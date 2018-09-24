@@ -45,29 +45,29 @@ for i=1:n
     OGroup = singleCopy{i};
     index  = find(strcmpi(AllGroups{1},OGroup));
     if ~isempty(index)
-        OGids     = [OGids; OGroup];
-        matchStr = AllGroups{5}{index};
+        OGids      = [OGids; OGroup];
+        matchStr   = AllGroups{5}{index};
+        %Save Kmarx gene
+        geneID     = AllGroups{3}(index);%findInProtDatabase(pID,kma_swissprot, kma_kegg);
+        genes{i,2} = geneID;
         if ~isempty(matchStr)
-            matchStr = strsplit(matchStr,'|');
-            %Save sce uniprots
-            uniprots{i,1} = matchStr{2};
-            %Find gene ID in database
-            geneID     = findInProtDatabase(matchStr{2},sce_swissprot, sce_kegg);
-            genes{i,1} = geneID;
-
-            %Save yli uniprots
-            pID = matchStr{4};
-            %Find gene ID in database
-            [geneID,pID]  = findInW29(pID,w29,yali);
-            genes{i,3}    = geneID;
-            uniprots{i,3} = pID;
-            
+            [genesCell, uniCell] = decomposeString(matchStr);
+            uniprots{i,1} = uniCell{1};
+            genes{i,1}    = genesCell{1};
+            uniprots{i,3} = uniCell{3};
+            genes{i,3}    = genesCell{3};
             %Save kma uniprots
-            pID = AllGroups{4}(index);
-            uniprots{i,2} = pID;
+            uniprots{i,2} = AllGroups{4}(index);
             %Find gene ID in database
-            geneID   = findInProtDatabase(pID,kma_swissprot, kma_kegg);
-            genes{i,2} = geneID;
+        else
+            matchStr  = AllGroups{4}{index};
+            [genesCell,uniCell] = decomposeString(matchStr);
+            uniprots{i,1} = uniCell{1};
+            genes{i,1}    = genesCell{1};
+            uniprots{i,3} = uniCell{3};
+            genes{i,3}    = genesCell{3};
+            %Save marxianus gene instead of its uniprot for missing cases
+            uniprots{i,2} = AllGroups{3}(index);
        end
     end
     disp(['Ready with Orthogroup #' num2str(i)])
@@ -99,6 +99,24 @@ else
     gene = '';
 end
 
+end
+
+function [genes, uniprots] = decomposeString(matchStr)
+uniprots = cell(1,2);
+genes    = cell(1,2);
+matchStr = strsplit(matchStr,'|');
+%Save sce uniprots
+uniprots{1} = matchStr{2};
+%Find gene ID in database
+geneID     = findInProtDatabase(matchStr{2},sce_swissprot, sce_kegg);
+genes{1} = geneID;
+
+%Save yli uniprots
+pID = matchStr{4};
+%Find gene ID in database
+[geneID,pID] = findInW29(pID,w29,yali);
+genes{2}     = geneID;
+uniprots{2}  = pID;
 end
 
 function gene = findInProtDatabase(pID,swissprot, kegg)

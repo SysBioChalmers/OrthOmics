@@ -4,9 +4,7 @@
 #ortholog is available)
 
 convert_strainIDs <- function(org,strain,dataset){
-  print(org)
   IDs <- dataset$genes
-  print(length(IDs))
   if (all(tolower(org) == 'yli')){
     #Load annotation data: single copy orthologs W29 <-> CLIB122
     setwd('/Users/ivand/Documents/GitHub/CHASSY-Multi-Omics-Analyisis/Orthologs')
@@ -14,7 +12,7 @@ convert_strainIDs <- function(org,strain,dataset){
     #Discard internal CHASSY ids column
     IDs_table <- IDs_table[,2:3] 
     #Standardize format
-    IDs_table$CLIB122 <- gsub('YALI0','YALI0_',IDs_table$CLIB122)
+    #IDs_table$CLIB122 <- gsub('YALI0','YALI0_',IDs_table$CLIB122)
   }
   
   if (all(tolower(org) == 'kma')){
@@ -35,7 +33,6 @@ convert_strainIDs <- function(org,strain,dataset){
   matches <- match(IDs,IDs_table[,column])
   #Get indexes for converted elements
   converted <- !is.na(matches)
-  print(sum(converted))
   #Convert just those IDs for which a match was found
   newIDs  <- IDs
   newIDs[converted]  <- IDs_table[matches[converted],newCol]

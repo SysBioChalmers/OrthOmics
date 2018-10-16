@@ -1,0 +1,2 @@
+"OG_IDs"	"sce"	"kma"	"yli"
+"OG0001174"	"YLR222C"	"KMXK_0B01380"	"YALI1_E38020g"

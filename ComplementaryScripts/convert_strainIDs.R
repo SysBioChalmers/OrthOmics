@@ -3,11 +3,11 @@
 #with the other strain identifiers (limited those genes for which a single copy 
 #ortholog is available)
 
-convert_strainIDs <- function(org,strain,dataset){
+convert_strainIDs <- function(org,strain,dataset,repoPath){
   IDs <- dataset$genes
   if (all(tolower(org) == 'yli')){
     #Load annotation data: single copy orthologs W29 <-> CLIB122
-    setwd('/Users/ivand/Documents/GitHub/CHASSY-Multi-Omics-Analyisis/Orthologs')
+    setwd(paste(repoPath,'/Orthologs',sep=''))
     IDs_table <- read.delim('Yali_annotation.txt', header = TRUE, sep = "\t",stringsAsFactors=FALSE)
     #Discard internal CHASSY ids column
     IDs_table <- IDs_table[,2:3] 
@@ -17,7 +17,7 @@ convert_strainIDs <- function(org,strain,dataset){
   
   if (all(tolower(org) == 'kma')){
     #Load annotation data: single copy orthologs DMKU <-> CBS6556
-    setwd('/Users/ivand/Documents/GitHub/CHASSY-Multi-Omics-Analyisis/Orthologs')
+    setwd(paste(repoPath,'/Orthologs',sep=''))
     IDs_table <- read.delim('Kma_annotation.txt', header = TRUE, sep = "\t",stringsAsFactors=FALSE)
     #Extract columns of interest
     IDs_table[,3] <- IDs_table[,6]

@@ -1,4 +1,6 @@
-setwd('/Users/ivand/Documents/GitHub/CHASSY-Multi-Omics-Analyisis/ComplementaryScripts')
+#Write your repo directory here!!
+repoPath <- '/Users/ivand/Documents/GitHub/CHASSY-Multi-Omics-Analyisis'
+setwd(paste(repoPath,'/ComplementaryScripts',sep=''))
 source('convert_strainIDs.r')
 source('plotVennDiagram.r')
 
@@ -6,7 +8,7 @@ organisms <- c('sce','kma','yli')
 #Dataset strains
 strains   <- c('s288c','DMKU','CLIB122')
 #Load OrthoList
-setwd('/Users/ivand/Documents/GitHub/CHASSY-Multi-Omics-Analyisis/Databases')
+setwd(paste(repoPath,'/Databases',sep=''))
 ListFile <- 'SingleCopyOG_All.txt'
 orthoList <- read.delim(ListFile, header = TRUE, sep = "\t",stringsAsFactors=FALSE)
 colnames(orthoList) <- c('OG_IDs','sce','kma','yli')
@@ -26,7 +28,7 @@ FC     <- 0.5
 for (i in 1:length(organisms)) {
   #Get DE set for the organism
   org <- organisms[i]
-  setwd('/Users/ivand/Documents/GitHub/CHASSY-Multi-Omics-Analyisis/Biopetrolia/Docosanol-RNAseq')
+  setwd(paste(repoPath,'/Final_products_Tolerance/Docosanol/RNAseq',sep=''))
   filename <- paste('RNAseq_',org,'_doc.txt',sep='')
   dataset  <- read.delim(filename, header = TRUE, sep = "\t",stringsAsFactors=FALSE)
   print(org)
@@ -37,7 +39,7 @@ for (i in 1:length(organisms)) {
   dataset <- dataset[dataset$FDR<=pValue,]
   print(paste(length(dataset$genes),' DE genes'))
   #Write file with the significantly DE genes for the organism
-  setwd('/Users/ivand/Documents/GitHub/CHASSY-Multi-Omics-Analyisis/Biopetrolia/Results')
+  setwd(paste(repoPath,'/Biopetrolia/Results',sep=''))
   filename <- paste('RNAseq_DE_',org,'_docosanol.txt',sep='')
   write.table(dataset, filename, sep="\t",row.names = FALSE)
   
@@ -56,7 +58,8 @@ for (i in 1:length(organisms)) {
   matches     <- match(dataset$genes,orthoList[,i+1])
   converted   <- matches[!is.na(matches)]
   temp        <- cbind(orthoList$OG_IDs[converted],matchedData)
-  setwd('/Users/ivand/Documents/GitHub/CHASSY-Multi-Omics-Analyisis/Biopetrolia/Results')
+  #Set path for results storage
+  setwd(paste(repoPath,'/Biopetrolia/Results',sep=''))
   filename <- paste('RNAseq_DE_',org,'_orthologs_docosanol.txt',sep='')
   write.table(temp, filename, sep="\t",row.names = FALSE)
   #Substitute gene names for OG id's
@@ -75,7 +78,7 @@ for (i in 1:length(organisms)) {
 
 #Get Venn diagram for common stress responses
 organisms    <- c('Sce','Kma','Yli')
-direction    <- 'UpReg'
+direction    <- 'DownReg'
 colorValues  <- colorValues <- c("blue","red", "yellow")
 intLabSize   <- c(rep(2,7))
 intLabSize[5]<- 3
@@ -100,3 +103,8 @@ for (i in 1:length(organisms)){
   filename    <- paste('DE_',direction,'_OG_',organisms[i],'_',organisms[j],'_docosanol.txt',sep='')
   write.table(data, filename, sep="\t",row.names = FALSE)
 }
+matches     <- match(indexes[[4]],orthoList[,1])
+converted   <- matches[!is.na(matches)]
+data        <- orthoList[converted,]
+filename    <- paste('DE_',direction,'_OG_AllOrgs_docosanol.txt',sep='')
+write.table(data, filename, sep="\t",row.names = FALSE)

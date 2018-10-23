@@ -39,13 +39,13 @@ for (i in 1:length(organisms)) {
   dataset <- dataset[dataset$FDR<=pValue,]
   print(paste(length(dataset$genes),' DE genes'))
   #Write file with the significantly DE genes for the organism
-  setwd(paste(repoPath,'/Biopetrolia/Results',sep=''))
+  setwd(paste(repoPath,'/Final_products_Tolerance/Docosanol/Results',sep=''))
   filename <- paste('RNAseq_DE_',org,'_docosanol.txt',sep='')
   write.table(dataset, filename, sep="\t",row.names = FALSE)
   
   #convert IDs for compatibility with the OrthoList 
   if ((all(tolower(org) == 'yli')) | all(tolower(org) == 'kma')) {
-    dataset     <- convert_strainIDs(org,strains[i],dataset)
+    dataset     <- convert_strainIDs(org,strains[i],dataset,repoPath)
     newIDs[[i]] <- dataset$genes
   }
   
@@ -59,7 +59,7 @@ for (i in 1:length(organisms)) {
   converted   <- matches[!is.na(matches)]
   temp        <- cbind(orthoList$OG_IDs[converted],matchedData)
   #Set path for results storage
-  setwd(paste(repoPath,'/Biopetrolia/Results',sep=''))
+  setwd(paste(repoPath,'/Final_products_Tolerance/Docosanol/Results',sep=''))
   filename <- paste('RNAseq_DE_',org,'_orthologs_docosanol.txt',sep='')
   write.table(temp, filename, sep="\t",row.names = FALSE)
   #Substitute gene names for OG id's
@@ -78,7 +78,6 @@ for (i in 1:length(organisms)) {
 
 #Get Venn diagram for common stress responses
 organisms    <- c('Sce','Kma','Yli')
-direction    <- 'DownReg'
 colorValues  <- colorValues <- c("blue","red", "yellow")
 intLabSize   <- c(rep(2,7))
 intLabSize[5]<- 3
@@ -86,25 +85,38 @@ intLabSize[2]<- 2.5
 intLabSize[4]<- 2.5
 intLabSize[6]<- 2.5
 ellipses <- length(organisms)
-indexes <- plotVennDiagram(OGDown,organisms,colorValues,intLabSize,ellipses)
-#Write files for the different overlaps
-for (i in 1:length(organisms)){
-  if (i<3){
-    j <- i+1
-    k <- i
+
+
+for (direction in c('DownReg','UpReg')){
+  subsetGenes <- OGUp
+  figure <- 'Up_venn_plot.jpg'
+  if (all(tolower(direction) == 'DownReg')) {
+    subsetGenes <- OGDown
+    figure <- 'Down_venn_plot.jpg'
     }
-  else{
-    j <-1
-    k <- 4
-    }
-  matches     <- match(indexes[[k]],orthoList[,1])
+
+  jpeg(figure, width = 350, height = 350)
+  indexes <- plotVennDiagram(subsetGenes,organisms,colorValues,intLabSize,ellipses)
+  dev.off()
+  #Write files for the different overlaps
+  for (i in 1:length(organisms)){
+    if (i<3){
+      j <- i+1
+      k <- i
+      }
+    else{
+      j <-1
+      k <- 4
+      }
+    matches     <- match(indexes[[k]],orthoList[,1])
+    converted   <- matches[!is.na(matches)]
+    data        <- orthoList[converted,]
+    filename    <- paste('DE_',direction,'_OG_',organisms[i],'_',organisms[j],'_docosanol.txt',sep='')
+    write.table(data, filename, sep="\t",row.names = FALSE)
+  }
+  matches     <- match(indexes[[4]],orthoList[,1])
   converted   <- matches[!is.na(matches)]
   data        <- orthoList[converted,]
-  filename    <- paste('DE_',direction,'_OG_',organisms[i],'_',organisms[j],'_docosanol.txt',sep='')
+  filename    <- paste('DE_',direction,'_OG_AllOrgs_docosanol.txt',sep='')
   write.table(data, filename, sep="\t",row.names = FALSE)
 }
-matches     <- match(indexes[[4]],orthoList[,1])
-converted   <- matches[!is.na(matches)]
-data        <- orthoList[converted,]
-filename    <- paste('DE_',direction,'_OG_AllOrgs_docosanol.txt',sep='')
-write.table(data, filename, sep="\t",row.names = FALSE)

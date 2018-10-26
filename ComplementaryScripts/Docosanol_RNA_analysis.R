@@ -23,20 +23,20 @@ OGUp   <- c()
 OGDown <- c()
 #DE thresholds
 pValue <- 0.05
-FC     <- 0.5
+FC     <- 0.75
 
 for (i in 1:length(organisms)) {
   #Get DE set for the organism
   org <- organisms[i]
-  setwd(paste(repoPath,'/Final_products_Tolerance/Docosanol/RNAseq',sep=''))
-  filename <- paste('RNAseq_',org,'_doc.txt',sep='')
-  dataset  <- read.delim(filename, header = TRUE, sep = "\t",stringsAsFactors=FALSE)
+  setwd(paste(repoPath,'/Final_products_Tolerance/Docosanol/Results/',org,sep=''))
+  filename <- paste(org,'_RNA_ref_Doc.csv',sep='')
+  dataset  <- read.delim(filename, header = TRUE, sep = ",",stringsAsFactors=FALSE)
   print(org)
   print(paste(length(dataset$genes),' genes'))
   
   #Get differentially expressed genes
   dataset <- dataset[(dataset$logFC>=FC | dataset$logFC<=-FC),] 
-  dataset <- dataset[dataset$FDR<=pValue,]
+  dataset <- dataset[dataset$PValue<=pValue,]
   print(paste(length(dataset$genes),' DE genes'))
   #Write file with the significantly DE genes for the organism
   setwd(paste(repoPath,'/Final_products_Tolerance/Docosanol/Results',sep=''))
@@ -59,7 +59,7 @@ for (i in 1:length(organisms)) {
   converted   <- matches[!is.na(matches)]
   temp        <- cbind(orthoList$OG_IDs[converted],matchedData)
   #Set path for results storage
-  setwd(paste(repoPath,'/Final_products_Tolerance/Docosanol/Results',sep=''))
+  setwd(paste(repoPath,'/Final_products_Tolerance/Docosanol/Results/Allorgs',sep=''))
   filename <- paste('RNAseq_DE_',org,'_orthologs_docosanol.txt',sep='')
   write.table(temp, filename, sep="\t",row.names = FALSE)
   #Substitute gene names for OG id's
@@ -79,38 +79,37 @@ for (i in 1:length(organisms)) {
 #Get Venn diagram for common stress responses
 organisms    <- c('Sce','Kma','Yli')
 colorValues  <- colorValues <- c("blue","red", "yellow")
-intLabSize   <- c(rep(2,7))
-intLabSize[5]<- 3
-intLabSize[2]<- 2.5
-intLabSize[4]<- 2.5
-intLabSize[6]<- 2.5
+intLabSize   <- c(rep(2.5,7))
+intLabSize[5]<- 3.5
+intLabSize[2]<- 3
+intLabSize[4]<- 3
+intLabSize[6]<- 3
 ellipses <- length(organisms)
 
-
+setwd(paste(repoPath,'/Final_products_Tolerance/Docosanol/Results/Allorgs',sep=''))
 for (direction in c('DownReg','UpReg')){
-  subsetGenes <- OGUp
-  figure <- 'Up_venn_plot.jpg'
-  if (all(tolower(direction) == 'DownReg')) {
+  print(direction)
+
+  if (all(direction == 'DownReg')) {
     subsetGenes <- OGDown
-    figure <- 'Down_venn_plot.jpg'
+    figure <- 'Docosanol_Down_venn_plot.png'
+  }else{
+    subsetGenes <- OGUp
+    figure <- 'Docosanol_Up_venn_plot.png'
     }
 
-  jpeg(figure, width = 350, height = 350)
+  png(figure, width = 500, height = 500)
   indexes <- plotVennDiagram(subsetGenes,organisms,colorValues,intLabSize,ellipses)
   dev.off()
   #Write files for the different overlaps
   for (i in 1:length(organisms)){
-    if (i<3){
-      j <- i+1
-      k <- i
-      }
-    else{
-      j <-1
-      k <- 4
-      }
+    k <- i
+    j <- i+1
+    if (i==3){j <-1}
+    columns <- c(1,i+1,j+1)
     matches     <- match(indexes[[k]],orthoList[,1])
     converted   <- matches[!is.na(matches)]
-    data        <- orthoList[converted,]
+    data        <- orthoList[converted,columns]
     filename    <- paste('DE_',direction,'_OG_',organisms[i],'_',organisms[j],'_docosanol.txt',sep='')
     write.table(data, filename, sep="\t",row.names = FALSE)
   }

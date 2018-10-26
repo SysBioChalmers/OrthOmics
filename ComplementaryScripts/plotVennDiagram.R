@@ -51,14 +51,17 @@ library(VennDiagram)
     area   <- c()
     shared <- c()
     for (i in 1:2){
-      area[i]   <- length(elementsList[[i]])
+      area[i]      <- length(elementsList[[i]])
+      overlap[[i]] <- elementsList[[i]]
     } 
+    overlap[[3]] <- intersect(elementsList[[1]],elementsList[[2]])
     #Intersect 1,2
-    overlap <-intersect(elementsList[[1]],elementsList[[2]])
-    shared  <- length(overlap)
+    shared  <- length(overlap[[3]])
     venn.plot<-draw.pairwise.venn(area[1], area[2],shared,
                                 category = categories,scaled = F,fill = colorValues, 
                                 lty = c(rep("solid",2)), cex = intLabSize, cat.cex = 2.5)
+    
+
   }
   return(overlap)
 }

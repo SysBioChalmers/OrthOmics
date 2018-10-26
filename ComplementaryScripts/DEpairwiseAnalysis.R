@@ -4,13 +4,15 @@ DEpairwiseAnalysis <- function(x2,org,conditions,coloVals,logPval,log2FC){
   upReg_AllConds   <- c()
   #Group all the genes that are upregulated in at least one of the conditions
   downReg_AllConds <- c()
+  data <- list()
   for (i in 2:length(conditions)) {
     #Differential expression analysis
     de <- exactTest(x2, pair = c(conditions[1],conditions[i])) # Reference first!
     tt <- topTags(de, n = Inf)
     # Write CSV file
-    filename <- paste(org,'_RNA_ref_',conditions[i],'.csv')
+    filename <- paste(org,'_RNA_ref_',conditions[i],'.csv',sep='')
     write.csv(tt, file = filename, row.names = T)
+    #tt$table$PValue <- p.adjust(tt$table$PValue,method = "FDR")
     # Make volcano plot
     volcanoData <- cbind(tt$table$logFC, -log10(tt$table$PValue))
     colnames(volcanoData) <- c("logFC", "-log10Pval")
@@ -47,21 +49,22 @@ DEpairwiseAnalysis <- function(x2,org,conditions,coloVals,logPval,log2FC){
     plot(p)
     plot_name <- paste(org,'_RNA_ref_',conditions[i],'.png',sep='')
     ggsave(plot_name, width = 5, height=5)
+    data[[i-1]] <- volcanoData
     dev.off()
   }
   #Get venn diagrams for the up and down regulated genes
-  if (all(org != 'yli')) {
+  ellipses <- length(conditions)-1
+  if (ellipses == 3) {
     intLabSize <- c(rep(2.5,7))
     intLabSize[2]<-3
     intLabSize[4]<-3
     intLabSize[6]<-3
     intLabSize[5]<-3.5
-    ellipses <- 3
   }else{
     intLabSize <- c(rep(2.5,3))
     intLabSize[2]<-3.5
-    ellipses <- 2
   }
+  if (ellipses == 1) {intLabSize = 3.5}
   #Venn for upregulated genes
   png(paste(org,'_RNA_UpRegulated_vennAllconds.png',sep=''),width = 600, height = 600)
   allCondsUp <- plotVennDiagram(upReg_AllConds,conditions[2:length(conditions)],coloVals[2:length(conditions)],intLabSize,ellipses)
@@ -73,16 +76,34 @@ DEpairwiseAnalysis <- function(x2,org,conditions,coloVals,logPval,log2FC){
   
   #Put together all unique DE, up and down regulated genes for any condition
   tempDEgenes <- c()
-  tempDown <- c()
-  tempUp <- c()
+  tempDown    <- c()
+  tempUp      <- c()
+  Excsv_Up    <- list()
+  Excsv_down  <- list()
+  condIndxes  <- c(1:(length(conditions)-1))
   for (i in 1:(length(conditions)-1)){
     tempDEgenes <- c(tempDEgenes,DEgenes[[i]])
-    tempDown <- c(tempDown,downReg_AllConds[[i]])
-    tempUp <- c(tempUp,upReg_AllConds[[i]])
+    tempDown    <- c(tempDown,downReg_AllConds[[i]])
+    tempUp      <- c(tempUp,upReg_AllConds[[i]])
+    otherIndxs  <- setdiff(condIndxes,i)
+    #Get the stress responses that are exclusively for each of the conditions
+    Excsv_Up[[i]]   <- upReg_AllConds[[i]]
+    Excsv_down[[i]] <- downReg_AllConds[[i]]
+    for (j in otherIndxs){
+      Excsv_Up[[i]]   <- setdiff(Excsv_Up[[i]],upReg_AllConds[[j]])
+      Excsv_down[[i]] <-  setdiff(Excsv_down[[i]],downReg_AllConds[[j]])
+    }
+    #Write a file with the genes data exclusively DE for the i-th condition
+    temp <- c(Excsv_Up[[i]],Excsv_down[[i]])
+    temp <- data[[i]][is.element(rownames(data[[i]]),temp),]
+    filename <- paste(org,'_RNA_DE_exclusive_',conditions[i+1],'.csv',sep='')
+    write.csv(temp, file = filename, row.names = TRUE)
+    
   }
+  
   tempDEgenes <- unique(tempDEgenes)
-  tempDown <- unique(tempDown)
-  tempUp <- unique(tempUp)
+  tempDown    <- unique(tempDown)
+  tempUp      <- unique(tempUp)
   #Create a file with all the DE genes (for any condition) including its direction
   DEdata <- c()
   DEdata$genes <- tempDEgenes
@@ -93,5 +114,5 @@ DEpairwiseAnalysis <- function(x2,org,conditions,coloVals,logPval,log2FC){
   DEdata <- as.data.frame(DEdata)
   filename <- paste(org,'_RNA_DE_anyCondition.csv')
   write.csv(DEdata, file = filename, row.names = FALSE)
-  return(list(upReg_AllConds,downReg_AllConds))
+  return(list(upReg_AllConds,downReg_AllConds,Excsv_Up,Excsv_down))
 }

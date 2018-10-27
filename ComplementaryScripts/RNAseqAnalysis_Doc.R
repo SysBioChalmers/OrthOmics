@@ -14,7 +14,7 @@ repoPath  <- '/Users/ivand/Documents/GitHub/CHASSY-Multi-Omics-Analyisis'
 scriptsPath <- paste(repoPath,'/ComplementaryScripts',sep='')
 setwd(scriptsPath)
 #Provide organism code [Sce,Kma,Yli]
-organism    <- 'kma'
+organism    <- 'sce'
 #dataPath    <- paste(repoPath,'/RNA-seq',sep='')
 #resultsPath <- paste(dataPath,'/',organism,'/Results',sep='')
 dataPath <- paste(repoPath,'/Final_products_Tolerance/Docosanol/RNAseq',sep = '')
@@ -85,7 +85,7 @@ dev.off()
 setwd(scriptsPath)
 source('getPCAplot.R')
 setwd(resultsPath)
-prots.PCA <- getPCAplot(lcpm2,conditions,group,replicates,colorValues,organism)
+prots.PCA <- getPCAplot(filtered.data,conditions,group,replicates,colorValues,organism)
 #======================= 6. Pairwise DE analysis ==============================================
 setwd(scriptsPath)
 source('DEpairwiseAnalysis.R')

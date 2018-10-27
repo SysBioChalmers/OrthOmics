@@ -41,7 +41,7 @@ for (i in 1:length(organisms)) {
   #Write file with the significantly DE genes for the organism
   setwd(paste(repoPath,'/Final_products_Tolerance/Docosanol/Results',sep=''))
   filename <- paste('RNAseq_DE_',org,'_docosanol.txt',sep='')
-  write.table(dataset, filename, sep="\t",row.names = FALSE)
+  write.table(dataset, filename, sep="\t",row.names = FALSE,quote=FALSE)
   
   #convert IDs for compatibility with the OrthoList 
   if ((all(tolower(org) == 'yli')) | all(tolower(org) == 'kma')) {
@@ -61,7 +61,7 @@ for (i in 1:length(organisms)) {
   #Set path for results storage
   setwd(paste(repoPath,'/Final_products_Tolerance/Docosanol/Results/Allorgs',sep=''))
   filename <- paste('RNAseq_DE_',org,'_orthologs_docosanol.txt',sep='')
-  write.table(temp, filename, sep="\t",row.names = FALSE)
+  write.table(temp, filename, sep="\t",row.names = FALSE,quote=FALSE)
   #Substitute gene names for OG id's
   matchedData$genes <- orthoList$OG_IDs[converted]
 
@@ -110,11 +110,11 @@ for (direction in c('DownReg','UpReg')){
     converted   <- matches[!is.na(matches)]
     data        <- orthoList[converted,columns]
     filename    <- paste('DE_',direction,'_OG_',organisms[i],'_',organisms[j],'_docosanol.txt',sep='')
-    write.table(data, filename, sep="\t",row.names = FALSE)
+    write.table(data, filename, sep="\t",row.names = FALSE,quote=FALSE)
   }
   matches     <- match(indexes[[4]],orthoList[,1])
   converted   <- matches[!is.na(matches)]
   data        <- orthoList[converted,]
   filename    <- paste('DE_',direction,'_OG_AllOrgs_docosanol.txt',sep='')
-  write.table(data, filename, sep="\t",row.names = FALSE)
+  write.table(data, filename, sep="\t",row.names = FALSE,quote=FALSE)
 }

@@ -1,4 +1,4 @@
-filterData <- function(dataset,grouping,metric){
+filterData <- function(dataset,grouping,metric,measured){
 #Function that filters a biological dataset for different replicates in 
 #different conditions. Those elements that were not measured for at least 2/3
 #of the triplicates for at least one of the conditions are removed. The elements
@@ -46,14 +46,21 @@ for (i in 1:nrow(dataset)){
       width <- 10
       if (all(metric == 'mean')){width <- (sd(rowCond)/mean(as.matrix(rowCond)))}
       if (all(metric == 'median')){(width <- sd(rowCond)/median(as.matrix(rowCond)))}
-      if (width<=1){spreading[j] <- TRUE}
+      if (width<=1 & width>0){spreading[j] <- TRUE}
     }
   }
   #The element should be present in at least one condition and have a low variability
   #for all the conditions in which it is present
-  if (any(presence==TRUE) & (all(spreading == presence))){
-    filtered <- c(filtered,i)
+  
+  #If proteomics
+  if (all(measured=='RNA')){
+    conditional <- ((presence[1]==TRUE) & 1*sum(presence==TRUE) >= 0.8*length(grouping) & (all(spreading == presence)))
+  }else{
+    conditional <- ((presence[1]==TRUE) &  (all(spreading == presence)))
   }
+
+  #if ((presence[1]==TRUE) & 1*sum(presence==TRUE) >= 0.8*length(grouping) & (all(spreading == presence))){
+  if (conditional == TRUE){filtered <- c(filtered,i)}
 }
 return(list(filtered,detected))
 }

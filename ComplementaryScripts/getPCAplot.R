@@ -1,4 +1,4 @@
-getPCAplot <- function(data,conditions,group,replicates,colVals,org){
+getPCAplot <- function(data,conditions,group,replicates,colVals,org,plot_name,measured){
   data[is.na.data.frame(data)] <- 0
   t.data<-t(as.matrix(data))
   prots.pca <- prcomp(t.data, center = TRUE,scale. = TRUE) 
@@ -13,9 +13,8 @@ getPCAplot <- function(data,conditions,group,replicates,colVals,org){
   p <- p + theme_bw()
   #Format plot
   p <- p + scale_colour_manual(values=colVals)
-  titleStr <- paste(org,'/ RNAseq /',length(data[,2]), ' RNA')
+  titleStr <- paste(org,'/ ',length(data[,2]), measured)
   p <- p + labs(title = titleStr)
-  plot_name <- paste(org,'_RNAseq_PCA.png')
   p
   #Save plot
   ggsave(plot_name, width = 5, height=5)

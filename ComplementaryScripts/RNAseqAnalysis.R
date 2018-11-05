@@ -14,9 +14,10 @@ repoPath  <- '/Users/ivand/Documents/GitHub/CHASSY-Multi-Omics-Analyisis'
 scriptsPath <- paste(repoPath,'/ComplementaryScripts',sep='')
 setwd(scriptsPath)
 #Provide organism code [Sce,Kma,Yli]
-organism    <- 'yli'
+organism    <- 'sce'
 dataPath    <- paste(repoPath,'/RNA-seq',sep='')
 resultsPath <- paste(dataPath,'/',organism,'/Results',sep='')
+
 #================== 1. Load data and add grouping info ====================================
 setwd(scriptsPath)
 source('loadRNAdata.R')
@@ -34,7 +35,7 @@ rm(dataPath)
 #Remove those RNA with a SD == 0 across all samples
 setwd(scriptsPath)
 source('filterData.R')
-output   <- filterData(dataset,replicates,'median')
+output   <- filterData(dataset,replicates,'median','RNA')
 filtered <- output[[1]]
 detected <- output[[2]]
 rm(output)
@@ -67,10 +68,10 @@ lcpm   <- cpm(x, log = T)
 x2     <- filtered.data
 lcpm2  <- cpm(x2, log = T)
 #Filter low erads (log2cpm<0)
-output <-filterLowReads(filtered.data,lcpm2,organism,resultsPath)
+output <-filterLowReads(filtered.data,lcpm2)
 #Plot reads dritributions for filtered and unfiltered data
 png(paste(organism,'_SamplesDistributions.png',sep=''),width = 1200, height = 600)
-plotDistributions(lcpm,x,lcpm2,x2)
+plotDistributions(lcpm,lcpm2,' RNA', 0.3)
 dev.off()
 filtered.data <- output
 rm(lcpm,x,x2)
@@ -92,22 +93,26 @@ dev.off()
 setwd(scriptsPath)
 source('getPCAplot.R')
 setwd(resultsPath)
-prots.PCA <- getPCAplot(filtered.data,conditions,group,replicates,colorValues,organism)
+if (all(organism=='kma')){ 
+  data  <- cpm(x2, log = T)
+}else{
+  data <- filtered.data
+  }
+plot_name <- paste(organism,'_RNAseq_PCA.png',sep='')
+prots.PCA <- getPCAplot(data,conditions,group,replicates,colorValues,organism,plot_name,' RNA')
 #======================= 6. Pairwise DE analysis ==============================================
 setwd(scriptsPath)
 source('DEpairwiseAnalysis.R')
 setwd(resultsPath)
-x <-filtered.data
-x <- DGEList(counts = x, genes = rownames(filtered.data))
-#x<- data
-# To properly normalize for library size we use TMM normalization, as discussed in the lectures.
-x2 <- calcNormFactors(x, method = "TMM")
+
 x2 <- estimateDisp(x2)
-x2$samples$group <- group
 #Call DE analysis internal function
 #Define DE thresholds
-logPval <- abs(log10(0.01))
-log2FC  <- 0.75
-output  <- DEpairwiseAnalysis(x2,organism,conditions,colorValues,logPval,log2FC)
+logPval  <- abs(log10(0.01))
+log2FC   <- 0.5
+adjusted <- TRUE
+output   <- DEpairwiseAnalysis(x2,organism,conditions,colorValues,logPval,log2FC,adjusted,'RNA')
 upReg_AllConds   <- output[[1]]
 downReg_AllConds <- output[[2]]
+Excsv_Up   <- output[[3]]
+Excsv_down <- output[[4]]

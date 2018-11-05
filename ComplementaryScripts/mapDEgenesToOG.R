@@ -14,7 +14,7 @@ setwd(dataPath)
 OGlist  <- read.csv('SingleCopyOG_All.txt', header = TRUE, sep = "\t",stringsAsFactors=FALSE)
 #DE thresholds
 logPVal <- abs(log10(0.01))
-logFC <- 0.75
+logFC <- 0.5
 for (i in 1:length(conditions)){
   cond    <- conditions[i]
   print(cond)
@@ -81,7 +81,7 @@ for (i in 1:length(conditions)){
   dev.off()
   png(paste('RNAseq_',cond,'_Exclusive_down_OG.png',sep=''),width = 600, height = 600)
   conds_down_subsets <- plotVennDiagram(OGDown,orgs,colorValues,intLabSize,ellipses)
-  dev.off
+  dev.off()
   #Write files for the different overlaps
   for (direction in c('up','down')){
     if (all(direction=='up')){

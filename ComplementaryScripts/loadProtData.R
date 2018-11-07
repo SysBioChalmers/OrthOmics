@@ -26,7 +26,7 @@ loadProtData <- function(dataPath,organism,emPAI){
                       rep(conditions[3],replicates[3]),
                       rep(conditions[4],replicates[4])), levels = conditions)
     #Get proteins and genes IDs
-    if (emPAI == TRUE & all(organism =='sce')){
+    if (all(organism =='sce')){
       IDs      <- dataset[,1:3]
       dataset  <- dataset[,(ncol(IDs)+1):(sum(replicates)+ncol(IDs))]
       dataset[is.na(dataset)] <- 0 
@@ -35,12 +35,12 @@ loadProtData <- function(dataPath,organism,emPAI){
       proteins <- IDs[,3]
       proteins[proteins==''] <- genes[proteins=='']
     }else{
-      IDs      <- dataset[,1:4]
+      IDs      <- dataset[,1:3]
       dataset  <- dataset[,(ncol(IDs)+1):(sum(replicates)+ncol(IDs))]
       dataset[is.na(dataset)] <- 0 
-      genes    <- IDs[,4]
-      genes[genes==''] <- IDs[genes=='',2]
-      proteins <- IDs[,3]
+      genes    <- IDs[,1]
+      genes[genes==''] <- IDs[genes=='',1]
+      proteins <- IDs[,2]
       proteins[proteins==''] <- genes[proteins=='']
     }
   }

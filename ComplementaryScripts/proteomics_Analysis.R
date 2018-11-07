@@ -14,7 +14,7 @@ repoPath  <- '/Users/ivand/Documents/GitHub/CHASSY-Multi-Omics-Analyisis'
 scriptsPath <- paste(repoPath,'/ComplementaryScripts',sep='')
 setwd(scriptsPath)
 #Provide organism code [Sce,Kma,Yli]
-organism    <- 'yli'
+organism    <- 'kma'
 dataPath    <- paste(repoPath,'/Proteomics/Relative/data',sep='')
 resultsPath <- paste(repoPath,'/Proteomics/Relative/Results/',organism,sep='')
 
@@ -100,9 +100,9 @@ dev.off()
 setwd(scriptsPath)
 source('getPCAplot.R')
 setwd(resultsPath)
-#if (all(organism=='kma')){data  <- cpm(x2, log = T)}else{data <- filtered.data}
+if (all(organism=='kma')){data  <- cpm(x2, log = T)}else{data <- filtered.data}
 data <- filtered.data
-plot_name <- paste(organism,'_emPAI_PCA.png')
+plot_name <- paste(organism,'_emPAI_PCA.png',sep='')
 prots.PCA <- getPCAplot(data,conditions,group,replicates,colorValues,organism,plot_name,' Proteins')
 #What's the contribution of individual genes to the PC's
 par(mar=c(5.1,5.1,3.1,2.1));plot(prots.PCA$rotation,type='p',pch=19,col='black',cex.lab=2, cex.axis=2, cex.main=2, cex.sub=2,cex=1.5,

@@ -23,22 +23,26 @@ for (i in 2:length(conditions)){
   setwd(resultsPath)
   filename <- paste(organism,'_RNA_DE_exclusive_',conditions[i],'.csv',sep='')
   RNA <- read.delim(filename, header = TRUE, sep = ",",stringsAsFactors=FALSE, na.strings = "NA")
-  downRNA <- RNA[which(RNA$logFC<0),]
-  upRNA <- RNA[which(RNA$logFC>0),]
+  downRNA <- RNA$X[which(RNA$logFC<0)]
+  upRNA <- RNA$X[which(RNA$logFC>0)]
   #Load DE prots for the i-th condition
   resultsPath <- paste(protPath,'/Results/',organism,sep='')
   setwd(resultsPath)
   filename <- paste(organism,'_Proteins_ref_',conditions[i],'.csv',sep='')
   Prots <- read.delim(filename, header = TRUE, sep = ",",stringsAsFactors=FALSE, na.strings = "NA")
-  downProts <- RNA[which(Prots$logFC<(-log2FC) & Prots$PValue<Pvalue),]
-  upProts <- RNA[which(Prots$logFC>log2FC & Prots$PValue<Pvalue),]
+  downProts <- Prots$genes[which(Prots$logFC<(-log2FC) & Prots$PValue<Pvalue)]
+  upProts <- Prots$genes[which(Prots$logFC>log2FC & Prots$PValue<Pvalue)]
   
   png(paste(organism,'_DE_RNA_prot_down_',conditions[i],'.png',sep=''),width = 600, height = 600)
-  x <- plotVennDiagram(list(downRNA$X,downProts$X),c('RNA','Prots'),c(colorValues[i],'gray'),c(2.5,2.5,3.5),2)
+  x <- plotVennDiagram(list(downRNA,downProts),c('RNA','Prots'),c(colorValues[i],'gray'),c(3,4,3),2)
   dev.off()
   
   png(paste(organism,'_DE_RNA_prot_up_',conditions[i],'.png',sep=''),width = 600, height = 600)
-  y <- plotVennDiagram(list(upRNA$X,upProts$X),c('RNA','Prots'),c(colorValues[i],'gray'),c(2.5,2.5,3.5),2)
+  y <- plotVennDiagram(list(upRNA,upProts),c('RNA','Prots'),c(colorValues[i],'gray'),c(3,4,3),2)
   dev.off()
   
+  filename <- paste(organism,'_DEgenes_prot_RNAoverlap_',conditions[i],'.csv',sep='')
+  table <- as.data.frame(c(x[[3]],y[[3]]))
+  colnames(table) <- paste('Ref_',conditions[i],sep='')
+  write.csv(table, file = filename, row.names = FALSE)
 }

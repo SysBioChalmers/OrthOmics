@@ -14,7 +14,7 @@ repoPath  <- '/Users/ivand/Documents/GitHub/CHASSY_multiOmics_Analysis'
 scriptsPath <- paste(repoPath,'/ComplementaryScripts',sep='')
 setwd(scriptsPath)
 #Provide organism code [Sce,Kma,Yli]
-organism    <- 'sce'
+organism    <- 'kma'
 dataPath    <- paste(repoPath,'/Proteomics/Relative/data',sep='')
 resultsPath <- paste(repoPath,'/Proteomics/Relative/Results/',organism,sep='')
 
@@ -98,13 +98,6 @@ if (all(organism == 'yli')) {
   allConds <- plotVennDiagram(detected_SC,conditions,colorValues,intLabSize,4)
 }
 dev.off()
-#Get overlap between methods
-intLabSize <- c(rep(3,3))
-intLabSize[3] <- 4
-png(paste(organism,'_prots_methods.png',sep=''),width = 600, height = 600)
-methods <- plotVennDiagram(list(rownames(filtered_XIC),rownames(filtered_SC)),c('XIC','SCounts'),c('red','blue'),intLabSize,2)
-dev.off()
-
 #================== 3. visualize data samples distributions and filter low reads =================
 setwd(scriptsPath)
 source('filterLowReads.R')
@@ -139,7 +132,11 @@ png(paste(organism,'_SCounts_SamplesDistributions.png',sep=''),width = 1200, hei
 plotDistributions(x,x2,' proteins',0.4)
 dev.off()
 rm(x,x2)
-
+#Get overlap between methods
+intLabSize <- c(rep(4,3))
+png(paste(organism,'_prots_methods.png',sep=''),width = 600, height = 600)
+methods <- plotVennDiagram(list(rownames(filtered_XIC),rownames(filtered_SC)),c('XIC','SC'),c('red','blue'),intLabSize,2)
+dev.off()
 #================== 4. Data normalization ================================================
 setwd(scriptsPath)
 source('getBoxPlots.R')
@@ -176,8 +173,8 @@ data <- filtered_XIC
 plot_name <- paste(organism,'_XIC_PCA.png',sep='')
 prots.PCA <- getPCAplot(data,conditions,group,replicates,colorValues,organism,plot_name,' Proteins')
 #What's the contribution of individual genes to the PC's
-par(mar=c(5.1,5.1,3.1,2.1));plot(prots.PCA$rotation,type='p',pch=19,col='black',cex.lab=2, cex.axis=2, cex.main=2, cex.sub=2,cex=1.5,
-     main='PCA Loadings')
+#par(mar=c(5.1,5.1,3.1,2.1));plot(prots.PCA$rotation,type='p',pch=19,col='black',cex.lab=2, cex.axis=2, cex.main=2, cex.sub=2,cex=1.5,
+#     main='PCA Loadings')
 #spectral counts
 data <- filtered_SC
 plot_name <- paste(organism,'_SCounts_PCA.png',sep='')

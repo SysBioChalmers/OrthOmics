@@ -1,14 +1,14 @@
-repoPath  <- '/Users/ivand/Documents/GitHub/CHASSY-Multi-Omics-Analyisis'
+repoPath  <- '/Users/ivand/Documents/GitHub/CHASSY_multiOmics_Analysis'
 #Internal functions
 scriptsPath <- paste(repoPath,'/ComplementaryScripts',sep='')
 setwd(scriptsPath)
 source('plotVennDiagram.R')
 #Provide organism code [Sce,Kma,Yli]
-organism    <- 'sce'
+organism    <- 'kma'
 RNAPath     <- paste(repoPath,'/RNA-seq',sep='')
 protPath    <- paste(repoPath,'/Proteomics/Relative',sep='')
 log2FC <- 0.5
-
+Pvalue <- 0.05
 if (all(organism == 'yli')){
   conditions <- c('Ref','HiT','LpH')
   colorValues <- c("black", "red", "#009E73")
@@ -30,8 +30,8 @@ for (i in 2:length(conditions)){
   setwd(resultsPath)
   filename <- paste(organism,'_Proteins_ref_',conditions[i],'.csv',sep='')
   Prots <- read.delim(filename, header = TRUE, sep = ",",stringsAsFactors=FALSE, na.strings = "NA")
-  downProts <- RNA[which(Prots$logFC<(-log2FC)),]
-  upProts <- RNA[which(Prots$logFC>log2FC),]
+  downProts <- RNA[which(Prots$logFC<(-log2FC) & Prots$PValue<Pvalue),]
+  upProts <- RNA[which(Prots$logFC>log2FC & Prots$PValue<Pvalue),]
   
   png(paste(organism,'_DE_RNA_prot_down_',conditions[i],'.png',sep=''),width = 600, height = 600)
   x <- plotVennDiagram(list(downRNA$X,downProts$X),c('RNA','Prots'),c(colorValues[i],'gray'),c(2.5,2.5,3.5),2)

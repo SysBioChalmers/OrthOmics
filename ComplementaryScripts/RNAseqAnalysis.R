@@ -9,12 +9,12 @@ library(RColorBrewer)
 library(snowfall)
 library(ggbiplot)
 library(ggplot2)
-repoPath  <- '/Users/ivand/Documents/GitHub/CHASSY-Multi-Omics-Analyisis'
+repoPath  <- '/Users/ivand/Documents/GitHub/CHASSY_multiOmics_Analysis'
 #Internal functions
 scriptsPath <- paste(repoPath,'/ComplementaryScripts',sep='')
 setwd(scriptsPath)
 #Provide organism code [Sce,Kma,Yli]
-organism    <- 'sce'
+organism    <- 'yli'
 dataPath    <- paste(repoPath,'/RNA-seq',sep='')
 resultsPath <- paste(dataPath,'/',organism,'/Results',sep='')
 
@@ -35,7 +35,7 @@ rm(dataPath)
 #Remove those RNA with a SD == 0 across all samples
 setwd(scriptsPath)
 source('filterData.R')
-output   <- filterData(dataset,replicates,'median','RNA')
+output   <- filterData(dataset,replicates,'mean','RNA')
 filtered <- output[[1]]
 detected <- output[[2]]
 rm(output)
@@ -46,14 +46,11 @@ source('plotVennDiagram.R')
 setwd(resultsPath)
 png(paste(organism,'_RNA_vennAllconds.png',sep=''),width = 600, height = 600)
 if (all(organism == 'yli')) {
-  intLabSize <- c(rep(2,7))
-  intLabSize[2]<-2.5
-  intLabSize[4]<-2.5
-  intLabSize[6]<-2.5
-  intLabSize[5]<-3
+  intLabSize <- c(rep(3,7))
+  intLabSize[5]<-4
   allConds <- plotVennDiagram(detected,conditions,colorValues,intLabSize,3)
 }else  {
-  intLabSize   <- c(rep(2.5,15))
+  intLabSize   <- c(rep(3,15))
   intLabSize[6]<- 4
   allConds <- plotVennDiagram(detected,conditions,colorValues,intLabSize,4)
 }

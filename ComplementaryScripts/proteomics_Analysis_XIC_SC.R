@@ -14,7 +14,7 @@ repoPath  <- '/Users/ivand/Documents/GitHub/CHASSY_multiOmics_Analysis'
 scriptsPath <- paste(repoPath,'/ComplementaryScripts',sep='')
 setwd(scriptsPath)
 #Provide organism code [Sce,Kma,Yli]
-organism    <- 'kma'
+organism    <- 'sce'
 dataPath    <- paste(repoPath,'/Proteomics/Relative/data',sep='')
 resultsPath <- paste(repoPath,'/Proteomics/Relative/Results/',organism,sep='')
 
@@ -98,6 +98,13 @@ if (all(organism == 'yli')) {
   allConds <- plotVennDiagram(detected_SC,conditions,colorValues,intLabSize,4)
 }
 dev.off()
+#Get overlap between methods
+intLabSize <- c(rep(3,3))
+intLabSize[3] <- 4
+png(paste(organism,'_prots_methods.png',sep=''),width = 600, height = 600)
+methods <- plotVennDiagram(list(rownames(filtered_XIC),rownames(filtered_SC)),c('XIC','SCounts'),c('red','blue'),intLabSize,2)
+dev.off()
+
 #================== 3. visualize data samples distributions and filter low reads =================
 setwd(scriptsPath)
 source('filterLowReads.R')

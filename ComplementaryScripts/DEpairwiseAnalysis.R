@@ -133,5 +133,17 @@ DEpairwiseAnalysis <- function(x2,org,conditions,coloVals,logPval,log2FC,adjuste
   DEdata <- as.data.frame(DEdata)
   filename <- paste(org,'_',measured,'_DE_anyCondition.csv',sep='')
   write.csv(DEdata, file = filename, row.names = FALSE)
+  #Create a file with the promiscuous DE genes
+  promiscuous <- tempDEgenes
+  promDown    <- tempDown
+  promUp      <- tempUp
+  for (i in 1:(length(conditions)-1)){
+    promDown <- promDown[!is.element(promDown,Excsv_down[[i]])]
+    promUp   <- promUp[!is.element(promUp,Excsv_Up[[i]])]
+  }
+  filename <- paste(org,'_',measured,'_Down_DE_promiscuous.csv',sep='')
+  write.csv(promDown, file = filename, row.names = FALSE)
+  filename <- paste(org,'_',measured,'_Up_DE_promiscuous.csv',sep='')
+  write.csv(promUp, file = filename, row.names = FALSE)
   return(list(upReg_AllConds,downReg_AllConds,Excsv_Up,Excsv_down))
 }

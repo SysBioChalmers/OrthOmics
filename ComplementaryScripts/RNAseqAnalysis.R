@@ -14,7 +14,7 @@ repoPath  <- '/Users/ivand/Documents/GitHub/CHASSY_multiOmics_Analysis'
 scriptsPath <- paste(repoPath,'/ComplementaryScripts',sep='')
 setwd(scriptsPath)
 #Provide organism code [Sce,Kma,Yli]
-organism    <- 'yli'
+organism    <- 'sce'
 dataPath    <- paste(repoPath,'/RNA-seq',sep='')
 resultsPath <- paste(dataPath,'/',organism,'/Results',sep='')
 
@@ -65,7 +65,7 @@ lcpm   <- cpm(x, log = T)
 x2     <- filtered.data
 lcpm2  <- cpm(x2, log = T)
 #Filter low erads (log2cpm<0)
-output <-filterLowReads(filtered.data,lcpm2)
+output <-filterLowReads(filtered.data,lcpm2,'-')
 #Plot reads dritributions for filtered and unfiltered data
 png(paste(organism,'_SamplesDistributions.png',sep=''),width = 1200, height = 600)
 plotDistributions(lcpm,lcpm2,' RNA', 0.3)
@@ -82,7 +82,7 @@ plot_name <- paste(organism,'_RNA_Box_unnorm.png',sep='')
 setwd(resultsPath)
 png(plot_name,width = 900, height = 600)
 titleStr  <- paste(organism, '_',length(filtered.data[,1]), ' RNA: Unnormalised')
-getBoxPlots(x,x2,titleStr,resultsPath,organism)
+getBoxPlots(x,x2,titleStr,resultsPath,organism,'RNA')
 dev.off()
 
 #================== 5. Unsupervised clustering ================================================

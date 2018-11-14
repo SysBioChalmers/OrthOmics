@@ -2,7 +2,7 @@ filterLowReads <- function(filtered.data,lcpm2,Pmethod){
 #Remove low reads
 keep.exprs <- c()
 if (all(Pmethod=='XIC')){factor <- 1}
-if (all(Pmethod=='SCounts')){factor <- 2/3}
+else{factor <- 2/3}
 for (i in 1:nrow(filtered.data)){
   #Get the 
   rowData <- lcpm2[i,][!is.na(lcpm2[i,])]

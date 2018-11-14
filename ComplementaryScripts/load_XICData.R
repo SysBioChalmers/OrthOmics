@@ -28,6 +28,10 @@ load_XICData <- function(dataPath,organism,Pmethod){
   dataset  <- dataset[,(ncol(IDs)+1):(sum(replicates)+ncol(IDs))]
   dataset[is.na(dataset)] <- 0
   genes    <- IDs[,1]
+  if (all(organism == 'sce')){
+    genes    <- IDs[,3]
+    genes[genes==''] <- IDs[,1][genes=='']
+  }
   #genes[genes==''] <- IDs[genes=='',1]
   proteins <- IDs[,2]
   proteins[proteins==''] <- genes[proteins=='']

@@ -1,6 +1,6 @@
 install.packages("rlist")
 library("rlist")
-repoPath   <- '/Users/ivand/Documents/GitHub/CHASSY-Multi-Omics-Analyisis'
+repoPath  <- '/Users/ivand/Documents/GitHub/CHASSY_multiOmics_Analysis'
 organisms  <- c('sce','kma','yli')
 orgColors  <- c('blue','red','yellow')
 
@@ -32,11 +32,11 @@ for (i in 1:length(conditions)){
     ellipses <- 2
   }else{
     colorValues <- orgColors
-    intLabSize <- c(rep(2.5,7))
-    intLabSize[2]<-3
-    intLabSize[4]<-3
-    intLabSize[6]<-3
-    intLabSize[5]<-3.5
+    intLabSize <- c(rep(3,7))
+    intLabSize[2]<-3.5
+    intLabSize[4]<-3.5
+    intLabSize[6]<-3.5
+    intLabSize[5]<-4.5
     ellipses <- 3
   }
   for (j in 1:length(orgs)){
@@ -66,11 +66,11 @@ for (i in 1:length(conditions)){
     temp <- list(upReg[[j]],upReg[[j]][indexes_up])
     setwd(resultsPath)
     png(paste(orgs[j],'_mapped_',cond,'_Exclusive_Up.png',sep=''),width = 600, height = 600)
-    OG_mapped <- plotVennDiagram(temp,c(paste(orgs[j],'_',cond,sep=''),'OG'),c(colorValues[j],'cyan'),c(2.5,3.5,2.5),2)
+    OG_mapped <- plotVennDiagram(temp,c(paste(orgs[j],'_',cond,sep=''),'OG'),c(colorValues[j],'cyan'),c(3,4,3),2)
     dev.off()
     temp <- list(DownReg[[j]],DownReg[[j]][indexes_down])
     png(paste(orgs[j],'_mapped_',cond,'_Exclusive_Down.png',sep=''),width = 600, height = 600)
-    OG_mapped <- plotVennDiagram(temp,c(paste(orgs[j],'_',cond,sep=''),'OG'),c(colorValues[j],'cyan'),c(2.5,3.5,2.5),2)
+    OG_mapped <- plotVennDiagram(temp,c(paste(orgs[j],'_',cond,sep=''),'OG'),c(colorValues[j],'cyan'),c(3,4,3),2)
     dev.off()
   }
   

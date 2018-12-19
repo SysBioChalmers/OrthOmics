@@ -93,7 +93,7 @@ setwd(resultsPath)
 if (all(organism=='kma')){ 
   data  <- cpm(x2, log = T)
 }else{
-  data <- filtered.data
+  data <- filtered.data # I think all organisms should use the cpm trasnformation of x2, since this is TMM normalized while filtered.data is not. This may require x3 <- cpm(filtered.data, normalized.lib.sizes = TRUE) and as.data.frame(x3)
   }
 plot_name <- paste(organism,'_RNAseq_PCA.png',sep='')
 prots.PCA <- getPCAplot(data,conditions,group,replicates,colorValues,organism,plot_name,' RNA')

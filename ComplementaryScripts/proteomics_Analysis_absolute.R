@@ -64,7 +64,7 @@ setwd(scriptsPath)
 source('filterData.R')
 
 #Filter by median value for XIC or NSAF
-output   <- filterData(dataset_1,replicates,'median','prots')
+output   <- filterData(dataset_1,replicates,'mean','prots')
 filtered <- output[[1]]
 detected_1 <- output[[2]]
 rm(output)
@@ -116,14 +116,14 @@ source('filterLowReads.R')
 source('plotDistributions.R')
 setwd(resultsPath)
 #XIC
-x  <- dataset_1
+x  <- filtered_1
 x <- cpm(x,log=FALSE)
-x <- log10(x)
 #Filter low reads (log2cpm<0)
 output <-filterLowReads(filtered_1,x,'1')
 filtered_1 <- output
 x2 <- filtered_1
 x2 <- cpm(x2,log=FALSE)
+x  <- log10(x)
 x2 <- log10(x2)
 #Plot reads dritributions for filtered and unfiltered data
 png(paste(organism,'_1_SamplesDistributions.png',sep=''),width = 1200, height = 600)
@@ -132,13 +132,15 @@ dev.off()
 rm(x,x2)
 
 #spectral counts
-x  <- dataset_2
-x <- cpm(x,log=TRUE)
+x  <- filtered_2
+x <- cpm(x,log=FALSE)
 #Filter low reads (log2cpm<0)
 output <-filterLowReads(filtered_2,x,'2')
 filtered_2 <- output
 x2 <- filtered_2
-x2 <- cpm(x2,log=TRUE)
+x2 <- cpm(x2,log=FALSE)
+x  <- log10(x)
+x2 <- log10(x2)
 #Plot reads dritributions for filtered and unfiltered data
 png(paste(organism,'_2_SamplesDistributions.png',sep=''),width = 1200, height = 600)
 plotDistributions(x,x2,' proteins',0.4)
@@ -180,24 +182,20 @@ setwd(scriptsPath)
 source('getPCAplot.R')
 setwd(resultsPath)
 #if (all(organism=='kma')){data  <- cpm(x2, log = T)}else{data <- filtered.data}
-#XIC
+#XIC or NSAF
 data <- filtered_1
 plot_name <- paste(organism,'_1_PCA.png',sep='')
-prots.PCA <- getPCAplot(data,conditions,group,replicates,colorValues,organism,plot_name,' Proteins')
+prots.PCA_1 <- getPCAplot(data,conditions,group,replicates,colorValues,organism,plot_name,' Proteins')
 #What's the contribution of individual genes to the PC's
 #par(mar=c(5.1,5.1,3.1,2.1));plot(prots.PCA$rotation,type='p',pch=19,col='black',cex.lab=2, cex.axis=2, cex.main=2, cex.sub=2,cex=1.5,
 #     main='PCA Loadings')
-#spectral counts
+#spectral counts or IBAQ
 data <- filtered_2
 plot_name <- paste(organism,'_2_PCA.png',sep='')
-prots.PCA <- getPCAplot(data,conditions,group,replicates,colorValues,organism,plot_name,' Proteins')
+prots.PCA_2 <- getPCAplot(data,conditions,group,replicates,colorValues,organism,plot_name,' Proteins')
 #What's the contribution of individual genes to the PC's
 #par(mar=c(5.1,5.1,3.1,2.1));plot(prots.PCA$rotation,type='p',pch=19,col='black',cex.lab=2, cex.axis=2, cex.main=2, cex.sub=2,cex=1.5,
 #                                 main='PCA Loadings')
-
-
-
-
 
 # Is there a way to interact with that graph?
 #library(plotly)
@@ -212,7 +210,7 @@ prots.PCA <- getPCAplot(data,conditions,group,replicates,colorValues,organism,pl
 #======================= 6. Pairwise DE analysis ==============================================
 
 indexes  <- which(!is.element(rownames(filtered_2),rownames(filtered_1)))
-#Merge XIC and Scounts data
+#Merge both datasets
 dataset  <- rbind(filtered_1,filtered_2[indexes,]) 
 dataset <- DGEList(counts = (dataset), genes = rownames(dataset))
 dataset$samples$group <- group
@@ -224,9 +222,9 @@ setwd(resultsPath)
 
 #Call DE analysis internal function
 #Define DE thresholds
-logPval <- abs(log10(0.05))
+logPval <- abs(log10(0.01))
 #A 50% percent of fold-change
-log2FC  <- 0.5
+log2FC  <- 1
 adjusted <- TRUE
 output  <- DEpairwiseAnalysis(dataset,organism,conditions,colorValues,logPval,log2FC,adjusted,'Proteins')
 upReg_AllConds   <- output[[1]]

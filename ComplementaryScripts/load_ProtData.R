@@ -42,7 +42,7 @@ load_ProtData <- function(dataPath,organism,Pmethod){
   #dataset  <- dataset/scalingFactors[pointer] 
   genes    <- IDs[,1]
   if (all(organism == 'sce')){
-    genes    <- IDs[,3]
+    genes    <- IDs[,1]
     genes[genes==''] <- IDs[,1][genes=='']
   }
   proteins <- IDs[,2]

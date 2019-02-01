@@ -1,11 +1,7 @@
 filterLowReads <- function(filtered.data,cpm_,Pmethod){
 #Remove low reads
 keep.exprs <- c()
-#if (Pmethod==1){factor <- 1}
-#else{
-#  factor <- 2/3
-#  }
-factor <- 1
+factor     <- 1
 for (i in 1:nrow(filtered.data)){
   #Get the 
   rowData <- cpm_[i,]#[!is.na(cpm_[i,])]

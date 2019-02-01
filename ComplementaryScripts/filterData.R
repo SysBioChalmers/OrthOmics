@@ -59,8 +59,6 @@ for (i in 1:nrow(dataset)){
     conditional <- ((presence[1]==TRUE) &  (all(spreading == presence)))
     #conditional <- (all(presence==TRUE) &  (all(spreading == presence)))
   }
-
-  #if ((presence[1]==TRUE) & 1*sum(presence==TRUE) >= 0.8*length(grouping) & (all(spreading == presence))){
   if (conditional == TRUE){filtered <- c(filtered,i)}
 }
 return(list(filtered,detected))

@@ -1,7 +1,7 @@
 getPCAplot <- function(data,conditions,group,replicates,colVals,org,plot_name,measured){
   data[is.na.data.frame(data)] <- 0
   t.data<-t(as.matrix(data))
-  prots.pca <- prcomp(t.data, center = TRUE,scale. = TRUE) #scale. =FALSE for RNA
+  prots.pca <- prcomp(t.data, center = TRUE,scale = TRUE) #scale. =FALSE for RNA
   summary(prots.pca)  
   #Plot PC1 and PC2 
   labelStr <- c()

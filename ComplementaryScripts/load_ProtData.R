@@ -39,7 +39,7 @@ load_ProtData <- function(dataPath,organism,Pmethod){
   dataset  <- dataset[,(ncol(IDs)+1):(sum(replicates)+ncol(IDs))]
   dataset[is.na(dataset)] <- 0
   #Normalize data fmol -> [fmol / ng protein]
-  dataset  <- dataset/scalingFactors[pointer] 
+  #dataset  <- dataset/scalingFactors[pointer] 
   genes    <- IDs[,1]
   if (all(organism == 'sce')){
     genes    <- IDs[,3]

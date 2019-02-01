@@ -1,13 +1,13 @@
 filterData <- function(dataset,grouping,metric,measured){
 #Function that filters a biological dataset for different replicates in 
-#different conditions. Those elements that were not measured for at least 2/3
+#different conditions. Those elements that were not measured for at least coverage
 #of the triplicates for at least one of the conditions are removed. The elements
 #should show low variability for all the conditions in which they were measured 
 #in order to be kept
 #
 # Ivan Domenzain. created 2018-10-18
 #
-
+coverage <- 2/3
 #First remove rows with missing IDs
 NaNs    <- !is.na(rownames(dataset))
 dataset <- dataset[NaNs,]
@@ -19,12 +19,12 @@ condData <- c()
 detected <- c()
 for (i in 1:length(grouping)){
   condData[[i]]  <- tempData[,1:grouping[i]]
-  #Identify those genes that were detected in at least 2/3 of the 
+  #Identify those genes that were detected in at least coverage of the 
   #triplicates for the i-th condition
   condMat <- as.matrix(condData[[i]])
   rownames(condMat) <- c()
   detected[[i]]     <- rowSums(1*(condMat>0))
-  detected[[i]]     <- which(detected[[i]]>= ((2/3)*grouping[i]))
+  detected[[i]]     <- which(detected[[i]]>= ((coverage)*grouping[i]))
   if (i<length(grouping)){tempData <- tempData[,(grouping[i]+1):ncol(tempData)]}
 }
 #Loop through all the elements (rows)
@@ -35,7 +35,7 @@ for (i in 1:nrow(dataset)){
   spreading <- c(rep(FALSE,length(grouping)))
   for (j in 1:length(grouping)){
     #print(j)
-    #The element should be measured in at least 2/3 of the replicates 
+    #The element should be measured in at least coverage of the replicates 
     #for being considered as present in one condition
     rowCond <- condData[[j]][i,]
     rowCond[is.na(rowCond)] <- 0
@@ -57,6 +57,7 @@ for (i in 1:nrow(dataset)){
     conditional <- ((presence[1]==TRUE) & 1*sum(presence==TRUE) >= 0.8*length(grouping) & (all(spreading == presence)))
   }else{
     conditional <- ((presence[1]==TRUE) &  (all(spreading == presence)))
+    #conditional <- (all(presence==TRUE) &  (all(spreading == presence)))
   }
 
   #if ((presence[1]==TRUE) & 1*sum(presence==TRUE) >= 0.8*length(grouping) & (all(spreading == presence))){

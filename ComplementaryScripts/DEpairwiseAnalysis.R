@@ -1,4 +1,4 @@
-DEpairwiseAnalysis <- function(x2,org,conditions,coloVals,logPval,log2FC,adjusted,measured){
+DEpairwiseAnalysis <- function(dataSet,org,conditions,coloVals,logPval,log2FC,adjusted,measured){
   DEgenes <- c()
   #Group all the genes that are upregulated in at least one of the conditions
   upReg_AllConds   <- c()
@@ -7,7 +7,7 @@ DEpairwiseAnalysis <- function(x2,org,conditions,coloVals,logPval,log2FC,adjuste
   data <- list()
   for (i in 2:length(conditions)) {
     #Differential expression analysis
-    de <- exactTest(x2, pair = c(conditions[1],conditions[i])) # Reference first!
+    de <- exactTest(dataSet, pair = c(conditions[1],conditions[i])) # Reference first!
     tt <- topTags(de, n = Inf)
     # Write CSV file
     filename <- paste(org,'_',measured,'_ref_',conditions[i],'.csv',sep='')
@@ -26,7 +26,7 @@ DEpairwiseAnalysis <- function(x2,org,conditions,coloVals,logPval,log2FC,adjuste
     downReg_AllConds[[i-1]] <- rownames(volcanoData)[(volcanoData$logFC<=-log2FC & volcanoData$`-log10Pval`>=logPval)]
     
     #Black color for all genes
-    genesColor  <- c(rep('black',nrow(x2)))
+    genesColor  <- c(rep('black',nrow(dataSet)))
     #Red for downregulated
     genesColor[volcanoData$logFC<=-log2FC & volcanoData$`-log10Pval`>=logPval] = 'red'
     #Green for upregulated genes

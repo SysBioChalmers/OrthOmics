@@ -1,18 +1,18 @@
 DEpairwiseAnalysis <- function(dataSet,org,conditions,coloVals,logPval,log2FC,adjusted,measured){
   DEgenes <- c()
   #Group all the genes that are upregulated in at least one of the conditions
-  upReg_AllConds   <- c()
+  upReg_AllConds   <- list()
   #Group all the genes that are upregulated in at least one of the conditions
-  downReg_AllConds <- c()
+  downReg_AllConds <- list()
   data <- list()
   for (i in 2:length(conditions)) {
+
     #Differential expression analysis
     de <- exactTest(dataSet, pair = c(conditions[1],conditions[i])) # Reference first!
     tt <- topTags(de, n = Inf)
     # Write CSV file
     filename <- paste(org,'_',measured,'_ref_',conditions[i],'.csv',sep='')
-    write.csv(tt, file = filename, row.names = T)
-    #tt$table$PValue <- p.adjust(tt$table$PValue,method = "fdr")
+    write.csv(tt, file = filename, row.names = F)
     # Make volcano plot
     if (adjusted == TRUE){
     volcanoData <- cbind(tt$table$logFC, -log10(tt$table$FDR))

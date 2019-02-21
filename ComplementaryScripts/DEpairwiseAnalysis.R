@@ -12,7 +12,7 @@ DEpairwiseAnalysis <- function(dataSet,org,conditions,coloVals,logPval,log2FC,ad
     tt <- topTags(de, n = Inf)
     # Write CSV file
     filename <- paste(org,'_',measured,'_ref_',conditions[i],'.csv',sep='')
-    write.csv(tt, file = filename, row.names = F,quote = FALSE)
+    write.csv(tt, file = filename, row.names = F)
     # Make volcano plot
     if (adjusted == TRUE){
     volcanoData <- cbind(tt$table$logFC, -log10(tt$table$FDR))
@@ -107,7 +107,7 @@ DEpairwiseAnalysis <- function(dataSet,org,conditions,coloVals,logPval,log2FC,ad
     temp <- c(Excsv_Up[[i]],Excsv_down[[i]])
     temp <- data[[i]][is.element(rownames(data[[i]]),temp),]
     filename <- paste(org,'_',measured,'_DE_exclusive_',conditions[i+1],'.csv',sep='')
-    write.csv(temp, file = filename, row.names = TRUE, quote= FALSE)
+    write.csv(temp, file = filename, row.names = TRUE)
   }
   #Write a file with the core stress responses (DE for all conditions)
   allUpCols <- as.data.frame(cbind(allCondsUp,allUpCols))
@@ -132,7 +132,7 @@ DEpairwiseAnalysis <- function(dataSet,org,conditions,coloVals,logPval,log2FC,ad
   DEdata$direction[is.element(DEdata$genes,tempUp) & is.element(DEdata$genes,tempDown)] <- 'mixed'
   DEdata <- as.data.frame(DEdata)
   filename <- paste(org,'_',measured,'_DE_anyCondition.csv',sep='')
-  write.csv(DEdata, file = filename, row.names = FALSE, quote= FALSE)
+  write.csv(DEdata, file = filename, row.names = FALSE)
   #Create a file with the promiscuous DE genes
   promiscuous <- tempDEgenes
   promDown    <- tempDown
@@ -142,8 +142,8 @@ DEpairwiseAnalysis <- function(dataSet,org,conditions,coloVals,logPval,log2FC,ad
     promUp   <- promUp[!is.element(promUp,Excsv_Up[[i]])]
   }
   filename <- paste(org,'_',measured,'_Down_DE_promiscuous.csv',sep='')
-  write.csv(promDown, file = filename, row.names = FALSE, quote= FALSE)
+  write.csv(promDown, file = filename, row.names = FALSE)
   filename <- paste(org,'_',measured,'_Up_DE_promiscuous.csv',sep='')
-  write.csv(promUp, file = filename, row.names = FALSE, quote= FALSE)
+  write.csv(promUp, file = filename, row.names = FALSE)
   return(list(upReg_AllConds,downReg_AllConds,Excsv_Up,Excsv_down))
 }

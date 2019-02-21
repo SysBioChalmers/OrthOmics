@@ -1,14 +1,21 @@
-filterLowReads <- function(filtered.data,cpm_,Pmethod){
+filterLowReads <- function(data,coverage,filterType,grouping){
 #Remove low reads
 keep.exprs <- c()
-factor     <- 1
-for (i in 1:nrow(filtered.data)){
+cpm_       <- cpm(data, log = T)
+for (i in 1:nrow(data)){
   #Get the 
   rowData <- cpm_[i,]#[!is.na(cpm_[i,])]
-  #Keep those rows which show a cpm>=1 in at least (factor) of the total samples 
-  #in which it was measured
-  if (length(rowData[rowData>=1])>=factor*length(rowData)){keep.exprs <- c(keep.exprs,i)}
+  if (all(filterType=='all')){
+      #Keep those rows which show a cpm>=1 in at least (coverage) of the total samples 
+      #in which it was measured
+      if (length(rowData[rowData>=1])>=coverage*length(rowData)) {keep.exprs <- c(keep.exprs,i)}
+  } else{
+    #Keep those rows which show a cpm>=1 for at least 2/3 of the triplicates
+    #in the standard condition
+    if (length(rowData[1:grouping[1]]>=1)>=(2/3)*grouping[1]) {keep.exprs <- c(keep.exprs,i)}    
+  }
+  
 }
-filtered.data <- filtered.data[keep.exprs,]
-return(filtered.data)
+data <- data[keep.exprs,]
+return(data)
 }

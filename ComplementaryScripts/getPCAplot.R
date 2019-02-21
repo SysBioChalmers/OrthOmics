@@ -1,7 +1,7 @@
-getPCAplot <- function(data,conditions,group,replicates,colVals,org,plot_name,measured){
+getPCAplot <- function(data,conditions,group,replicates,colVals,org,plot_name,omicsName){
   data[is.na.data.frame(data)] <- 0
   t.data<-t(as.matrix(data))
-  prots.pca <- prcomp(t.data, center = TRUE,scale = TRUE) #scale. =FALSE for RNA
+  prots.pca <- prcomp(t.data, center = TRUE,scale. = TRUE) 
   summary(prots.pca)  
   #Plot PC1 and PC2 
   labelStr <- c()
@@ -13,7 +13,7 @@ getPCAplot <- function(data,conditions,group,replicates,colVals,org,plot_name,me
   p <- p + theme_bw()
   #Format plot
   p <- p + scale_colour_manual(values=colVals)
-  titleStr <- paste(org,'/ ',length(data[,2]), measured)
+  titleStr <- paste(org,'/ ',length(data[,2]), omicsName)
   p <- p + labs(title = titleStr)
   p
   #Save plot

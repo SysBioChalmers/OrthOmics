@@ -1,4 +1,7 @@
 DEpairwiseAnalysis <- function(dataSet,org,conditions,coloVals,logPval,log2FC,adjusted,measured){
+  newDirName <- paste('DE_log2FC_',log2FC,'_FDR_',10^(-logPval),sep='')
+  dir.create(newDirName)
+  setwd(newDirName)
   DEgenes <- c()
   #Group all the genes that are upregulated in at least one of the conditions
   upReg_AllConds   <- list()

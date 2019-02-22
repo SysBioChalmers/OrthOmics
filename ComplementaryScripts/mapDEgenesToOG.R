@@ -12,8 +12,9 @@ setwd(paste(repoPath,'/ComplementaryScripts',sep=''))
 source('plotVennDiagram.R')
 #Load OG list 
 dataPath <- paste(repoPath,'/Databases',sep='')
-resultsPath <- paste(repoPath,'/RNA-seq/All_organisms',sep='')
+resultsPath <- paste(repoPath,'/RNA-seq/All_organisms/DE_log2FC_',logFC,'_FDR_',pVal,sep='')
 setwd(dataPath)
+dir.create(resultsPath)
 OGlist  <- read.csv('SingleCopyOG_All.txt', header = TRUE, sep = "\t",stringsAsFactors=FALSE)
 
 for (i in 1:length(conditions)){
@@ -73,21 +74,21 @@ for (i in 1:length(conditions)){
     #How many of the DE for the j-th organism and the i-th condition were actually mapped to the OG list?
     temp <- list(upReg[[j]],upReg[[j]][indexes_up])
     setwd(resultsPath)
-    png(paste(orgs[j],'_mapped_',cond,'_Exclusive_Up.png',sep=''),width = 600, height = 600)
+    png(paste(orgs[j],'_mapped_',cond,'_Up.png',sep=''),width = 600, height = 600)
     OG_mapped <- plotVennDiagram(temp,c(paste(orgs[j],'_',cond,sep=''),'OG'),c(colorValues[j],'cyan'),c(3,4,3),2)
     dev.off()
     temp <- list(DownReg[[j]],DownReg[[j]][indexes_down])
-    png(paste(orgs[j],'_mapped_',cond,'_Exclusive_Down.png',sep=''),width = 600, height = 600)
+    png(paste(orgs[j],'_mapped_',cond,'_Down.png',sep=''),width = 600, height = 600)
     OG_mapped <- plotVennDiagram(temp,c(paste(orgs[j],'_',cond,sep=''),'OG'),c(colorValues[j],'cyan'),c(3,4,3),2)
     dev.off()
   }
   
   setwd(resultsPath)
   #get venn diagrams across organisms
-  png(paste('RNAseq_',cond,'_Exclusive_Up_OG.png',sep=''),width = 600, height = 600)
+  png(paste('RNAseq_',cond,'_Up_OG.png',sep=''),width = 600, height = 600)
   conds_Up_subsets <- plotVennDiagram(OGup,orgs,colorValues,intLabSize,ellipses,TRUE)
   dev.off()
-  png(paste('RNAseq_',cond,'_Exclusive_down_OG.png',sep=''),width = 600, height = 600)
+  png(paste('RNAseq_',cond,'_down_OG.png',sep=''),width = 600, height = 600)
   conds_down_subsets <- plotVennDiagram(OGDown,orgs,colorValues,intLabSize,ellipses,TRUE)
   dev.off()
   #Write files for the different overlaps
@@ -107,7 +108,7 @@ for (i in 1:length(conditions)){
     dataCondition <- as.data.frame(genesOrg)
     dataCondition <- cbind(condOG_allOrgs,dataCondition)
     colnames(dataCondition) <- c('OG',orgs)
-    filename <- paste('DE_',direction,'_exclusive_',cond,'_OG_allOrgs.csv',sep='')
+    filename <- paste('DE_',direction,'_',cond,'_OG_allOrgs.csv',sep='')
     write.table(dataCondition, filename, sep=",",row.names = FALSE,quote=FALSE)
   }
 }  

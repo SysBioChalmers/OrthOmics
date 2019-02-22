@@ -49,13 +49,13 @@ for (i in 1:nrow(dataset)){
       if (width<=1 & width>0){spreading[j] <- TRUE}
     }
   }
-  #The element should be present in at least one condition (std) and have a low variability
-  #for all the conditions in which it is present
   if (all(omicsData=='RNA')){
-    conditional <- ((presence[1]==TRUE) & 1*sum(presence==TRUE) >= 0.8*length(grouping) & (all(spreading == presence)))
+    conditional <- (all(presence==TRUE) &  (all(spreading == presence)))
+    #conditional <- ((presence[1]==TRUE) & 1*sum(presence==TRUE) >= 0.8*length(grouping) & (all(spreading == presence)))
   }else{
+    #The element should be present in at least one condition (std) and have a low variability
+    #for all the conditions in which it is present
     conditional <- ((presence[1]==TRUE) &  (all(spreading == presence)))
-    #conditional <- (all(presence==TRUE) &  (all(spreading == presence)))
   }
   if (conditional == TRUE){filtered <- c(filtered,i)}
 }

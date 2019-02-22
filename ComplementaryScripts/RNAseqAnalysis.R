@@ -36,7 +36,7 @@ rm(dataPath)
 setwd(scriptsPath)
 source('filterData.R')
 coverage <- 2/3
-output   <- filterData(dataset,replicates,'mean','-',coverage)
+output   <- filterData(dataset,replicates,'mean','RNA',coverage)
 filtered <- output[[1]]
 detected <- output[[2]]
 rm(output)
@@ -63,9 +63,8 @@ source('plotDistributions.R')
 setwd(resultsPath)
 lcpm   <- cpm(dataset, log = T)
 lcpm2  <- cpm(filtered.data, log = T)
-#Filter low reads (log2cpm<0)
-coverage <- 2/3
-output <- filterLowReads(filtered.data,coverage,'-',replicates)
+#Filter low reads (log2cpm<1)
+output <- filterLowReads(filtered.data,coverage,'std',replicates)
 #Plot reads dritributions for filtered and unfiltered data
 png(paste(organism,'_SamplesDistributions.png',sep=''),width = 1200, height = 600)
 plotDistributions(lcpm,lcpm2,' RNA', 0.3)
@@ -78,7 +77,7 @@ source('getBoxPlots.R')
 x               <- DGEList(counts = (filtered.data), genes = rownames(filtered.data))
 x$samples$group <- grouping
 x2              <- calcNormFactors(x, method = "TMM")
-plot_name <- paste(organism,'_RNA_Box_unnorm.png',sep='')
+plot_name <- paste(organism,'_RNA_Box_normalization.png',sep='')
 setwd(resultsPath)
 png(plot_name,width = 900, height = 600)
 titleStr  <- paste(organism, '_',length(filtered.data[,1]), ' RNA: Unnormalised')
@@ -89,12 +88,8 @@ dev.off()
 setwd(scriptsPath)
 source('getPCAplot.R')
 setwd(resultsPath)
-#data      <- as.data.frame(cpm(filtered.data, normalized.lib.sizes = TRUE))
-#data       <- DGEList(counts = (filtered.data), genes = rownames(filtered.data))
-data      <- x2$counts
 plot_name <- paste(organism,'_RNAseq_PCA.png',sep='')
-prots.PCA <- getPCAplot(data,conditions,grouping,replicates,colorValues,organism,plot_name,' RNA')
-
+prots.PCA <- getPCAplot(x2$counts,conditions,grouping,replicates,colorValues,organism,plot_name,' RNA')
 #======================= 6. Pairwise DE analysis ==============================================
 setwd(scriptsPath)
 source('DEpairwiseAnalysis.R')

@@ -3,7 +3,10 @@ library("rlist")
 repoPath  <- '/Users/ivand/Documents/GitHub/CHASSY_multiOmics_Analysis'
 organisms  <- c('sce','kma','yli')
 orgColors  <- c('blue','red','yellow')
-
+#DE thresholds
+pVal     <- 0.01
+logFC    <- 0.75
+adjustedPval <- TRUE
 conditions <- c('HiT','LpH','Osm')
 setwd(paste(repoPath,'/ComplementaryScripts',sep=''))
 source('plotVennDiagram.R')
@@ -12,9 +15,7 @@ dataPath <- paste(repoPath,'/Databases',sep='')
 resultsPath <- paste(repoPath,'/RNA-seq/All_organisms',sep='')
 setwd(dataPath)
 OGlist  <- read.csv('SingleCopyOG_All.txt', header = TRUE, sep = "\t",stringsAsFactors=FALSE)
-#DE thresholds
-logPVal <- abs(log10(0.01))
-logFC <- 0.5
+
 for (i in 1:length(conditions)){
   cond    <- conditions[i]
   print(cond)
@@ -41,13 +42,20 @@ for (i in 1:length(conditions)){
   }
   for (j in 1:length(orgs)){
     print(orgs[j])
-    dataPath <- paste(repoPath,'/RNA-seq/',orgs[j],'/Results',sep='')
+    #Load any DE file 
+    dataPath <- paste(repoPath,'/RNA-seq/',orgs[j],'/Results/DE_log2FC_0.75_FDR_0.01',sep='')
     setwd(dataPath)
-    filename     <- paste(orgs[j],'_RNA_DE_exclusive_',cond,'.csv',sep='')
+    filename     <- paste(orgs[j],'_RNA_ref_',cond,'.csv',sep='')
     #For j-th organism get the data for the genes that were DE exclusively in the i-th condition
     DEdata[[j]]  <- read.csv(filename,row.names = 1,stringsAsFactors = FALSE)
-    upReg[[j]]   <- rownames(DEdata[[j]])[(DEdata[[j]]$logFC>=logFC) & (DEdata[[j]]$X.log10Pval>=logPVal)]
-    DownReg[[j]] <- rownames(DEdata[[j]])[(DEdata[[j]]$logFC<=-logFC) & (DEdata[[j]]$X.log10Pval>=logPVal)]
+    if (adjustedPval == TRUE){
+      upReg[[j]]   <- rownames(DEdata[[j]])[(DEdata[[j]]$logFC>=logFC) & (DEdata[[j]]$FDR<=pVal)]
+      DownReg[[j]] <- rownames(DEdata[[j]])[(DEdata[[j]]$logFC<=-logFC) & (DEdata[[j]]$FDR<=pVal)]
+    } else {
+      upReg[[j]]   <- rownames(DEdata[[j]])[(DEdata[[j]]$logFC>=logFC) & (DEdata[[j]]$PValue<=pVal)]
+      DownReg[[j]] <- rownames(DEdata[[j]])[(DEdata[[j]]$logFC<=-logFC) & (DEdata[[j]]$PValue<=pVal)]   
+      print(upReg[[j]])
+    }
     #Map the DE genes to the OG list
     k <- j+1
     #upregulated
@@ -77,10 +85,10 @@ for (i in 1:length(conditions)){
   setwd(resultsPath)
   #get venn diagrams across organisms
   png(paste('RNAseq_',cond,'_Exclusive_Up_OG.png',sep=''),width = 600, height = 600)
-  conds_Up_subsets <- plotVennDiagram(OGup,orgs,colorValues,intLabSize,ellipses)
+  conds_Up_subsets <- plotVennDiagram(OGup,orgs,colorValues,intLabSize,ellipses,TRUE)
   dev.off()
   png(paste('RNAseq_',cond,'_Exclusive_down_OG.png',sep=''),width = 600, height = 600)
-  conds_down_subsets <- plotVennDiagram(OGDown,orgs,colorValues,intLabSize,ellipses)
+  conds_down_subsets <- plotVennDiagram(OGDown,orgs,colorValues,intLabSize,ellipses,TRUE)
   dev.off()
   #Write files for the different overlaps
   for (direction in c('up','down')){

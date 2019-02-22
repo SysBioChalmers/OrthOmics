@@ -14,7 +14,7 @@ repoPath  <- '/Users/ivand/Documents/GitHub/CHASSY_multiOmics_Analysis'
 scriptsPath <- paste(repoPath,'/ComplementaryScripts',sep='')
 setwd(scriptsPath)
 #Provide organism code [Sce,Kma,Yli]
-organism    <- 'kma'
+organism    <- 'sce'
 dataPath    <- paste(repoPath,'/RNA-seq',sep='')
 resultsPath <- paste(dataPath,'/',organism,'/Results',sep='')
 
@@ -36,7 +36,7 @@ rm(dataPath)
 setwd(scriptsPath)
 source('filterData.R')
 coverage <- 2/3
-output   <- filterData(dataset,replicates,'mean','RNA',coverage)
+output   <- filterData(dataset,replicates,'mean','-',coverage)
 filtered <- output[[1]]
 detected <- output[[2]]
 rm(output)
@@ -64,23 +64,15 @@ setwd(resultsPath)
 lcpm   <- cpm(dataset, log = T)
 lcpm2  <- cpm(filtered.data, log = T)
 #Filter low reads (log2cpm<0)
-coverage <- 0.8
-output <- filterLowReads(filtered.data,coverage,'all',grouping)
+coverage <- 2/3
+output <- filterLowReads(filtered.data,coverage,'-',replicates)
 #Plot reads dritributions for filtered and unfiltered data
 png(paste(organism,'_SamplesDistributions.png',sep=''),width = 1200, height = 600)
 plotDistributions(lcpm,lcpm2,' RNA', 0.3)
 dev.off()
 filtered.data <- output
 rm(lcpm)
-#================== 4. Unsupervised clustering ================================================
-#Get PCA for the filtered data
-setwd(scriptsPath)
-source('getPCAplot.R')
-setwd(resultsPath)
-data      <- as.data.frame(cpm(filtered.data, normalized.lib.sizes = TRUE))
-plot_name <- paste(organism,'_RNAseq_PCA.png',sep='')
-prots.PCA <- getPCAplot(data,conditions,grouping,replicates,colorValues,organism,plot_name,' RNA')
-#================== 5. Data normalization ================================================
+#================== 4. Data normalization ================================================
 setwd(scriptsPath)
 source('getBoxPlots.R')
 x               <- DGEList(counts = (filtered.data), genes = rownames(filtered.data))
@@ -92,6 +84,17 @@ png(plot_name,width = 900, height = 600)
 titleStr  <- paste(organism, '_',length(filtered.data[,1]), ' RNA: Unnormalised')
 getBoxPlots(x,x2,titleStr,resultsPath,organism,'RNA')
 dev.off()
+#================== 5. Unsupervised clustering ================================================
+#Get PCA for the filtered data
+setwd(scriptsPath)
+source('getPCAplot.R')
+setwd(resultsPath)
+#data      <- as.data.frame(cpm(filtered.data, normalized.lib.sizes = TRUE))
+#data       <- DGEList(counts = (filtered.data), genes = rownames(filtered.data))
+data      <- x2$counts
+plot_name <- paste(organism,'_RNAseq_PCA.png',sep='')
+prots.PCA <- getPCAplot(data,conditions,grouping,replicates,colorValues,organism,plot_name,' RNA')
+
 #======================= 6. Pairwise DE analysis ==============================================
 setwd(scriptsPath)
 source('DEpairwiseAnalysis.R')

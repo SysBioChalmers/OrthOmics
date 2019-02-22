@@ -35,12 +35,12 @@ for (i in 1:nrow(dataset)){
   spreading <- c(rep(FALSE,length(grouping)))
   for (j in 1:length(grouping)){
     #print(j)
-    #The element should be measured in at least coverage of the replicates 
+    #The element should be measured in at least (coverage) of the replicates 
     #for being considered as present in one condition
     rowCond <- condData[[j]][i,]
     rowCond[is.na(rowCond)] <- 0
     if (sum(rowCond)>0){
-      if (sum(1*(rowCond==0))<=(1/3)){presence[j] <- TRUE}
+      if (sum(1*(rowCond==0))<=(1-coverage)){presence[j] <- TRUE}
       #The element should have an RSD lower than 1 across triplicates
       #for being considered as a consistently measured value
       width <- 10

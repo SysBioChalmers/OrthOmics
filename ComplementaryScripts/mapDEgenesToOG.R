@@ -1,7 +1,7 @@
 install.packages("rlist")
 library("rlist")
 repoPath  <- '/Users/ivand/Documents/GitHub/CHASSY_multiOmics_Analysis'
-organisms  <- c('sce','kma','yli')
+organisms  <- c('cpk','kma','yli')
 orgColors  <- c('blue','red','yellow')
 #DE thresholds
 pVal     <- 0.01
@@ -15,7 +15,7 @@ dataPath <- paste(repoPath,'/Databases',sep='')
 resultsPath <- paste(repoPath,'/RNA-seq/All_organisms/DE_log2FC_',logFC,'_FDR_',pVal,sep='')
 setwd(dataPath)
 dir.create(resultsPath)
-OGlist  <- read.csv('SingleCopyOG_All.txt', header = TRUE, sep = "\t",stringsAsFactors=FALSE)
+OGlist  <- read.csv('SingleCopyOG_All_cpk.txt', header = TRUE, sep = "\t",stringsAsFactors=FALSE)
 
 for (i in 1:length(conditions)){
   cond    <- conditions[i]

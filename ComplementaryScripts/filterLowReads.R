@@ -1,14 +1,21 @@
-filterLowReads <- function(filtered.data,cpm_,Pmethod){
+filterLowReads <- function(data,coverage,filterType,grouping){
 #Remove low reads
 keep.exprs <- c()
-factor     <- 1
-for (i in 1:nrow(filtered.data)){
+cpm_       <- cpm(data, log = T)
+for (i in 1:nrow(data)){
   #Get the 
-  rowData <- cpm_[i,]#[!is.na(cpm_[i,])]
-  #Keep those rows which show a cpm>=1 in at least (factor) of the total samples 
-  #in which it was measured
-  if (length(rowData[rowData>=1])>=factor*length(rowData)){keep.exprs <- c(keep.exprs,i)}
+  rowData <- cpm_[i,]
+  if (all(filterType=='ref')){
+    #Keep those rows which show a cpm>=1 for the std condition (on average)
+    if (mean(rowData[1:grouping[1]])>=0){keep.exprs <- c(keep.exprs,i)}    
+  } else{
+    #Keep those rows which show an average cpm>=1 in at least (coverage) of the total samples 
+    #in which it was measured
+    if (length(rowData[rowData>=0])>=coverage*length(rowData)) {keep.exprs <- c(keep.exprs,i)}
+   
+  }
+  
 }
-filtered.data <- filtered.data[keep.exprs,]
-return(filtered.data)
+data <- data[keep.exprs,]
+return(data)
 }

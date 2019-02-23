@@ -1,4 +1,4 @@
-filterData <- function(dataset,grouping,metric,measured){
+filterData <- function(dataset,grouping,metric,omicsData,coverage){
 #Function that filters a biological dataset for different replicates in 
 #different conditions. Those elements that were not measured for at least coverage
 #of the triplicates for at least one of the conditions are removed. The elements
@@ -7,7 +7,7 @@ filterData <- function(dataset,grouping,metric,measured){
 #
 # Ivan Domenzain. created 2018-10-18
 #
-coverage <- 2/3
+
 #First remove rows with missing IDs
 NaNs    <- !is.na(rownames(dataset))
 dataset <- dataset[NaNs,]
@@ -35,12 +35,12 @@ for (i in 1:nrow(dataset)){
   spreading <- c(rep(FALSE,length(grouping)))
   for (j in 1:length(grouping)){
     #print(j)
-    #The element should be measured in at least coverage of the replicates 
+    #The element should be measured in at least (coverage) of the replicates 
     #for being considered as present in one condition
     rowCond <- condData[[j]][i,]
     rowCond[is.na(rowCond)] <- 0
     if (sum(rowCond)>0){
-      if (sum(1*(rowCond==0))<=(1/3)){presence[j] <- TRUE}
+      if (sum(1*(rowCond==0))<=(1-coverage)){presence[j] <- TRUE}
       #The element should have an RSD lower than 1 across triplicates
       #for being considered as a consistently measured value
       width <- 10
@@ -49,15 +49,13 @@ for (i in 1:nrow(dataset)){
       if (width<=1 & width>0){spreading[j] <- TRUE}
     }
   }
-  #The element should be present in at least one condition and have a low variability
-  #for all the conditions in which it is present
-  
-  #If proteomics
-  if (all(measured=='RNA')){
-    conditional <- ((presence[1]==TRUE) & 1*sum(presence==TRUE) >= 0.8*length(grouping) & (all(spreading == presence)))
+  if (all(omicsData=='RNA')){
+    conditional <- (all(presence==TRUE) &  (all(spreading == presence)))
+    #conditional <- ((presence[1]==TRUE) & 1*sum(presence==TRUE) >= 0.8*length(grouping) & (all(spreading == presence)))
   }else{
+    #The element should be present in at least one condition (std) and have a low variability
+    #for all the conditions in which it is present
     conditional <- ((presence[1]==TRUE) &  (all(spreading == presence)))
-    #conditional <- (all(presence==TRUE) &  (all(spreading == presence)))
   }
   if (conditional == TRUE){filtered <- c(filtered,i)}
 }

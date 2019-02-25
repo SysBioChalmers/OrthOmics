@@ -1,20 +1,22 @@
 install.packages("rlist")
 library("rlist")
 repoPath  <- '/Users/ivand/Documents/GitHub/CHASSY_multiOmics_Analysis'
-organisms  <- c('sce','kma','yli')
+organisms  <- c('cpk','kma','yli')
 orgColors  <- c('blue','red','yellow')
-
+#DE thresholds
+pVal     <- 0.01
+logFC    <- 0.75
+adjustedPval <- TRUE
 conditions <- c('HiT','LpH','Osm')
 setwd(paste(repoPath,'/ComplementaryScripts',sep=''))
 source('plotVennDiagram.R')
 #Load OG list 
 dataPath <- paste(repoPath,'/Databases',sep='')
-resultsPath <- paste(repoPath,'/RNA-seq/All_organisms',sep='')
+resultsPath <- paste(repoPath,'/RNA-seq/All_organisms/DE_log2FC_',logFC,'_FDR_',pVal,sep='')
 setwd(dataPath)
-OGlist  <- read.csv('SingleCopyOG_All.txt', header = TRUE, sep = "\t",stringsAsFactors=FALSE)
-#DE thresholds
-logPVal <- abs(log10(0.01))
-logFC <- 0.5
+dir.create(resultsPath)
+OGlist  <- read.csv('SingleCopyOG_All_cpk.txt', header = TRUE, sep = "\t",stringsAsFactors=FALSE)
+
 for (i in 1:length(conditions)){
   cond    <- conditions[i]
   print(cond)
@@ -41,13 +43,20 @@ for (i in 1:length(conditions)){
   }
   for (j in 1:length(orgs)){
     print(orgs[j])
-    dataPath <- paste(repoPath,'/RNA-seq/',orgs[j],'/Results',sep='')
+    #Load any DE file 
+    dataPath <- paste(repoPath,'/RNA-seq/',orgs[j],'/Results/DE_log2FC_0.75_FDR_0.01',sep='')
     setwd(dataPath)
-    filename     <- paste(orgs[j],'_RNA_DE_exclusive_',cond,'.csv',sep='')
+    filename     <- paste(orgs[j],'_RNA_ref_',cond,'.csv',sep='')
     #For j-th organism get the data for the genes that were DE exclusively in the i-th condition
     DEdata[[j]]  <- read.csv(filename,row.names = 1,stringsAsFactors = FALSE)
-    upReg[[j]]   <- rownames(DEdata[[j]])[(DEdata[[j]]$logFC>=logFC) & (DEdata[[j]]$X.log10Pval>=logPVal)]
-    DownReg[[j]] <- rownames(DEdata[[j]])[(DEdata[[j]]$logFC<=-logFC) & (DEdata[[j]]$X.log10Pval>=logPVal)]
+    if (adjustedPval == TRUE){
+      upReg[[j]]   <- rownames(DEdata[[j]])[(DEdata[[j]]$logFC>=logFC) & (DEdata[[j]]$FDR<=pVal)]
+      DownReg[[j]] <- rownames(DEdata[[j]])[(DEdata[[j]]$logFC<=-logFC) & (DEdata[[j]]$FDR<=pVal)]
+    } else {
+      upReg[[j]]   <- rownames(DEdata[[j]])[(DEdata[[j]]$logFC>=logFC) & (DEdata[[j]]$PValue<=pVal)]
+      DownReg[[j]] <- rownames(DEdata[[j]])[(DEdata[[j]]$logFC<=-logFC) & (DEdata[[j]]$PValue<=pVal)]   
+      print(upReg[[j]])
+    }
     #Map the DE genes to the OG list
     k <- j+1
     #upregulated
@@ -65,22 +74,22 @@ for (i in 1:length(conditions)){
     #How many of the DE for the j-th organism and the i-th condition were actually mapped to the OG list?
     temp <- list(upReg[[j]],upReg[[j]][indexes_up])
     setwd(resultsPath)
-    png(paste(orgs[j],'_mapped_',cond,'_Exclusive_Up.png',sep=''),width = 600, height = 600)
+    png(paste(orgs[j],'_mapped_',cond,'_Up.png',sep=''),width = 600, height = 600)
     OG_mapped <- plotVennDiagram(temp,c(paste(orgs[j],'_',cond,sep=''),'OG'),c(colorValues[j],'cyan'),c(3,4,3),2)
     dev.off()
     temp <- list(DownReg[[j]],DownReg[[j]][indexes_down])
-    png(paste(orgs[j],'_mapped_',cond,'_Exclusive_Down.png',sep=''),width = 600, height = 600)
+    png(paste(orgs[j],'_mapped_',cond,'_Down.png',sep=''),width = 600, height = 600)
     OG_mapped <- plotVennDiagram(temp,c(paste(orgs[j],'_',cond,sep=''),'OG'),c(colorValues[j],'cyan'),c(3,4,3),2)
     dev.off()
   }
   
   setwd(resultsPath)
   #get venn diagrams across organisms
-  png(paste('RNAseq_',cond,'_Exclusive_Up_OG.png',sep=''),width = 600, height = 600)
-  conds_Up_subsets <- plotVennDiagram(OGup,orgs,colorValues,intLabSize,ellipses)
+  png(paste('RNAseq_',cond,'_Up_OG.png',sep=''),width = 600, height = 600)
+  conds_Up_subsets <- plotVennDiagram(OGup,orgs,colorValues,intLabSize,ellipses,TRUE)
   dev.off()
-  png(paste('RNAseq_',cond,'_Exclusive_down_OG.png',sep=''),width = 600, height = 600)
-  conds_down_subsets <- plotVennDiagram(OGDown,orgs,colorValues,intLabSize,ellipses)
+  png(paste('RNAseq_',cond,'_down_OG.png',sep=''),width = 600, height = 600)
+  conds_down_subsets <- plotVennDiagram(OGDown,orgs,colorValues,intLabSize,ellipses,TRUE)
   dev.off()
   #Write files for the different overlaps
   for (direction in c('up','down')){
@@ -99,7 +108,7 @@ for (i in 1:length(conditions)){
     dataCondition <- as.data.frame(genesOrg)
     dataCondition <- cbind(condOG_allOrgs,dataCondition)
     colnames(dataCondition) <- c('OG',orgs)
-    filename <- paste('DE_',direction,'_exclusive_',cond,'_OG_allOrgs.csv',sep='')
+    filename <- paste('DE_',direction,'_',cond,'_OG_allOrgs.csv',sep='')
     write.table(dataCondition, filename, sep=",",row.names = FALSE,quote=FALSE)
   }
 }  

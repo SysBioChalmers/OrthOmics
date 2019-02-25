@@ -14,28 +14,33 @@ repoPath  <- '/Users/ivand/Documents/GitHub/CHASSY_multiOmics_Analysis'
 scriptsPath <- paste(repoPath,'/ComplementaryScripts',sep='')
 setwd(scriptsPath)
 #Provide organism code [Sce,Kma,Yli]
-organism    <- 'kma'
+organism    <- 'yli'
 #Indicate if the dataset is absolute quantification of proteins
-absolute <- TRUE
+absolute <- FALSE
 #================== 1. Load data and add grouping info ====================================
+DBpath <- paste(repoPath,'/Databases/Uniprot/',sep='')
 setwd(scriptsPath)
 source('load_ProtData.R')
+source('normalize_SCounts.R')
 if (absolute){
   dataPath    <- paste(repoPath,'/Proteomics/Absolute/data',sep='')
   resultsPath <- paste(repoPath,'/Proteomics/Absolute/Results/',organism,sep='')
+  DBpath      <- paste(repoPath,'/Databases/Uniprot/',sep='')
   #Load NSAF data
-  output_1    <- load_ProtData (dataPath,organism,'NSAF')
+  output_1    <- load_ProtData (dataPath,c(),organism,'NSAF')
   #Load IBAQ data
-  output_2    <- load_ProtData (dataPath,organism,'IBAQ')
+  output_2    <- load_ProtData (dataPath,c(),organism,'IBAQ')
+  legends <- c('NSAF','IBAQ')
 } else {
   dataPath    <- paste(repoPath,'/Proteomics/Relative/data',sep='')
   resultsPath <- paste(repoPath,'/Proteomics/Relative/Results/',organism,sep='')
   #Load XIC data
-  output_1      <- load_ProtData (dataPath,organism,'XIC')
+  output_1      <- load_ProtData (dataPath,c(),organism,'XIC')
   #Convert to linear scale
   output_1[[1]] <- as.data.frame(10^(output_1[[1]]))
   #Load Scounts data
-  output_2      <- load_ProtData (dataPath,organism,'SCounts')
+  output_2      <- load_ProtData (dataPath,DBpath,organism,'SCounts')
+  legends <- c('XIC','SCounts')
 }
 dataset_1     <- output_1[[1]]
 dataset_2     <- output_2[[1]]
@@ -62,15 +67,17 @@ rm(dataPath)
 #Remove those proteins with a SD == 0 across all samples
 setwd(scriptsPath)
 source('filterData.R')
-
+#Coverage means the proportion of replicates in which a protein should be present 
+#in order to be considered as measured for a given condition
+coverage <- 2/3
 #Filter by median value for XIC or NSAF
-output   <- filterData(dataset_1,replicates,'mean','prots')
+output   <- filterData(dataset_1,replicates,'median','prots',coverage)
 filtered <- output[[1]]
 detected_1 <- output[[2]]
 rm(output)
 filtered_1 <- dataset_1[filtered,]
 #Filter by mean value for SC or IBAQ
-output     <- filterData(dataset_2,replicates,'mean','prots')
+output     <- filterData(dataset_2,replicates,'mean','prots',coverage)
 filtered   <- output[[1]]
 detected_2 <- output[[2]]
 rm(output)
@@ -119,8 +126,7 @@ setwd(resultsPath)
 x  <- filtered_1
 x <- cpm(x,log=FALSE)
 #Filter low reads (log2cpm<0)
-output <-filterLowReads(filtered_1,x,'1')
-filtered_1 <- output
+filtered_1 <-filterLowReads(filtered_1,1,'-',replicates)
 x2 <- filtered_1
 x2 <- cpm(x2,log=FALSE)
 x  <- log10(x)
@@ -135,21 +141,20 @@ rm(x,x2)
 x  <- filtered_2
 x <- cpm(x,log=FALSE)
 #Filter low reads (log2cpm<0)
-output <-filterLowReads(filtered_2,x,'2')
-filtered_2 <- output
+filtered_2 <-filterLowReads(filtered_2,1,'-',replicates)
 x2 <- filtered_2
 x2 <- cpm(x2,log=FALSE)
 x  <- log10(x)
 x2 <- log10(x2)
 #Plot reads dritributions for filtered and unfiltered data
 png(paste(organism,'_2_SamplesDistributions.png',sep=''),width = 1200, height = 600)
-plotDistributions(x,x2,' proteins',0.4)
+plotDistributions(x,x2,' proteins',1)
 dev.off()
 rm(x,x2)
 #Get overlap between methods
 intLabSize <- c(rep(4,3))
 png(paste(organism,'_prots_methods.png',sep=''),width = 600, height = 600)
-methods <- plotVennDiagram(list(rownames(filtered_1),rownames(filtered_2)),c('NSAF','IBAQ'),c('red','blue'),intLabSize,2)
+methods <- plotVennDiagram(list(rownames(filtered_1),rownames(filtered_2)),legends,c('red','blue'),intLabSize,2)
 dev.off()
 #================== 4. Data normalization ================================================
 setwd(scriptsPath)
@@ -158,7 +163,7 @@ source('getBoxPlots.R')
 x_1 <- DGEList(counts = (filtered_1), genes = rownames(filtered_1))
 x_1$samples$group <- group
 x2_1 <- calcNormFactors(x_1, method = 'TMM')
-plot_name <- paste(organism,'_1_Box_unnorm.png',sep='')
+plot_name <- paste(organism,'_1_normalization.png',sep='')
 setwd(resultsPath)
 png(plot_name,width = 900, height = 600)
 titleStr  <- paste(organism, '_',length(filtered_1[,1]),sep='')
@@ -168,7 +173,7 @@ dev.off()
 x_2 <- DGEList(counts = (filtered_2), genes = rownames(filtered_2))
 x_2$samples$group <- group
 x2_2 <- calcNormFactors(x_2, method = 'TMM')
-plot_name <- paste(organism,'_2_Box_unnorm.png',sep='')
+plot_name <- paste(organism,'_2_Box_normalization.png',sep='')
 setwd(resultsPath)
 png(plot_name,width = 900, height = 600)
 titleStr  <- paste(organism, '_',length(filtered_2[,1]),sep='')
@@ -181,40 +186,25 @@ rm(titleStr)
 setwd(scriptsPath)
 source('getPCAplot.R')
 setwd(resultsPath)
-#if (all(organism=='kma')){data  <- cpm(x2, log = T)}else{data <- filtered.data}
+#The datasets are already normalized, in the sense that they take the protein length or MW into 
+#account in the definition of their metrics so, there's no need to use TMM normalized data for 
+#the next tasks.
+
 #XIC or NSAF
-data <- filtered_1
+data <- as.data.frame(x_1$counts)
 plot_name <- paste(organism,'_1_PCA.png',sep='')
 prots.PCA_1 <- getPCAplot(data,conditions,group,replicates,colorValues,organism,plot_name,' Proteins')
-#What's the contribution of individual genes to the PC's
-#par(mar=c(5.1,5.1,3.1,2.1));plot(prots.PCA$rotation,type='p',pch=19,col='black',cex.lab=2, cex.axis=2, cex.main=2, cex.sub=2,cex=1.5,
-#     main='PCA Loadings')
 #spectral counts or IBAQ
-data <- filtered_2
+data <- as.data.frame(x_2$counts)
 plot_name <- paste(organism,'_2_PCA.png',sep='')
 prots.PCA_2 <- getPCAplot(data,conditions,group,replicates,colorValues,organism,plot_name,' Proteins')
-#What's the contribution of individual genes to the PC's
-#par(mar=c(5.1,5.1,3.1,2.1));plot(prots.PCA$rotation,type='p',pch=19,col='black',cex.lab=2, cex.axis=2, cex.main=2, cex.sub=2,cex=1.5,
-#                                 main='PCA Loadings')
-
-# Is there a way to interact with that graph?
-#library(plotly)
-#plot_ly(data.frame(prots.PCA$rotation),x=~PC1,y=~PC2,type='scatter',mode='markers',text=rownames(filtered.data),
-#        marker = list(size = 12,color = 'rgba(0,0,0,1)'))%>%
-#  layout(title = 'PCA Loadings',
-#         titlefont=list(family="arial",size=24,color='black'),
-#         font=list(family = "arial",size = 18,color = 'black'),
-#         margin=list(l=55,r=50,t=70,b=53,pad=0),
-#         hoverlabel=list(bgcolor='white',bordercolor='black',font=list(family="arial",size=16,color='black'))
-#  )
 #======================= 6. Pairwise DE analysis ==============================================
-
 indexes  <- which(!is.element(rownames(filtered_2),rownames(filtered_1)))
 #Merge both datasets
 dataset  <- rbind(filtered_1,filtered_2[indexes,]) 
 dataset <- DGEList(counts = (dataset), genes = rownames(dataset))
 dataset$samples$group <- group
-dataset <- calcNormFactors(dataset, method = 'TMM')
+#dataset <- calcNormFactors(dataset, method = 'TMM')
 dataset <- estimateDisp(dataset)
 setwd(scriptsPath)
 source('DEpairwiseAnalysis.R')

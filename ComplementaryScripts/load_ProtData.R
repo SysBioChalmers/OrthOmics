@@ -1,4 +1,4 @@
-load_ProtData <- function(dataPath,organism,Pmethod){
+load_ProtData <- function(dataPath,DBpath,organism,Pmethod){
   setwd(dataPath)
   pointer <- which(c('kma','sce','yli') == organism)
   if (all(Pmethod == 'XIC')){
@@ -55,6 +55,14 @@ load_ProtData <- function(dataPath,organism,Pmethod){
     }
   }
   colnames(dataset) <- cols
+  rownames(dataset) <- genes
   remove(cols)
+  if (all(Pmethod == 'SCounts')){
+    setwd(DBpath)
+    output   <- normalize_SCounts(dataset,genes,proteins,organism)
+    dataset  <- output[[1]]
+    genes    <- output[[2]]
+    proteins <- output[[3]]
+  }
   return(list(dataset,proteins,genes,conditions,colorValues,replicates,group))
 }

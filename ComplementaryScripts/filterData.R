@@ -8,6 +8,8 @@ filterData <- function(dataset,grouping,metric,omicsData,coverage){
 # Ivan Domenzain. created 2018-10-18
 #
 
+nargin <- length(as.list(match.call())) -1
+if (nargin < 5){coverage <- 1}
 #First remove rows with missing IDs
 NaNs    <- !is.na(rownames(dataset))
 dataset <- dataset[NaNs,]

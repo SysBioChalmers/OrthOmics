@@ -4,15 +4,28 @@ repoPath  <- '/Users/ivand/Documents/GitHub/CHASSY_multiOmics_Analysis'
 organisms  <- c('cpk','kma','yli')
 orgColors  <- c('blue','red','yellow')
 #DE thresholds
-pVal     <- 0.01
-logFC    <- 0.75
+pVal         <- 0.01
+logFC        <- 0.75
 adjustedPval <- TRUE
+omics        <- 'proteins'
+
 conditions <- c('HiT','LpH','Osm')
 setwd(paste(repoPath,'/ComplementaryScripts',sep=''))
 source('plotVennDiagram.R')
 #Load OG list 
 dataPath <- paste(repoPath,'/Databases',sep='')
-resultsPath <- paste(repoPath,'/RNA-seq/All_organisms/DE_log2FC_',logFC,'_FDR_',pVal,sep='')
+if (all(omics=='RNA')){
+  resultsPath <- paste(repoPath,'/RNA-seq/All_organisms',sep='')
+  setwd(resultsPath)
+  resultsPath <- paste(repoPath,'/RNA-seq/All_organisms/DE_log2FC_',logFC,'_FDR_',pVal,sep='')
+  dir.create(resultsPath)
+} else {
+  organisms  <- c('sce','kma','yli')
+  resultsPath <- paste(repoPath,'/Proteomics/Relative/Results/All_organisms',sep='')
+  setwd(resultsPath)
+  resultsPath <- paste(resultsPath,'/DE_log2FC_',logFC,'_FDR_',pVal,sep='')
+  dir.create(resultsPath)
+}
 setwd(dataPath)
 dir.create(resultsPath)
 OGlist  <- read.csv('SingleCopyOG_All_cpk.txt', header = TRUE, sep = "\t",stringsAsFactors=FALSE)
@@ -44,9 +57,13 @@ for (i in 1:length(conditions)){
   for (j in 1:length(orgs)){
     print(orgs[j])
     #Load any DE file 
-    dataPath <- paste(repoPath,'/RNA-seq/',orgs[j],'/Results/DE_log2FC_0.75_FDR_0.01',sep='')
+    if (all(omics=='RNA')){
+      dataPath <- paste(repoPath,'/RNA-seq/',orgs[j],'/Results/DE_log2FC_0.75_FDR_0.01',sep='')
+    } else{
+      dataPath <- paste(repoPath,'/Proteomics/Relative/Results/',orgs[j],'/DE_log2FC_0.75_FDR_0.01',sep='')
+    }
     setwd(dataPath)
-    filename     <- paste(orgs[j],'_RNA_ref_',cond,'.csv',sep='')
+    filename <- paste(orgs[j],'_',omics,'_ref_',cond,'.csv',sep='')
     #For j-th organism get the data for the genes that were DE exclusively in the i-th condition
     DEdata[[j]]  <- read.csv(filename,row.names = 1,stringsAsFactors = FALSE)
     if (adjustedPval == TRUE){
@@ -60,19 +77,16 @@ for (i in 1:length(conditions)){
     #Map the DE genes to the OG list
     k <- j+1
     #upregulated
-    #OGup[[j]] <- upReg[[j]]
-    indexesOG <- which(is.element(OGlist[,k],upReg[[j]]))
-    indexes_up   <- which(is.element(upReg[[j]],OGlist[,k]))
-    #OGup[[j]][indexes] <- OGlist[indexesOG,1] 
-    OGup[[j]] <- OGlist[indexesOG,1] 
+    indexesOG  <- which(is.element(OGlist[,k],upReg[[j]]))
+    indexes_up <- which(is.element(upReg[[j]],OGlist[,k]))
+    OGup[[j]]  <- OGlist[indexesOG,1] 
     #Downregulated
-    #OGDown[[j]] <- DownReg[[j]]
-    indexesOG <- which(is.element(OGlist[,k],DownReg[[j]]))
-    indexes_down   <- which(is.element(DownReg[[j]],OGlist[,k]))
-    #OGDown[[j]][indexes] <- OGlist[indexesOG,1]  
-    OGDown[[j]] <- OGlist[indexesOG,1]  
+    indexesOG     <- which(is.element(OGlist[,k],DownReg[[j]]))
+    indexes_down  <- which(is.element(DownReg[[j]],OGlist[,k]))
+    OGDown[[j]]   <- OGlist[indexesOG,1]  
     #How many of the DE for the j-th organism and the i-th condition were actually mapped to the OG list?
     temp <- list(upReg[[j]],upReg[[j]][indexes_up])
+    #Get and save Venn diagrams for the mapping results for each organism
     setwd(resultsPath)
     png(paste(orgs[j],'_mapped_',cond,'_Up.png',sep=''),width = 600, height = 600)
     OG_mapped <- plotVennDiagram(temp,c(paste(orgs[j],'_',cond,sep=''),'OG'),c(colorValues[j],'cyan'),c(3,4,3),2)
@@ -85,10 +99,10 @@ for (i in 1:length(conditions)){
   
   setwd(resultsPath)
   #get venn diagrams across organisms
-  png(paste('RNAseq_',cond,'_Up_OG.png',sep=''),width = 600, height = 600)
+  png(paste(omics,'_',cond,'_Up_OG.png',sep=''),width = 600, height = 600)
   conds_Up_subsets <- plotVennDiagram(OGup,orgs,colorValues,intLabSize,ellipses,TRUE)
   dev.off()
-  png(paste('RNAseq_',cond,'_down_OG.png',sep=''),width = 600, height = 600)
+  png(paste(omics,'_',cond,'_down_OG.png',sep=''),width = 600, height = 600)
   conds_down_subsets <- plotVennDiagram(OGDown,orgs,colorValues,intLabSize,ellipses,TRUE)
   dev.off()
   #Write files for the different overlaps

@@ -40,23 +40,23 @@ normalize_SCounts <- function(data,genes,proteins,organism){
   }
   #Reduce dataset to those entries which have a correspondance in the
   #uniprot database
-  DB_indxs   <- match(ids,DB_ids)
-  toRemove   <- c()
-  newData    <- c()
+  DB_indxs     <- match(ids,DB_ids)
+  toRemove     <- c()
+  newData      <- c()
+  newGenes     <- c()
+  newProts <- c()
   #Exclude indexes without a match in the database, with non-positive or
   #non-numerical MW
   MWs <- as.numeric(MWs)
   for (i in 1:length(DB_indxs)){
     index <- DB_indxs[i]
     if (!is.na(index)){
-      if (is.na(MWs[index]) | MWs[index]<=0){
-        toRemove <- c(toRemove,i)
-      } else{
-        #Multiply each protein row by its correspondant MW
-        newData <- rbind(newData,data[i,]*MWs[index])  
+      if (!is.na(MWs[index]) | MWs[index]>0){
+        #Divide each protein row by its correspondant MW
+        newData <- rbind(newData,data[i,]/MWs[index])  
+        newGenes <- rbind(newGenes,genes[i])  
+        newProts <- rbind(newProts,proteins[i])  
       }
-    } else{
-      toRemove <- c(toRemove,i)
     }
   }
   
@@ -64,9 +64,6 @@ normalize_SCounts <- function(data,genes,proteins,organism){
   for (j in 1:ncol(newData)){
     newData[,j] <- newData[,j]/sum(newData[,j]) 
   }
-  if (length(toRemove>1)){
-    genes    <- genes[-toRemove]
-    proteins <- proteins[-toRemove] 
-  }
-  return(list(newData,genes,proteins))
+  
+  return(list(newData,newGenes,newProts))
 }

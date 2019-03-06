@@ -1,4 +1,3 @@
-tr|A0A1D8NC36|A0A1D8NC36_YARLL	GO:0015671	oxygen transport	Biological Process
 W29 Uniprot	Annotation GO ID	Annotation GO Term	Annotation GO Category
 A0A1D8NAR9	GO:0004750	ribulose-phosphate 3-epimerase activity	Molecular Function
 A0A1D8NAR9	GO:0005975	carbohydrate metabolic process	Biological Process

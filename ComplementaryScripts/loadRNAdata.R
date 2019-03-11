@@ -12,15 +12,11 @@ loadRNAdata <- function(dataPath,organism){
                       rep(conditions[2],replicates[2]),
                       rep(conditions[3],replicates[3])), levels = conditions)
   } else {
-    if (all(organism == 'sce')){
-      temp <- dataset
-      #Rearrange columns
-      dataset[,4:6] <- temp[,7:9]
-      dataset[,7:9] <- temp[,4:6]
-    }
+    if (all(organism == 'cpk')){
     conditions <- c('Ref','HiT','LpH','Osm')
     colorValues <- c("black", "red", "#009E73","blue")
     replicates <- c(3,3,3,3)
+    }
     if (all(organism == 'kma')){replicates <- c(3,2,3,3)}
     group <- factor(c(rep(conditions[1],replicates[1]),
                       rep(conditions[2],replicates[2]),

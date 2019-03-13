@@ -9,12 +9,12 @@ library(RColorBrewer)
 library(snowfall)
 library(ggbiplot)
 library(ggplot2)
-repoPath  <- '/Users/ivand/Documents/GitHub/CHASSY_multiOmics_Analysis'
+repoPath  <- '/Users/doughty/Documents/GitHub/CHASSY_multiOmics_Analysis'
 #Internal functions
 scriptsPath <- paste(repoPath,'/ComplementaryScripts',sep='')
 setwd(scriptsPath)
 #Provide organism code [Sce,Kma,Yli]
-organism    <- 'sce'
+organism    <- 'cpk'
 dataPath    <- paste(repoPath,'/RNA-seq',sep='')
 resultsPath <- paste(dataPath,'/',organism,'/Results',sep='')
 
@@ -99,7 +99,7 @@ x2 <- estimateDisp(x2)
 #Call DE analysis internal function
 #Define DE thresholds
 logPval  <- abs(log10(0.01))
-log2FC   <- 0.75
+log2FC   <- 1
 adjusted <- TRUE
 output   <- DEpairwiseAnalysis(x2,organism,conditions,colorValues,logPval,log2FC,adjusted,'RNA')
 upReg_AllConds   <- output[[1]]

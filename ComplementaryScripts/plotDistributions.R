@@ -1,9 +1,17 @@
-plotDistributions <- function(lcpm,lcpm2,measured,UB){
+plotDistributions <- function(x1,x2,measured,UB,colVals,reps){
+  
+  lcpm    <- cpm(x1,log=TRUE)
+  lcpm2    <- cpm(x2,log=TRUE)
+
   # With the following code we can make a plot showing the raw log2CPM reads, the dotted
   # line indicates zero logCPM (= 1 cpm)
   nsamples <- ncol(lcpm)
-  # Ignore warning, some samples will have identical color.
-  col <- brewer.pal(nsamples, "Paired") 
+  #Assign condition-specific color to samples
+  col <- c()
+  for (i in 1:length(reps)){
+    col <- c(col,rep(colVals[i],reps[i]))
+  }
+
   if (all(measured==' proteins')){
     xlabel <- 'counts'
   }else{xlabel <- 'Log2-cpm'}

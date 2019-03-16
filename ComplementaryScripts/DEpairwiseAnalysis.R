@@ -1,4 +1,6 @@
-DEpairwiseAnalysis <- function(dataset,org,conditions,coloVals,logPval,log2FC,adjusted,omics,groups){
+DEpairwiseAnalysis <- function(dataset,org,conditions,coloVals,logPval,log2FC,adjusted,omics,groups,normMethod){
+  nargin <- length(as.list(match.call())) -1
+  if (nargin < 10){normMethod <- '-'}
   #Create new directory for storing results for the given set of threshold values 
   newDirName <- paste('DE_log2FC_',log2FC,'_FDR_',10^(-logPval),sep='')
   dir.create(newDirName)
@@ -18,6 +20,8 @@ DEpairwiseAnalysis <- function(dataset,org,conditions,coloVals,logPval,log2FC,ad
     colIndexes            <- groups=='Ref' | groups==conditions[i]
     dataSet               <- DGEList(counts = (dataset[,colIndexes]), genes = rownames(dataset))
     dataSet$samples$group <- groups[colIndexes]
+    #Normalization as an optional step [TMM normalization is recommended for RNAseq data]
+    if (all(normMethod!='-')){dataSet <- calcNormFactors(dataSet, method = normMethod)}
     dataSet               <- estimateDisp(dataSet)
     #Differential expression analysis function 
     de <- exactTest(dataSet, pair = tempConds) 

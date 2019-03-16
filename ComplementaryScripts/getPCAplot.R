@@ -9,7 +9,6 @@ getPCAplot <- function(data,conditions,group,replicates,colVals,org,plot_name,om
     labelStr <- c(labelStr, seq(1,replicates[i],1))
     if (all(colVals[[i]]=='grey')){colVals[[i]]='black'}
   }
-  print(colVals)
   p<-ggbiplot(prots.pca, choices = c(1,2),var.axes = FALSE,groups = group,
               varname.size = 6,labels=labelStr,labels.size = 6,ellipse=TRUE)
   p <- p + theme_bw()

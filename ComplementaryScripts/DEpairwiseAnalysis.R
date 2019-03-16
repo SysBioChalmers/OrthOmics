@@ -39,6 +39,9 @@ DEpairwiseAnalysis <- function(dataset,org,conditions,coloVals,logPval,log2FC,ad
     #Identify the DE genes from the whole list
     significantDE           <- ((abs(volcanoData$logFC)>=log2FC & volcanoData$`-log10Pval`>=logPval))
     print(paste(sum(significantDE),' DE hits',sep=''))
+    # Write CSV file with the DE analysis results for all genes
+    filename <- paste(org,'_SIGNIFICANT_',omics,'_ref_',conditions[i],'.csv',sep='')
+    write.csv(tt[significantDE,], file = filename, row.names = F,quote = FALSE)
     #Sort DE hits by directionality of their FC
     upReg_AllConds[[i-1]]   <- rownames(volcanoData)[(volcanoData$logFC>=log2FC & volcanoData$`-log10Pval`>=logPval)]
     print(paste(length(upReg_AllConds[[i-1]]),' UpRegulated ',omics,sep=''))

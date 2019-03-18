@@ -104,6 +104,7 @@ detected_abs <- output[[2]]
 filtered_abs <- dataset_abs[filtered,]
 lcpm_abs     <- lcpm_abs[filtered,]
 # Write CSV file with the filtered absolute dataset
+setwd(resultsPath)
 filename <- paste(organism,'_abs_NSAF_filtered.csv',sep='')
 write.csv(filtered_abs, file = filename, row.names = T,quote = FALSE)
 rm(output)

@@ -7,6 +7,7 @@ getPCAplot <- function(data,conditions,group,replicates,colVals,org,plot_name,om
   labelStr <- c()
   for (i in 1:length(conditions)) {
     labelStr <- c(labelStr, seq(1,replicates[i],1))
+    if (all(colVals[[i]]=='grey')){colVals[[i]]='black'}
   }
   p<-ggbiplot(prots.pca, choices = c(1,2),var.axes = FALSE,groups = group,
               varname.size = 6,labels=labelStr,labels.size = 6,ellipse=TRUE)

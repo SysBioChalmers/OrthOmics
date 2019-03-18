@@ -1,4 +1,4 @@
-filterData <- function(dataset,grouping,metric,omicsData,coverage){
+filterData <- function(dataset,grouping,metric,stringent,coverage){
 #Function that filters a biological dataset for different replicates in 
 #different conditions. Those elements that were not measured for at least coverage
 #of the triplicates for at least one of the conditions are removed. The elements
@@ -8,6 +8,8 @@ filterData <- function(dataset,grouping,metric,omicsData,coverage){
 # Ivan Domenzain. created 2018-10-18
 #
 
+nargin <- length(as.list(match.call())) -1
+if (nargin < 5){coverage <- 1}
 #First remove rows with missing IDs
 NaNs    <- !is.na(rownames(dataset))
 dataset <- dataset[NaNs,]
@@ -19,8 +21,8 @@ condData <- c()
 detected <- c()
 for (i in 1:length(grouping)){
   condData[[i]]  <- tempData[,1:grouping[i]]
-  #Identify those genes that were detected in at least coverage of the 
-  #triplicates for the i-th condition
+  #Identify those genes that were detected in at least (coverage value) of the 
+  #replicates for the i-th condition
   condMat <- as.matrix(condData[[i]])
   rownames(condMat) <- c()
   detected[[i]]     <- rowSums(1*(condMat>0))
@@ -35,7 +37,7 @@ for (i in 1:nrow(dataset)){
   spreading <- c(rep(FALSE,length(grouping)))
   for (j in 1:length(grouping)){
     #print(j)
-    #The element should be measured in at least (coverage) of the replicates 
+    #The element should be measured in at least (coverage value) of the replicates 
     #for being considered as present in one condition
     rowCond <- condData[[j]][i,]
     rowCond[is.na(rowCond)] <- 0
@@ -49,9 +51,8 @@ for (i in 1:nrow(dataset)){
       if (width<=1 & width>0){spreading[j] <- TRUE}
     }
   }
-  if (all(omicsData=='RNA')){
+  if (stringent) {
     conditional <- (all(presence==TRUE) &  (all(spreading == presence)))
-    #conditional <- ((presence[1]==TRUE) & 1*sum(presence==TRUE) >= 0.8*length(grouping) & (all(spreading == presence)))
   }else{
     #The element should be present in at least one condition (std) and have a low variability
     #for all the conditions in which it is present

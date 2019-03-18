@@ -5,10 +5,14 @@ setwd(scriptsPath)
 source('plotVennDiagram.R')
 #Provide organism code [Sce,Kma,Yli]
 organism    <- 'kma'
+if (all(organism=='sce')){
+  org = 'cpk'
+} else{org = organism}
 RNAPath     <- paste(repoPath,'/RNA-seq',sep='')
 protPath    <- paste(repoPath,'/Proteomics/Relative',sep='')
-log2FC <- 0.5
-Pvalue <- 0.05
+log2FC <- 0.75
+Pvalue <- 0.01
+adjProteomics <- TRUE
 if (all(organism == 'yli')){
   conditions <- c('Ref','HiT','LpH')
   colorValues <- c("black", "red", "#009E73")
@@ -19,20 +23,27 @@ if (all(organism == 'yli')){
 
 for (i in 2:length(conditions)){
   #Load DE RNA for the i-th condition
-  resultsPath <- paste(RNAPath,'/',organism,'/Results',sep='')
+  resultsPath <- paste(RNAPath,'/',org,'/Results/',sep='')
+  resultsPath <- paste(resultsPath,'DE_log2FC_',log2FC,'_FDR_',Pvalue,sep='')
   setwd(resultsPath)
-  filename <- paste(organism,'_RNA_DE_exclusive_',conditions[i],'.csv',sep='')
+  filename <- paste(org,'_RNA_ref_',conditions[i],'.csv',sep='')
   RNA <- read.delim(filename, header = TRUE, sep = ",",stringsAsFactors=FALSE, na.strings = "NA")
-  downRNA <- RNA$X[which(RNA$logFC<0)]
-  upRNA <- RNA$X[which(RNA$logFC>0)]
+  downRNA <- RNA$genes[which(RNA$logFC<(-log2FC) & RNA$FDR<Pvalue)]
+  upRNA <- RNA$genes[which(RNA$logFC>(-log2FC) & RNA$FDR<Pvalue)]
   #Load DE prots for the i-th condition
   resultsPath <- paste(protPath,'/Results/',organism,sep='')
+  resultsPath <- paste(resultsPath,'/DE_log2FC_',log2FC,'_FDR_',Pvalue,sep='')
   setwd(resultsPath)
   filename <- paste(organism,'_Proteins_ref_',conditions[i],'.csv',sep='')
   Prots <- read.delim(filename, header = TRUE, sep = ",",stringsAsFactors=FALSE, na.strings = "NA")
-  downProts <- Prots$genes[which(Prots$logFC<(-log2FC) & Prots$PValue<Pvalue)]
-  upProts <- Prots$genes[which(Prots$logFC>log2FC & Prots$PValue<Pvalue)]
-  
+  if (adjProteomics){
+    downProts <- Prots$genes[which(Prots$logFC<(-log2FC) & Prots$FDR<Pvalue)]
+    upProts <- Prots$genes[which(Prots$logFC>log2FC & Prots$FDR<Pvalue)]
+  } else{
+    downProts <- Prots$genes[which(Prots$logFC<(-log2FC) & Prots$PValue<Pvalue)]
+    upProts <- Prots$genes[which(Prots$logFC>log2FC & Prots$PValue<Pvalue)]
+  }
+
   png(paste(organism,'_DE_RNA_prot_down_',conditions[i],'.png',sep=''),width = 600, height = 600)
   x <- plotVennDiagram(list(downRNA,downProts),c('RNA','Prots'),c(colorValues[i],'gray'),c(3,4,3),2)
   dev.off()

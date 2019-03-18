@@ -1,21 +1,20 @@
-filterLowReads <- function(data,coverage,filterType,grouping){
+filterLowReads <- function(lcpm,coverage,filterType,grouping,threshold){
+nargin <- length(as.list(match.call())) -1
+if (nargin < 5){threshold <- 0}
 #Remove low reads
 keep.exprs <- c()
-cpm_       <- cpm(data, log = T)
-for (i in 1:nrow(data)){
+for (i in 1:nrow(lcpm)){
   #Get the 
-  rowData <- cpm_[i,]
+  rowData <- lcpm[i,]
   if (all(filterType=='ref')){
     #Keep those rows which show a cpm>=1 for the std condition (on average)
-    if (mean(rowData[1:grouping[1]])>=0){keep.exprs <- c(keep.exprs,i)}    
+    if (mean(rowData[1:grouping[1]])>=threshold){keep.exprs <- c(keep.exprs,i)}    
   } else{
     #Keep those rows which show an average cpm>=1 in at least (coverage) of the total samples 
     #in which it was measured
-    if (length(rowData[rowData>=0])>=coverage*length(rowData)) {keep.exprs <- c(keep.exprs,i)}
-   
+    if (length(rowData[rowData>=threshold])>=coverage*length(rowData)) {keep.exprs <- c(keep.exprs,i)}
   }
-  
 }
-data <- data[keep.exprs,]
-return(data)
+#data <- data[keep.exprs,]
+return(keep.exprs)
 }

@@ -49,7 +49,7 @@ load_ProtData <- function(dataPath,DBpath,organism,Pmethod,normalize){
   #Normalize data fmol -> [fmol / ng protein] == [umol/g protein] if absolute
   dataset  <- dataset/scalingFactors[pointer] 
   genes    <- IDs[,1]
-  if (all(Pmethod == 'NSAF')){
+  if (all(Pmethod == 'NSAF')  & all(organism == 'kma')){
     genes <- gsub("_", "", genes)
   }
   

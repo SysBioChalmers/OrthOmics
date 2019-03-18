@@ -11,16 +11,21 @@ library(ggbiplot)
 library(ggplot2)
 #====================================DEFINE VARIABLES =======================================
 #Provide organism code [Sce,Kma,Yli]
-organism    <- 'kma'
+organism    <- 'yli'
 #Indicate the dataset that should be used foer DE analysis
 selectedDataset <- 1 #1 for XIC or NSAF, 2 for Scounts or iBAQ and 3 for merged datasets
 #Define DE thresholds
 logPval    <- abs(log10(0.01))
 log2FC     <- 0.75
 adjustedP  <- TRUE
+#Should the initial dataset be normalized by MW of proteins
 normByMW   <- TRUE
-normMethod <- 'RLE'
+#Filter type for determination of present and non-noisy proteins in the dataset (TRUE if filter
+#criteria should be applied to all conditions, FALSE if just the reference is desired to be 
+#filtered)
 stringent  <- TRUE
+#Normalization method for DE analysis
+normMethod <- 'TMM'
 #===========================================================================================
 #Relevant paths (The user should provide the path in which the repository is stored)
 repoPath  <- '/Users/ivand/Documents/GitHub/CHASSY_multiOmics_Analysis'

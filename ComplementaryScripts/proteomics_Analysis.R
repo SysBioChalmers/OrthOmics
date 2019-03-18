@@ -10,8 +10,8 @@ library(snowfall)
 library(ggbiplot)
 library(ggplot2)
 #====================================DEFINE VARIABLES =======================================
-#Provide organism code [Sce,Kma,Yli]
-organism    <- 'yli'
+#Provide organism code [sce,kma,yli]
+organism    <- 'sce'
 #Indicate the dataset that should be used foer DE analysis
 selectedDataset <- 1 #1 for XIC or NSAF, 2 for Scounts or iBAQ and 3 for merged datasets
 #Define DE thresholds
@@ -28,7 +28,7 @@ stringent  <- TRUE
 normMethod <- 'TMM'
 #===========================================================================================
 #Relevant paths (The user should provide the path in which the repository is stored)
-repoPath  <- '/Users/ivand/Documents/GitHub/CHASSY_multiOmics_Analysis'
+repoPath  <- '/Users/doughty/Documents/GitHub/CHASSY_multiOmics_Analysis'
 #Internal functions path
 scriptsPath <- paste(repoPath,'/ComplementaryScripts',sep='')
 DBpath      <- paste(repoPath,'/Databases/Uniprot/',sep='')

@@ -3,7 +3,7 @@ nargin <- length(as.list(match.call())) -1
 if (nargin < 5){threshold <- 0}
 #Remove low reads
 keep.exprs <- c()
-for (i in 1:nrow(data)){
+for (i in 1:nrow(lcpm)){
   #Get the 
   rowData <- lcpm[i,]
   if (all(filterType=='ref')){

@@ -20,6 +20,7 @@ log2FC     <- 0.75
 adjustedP  <- TRUE
 normByMW   <- TRUE
 normMethod <- 'RLE'
+stringent  <- TRUE
 #===========================================================================================
 #Relevant paths (The user should provide the path in which the repository is stored)
 repoPath  <- '/Users/ivand/Documents/GitHub/CHASSY_multiOmics_Analysis'
@@ -81,7 +82,7 @@ source('filterData.R')
 coverage <- 2/3
 #Filter by median value for XIC datasets (they come from exponential values they're
 #likely to span several orders of magnitude
-output     <- filterData(dataset_1,replicates,'median','prots',coverage)
+output     <- filterData(dataset_1,replicates,'median',stringent,coverage)
 filtered   <- output[[1]]
 detected_1 <- output[[2]]
 filtered_1 <- dataset_1[filtered,]
@@ -89,7 +90,7 @@ lcpm_1     <- lcpm_1[filtered,]
 rm(output)
 rm(filtered)
 #Filter by mean value for SC, IBAQ or NSAF
-output     <- filterData(dataset_2,replicates,'mean','prots',coverage)
+output     <- filterData(dataset_2,replicates,'mean',stringent,coverage)
 filtered   <- output[[1]]
 detected_2 <- output[[2]]
 filtered_2 <- dataset_2[filtered,]
@@ -97,11 +98,14 @@ lcpm_2     <- lcpm_2[filtered,]
 rm(output)
 rm(filtered)
 #Filter absolute measurements
-output       <- filterData(dataset_abs,replicates,'mean','prots',coverage)
+output       <- filterData(dataset_abs,replicates,'mean',stringent,coverage)
 filtered     <- output[[1]]
 detected_abs <- output[[2]]
 filtered_abs <- dataset_abs[filtered,]
 lcpm_abs     <- lcpm_abs[filtered,]
+# Write CSV file with the filtered absolute dataset
+filename <- paste(organism,'_abs_NSAF_filtered.csv',sep='')
+write.csv(filtered_abs, file = filename, row.names = T,quote = FALSE)
 rm(output)
 rm(filtered)
 #============ Get venn diagram for measured genes
@@ -235,7 +239,7 @@ setwd(resultsPath)
 #Select the dataset that should go through the DE analysis
 if (selectedDataset == 3){ #Merge both datasets (methods, prioritizing to the first one)
   indexes <- which(!is.element(rownames(filtered_2),rownames(filtered_1)))
-  dataset <-rbind(filtered_1,filtered_2[indexes,]) 
+  dataset <- rbind(filtered_1,filtered_2[indexes,]) 
 } else {
   if (selectedDataset == 2){dataset  <- filtered_2}
   if (selectedDataset == 1){dataset  <- filtered_1}

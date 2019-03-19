@@ -13,7 +13,7 @@ loadRNAdata <- function(dataPath,organism){
                       rep(conditions[2],replicates[2]),
                       rep(conditions[3],replicates[3])), levels = conditions)
   } else {
-    if (all(organism == 'cpk')){
+    if (all(organism == 'cpk') |all(organism == 'sce')){
     conditions <- c('Ref','HiT','LpH','Osm')
     colorValues <- c("grey", "red", "#009E73","blue")
     replicates <- c(3,3,3,3)

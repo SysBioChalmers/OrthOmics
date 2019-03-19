@@ -7,7 +7,7 @@ orgColors  <- c('blue','red','yellow')
 pVal         <- 0.01
 logFC        <- 0.75
 adjustedPval <- TRUE
-omics        <- 'proteins'
+omics        <- 'RNA'
 
 conditions <- c('HiT','LpH','Osm')
 setwd(paste(repoPath,'/ComplementaryScripts',sep=''))
@@ -15,19 +15,21 @@ source('plotVennDiagram.R')
 #Load OG list 
 dataPath <- paste(repoPath,'/Databases',sep='')
 if (all(omics=='RNA')){
-  resultsPath <- paste(repoPath,'/RNA-seq/All_organisms',sep='')
-  setwd(resultsPath)
+  setwd(paste(repoPath,'/RNA-seq',sep=''))
+  dir.create('All_organisms')
+  setwd(paste(repoPath,'/RNA-seq/All_organisms',sep=''))
   resultsPath <- paste(repoPath,'/RNA-seq/All_organisms/DE_log2FC_',logFC,'_FDR_',pVal,sep='')
   dir.create(resultsPath)
 } else {
   organisms  <- c('sce','kma','yli')
-  resultsPath <- paste(repoPath,'/Proteomics/Relative/Results/All_organisms',sep='')
-  setwd(resultsPath)
-  resultsPath <- paste(resultsPath,'/DE_log2FC_',logFC,'_FDR_',pVal,sep='')
+  setwd(paste(repoPath,'/Proteomics/Results',sep=''))
+  dir.create('All_organisms')
+  setwd(paste(repoPath,'/Proteomics/Results/All_organisms',sep=''))
+  resultsPath <- paste(repoPath,'/Proteomics/Results/All_organisms/DE_log2FC_',logFC,'_FDR_',pVal,sep='')
   dir.create(resultsPath)
 }
 setwd(dataPath)
-dir.create(resultsPath)
+#dir.create(resultsPath)
 OGlist  <- read.csv('SingleCopyOG_All_cpk.txt', header = TRUE, sep = "\t",stringsAsFactors=FALSE)
 
 for (i in 1:length(conditions)){
@@ -60,12 +62,14 @@ for (i in 1:length(conditions)){
     if (all(omics=='RNA')){
       dataPath <- paste(repoPath,'/RNA-seq/',orgs[j],'/Results/DE_log2FC_0.75_FDR_0.01',sep='')
     } else{
-      dataPath <- paste(repoPath,'/Proteomics/Relative/Results/',orgs[j],'/DE_log2FC_0.75_FDR_0.01',sep='')
+      dataPath <- paste(repoPath,'/Proteomics/Results/',orgs[j],'/DE_log2FC_0.75_FDR_0.01',sep='')
     }
     setwd(dataPath)
     filename <- paste(orgs[j],'_',omics,'_ref_',cond,'.csv',sep='')
     #For j-th organism get the data for the genes that were DE exclusively in the i-th condition
     DEdata[[j]]  <- read.csv(filename,row.names = 1,stringsAsFactors = FALSE)
+    #Add exception for Kma identifiers
+    if (all(omics=='RNA') & all(orgs[j]=='kma')) {rownames(DEdata[[j]]) <- gsub("KMXK_", "KMXK", rownames(DEdata[[j]]))}
     if (adjustedPval == TRUE){
       upReg[[j]]   <- rownames(DEdata[[j]])[(DEdata[[j]]$logFC>=logFC) & (DEdata[[j]]$FDR<=pVal)]
       DownReg[[j]] <- rownames(DEdata[[j]])[(DEdata[[j]]$logFC<=-logFC) & (DEdata[[j]]$FDR<=pVal)]

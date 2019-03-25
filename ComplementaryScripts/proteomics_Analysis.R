@@ -11,7 +11,7 @@ library(ggbiplot)
 library(ggplot2)
 #====================================DEFINE VARIABLES =======================================
 #Provide organism code [sce,kma,yli]
-organism    <- 'sce'
+organism    <- 'yli'
 #Indicate the dataset that should be used foer DE analysis
 selectedDataset <- 1 #1 for XIC or NSAF, 2 for Scounts or iBAQ and 3 for merged datasets
 #Define DE thresholds
@@ -28,7 +28,7 @@ stringent  <- TRUE
 normMethod <- 'TMM'
 #===========================================================================================
 #Relevant paths (The user should provide the path in which the repository is stored)
-repoPath  <- '/Users/doughty/Documents/GitHub/CHASSY_multiOmics_Analysis'
+repoPath    <- '/Users/ivand/Documents/GitHub/CHASSY_multiOmics_Analysis'
 #Internal functions path
 scriptsPath <- paste(repoPath,'/ComplementaryScripts',sep='')
 DBpath      <- paste(repoPath,'/Databases/Uniprot/',sep='')
@@ -40,13 +40,13 @@ source('normalize_Prots_MWeight.R')
 dataPath    <- paste(repoPath,'/Proteomics/data',sep='')
 resultsPath <- paste(repoPath,'/Proteomics/Results/',organism,sep='')
 #Load XIC data
-output_1    <- load_ProtData (dataPath,DBpath,organism,'XIC',normByMW)
+output_1    <- load_ProtData(dataPath,DBpath,organism,'XIC',normByMW)
 #Load Scounts data
-output_2    <- load_ProtData (dataPath,DBpath,organism,'SCounts',normByMW)
+output_2    <- load_ProtData(dataPath,DBpath,organism,'SCounts',normByMW)
 legends     <- c('XIC','SCounts')
 dataPath    <- paste(repoPath,'/Proteomics/data/absolute',sep='')
 #Load NSAF data [umol/g protein]
-output_abs  <- load_ProtData (dataPath,DBpath,organism,'NSAF',FALSE)
+output_abs  <- load_ProtData(dataPath,DBpath,organism,'NSAF',FALSE)
 #Sort and rename outputs
 dataset_1     <- output_1[[1]]
 lcpm_1        <- cpm(dataset_1, log = T)
@@ -62,8 +62,8 @@ genes_2       <- output_2[[3]]
 proteins_abs  <- output_abs[[2]]
 genes_abs     <- output_abs[[3]]
 #Set rownames for the dataset (proteins or genes)
-rownames(dataset_1) <- genes_1
-rownames(dataset_2) <- genes_2
+rownames(dataset_1)   <- genes_1
+rownames(dataset_2)   <- genes_2
 rownames(dataset_abs) <- genes_abs
 #Get grouping information
 conditions  <- output_1[[4]]
@@ -82,6 +82,7 @@ rm(dataPath)
 #Remove those proteins with a SD == 0 across all samples
 setwd(scriptsPath)
 source('filterData.R')
+source('getMeanAbundances.R')
 #Coverage means the proportion of replicates in which a protein should be present 
 #in order to be considered as measured for a given condition
 coverage <- 2/3
@@ -111,7 +112,7 @@ lcpm_abs     <- lcpm_abs[filtered,]
 # Write CSV file with the filtered absolute dataset
 setwd(resultsPath)
 filename <- paste(organism,'_abs_NSAF_filtered.csv',sep='')
-write.csv(filtered_abs, file = filename, row.names = T,quote = FALSE)
+getMeanAbundances(filtered_abs,group,conditions,filename)
 rm(output)
 rm(filtered)
 #============ Get venn diagram for measured genes
@@ -120,15 +121,15 @@ source('plotVennDiagram.R')
 setwd(resultsPath)
 if (all(organism == 'yli')) {
     intLabSize <- c(rep(2,7))
-    intLabSize[2]<-2.5
-    intLabSize[4]<-2.5
-    intLabSize[6]<-2.5
-    intLabSize[5]<-3
-    ellipses     <-3
+    intLabSize[2] <-2.5
+    intLabSize[4] <-2.5
+    intLabSize[6] <-2.5
+    intLabSize[5] <-3
+    ellipses      <-3
 }else  {
-    intLabSize   <- c(rep(2.5,15))
-    intLabSize[6]<- 4
-    ellipses     <- 4
+    intLabSize    <- c(rep(2.5,15))
+    intLabSize[6] <- 4
+    ellipses      <- 4
 }
 #XIC 
 png(paste(organism,'_1_vennAllconds.png',sep=''),width = 600, height = 600)

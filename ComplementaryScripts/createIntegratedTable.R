@@ -7,13 +7,15 @@
   
 #==================================== DEFINE VARIABLES =======================================
 #Provide organism code [sce,kma,yli]
-organism    <- 'cpk'
+organism    <- 'kma'
+organism2   <- organism
 if (all(organism == 'yli')){
   conditions <- c('HiT','LpH')
   colorValues <- c("red", "#009E73")
 } else {
   conditions <- c('HiT','LpH','Osm')
   colorValues <- c("red", "#009E73","blue")
+  if (all(organism=='cpk')){organism2 <- 'sce'}
 }
 #Define DE thresholds
 FDR        <- 0.01
@@ -27,17 +29,13 @@ scriptsPath <- paste(repoPath,'/ComplementaryScripts',sep='')
 resultsPath <- paste(repoPath,'/Integration',sep='')
 uniprotPath <- paste(repoPath,'/Databases/Uniprot',sep='')
 RNApath     <- paste(repoPath,'/RNA-seq',sep='')
-Protpath    <- paste(repoPath,'/Proteomics/Results',organism,sep='')
+Protpath    <- paste(repoPath,'/Proteomics/Results/',organism2,sep='')
 Orthpath    <- paste(repoPath,'/Orthologs',sep='')
+GOTermsPath <- paste(repoPath,'/Databases/GO_terms',sep='')
 #=============================== Load data =================================================
 #============= Load absolute proteomics measurements (all conditions)
-if (all(organism=='cpk')){
-  setwd(paste(repoPath,'/Proteomics/Results/sce',sep=''))
-  fileName <- 'sce_abs_NSAF_filtered.csv'
-} else{
-  setwd(Protpath)
-  fileName <- paste(organism,'_abs_NSAF_filtered.csv',sep='')
-}  
+setwd(Protpath)
+fileName <- paste(organism2,'_abs_NSAF_filtered.csv',sep='')
 prot_Abs <- read.delim(fileName, header = TRUE, sep = ",",stringsAsFactors=FALSE, na.strings = "NA")
 proteins <- prot_Abs[,1]
 prot_Abs <- prot_Abs[,2:ncol(prot_Abs)]
@@ -62,9 +60,6 @@ if (all(organism=='kma')){
     geneGroups[(which(geneGroups[,2]=="Y+H")),2]  <- 1
   } else {
       if (all(organism=='cpk')){
-        setwd(Orthpath)
-        fileName   <- paste('cpk_orthology_groups.txt',sep='')
-        geneGroups <- read.delim(fileName, header = TRUE, sep = "\t",stringsAsFactors=FALSE, na.strings = "NA")
         geneGroups[(which(geneGroups[,2]=="C+C")),2]  <- 5
         geneGroups[(which(geneGroups[,2]=="C+E")),2]  <- 4
         geneGroups[(which(geneGroups[,2]=="C+K")),2]  <- 3
@@ -73,6 +68,10 @@ if (all(organism=='kma')){
       } 
   }
 }
+#============= Load GO terms files 
+setwd(GOTermsPath)
+fileName <- paste(organism2,'_GOterms.txt',sep="")
+GO_terms  <- read.delim(fileName, header = TRUE, sep = "\t",stringsAsFactors=FALSE, na.strings = "NA")
 
 #Loop through all conditions 
 tableData <- c()
@@ -101,21 +100,30 @@ for (i in 1:length(conditions)){
       P_ref  <- NaN
       P_cond <- NaN
     }
-    #Search gene group
+    #Search gene orthoGroup
     geneIndex <- which(geneGroups[,1] == gene)
+    orthoGene <- c()
     if (length(geneIndex)>0){
-      group  <- geneGroups[geneIndex,2]
+      group     <- geneGroups[geneIndex,2]
+      #Extract ortholog ID for GO terms identification
+      if (all(organism == 'cpk')){
+        orthoGene <- geneGroups[geneIndex,3]
+      } else {
+        orthoGene <- gene
+      } 
     } else {
       group  <- NaN
     }
+   
+    #Combine variables for a row in the integrated table
     #if (significance & !is.na(P_ref)){  
     if (significance){  
-      row <- cbind(gene,condition,significance,direction,P_ref,P_cond,group) 
+      row       <- cbind(gene,condition,significance,direction,P_ref,P_cond,group) 
       tableData <- rbind(tableData,row)
     } 
-    }
+  }
 }
 setwd(resultsPath)
-fileName    <- paste(organism,'_integratedTable.csv',sep='')
-write.csv(tableData, file = fileName, row.names = F,quote = FALSE)
+fileName    <- paste(organism,'_integratedTable.txt',sep='')
+write.table(tableData, file = fileName, row.names = F,quote = FALSE,sep="\t")
 #}

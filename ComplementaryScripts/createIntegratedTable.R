@@ -1,4 +1,4 @@
-createIntegratedTable <- function(dataset,grouping,metric,stringent,coverage){
+#createIntegratedTable <- function(dataset,grouping,metric,stringent,coverage){
 #Function that integrates the results from RNAseq DE with absolute proteomics
 #measurements and genes annotation.
 #
@@ -7,7 +7,7 @@ createIntegratedTable <- function(dataset,grouping,metric,stringent,coverage){
   
 #==================================== DEFINE VARIABLES =======================================
 #Provide organism code [sce,kma,yli]
-organism    <- 'yli'
+organism    <- 'cpk'
 if (all(organism == 'yli')){
   conditions <- c('HiT','LpH')
   colorValues <- c("red", "#009E73")
@@ -23,19 +23,25 @@ adjustedP  <- TRUE
 #=============================== Relevant directories ======================================
 #Relevant paths (The user should provide the path in which the repository is stored)
 repoPath    <- '/Users/ivand/Documents/GitHub/CHASSY_multiOmics_Analysis'
-#Internal functions path
 scriptsPath <- paste(repoPath,'/ComplementaryScripts',sep='')
-DBpath      <- paste(repoPath,'/Databases/Uniprot/',sep='')
+resultsPath <- paste(repoPath,'/Integration',sep='')
+uniprotPath <- paste(repoPath,'/Databases/Uniprot',sep='')
 RNApath     <- paste(repoPath,'/RNA-seq',sep='')
-Protpath    <- paste(repoPath,'/Proteomics/Results/',organism,sep='')
+Protpath    <- paste(repoPath,'/Proteomics/Results',organism,sep='')
 Orthpath    <- paste(repoPath,'/Orthologs',sep='')
-#Load absolute proteomics measurements (all conditions)
-setwd(Protpath)
-fileName <- paste(organism,'_abs_NSAF_filtered.csv',sep='')
+#=============================== Load data =================================================
+#============= Load absolute proteomics measurements (all conditions)
+if (all(organism=='cpk')){
+  setwd(paste(repoPath,'/Proteomics/Results/sce',sep=''))
+  fileName <- 'sce_abs_NSAF_filtered.csv'
+} else{
+  setwd(Protpath)
+  fileName <- paste(organism,'_abs_NSAF_filtered.csv',sep='')
+}  
 prot_Abs <- read.delim(fileName, header = TRUE, sep = ",",stringsAsFactors=FALSE, na.strings = "NA")
 proteins <- prot_Abs[,1]
 prot_Abs <- prot_Abs[,2:ncol(prot_Abs)]
-#Load gene groups (orthology) list
+#============= Load gene groups (orthology) list
 setwd(Orthpath)
 fileName   <- paste(organism,'_orthology_groups.txt',sep='')
 geneGroups <- read.delim(fileName, header = TRUE, sep = "\t",stringsAsFactors=FALSE, na.strings = "NA")
@@ -55,22 +61,18 @@ if (all(organism=='kma')){
     geneGroups[(which(geneGroups[,2]=="Y+K")),2]  <- 2
     geneGroups[(which(geneGroups[,2]=="Y+H")),2]  <- 1
   } else {
-      if (all(organism=='sce')){
-        geneGroups[(which(geneGroups[,2]=="S+S")),2]  <- 5
-        geneGroups[(which(geneGroups[,2]=="S+E")),2]  <- 4
-        geneGroups[(which(geneGroups[,2]=="S+K")),2]  <- 3
-        geneGroups[(which(geneGroups[,2]=="S+Y")),2]  <- 2
-        geneGroups[(which(geneGroups[,2]=="S+H")),2]  <- 1
-      } else {
-          geneGroups[(which(geneGroups[,2]=="C+C")),2]  <- 5
-          geneGroups[(which(geneGroups[,2]=="C+E")),2]  <- 4
-          geneGroups[(which(geneGroups[,2]=="C+K")),2]  <- 3
-          geneGroups[(which(geneGroups[,2]=="C+Y")),2]  <- 2
-          geneGroups[(which(geneGroups[,2]=="C+H")),2]  <- 1
-      }
+      if (all(organism=='cpk')){
+        setwd(Orthpath)
+        fileName   <- paste('cpk_orthology_groups.txt',sep='')
+        geneGroups <- read.delim(fileName, header = TRUE, sep = "\t",stringsAsFactors=FALSE, na.strings = "NA")
+        geneGroups[(which(geneGroups[,2]=="C+C")),2]  <- 5
+        geneGroups[(which(geneGroups[,2]=="C+E")),2]  <- 4
+        geneGroups[(which(geneGroups[,2]=="C+K")),2]  <- 3
+        geneGroups[(which(geneGroups[,2]=="C+Y")),2]  <- 2
+        geneGroups[(which(geneGroups[,2]=="C+H")),2]  <- 1
+      } 
   }
 }
-
 
 #Loop through all conditions 
 tableData <- c()
@@ -113,4 +115,7 @@ for (i in 1:length(conditions)){
     } 
     }
 }
-}
+setwd(resultsPath)
+fileName    <- paste(organism,'_integratedTable.csv',sep='')
+write.csv(tableData, file = fileName, row.names = F,quote = FALSE)
+#}

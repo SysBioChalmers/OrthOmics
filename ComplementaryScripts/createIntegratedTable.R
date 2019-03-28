@@ -19,10 +19,12 @@ if (all(organism == 'yli')){
   if (all(organism=='cpk')){organism2 <- 'sce'}
 }
 #Define DE thresholds
-FDR        <- 0.01
-logPval    <- abs(log10(FDR))
-log2FC     <- 1
-adjustedP  <- TRUE
+FDR         <- 0.01
+logPval     <- abs(log10(FDR))
+log2FC      <- 1
+adjustedP   <- TRUE
+#Flag that indicates if all genes or just the DE ones should be shown on the integrated tables
+justDEgenes <- FALSE
 #=============================== Relevant directories ======================================
 #Relevant paths (The user should provide the path in which the repository is stored)
 repoPath    <- '/Users/ivand/Documents/GitHub/CHASSY_multiOmics_Analysis'
@@ -164,13 +166,21 @@ for (i in 1:length(conditions)){
     
     #Combine variables for a row in the integrated table
     #if (significance & !is.na(P_ref)){  
-    if (significance){  
+    if (justDEgenes) {
+      conditional <- significance
+      } else {conditional <- TRUE}
+     
+    if (conditional){  
       row       <- cbind(originalGene,condition,significance,direction,P_ref,P_cond,orthoGroup,protName,shortName,MWeigth,SeqLength,GOterms) 
       tableData <- rbind(tableData,row)
     } 
   }
 }
 setwd(resultsPath)
-fileName    <- paste(organism,'_integratedTable.txt',sep='')
+if (justDEgenes) {
+  fileName <- paste(organism,'_integratedTable_DEgenes.txt',sep='')
+} else {
+  fileName <- paste(organism,'_integratedTable_Allgenes.txt',sep='')
+}
 write.table(tableData, file = fileName, row.names = F,quote = FALSE,sep="\t")
 #}

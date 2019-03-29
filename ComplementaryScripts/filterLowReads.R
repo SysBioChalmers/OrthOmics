@@ -1,15 +1,20 @@
-filterLowReads <- function(filtered.data,lcpm2,Pmethod){
+filterLowReads <- function(lcpm,coverage,filterType,grouping,threshold){
+nargin <- length(as.list(match.call())) -1
+if (nargin < 5){threshold <- 0}
 #Remove low reads
 keep.exprs <- c()
-if (all(Pmethod=='XIC')){factor <- 1}
-if (all(Pmethod=='SCounts')){factor <- 2/3}
-for (i in 1:nrow(filtered.data)){
+for (i in 1:nrow(lcpm)){
   #Get the 
-  rowData <- lcpm2[i,][!is.na(lcpm2[i,])]
-  #Keep those rows which show a log2cpm >0 in at least 2/3 of the total samples 
-  #in which it was measured
-  if (length(rowData[rowData>0])>=factor*length(rowData)){keep.exprs <- c(keep.exprs,i)}
+  rowData <- lcpm[i,]
+  if (all(filterType=='ref')){
+    #Keep those rows which show a cpm>=1 for the std condition (on average)
+    if (mean(rowData[1:grouping[1]])>=threshold){keep.exprs <- c(keep.exprs,i)}    
+  } else{
+    #Keep those rows which show an average cpm>=1 in at least (coverage) of the total samples 
+    #in which it was measured
+    if (length(rowData[rowData>=threshold])>=coverage*length(rowData)) {keep.exprs <- c(keep.exprs,i)}
+  }
 }
-filtered.data <- filtered.data[keep.exprs,]
-return(filtered.data)
+#data <- data[keep.exprs,]
+return(keep.exprs)
 }

@@ -1,19 +1,35 @@
-DEpairwiseAnalysis <- function(x2,org,conditions,coloVals,logPval,log2FC,adjusted,measured){
-  DEgenes <- c()
-  #Group all the genes that are upregulated in at least one of the conditions
-  upReg_AllConds   <- c()
-  #Group all the genes that are upregulated in at least one of the conditions
-  downReg_AllConds <- c()
+DEpairwiseAnalysis <- function(dataset,org,conditions,coloVals,logPval,log2FC,adjusted,omics,groups,normMethod){
+  nargin <- length(as.list(match.call())) -1
+  if (nargin < 10){normMethod <- '-'}
+  #Create new directory for storing results for the given set of threshold values 
+  newDirName <- paste('DE_log2FC_',log2FC,'_FDR_',10^(-logPval),sep='')
+  dir.create(newDirName)
+  setwd(newDirName)
+
+  #Group all the genes that are upregulated or downregulated in at least one of the conditions
+  upReg_AllConds   <- list()
+  downReg_AllConds <- list()
+  DEgenes          <- c()
   data <- list()
   for (i in 2:length(conditions)) {
-    #Differential expression analysis
-    de <- exactTest(x2, pair = c(conditions[1],conditions[i])) # Reference first!
+    print(paste('DE analysis Ref vs. ',conditions[i],sep=''))
+    #Prepate DGEList object for DE analysis
+    #For correct dispersion estimations it is needed to extract the just data for the reference and i-th 
+    #condition
+    tempConds             <- c(conditions[1],conditions[i]) # Reference first!
+    colIndexes            <- groups=='Ref' | groups==conditions[i]
+    dataSet               <- DGEList(counts = (dataset[,colIndexes]), genes = rownames(dataset))
+    dataSet$samples$group <- groups[colIndexes]
+    #Normalization as an optional step [TMM normalization is recommended for RNAseq data]
+    if (all(normMethod!='-')){dataSet <- calcNormFactors(dataSet, method = normMethod)}
+    dataSet               <- estimateDisp(dataSet)
+    #Differential expression analysis function 
+    de <- exactTest(dataSet, pair = tempConds) 
     tt <- topTags(de, n = Inf)
-    # Write CSV file
-    filename <- paste(org,'_',measured,'_ref_',conditions[i],'.csv',sep='')
-    write.csv(tt, file = filename, row.names = T)
-    #tt$table$PValue <- p.adjust(tt$table$PValue,method = "fdr")
-    # Make volcano plot
+    # Write CSV file with the DE analysis results for all genes
+    filename <- paste(org,'_',omics,'_ref_',conditions[i],'.csv',sep='')
+    write.csv(tt, file = filename, row.names = F,quote = FALSE)
+    # Make volcano plot highlighting significant DE hits
     if (adjusted == TRUE){
     volcanoData <- cbind(tt$table$logFC, -log10(tt$table$FDR))
     }else{volcanoData <- cbind(tt$table$logFC, -log10(tt$table$PValue))}
@@ -22,11 +38,17 @@ DEpairwiseAnalysis <- function(x2,org,conditions,coloVals,logPval,log2FC,adjuste
     volcanoData <- as.data.frame(volcanoData)
     #Identify the DE genes from the whole list
     significantDE           <- ((abs(volcanoData$logFC)>=log2FC & volcanoData$`-log10Pval`>=logPval))
+    print(paste(sum(significantDE),' DE hits',sep=''))
+    # Write CSV file with the DE analysis results for all genes
+    filename <- paste(org,'_SIGNIFICANT_',omics,'_ref_',conditions[i],'.csv',sep='')
+    write.csv(tt[significantDE,], file = filename, row.names = F,quote = FALSE)
+    #Sort DE hits by directionality of their FC
     upReg_AllConds[[i-1]]   <- rownames(volcanoData)[(volcanoData$logFC>=log2FC & volcanoData$`-log10Pval`>=logPval)]
+    print(paste(length(upReg_AllConds[[i-1]]),' UpRegulated ',omics,sep=''))
     downReg_AllConds[[i-1]] <- rownames(volcanoData)[(volcanoData$logFC<=-log2FC & volcanoData$`-log10Pval`>=logPval)]
-    
+    print(paste(length(downReg_AllConds[[i-1]]),' DownRegulated ',omics,sep=''))
     #Black color for all genes
-    genesColor  <- c(rep('black',nrow(x2)))
+    genesColor  <- c(rep('black',nrow(dataSet)))
     #Red for downregulated
     genesColor[volcanoData$logFC<=-log2FC & volcanoData$`-log10Pval`>=logPval] = 'red'
     #Green for upregulated genes
@@ -49,7 +71,7 @@ DEpairwiseAnalysis <- function(x2,org,conditions,coloVals,logPval,log2FC,adjuste
     p <- p + labs(x='Log2FC', y = '-Log10 P-value')
     p <- p + theme_bw()
     plot(p)
-    plot_name <- paste(org,'_',measured,'_ref_',conditions[i],'.png',sep='')
+    plot_name <- paste(org,'_',omics,'_ref_',conditions[i],'.png',sep='')
     ggsave(plot_name, width = 5, height=5)
     data[[i-1]] <- volcanoData
     dev.off()
@@ -68,14 +90,13 @@ DEpairwiseAnalysis <- function(x2,org,conditions,coloVals,logPval,log2FC,adjuste
   }
   if (ellipses == 1) {intLabSize = 3.5}
   #Venn for upregulated genes
-  png(paste(org,'_',measured,'_UpRegulated_vennAllconds.png',sep=''),width = 600, height = 600)
+  png(paste(org,'_',omics,'_UpRegulated_vennAllconds.png',sep=''),width = 600, height = 600)
   allCondsUp <- plotVennDiagram(upReg_AllConds,conditions[2:length(conditions)],coloVals[2:length(conditions)],intLabSize,ellipses)
   dev.off()
   #Venn for downregulated genes
-  png(paste(org,'_',measured,'_downRegulated_vennAllconds.png',sep=''),width = 600, height = 600)
+  png(paste(org,'_',omics,'_downRegulated_vennAllconds.png',sep=''),width = 600, height = 600)
   allCondsDown <- plotVennDiagram(downReg_AllConds,conditions[2:length(conditions)],coloVals[2:length(conditions)],intLabSize,ellipses)
   dev.off()
-  
   #Put together all unique DE, up and down regulated genes for any condition
   tempDEgenes <- c()
   tempDown    <- c()
@@ -106,17 +127,17 @@ DEpairwiseAnalysis <- function(x2,org,conditions,coloVals,logPval,log2FC,adjuste
     #Write a file with the genes data exclusively DE for the i-th condition
     temp <- c(Excsv_Up[[i]],Excsv_down[[i]])
     temp <- data[[i]][is.element(rownames(data[[i]]),temp),]
-    filename <- paste(org,'_',measured,'_DE_exclusive_',conditions[i+1],'.csv',sep='')
-    write.csv(temp, file = filename, row.names = TRUE)
+    filename <- paste(org,'_',omics,'_DE_exclusive_',conditions[i+1],'.csv',sep='')
+    write.csv(temp, file = filename, row.names = TRUE, quote= FALSE)
   }
   #Write a file with the core stress responses (DE for all conditions)
   allUpCols <- as.data.frame(cbind(allCondsUp,allUpCols))
-  filename <- paste(org,'_',measured,'_UpReg_allConds.csv',sep='')
+  filename <- paste(org,'_',omics,'_UpReg_allConds.csv',sep='')
   colnames(allUpCols) <- c('genes',conditions[2:length(conditions)])
   write.csv(allUpCols, file = filename, row.names = FALSE,quote = FALSE)
 
   allDownCols <- as.data.frame(cbind(allCondsDown,allDownCols))
-  filename <- paste(org,'_',measured,'_DownReg_allConds.csv',sep='')
+  filename <- paste(org,'_',omics,'_DownReg_allConds.csv',sep='')
   colnames(allDownCols) <- c('genes',conditions[2:length(conditions)])
   write.csv(allDownCols, file = filename, row.names = FALSE,quote = FALSE)
   
@@ -131,7 +152,19 @@ DEpairwiseAnalysis <- function(x2,org,conditions,coloVals,logPval,log2FC,adjuste
   DEdata$direction[is.element(DEdata$genes,tempUp)] <- 'up'
   DEdata$direction[is.element(DEdata$genes,tempUp) & is.element(DEdata$genes,tempDown)] <- 'mixed'
   DEdata <- as.data.frame(DEdata)
-  filename <- paste(org,'_',measured,'_DE_anyCondition.csv',sep='')
-  write.csv(DEdata, file = filename, row.names = FALSE)
+  filename <- paste(org,'_',omics,'_DE_anyCondition.csv',sep='')
+  write.csv(DEdata, file = filename, row.names = FALSE, quote= FALSE)
+  #Create a file with the promiscuous DE genes
+  promiscuous <- tempDEgenes
+  promDown    <- tempDown
+  promUp      <- tempUp
+  for (i in 1:(length(conditions)-1)){
+    promDown <- promDown[!is.element(promDown,Excsv_down[[i]])]
+    promUp   <- promUp[!is.element(promUp,Excsv_Up[[i]])]
+  }
+  filename <- paste(org,'_',omics,'_Down_DE_promiscuous.csv',sep='')
+  write.csv(promDown, file = filename, row.names = FALSE, quote= FALSE)
+  filename <- paste(org,'_',omics,'_Up_DE_promiscuous.csv',sep='')
+  write.csv(promUp, file = filename, row.names = FALSE, quote= FALSE)
   return(list(upReg_AllConds,downReg_AllConds,Excsv_Up,Excsv_down))
 }

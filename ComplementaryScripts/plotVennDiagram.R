@@ -1,5 +1,8 @@
-plotVennDiagram <- function(elementsList,categories,colorValues,intLabSize,ellipses){
+plotVennDiagram <- function(elementsList,categories,colorValues,intLabSize,ellipses,scaleF){
 library(VennDiagram)
+  nargin <- length(as.list(match.call())) -1
+  if (nargin < 6){scaleF = FALSE}
+  euler <- TRUE
   overlap <- list()  
     if (ellipses  >2){
     area   <- c()
@@ -18,7 +21,7 @@ library(VennDiagram)
     if (ellipses <4){
     venn.plot<-draw.triple.venn(area[1], area[2],area[3], 
                                 shared[1],shared[2],shared[3],shared[4],
-                                category = categories,scaled = F,fill = colorValues, 
+                                category = categories,scaled = scaleF,euler.d = euler,fill = colorValues, 
                                 lty = c(rep("solid",3)), cex = intLabSize, cat.cex = 2.5)}
     else{
       area[4] <- length(elementsList[[4]])
@@ -42,8 +45,8 @@ library(VennDiagram)
                                   shared[6],shared[4],shared[8],shared[9],shared[10],shared[11],
                                   #n12, n13,n14, n23, n24,
                                   #n34, n123, n124, n134, n234, n1234, 
-                                  category = categories,scaled = F,fill = colorValues, 
-                                  lty = c(rep("solid",4)), cex = intLabSize, cat.cex = 2.5)
+                                  category = categories,scaled = scaleF,fill = colorValues, 
+                                  lty = c(rep("solid",4)), cex = intLabSize, cat.cex = 2.5,euler.d = euler)
       
     }
   }
@@ -58,8 +61,8 @@ library(VennDiagram)
     #Intersect 1,2
     shared  <- length(overlap[[3]])
     venn.plot<-draw.pairwise.venn(area[1], area[2],shared,
-                                category = categories,scaled = F,fill = colorValues, 
-                                lty = c(rep("solid",2)), cex = intLabSize, cat.cex = 2.5)
+                                category = categories,scaled = scaleF,fill = colorValues, 
+                                lty = c(rep("solid",2)), cex = intLabSize, cat.cex = 2.5,euler.d = euler)
     
 
   }

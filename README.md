@@ -4,7 +4,7 @@ This repository contains a collection of scripts for mining, analysing and visua
 - Relative and absolute proteomics
 - Metabolomics
 
-This datasets were produced for three different fungal organisms:
+These datasets were produced for three different fungal organisms:
 - *S. cerevisiae*
 - *K. marxianus*
 - *Y. lipolytica*
@@ -27,13 +27,11 @@ The proteomics datasets have been incorporated to enzymatically constrained GEMs
 | *K. marxianus* |	ecKmarxGEM |	https://github.com/SysBioChalmers/EnzymeConstrained-Kmarx-GEM |
 | *Y. lipolytica* |	ecYaliGEM |	https://github.com/SysBioChalmers/EnzymeConstrained-Yali-GEM |
 
-version of the current genome-scale metabolic model of the ascomycetous yeast _Kluyveromyces marxianus_, available at:
-https://github.com/SysBioChalmers/KluyveromycesMarxianus-GEM
 
 - KeyWords
 
-**Repo Category:** Data Analysis; **Utilisation:** Multi-omics and multi organisms datasets analysis; **Field:** Metabolic engineering; **Omic Source:** Transcriptomics, Proteomics, Metabolomics; **Taxonomy:** *S. cervisiae* CEN.PK 113 /-D,	*K. marxianus* CBS6556, *Y. lipolytica* W29  
-Last update: 2018-11-12
+**Repo Category:** Data Analysis; **Utilisation:** Multi-omics/multi-organisms datasets analysis; **Field:** Metabolic engineering, Omics, Evolutionary studies;**Omic Source:** Transcriptomics, Proteomics, Metabolomics; **Taxonomy:** *S. cervisiae* CEN.PK 113 /-D,	*K. marxianus* CBS6556, *Y. lipolytica* W29  
+Last update: 2018-11-13
 
 
 This repository is administered by [@IVANDOMENZAIN](https://github.com/IVANDOMENZAIN), Division of Systems and Synthetic Biology, Department of Biology and Biological Engineering, Chalmers University of Technology

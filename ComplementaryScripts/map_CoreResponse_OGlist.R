@@ -1,5 +1,5 @@
 library("rlist")
-repoPath   <- '/Users/ivand/Documents/GitHub/CHASSY-Multi-Omics-Analyisis'
+repoPath  <- '/Users/ivand/Documents/GitHub/CHASSY_multiOmics_Analysis'
 organisms  <- c('sce','kma','yli')
 orgColors  <- c('blue','red','yellow')
 setwd(paste(repoPath,'/ComplementaryScripts',sep=''))
@@ -25,18 +25,18 @@ for (i in 1:length(organisms)){
   indexesOG <- which(is.element(OGlist[,j],coreGenes[[i]]))
   
   png(paste(organisms[i],'_RNAseq_',dir,'_AllConds_OG.png',sep=''),width = 600, height = 600)
-  plotVennDiagram(list(coreGenes[[i]],OGlist[indexesOG,j]),c(organisms[i],'OG'),c(orgColors[i],'gray'),c(2.5,3.5,2.5),2)
+  plotVennDiagram(list(coreGenes[[i]],OGlist[indexesOG,j]),c(organisms[i],'OG'),c(orgColors[i],'gray'),c(3,4,3),2)
   dev.off()
   coreGenes [[i]] <- OGlist[indexesOG,1]
   
 }
   setwd(resultsPath)
   
-  intLabSize <- c(rep(2.5,7))
-  intLabSize[2]<-3
-  intLabSize[4]<-3
-  intLabSize[6]<-3
-  intLabSize[5]<-3.5
+  intLabSize <- c(rep(3,7))
+  intLabSize[2]<-3.5
+  intLabSize[4]<-3.5
+  intLabSize[6]<-3.5
+  intLabSize[5]<-4
   
   png(paste('AllOrgs_RNAseq_',dir,'_AllConds_OG.png',sep=''),width = 600, height = 600)
   plotVennDiagram(coreGenes,organisms,orgColors,intLabSize,3)

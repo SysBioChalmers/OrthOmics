@@ -38,10 +38,9 @@ GOTermsPath <- paste(repoPath,'/Databases/GO_terms',sep='')
 #=============================== Load data =================================================
 #============= Load absolute proteomics measurements (all conditions)
 setwd(Protpath)
-fileName <- paste(organism2,'_abs_NSAF_filtered.csv',sep='')
-prot_Abs <- read.delim(fileName, header = TRUE, sep = ",",stringsAsFactors=FALSE, na.strings = "NA")
-proteins <- prot_Abs[,1]
-prot_Abs <- prot_Abs[,2:ncol(prot_Abs)]
+fileName <- paste(organism2,'_abs_NSAF_filtered.txt',sep="")
+prot_Abs <- read.delim(fileName, header = TRUE, sep = "\t",stringsAsFactors=FALSE)
+proteins <- rownames(prot_Abs)
 #============= Load gene groups (orthology) list
 setwd(Orthpath)
 fileName   <- paste(organism,'_orthology_groups.txt',sep='')
@@ -183,4 +182,3 @@ if (justDEgenes) {
   fileName <- paste(organism,'_integratedTable_Allgenes.txt',sep='')
 }
 write.table(tableData, file = fileName, row.names = F,quote = FALSE,sep="\t")
-#}

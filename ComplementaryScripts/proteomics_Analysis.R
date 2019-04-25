@@ -121,13 +121,13 @@ lcpm_2     <- lcpm_2[filtered,]
 rm(output)
 rm(filtered)
 #Filter absolute measurements
-output       <- filterData(dataset_abs,replicates,'mean',FALSE,coverage)
+output       <- filterData(dataset_abs,replicates,'mean',stringent,coverage)
 filtered     <- output[[1]]
 detected_abs <- output[[2]]
 filtered_abs <- dataset_abs[filtered,]
 lcpm_abs     <- lcpm_abs[filtered,]
 #Filter absolute measurements
-output       <- filterData(dataset_TPA,replicates,'mean',FALSE,coverage)
+output       <- filterData(dataset_TPA,replicates,'mean',stringent,coverage)
 filtered     <- output[[1]]
 detected_TPA <- output[[2]]
 filtered_TPA <- dataset_TPA[filtered,]

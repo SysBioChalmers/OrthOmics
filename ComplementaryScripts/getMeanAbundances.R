@@ -6,5 +6,5 @@ for (i in 1:length(conditions)){
   meanValues <- cbind(meanValues,rowMeans(temp))
 }
 rownames(meanValues) <- rownames(dataset)
-write.csv(meanValues, file = filename, row.names = T,quote = FALSE)
+write.table(meanValues, file = filename, row.names = T,quote = F,sep='\t')
 }

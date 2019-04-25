@@ -11,7 +11,7 @@ library(ggbiplot)
 library(ggplot2)
 #====================================DEFINE VARIABLES =======================================
 #Provide organism code [sce,kma,yli]
-organism    <- 'yli'
+organism    <- 'sce'
 #Indicate the dataset that should be used foer DE analysis
 selectedDataset <- 1 #1 for XIC or NSAF, 2 for Scounts or iBAQ and 3 for merged datasets
 #Define DE thresholds
@@ -19,7 +19,7 @@ logPval    <- abs(log10(0.01))
 log2FC     <- 0.75
 adjustedP  <- TRUE
 #Should the initial dataset be normalized by MW of proteins
-normByMW   <- TRUE
+normByMW <- TRUE
 #Filter type for determination of present and non-noisy proteins in the dataset (TRUE if filter
 #criteria should be applied to all conditions, FALSE if just the reference is desired to be 
 #filtered)
@@ -36,6 +36,7 @@ DBpath      <- paste(repoPath,'/Databases/Uniprot/',sep='')
 setwd(scriptsPath)
 source('load_ProtData.R')
 source('normalize_Prots_MWeight.R')
+source('normalize_Prots_AALength.R')
 #==================== Relative data ====================================
 dataPath    <- paste(repoPath,'/Proteomics/data',sep='')
 resultsPath <- paste(repoPath,'/Proteomics/Results/',organism,sep='')
@@ -43,9 +44,14 @@ resultsPath <- paste(repoPath,'/Proteomics/Results/',organism,sep='')
 output_1    <- load_ProtData(dataPath,DBpath,organism,'XIC',normByMW)
 #Load Scounts data
 output_2    <- load_ProtData(dataPath,DBpath,organism,'SCounts',normByMW)
+#Load Scounts data and transform them to normalized TPA values
+#In this fuction each SCounts value is divided by the AA chain length of the 
+#protein and the whole dataset is then normalized taking the MWeights into 
+#account
+output_TPA  <- load_ProtData(dataPath,DBpath,organism,'SCounts',FALSE,TRUE)
 legends     <- c('XIC','SCounts')
-dataPath    <- paste(repoPath,'/Proteomics/data/absolute',sep='')
 #Load NSAF data [umol/g protein]
+dataPath    <- paste(repoPath,'/Proteomics/data/absolute',sep='')
 output_abs  <- load_ProtData(dataPath,DBpath,organism,'NSAF',FALSE)
 #Sort and rename outputs
 dataset_1     <- output_1[[1]]
@@ -54,6 +60,8 @@ dataset_2     <- output_2[[1]]
 lcpm_2        <- cpm(dataset_2, log = T)
 dataset_abs   <- output_abs[[1]]
 lcpm_abs      <- cpm(dataset_abs, log = T)
+dataset_TPA   <- output_TPA[[1]]
+lcpm_TPA      <- cpm(dataset_TPA, log = T)
 #Get data IDs
 proteins_1    <- output_1[[2]]
 genes_1       <- output_1[[3]]
@@ -61,18 +69,27 @@ proteins_2    <- output_2[[2]]
 genes_2       <- output_2[[3]]
 proteins_abs  <- output_abs[[2]]
 genes_abs     <- output_abs[[3]]
+proteins_TPA  <- output_TPA[[2]]
+genes_TPA     <- output_TPA[[3]]
 #Set rownames for the dataset (proteins or genes)
 rownames(dataset_1)   <- genes_1
 rownames(dataset_2)   <- genes_2
 rownames(dataset_abs) <- genes_abs
+rownames(dataset_TPA) <- genes_TPA
 #Get grouping information
 conditions  <- output_1[[4]]
 colorValues <- output_1[[5]]
 replicates  <- output_1[[6]]
 group       <- output_1[[7]]
+#Write file with normalized values in absolute data subfolder
+setwd(paste(repoPath,'/Proteomics/data/absolute',sep=''))
+filename <- paste(organism,'_normalized_TPA.txt',sep='')
+write.table(dataset_TPA, file = filename, row.names = T,quote = F,sep='\t')
+
 rm(output_1)
 rm(output_2)
 rm(output_abs)
+rm(output_TPA)
 rm(dataPath)
 #================== 2. Filter Data ================================================
 #Filter data: Keep those proteins that were measured in at least 2/3 of the replicates 
@@ -104,15 +121,23 @@ lcpm_2     <- lcpm_2[filtered,]
 rm(output)
 rm(filtered)
 #Filter absolute measurements
-output       <- filterData(dataset_abs,replicates,'mean',stringent,coverage)
+output       <- filterData(dataset_abs,replicates,'mean',FALSE,coverage)
 filtered     <- output[[1]]
 detected_abs <- output[[2]]
 filtered_abs <- dataset_abs[filtered,]
 lcpm_abs     <- lcpm_abs[filtered,]
-# Write CSV file with the filtered absolute dataset
+#Filter absolute measurements
+output       <- filterData(dataset_TPA,replicates,'mean',FALSE,coverage)
+filtered     <- output[[1]]
+detected_TPA <- output[[2]]
+filtered_TPA <- dataset_TPA[filtered,]
+lcpm_TPA     <- lcpm_TPA[filtered,]
+# Write CSV file with the filtered absolute datasets
 setwd(resultsPath)
-filename <- paste(organism,'_abs_NSAF_filtered.csv',sep='')
+filename <- paste(organism,'_abs_NSAF_filtered.txt',sep='')
 getMeanAbundances(filtered_abs,group,conditions,filename)
+filename <- paste(organism,'_abs_normTPA_filtered.txt',sep='')
+getMeanAbundances(filtered_TPA,group,conditions,filename)
 rm(output)
 rm(filtered)
 #============ Get venn diagram for measured genes

@@ -4,14 +4,14 @@ This repository contains a collection of scripts for mining, analysing and visua
 - Relative and absolute proteomics
 - Metabolomics
 
-These datasets were produced for three different fungal organisms:
+The included datasets were produced for three different fungal organisms:
 - *S. cerevisiae*
 - *K. marxianus*
 - *Y. lipolytica*
 
 Growing on different experimental conditions:
 
-| Conditions | *S. cervisiae* CEN.PK 113 /-D |	*K. marxianus* CBS6556 |	*Y. lipolytica* W29 
+| Conditions | *S. cervisiae* CEN.PK 113 7-D |	*K. marxianus* CBS6556 |	*Y. lipolytica* W29 
 | ------------- |:-------------:|:-------------:|:-------------:|
 | Reference |	30°C / pH 5.5 |	30°C / pH 5.5 |	25°C / pH 5.5 |
 | High temperature |	36°C / pH 5.5 |	44°C / pH 5.5 |	32°C / pH 5.5 |
@@ -31,7 +31,8 @@ The proteomics datasets have been incorporated to enzymatically constrained GEMs
 - KeyWords
 
 **Repo Category:** Data Analysis; **Utilisation:** Multi-omics/multi-organisms datasets analysis; **Field:** Metabolic engineering, Omics, Evolutionary studies;**Omic Source:** Transcriptomics, Proteomics, Metabolomics; **Taxonomy:** *S. cervisiae* CEN.PK 113 /-D,	*K. marxianus* CBS6556, *Y. lipolytica* W29  
-Last update: 2018-11-13
+
+Last update: 2019-04-25
 
 
 This repository is administered by [@IVANDOMENZAIN](https://github.com/IVANDOMENZAIN), Division of Systems and Synthetic Biology, Department of Biology and Biological Engineering, Chalmers University of Technology

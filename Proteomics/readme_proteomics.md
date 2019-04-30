@@ -38,7 +38,7 @@ iBAQ is defined as the sum of the MS1 intensities of all the peptides associated
 
 NSAF was defined by [Zibailov _et al._ (2006)](https://pubs.acs.org/doi/abs/10.1021/pr060161n) as: 
 
-NSAF<sub>k</sub> = (SC/L)<sub>k</sub> /  \Sigma<sup>N</sup><sub>i=1</sub> (SC/L) <sub>i</sub>
+NSAF<sub>k</sub> = (SC/L)<sub>k</sub> /  SUM (SC/L) <sub>N</sub>
 
 where:
 

@@ -5,8 +5,8 @@
 This directory contains the proteomics data of the yeast strains _S. cerevisiae_ CEN.PK113-7D (**sce**), _K. marxianus_ CBS 6556 (**kma**) and _Y. lipolytica_ W29 (**yli**). 
 
 The results obtained from the differental analysis pipeline can be found in the **.xlsx**  files:
-> sce_Proteins_DE_BothMSRuns.xlsx 	
-> kma_Proteins_DE_BothMSRuns.xlsx 	
+- sce_Proteins_DE_BothMSRuns.xlsx 	
+- kma_Proteins_DE_BothMSRuns.xlsx 	
 ## Data
 **Data** directory contains the detected proteins in an Orbitrap Fusion^TM^ Lumos^TM^ Tribrid^TM^ Mass Spectrometer (Thermo Fischer Scientific) and identified by the search engine X!Tandempipeline [Langella _et al._ 2017](https://pubs.acs.org/doi/10.1021/acs.jproteome.6b00632), _J Proteome Res_. 
 
@@ -19,7 +19,9 @@ The methods of quantification for each strain are:
 
 * **emPAI**
 The exponentially modified protein abundance index (emPAI) was proposed by [Ishihama _et al.,_ (2005)](https://www.mcponline.org/content/4/9/1265.long) as:
-emPAI  = (10^PAI^) – 1
+
+emPAI  = (10<sup>PAI</sup>) – 1
+
 PAI = the number of observed peptides counts per protein over the number of observable peptides per protein
 
 * **Spectral Counts**
@@ -36,10 +38,14 @@ iBAQ is defined as the sum of the MS1 intensities of all the peptides associated
 
 NSAF was defined by [Zibailov _et al._ (2006)](https://pubs.acs.org/doi/abs/10.1021/pr060161n) as: 
 
-NSAF~k~ = (SC/L)~k~ /  $\sum_{i=1}^{N} (SC/L)$~i~
+NSAF<sub>k</sub> = (SC/L)<sub>k</sub> /  \sum_{i=1}^{N} (SC/L) <sub>i</sub>
 
 where:
+
 _k_ =  a given protein
+
 _N_ = total quantified proteins
+
 _SC_ = Spectral counts 
+
 _L_ = protein length in aa

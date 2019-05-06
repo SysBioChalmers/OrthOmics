@@ -37,6 +37,7 @@ setwd(scriptsPath)
 source('load_ProtData.R')
 source('normalize_Prots_MWeight.R')
 source('normalize_Prots_AALength.R')
+source('sumProteinMass.R')
 #==================== Relative data ====================================
 dataPath    <- paste(repoPath,'/Proteomics/data',sep='')
 resultsPath <- paste(repoPath,'/Proteomics/Results/',organism,sep='')
@@ -75,7 +76,7 @@ genes_TPA     <- output_TPA[[3]]
 rownames(dataset_1)   <- genes_1
 rownames(dataset_2)   <- genes_2
 rownames(dataset_abs) <- genes_abs
-rownames(dataset_TPA) <- genes_TPA
+#rownames(dataset_TPA) <- proteins_TPA
 #Get grouping information
 conditions  <- output_1[[4]]
 colorValues <- output_1[[5]]
@@ -84,12 +85,18 @@ group       <- output_1[[7]]
 #Write file with normalized values in absolute data subfolder
 setwd(paste(repoPath,'/Proteomics/data/absolute',sep=''))
 filename <- paste(organism,'_normalized_TPA.txt',sep='')
-write.table(dataset_TPA, file = filename, row.names = T,quote = F,sep='\t')
-
+temp     <- cbind(proteins_TPA,genes_TPA,dataset_TPA)
+write.table(temp, file = filename, row.names = F,quote = F,sep='\t')
+#Get total protein estimate for absolute datasets
+#[g measured protein / g total protein]
+setwd(DBpath)
+data <- dataset_abs/1000 #[umol/g protein] -> [mmol/g protein]
+sumProteinMass <- sumProteinMass(data,proteins_abs,genes_abs,organism)
 rm(output_1)
 rm(output_2)
 rm(output_abs)
 rm(output_TPA)
+rm(temp)
 rm(dataPath)
 #================== 2. Filter Data ================================================
 #Filter data: Keep those proteins that were measured in at least 2/3 of the replicates 
@@ -121,23 +128,30 @@ lcpm_2     <- lcpm_2[filtered,]
 rm(output)
 rm(filtered)
 #Filter absolute measurements
-output       <- filterData(dataset_abs,replicates,'mean',stringent,coverage)
+output       <- filterData(dataset_abs,replicates,'mean',FALSE,coverage)
 filtered     <- output[[1]]
 detected_abs <- output[[2]]
 filtered_abs <- dataset_abs[filtered,]
+proteins_abs <- proteins_abs[filtered]
 lcpm_abs     <- lcpm_abs[filtered,]
 #Filter absolute measurements
-output       <- filterData(dataset_TPA,replicates,'mean',stringent,coverage)
+output       <- filterData(dataset_TPA,replicates,'mean',FALSE,coverage)
 filtered     <- output[[1]]
 detected_TPA <- output[[2]]
 filtered_TPA <- dataset_TPA[filtered,]
+proteins_TPA <- proteins_TPA[filtered]
 lcpm_TPA     <- lcpm_TPA[filtered,]
 # Write CSV file with the filtered absolute datasets
 setwd(resultsPath)
-filename <- paste(organism,'_abs_NSAF_filtered.txt',sep='')
-getMeanAbundances(filtered_abs,group,conditions,filename)
-filename <- paste(organism,'_abs_normTPA_filtered.txt',sep='')
-getMeanAbundances(filtered_TPA,group,conditions,filename)
+filename      <- paste(organism,'_abs_NSAF_filtered.txt',sep='')
+meanABSvalues <- getMeanAbundances(filtered_abs/1000,group,conditions,filename)
+filename      <- paste(organism,'_abs_normTPA_filtered.txt',sep='')
+meanTPAvalues <- getMeanAbundances(filtered_TPA,group,conditions,filename)
+#Compare semi-absolute quantitation methods
+dataABS           <- meanABSvalues
+rownames(dataABS) <- proteins_abs
+dataTPA           <- meanTPAvalues
+rownames(dataTPA) <- proteins_TPA
 rm(output)
 rm(filtered)
 #============ Get venn diagram for measured genes

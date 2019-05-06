@@ -7,4 +7,5 @@ for (i in 1:length(conditions)){
 }
 rownames(meanValues) <- rownames(dataset)
 write.table(meanValues, file = filename, row.names = T,quote = F,sep='\t')
+return(meanValues)
 }

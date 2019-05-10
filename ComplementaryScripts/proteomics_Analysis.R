@@ -39,7 +39,7 @@ source('normalize_Prots_MWeight.R')
 source('normalize_Prots_AALength.R')
 source('sumProteinMass.R')
 #==================== Relative data ====================================
-dataPath    <- paste(repoPath,'/Proteomics/data',sep='')
+dataPath    <- paste(repoPath,'/Proteomics/data/relative',sep='')
 resultsPath <- paste(repoPath,'/Proteomics/Results/',organism,sep='')
 #Load XIC data
 output_1    <- load_ProtData(dataPath,DBpath,organism,'XIC',normByMW)

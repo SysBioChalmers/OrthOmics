@@ -10,11 +10,11 @@ load_ProtData <- function(dataPath,DBpath,organism,Pmethod,normMW,normL){
     scalingFactors <- c(1,1,1)
   }
   if (all(Pmethod == 'SCounts')){
-    filename       <- paste(organism,'_SCounts.txt',sep='')
+    filename       <- paste(organism,'_SCounts_gel.txt',sep='')
     scalingFactors <- c(1,1,1)
   }
   if (all(Pmethod == 'NSAF')){
-    filename       <- paste(organism,'_NSAF_bulk_fmol.txt',sep='')
+    filename       <- paste(organism,'_NSAF_gel_fmol.txt',sep='')
     scalingFactors <- c(800,800,983) #ng of peptides in the sample
   }
   if (all(Pmethod == 'IBAQ')){
@@ -67,7 +67,7 @@ load_ProtData <- function(dataPath,DBpath,organism,Pmethod,normMW,normL){
     }
   }
   colnames(dataset) <- cols
-  rownames(dataset) <- genes
+  #rownames(dataset) <- genes
   remove(cols)
   if (normMW){
     setwd(DBpath)

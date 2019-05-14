@@ -5,7 +5,7 @@ organisms  <- c('cpk','kma','yli')
 orgColors  <- c('blue','red','yellow')
 #DE thresholds
 pVal         <- 0.01
-logFC        <- 0.75
+logFC        <- 1
 adjustedPval <- TRUE
 omics        <- 'RNA'
 
@@ -30,7 +30,7 @@ if (all(omics=='RNA')){
 }
 setwd(dataPath)
 #dir.create(resultsPath)
-OGlist  <- read.csv('SingleCopyOG_All_cpk.txt', header = TRUE, sep = "\t",stringsAsFactors=FALSE)
+OGlist  <- read.csv('SingleCopyOG_All.txt', header = TRUE, sep = "\t",stringsAsFactors=FALSE)
 
 for (i in 1:length(conditions)){
   cond    <- conditions[i]

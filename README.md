@@ -24,18 +24,19 @@ DE hits for all organisms and conditions are mapped to the **`SingleCopyOG_All.t
 
 Finally, an integrated table wich contains results from DE RNAseq analysis, absolute proteomics levels, GO terms, gene names, molecular weights, AA sequence length, etc. is generated for the three organisms. 
 
+## Integration into GEMs
 The absolute proteomics datasets [NSAF] have also been incorporated to enzyme-constrained GEMs for the three organisms, available at:
 
 | Organism | Model ID |	URL |
 | ------------- |:-------------:|:-------------:|
-| *S. cervisiae* |	ecYeastGEM |	https://github.com/SysBioChalmers/GECKO |
-| *K. marxianus* |	ecKmarxGEM |	https://github.com/SysBioChalmers/EnzymeConstrained-Kmarx-GEM |
-| *Y. lipolytica* |	ecYaliGEM |	https://github.com/SysBioChalmers/EnzymeConstrained-Yali-GEM |
+| *S. cervisiae* |	ecYeastGEM |	https://github.com/SysBioChalmers/ecModels/tree/chore/updateYeastGEM |
+| *K. marxianus* |	ecKmarxGEM |	https://github.com/SysBioChalmers/ecModels/tree/chore/updateKmarx |
+| *Y. lipolytica* |	ecYaliGEM |	https://github.com/SysBioChalmers/ecModels/tree/chore/update_iYali |
 
 
 - KeyWords
 
-**Repo Category:** Data Analysis; **Utilisation:** Multi-omics/multi-organisms datasets analysis; **Field:** Metabolic engineering, Omics, Evolutionary studies;**Omic Source:** Transcriptomics, Proteomics, Metabolomics; **Taxonomy:** *S. cervisiae* CEN.PK 113 /-D,	*K. marxianus* CBS6556, *Y. lipolytica* W29  
+**Repo Category:** Data Analysis; **Utilisation:** Multi-omics/multi-organisms datasets analysis; **Field:** Stress adaptation studies, Metabolic engineering, Omics, Evolutionary conservation;**Omic Source:** Transcriptomics, Proteomics; **Taxonomy:** *S. cervisiae* CEN.PK 113 /-D,	*K. marxianus* CBS6556, *Y. lipolytica* W29  
 
 Last update: 2019-05-20
 
@@ -44,7 +45,6 @@ This repository is administered by [@IVANDOMENZAIN](https://github.com/IVANDOMEN
 
 ## Installation
 ### Required Software
-- MATLAB (version 2013b)
 - R studio (version 1.0.136 or later)
 ### Installation Instructions
 * Clone master branch from [SysBioChalmers GitHub](https://github.com/SysBioChalmers/CHASSY_multiOmics_Analysis).

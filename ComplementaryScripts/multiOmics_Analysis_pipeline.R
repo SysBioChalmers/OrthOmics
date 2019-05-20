@@ -1,3 +1,19 @@
+#multiOmics_Analysis_pipeline
+#
+#Function that performs differential expression analysis on proteomics absolute and relative) nd RNAseq datasets 
+#for the datasets in the CHASSY project (fermentations for S. cerevisiae, K. marxianus and Y. lipolytica exposed
+#reference, high temperature, low pH and osmotic stress conditions).
+#
+#The DE hits for all organisms and conditions are mapped to a list of 1:1:1 orthologous genes (from orthoFinder)
+#to search for evolutionary conserved stress-adaptation responses at the transcript and protein levels.
+#
+#An intgrated table is also generated in which information of foldchanges at the transcript level together with 
+#absolute proteomics levels [umol/g protein], Molecular weight of proteins, Sequence lenght and GO terms information
+#is put together for each organism.
+#
+# Last modified: Ivan Domenzain. 2019-05-20
+#
+
 install.packages('VennDiagram')
 install.packages("rlist")
 library("rlist")
@@ -55,5 +71,5 @@ for (organism in organisms){
 }
 #================== 3. Map DE genes to 1:1:1 orthologous genes list ==================
 setwd(scriptsPath)
-source('mapDEgenesToOG.R')cat(paste("Analyzing proteomics data for: ", organism,'\n',sep=""))
+source('mapDEgenesToOG.R')
 mapDEgenesToOG(c('cpk','kma','yli'),pVal,log2FC,adjustedP,'RNA',repoPath)

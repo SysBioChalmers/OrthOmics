@@ -1,14 +1,5 @@
-install.packages("rlist")
-library("rlist")
-repoPath  <- '/Users/ivand/Documents/GitHub/CHASSY_multiOmics_Analysis'
-organisms  <- c('cpk','kma','yli')
+mapDEgenesToOG <- function(organisms,pVal,logFC,adjustedPval,omics,repoPath){
 orgColors  <- c('blue','red','yellow')
-#DE thresholds
-pVal         <- 0.01
-logFC        <- 1
-adjustedPval <- TRUE
-omics        <- 'RNA'
-
 conditions <- c('HiT','LpH','Osm')
 setwd(paste(repoPath,'/ComplementaryScripts',sep=''))
 source('plotVennDiagram.R')
@@ -34,7 +25,7 @@ OGlist  <- read.csv('SingleCopyOG_All.txt', header = TRUE, sep = "\t",stringsAsF
 
 for (i in 1:length(conditions)){
   cond    <- conditions[i]
-  print(cond)
+  cat(paste('Mapping DE ',omics,' for ', cond,'\n',sep=""))
   orgs    <- organisms
   DEdata  <- list()
   upReg   <- list()
@@ -60,9 +51,9 @@ for (i in 1:length(conditions)){
     print(orgs[j])
     #Load any DE file 
     if (all(omics=='RNA')){
-      dataPath <- paste(repoPath,'/RNA-seq/',orgs[j],'/Results/DE_log2FC_0.75_FDR_0.01',sep='')
+      dataPath <- paste(repoPath,'/RNA-seq/',orgs[j],'/Results/DE_log2FC_',logFC,'_FDR_0.01',sep='')
     } else{
-      dataPath <- paste(repoPath,'/Proteomics/Results/',orgs[j],'/DE_log2FC_0.75_FDR_0.01',sep='')
+      dataPath <- paste(repoPath,'/Proteomics/Results/',orgs[j],'/DE_log2FC_',logFC,'_FDR_0.01',sep='')
     }
     setwd(dataPath)
     filename <- paste(orgs[j],'_',omics,'_ref_',cond,'.csv',sep='')
@@ -129,6 +120,7 @@ for (i in 1:length(conditions)){
     filename <- paste('DE_',direction,'_',cond,'_OG_allOrgs.csv',sep='')
     write.table(dataCondition, filename, sep=",",row.names = FALSE,quote=FALSE)
   }
-}  
-
+} 
+cat(paste('Mapping completed, results are stored in ',omics,'/DE_log2FC_',logFC,'_FDR_',pVal,'\n',sep=""))
+}
 

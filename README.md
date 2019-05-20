@@ -18,15 +18,19 @@ Growing on different experimental conditions:
 | Osmotic stress |	30°C / pH 5.5 / KCL [1M] |	36°C / pH 5.5 / KCL [1M] |	--- |
 
 
-The proteomics datasets have been incorporated to enzymatically constrained GEMs for the three organisms, available at:
+The main function for the analysis is `**multiOmics_Analysis_pipeline**` located on the `complementaryScripts` subfolder. It should be run on R studio allowing the installation of the required packages. With this, preprocessing (two levels of filters), PCA and DE analysis are performed on RNAseq, relative and absolute proteomics datasets. 
+
+DE hits for all organisms and conditions are mapped to the `**SingleCopyOG_All.txt**` file which contains a list of 1:1:1 single copy orthologous proteins obtained from `**orthoFinder**`, this allows to explore the evolutionary conserved stress-adaptation responses of the three organisms in this study at the transcript and protein levels. 
+
+Finally, an integrated table wich contains results from DE RNAseq analysis, absolute proteomics levels, GO terms, gene names, molecular weights, AA sequence length, etc. is generated for the three organisms. 
+
+The absolute proteomics datasets [NSAF] have also been incorporated to enzyme-constrained GEMs for the three organisms, available at:
 
 | Organism | Model ID |	URL |
 | ------------- |:-------------:|:-------------:|
 | *S. cervisiae* |	ecYeastGEM |	https://github.com/SysBioChalmers/GECKO |
 | *K. marxianus* |	ecKmarxGEM |	https://github.com/SysBioChalmers/EnzymeConstrained-Kmarx-GEM |
 | *Y. lipolytica* |	ecYaliGEM |	https://github.com/SysBioChalmers/EnzymeConstrained-Yali-GEM |
-
-The main function for the analysis is `multiOmics_Analysis_pipeline` located on the `complementaryScripts` subfolder. It should be run on R studio allowing the installation of the required packages. With this, preprocessing (two levels of filters), PCA and DE analysis are performed on RNAseq, relative and absolute proteomics datasets. Then the DE hits for all organisms and conditions are mapped to the `SingleCopyOG_All.txt` file which contains a list of 1:1:1 single copy orthologous proteins obtained from `orthoFinder`, this allows to explore the evolutionary conserved stress-adaptation responses of the three organisms in this study at the transcript and protein levels. Finally, an integrated table wich contains results from DE RNAseq analysis, absolute proteomics levels, GO terms, gene names, molecular weights, AA sequence length, etc. is generated for the three organisms. 
 
 
 - KeyWords

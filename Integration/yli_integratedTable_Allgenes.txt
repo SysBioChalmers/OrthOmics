@@ -20,7 +20,7 @@ YALI1_B23237g	HiT	FALSE	1	NaN	NaN	1	Sulfate transporter family-domain-containing
 YALI1_E02744g	HiT	TRUE	1	NaN	NaN	4	Transposase	tra1	85,499	759	nucleic acid binding//transferase activity, transferring alkyl or aryl (other than methyl) groups
 YALI1_C06222g	HiT	TRUE	1	NaN	NaN	4	Uncharacterized protein		67,619	608	carbohydrate:proton symporter activity//glucose transmembrane transporter activity//integral component of membrane//glucose import//proton transmembrane transport
 YALI1_E04719g	HiT	FALSE	-1	NaN	NaN	4	Uncharacterized protein		15,695	162	
-YALI1_F14136g	HiT	FALSE	-1	NaN	NaN	1	Uncharacterized protein		102,159	911	integral component of membrane
+YALI1_F14136g	HiT	FALSE	-1	0.0176217070040692	0.00263742404238725	1	Uncharacterized protein		102,159	911	integral component of membrane
 YALI1_F17988g	HiT	TRUE	-1	NaN	NaN	2	Uncharacterized protein		44,549	422	RNA binding//nucleus//single-species biofilm formation on inanimate substrate
 YALI1_C04925g	HiT	FALSE	1	NaN	NaN	2	Protein yippee-like		15,816	138	metal ion binding
 YALI1_C25391g	HiT	TRUE	1	NaN	NaN	4	Uncharacterized protein		73,877	655	
@@ -116,7 +116,7 @@ YALI1_C07137g	HiT	FALSE	-1	NaN	NaN	2	Putative metalloprotease ARX1		52,671	484	n
 YALI1_F07318g	HiT	FALSE	-1	NaN	NaN	1	Surfeit locus protein 6-domain-containing protein		51,069	452	DNA binding//RNA binding//nucleolus//cytosolic large ribosomal subunit//ribosomal large subunit biogenesis//ribosomal small subunit biogenesis
 YALI1_A06416g	HiT	FALSE	1	NaN	NaN	3	Glutathione S-transferase		25,664	228	glutathione transferase activity//cytoplasm//glutathione metabolic process
 YALI1_B12993g	HiT	FALSE	1	0.232308768133266	0.34098710332316	1	Aldehyde/histidinol dehydrogenase		62,953	572	1-pyrroline-5-carboxylate dehydrogenase activity//proline catabolic process to glutamate//oxidoreductase activity, acting on the aldehyde or oxo group of donors, NAD or NADP as acceptor//oxidation-reduction process
-YALI1_E32664g	HiT	TRUE	-1	NaN	NaN	1	ATP-dependent RNA helicase DBP2		60,710	552	nuclear-transcribed mRNA catabolic process, nonsense-mediated decay//RNA binding//ATP-dependent RNA helicase activity//ATP binding//nucleolus//cytoplasm//rRNA processing//phosphomethylpyrimidine kinase activity//thiamine biosynthetic process//RNA secondary structure unwinding//phosphorylation//thiaminase activity
+YALI1_E32664g	HiT	TRUE	-1	0.0260428536826043	0.00692537706069854	1	ATP-dependent RNA helicase DBP2		60,710	552	nuclear-transcribed mRNA catabolic process, nonsense-mediated decay//RNA binding//ATP-dependent RNA helicase activity//ATP binding//nucleolus//cytoplasm//rRNA processing//phosphomethylpyrimidine kinase activity//thiamine biosynthetic process//RNA secondary structure unwinding//phosphorylation//thiaminase activity
 YALI1_F31215g	HiT	FALSE	1	0.107037472571211	0.134821623126484	3	Aldehyde dehydrogenase		57,804	519	cellular aldehyde metabolic process//integral component of membrane//oxidoreductase activity, acting on the aldehyde or oxo group of donors, NAD or NADP as acceptor//oxidation-reduction process
 YALI1_F15291g	HiT	FALSE	-1	NaN	NaN	4	Uncharacterized protein		45,861	404	
 YALI1_F39001g	HiT	FALSE	-1	NaN	NaN	1	Ribosome assembly factor mrt4		26,324	233	ribosomal large subunit assembly//nuclear-transcribed mRNA catabolic process//nucleolus//cytoplasm//rRNA processing
@@ -477,10 +477,10 @@ YALI1_C30181g	HiT	FALSE	-1	NaN	NaN	1	Uncharacterized protein		126,765	1117	endon
 YALI1_E37387g	HiT	FALSE	-1	NaN	NaN	1	U3 small nucleolar RNA-associated protein 22		129,351	1157	RNA binding//rRNA processing//tRNA export from nucleus//small-subunit processome//CURI complex//UTP-C complex
 YALI1_E04278g	HiT	FALSE	1	NaN	NaN	2	Uncharacterized protein		93,910	848	integral component of membrane
 YALI1_D22961g	HiT	FALSE	-1	NaN	NaN	1	Major facilitator superfamily domain-containing protein		55,916	512	integral component of membrane//transmembrane transport
-YALI1_F02545g	HiT	FALSE	1	NaN	NaN	3	Uncharacterized protein		33,243	313	oxidoreductase activity//oxidation-reduction process
+YALI1_F02545g	HiT	FALSE	1	0.0327300237792472	0.0282711445201763	3	Uncharacterized protein		33,243	313	oxidoreductase activity//oxidation-reduction process
 YALI1_D30058g	HiT	FALSE	1	NaN	NaN	1	Cation-transporting ATPase (EC 3.6.3.-)		162,742	1458	calcium-transporting ATPase activity//ATP binding//integral component of plasma membrane//cellular calcium ion homeostasis//intracellular membrane-bounded organelle//transition metal ion binding//calcium ion transmembrane transport//ATP hydrolysis coupled cation transmembrane transport
 YALI1_C20559g	HiT	FALSE	1	NaN	NaN	2	Uncharacterized protein		65,337	620	transcription corepressor activity//nucleus//endoplasmic reticulum//regulation of transcription by RNA polymerase II//phospholipid biosynthetic process//endoplasmic reticulum unfolded protein response//negative regulation of nucleic acid-templated transcription
-YALI1_F00261g	HiT	FALSE	1	NaN	NaN	3	Uncharacterized protein		61,918	564	integral component of membrane
+YALI1_F00261g	HiT	FALSE	1	0.0163044777822991	0.0110519180854527	3	Uncharacterized protein		61,918	564	integral component of membrane
 YALI1_C10730g	HiT	FALSE	-1	NaN	NaN	1	Protein MAK16		36,198	312	maturation of LSU-rRNA from tricistronic rRNA transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA)//maturation of 5.8S rRNA from tricistronic rRNA transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA)//nucleolus//preribosome, large subunit precursor
 YALI1_F31822g	HiT	FALSE	1	NaN	NaN	3	Uncharacterized protein		22,931	202	integral component of mitochondrial inner membrane//mitochondrial respiratory chain complex IV assembly//mitochondrial respiratory chain supercomplex
 YALI1_D13019g	HiT	FALSE	1	NaN	NaN	1	U6 small nuclear RNA (adenine-(43)-N(6))-methyltransferase (EC 2.1.1.-)		44,868	393	nucleus//23S rRNA (adenine(1618)-N(6))-methyltransferase activity//rRNA base methylation
@@ -624,7 +624,7 @@ YALI1_F33273g	HiT	FALSE	1	NaN	NaN	1	Ribonuclease T2-like protein		32,592	290	RNA
 YALI1_E36887g	HiT	FALSE	1	NaN	NaN	3	Uncharacterized protein		59,212	548	protein ubiquitination//proteasome-mediated ubiquitin-dependent protein catabolic process//ubiquitin protein ligase activity
 YALI1_B18975g	HiT	FALSE	1	NaN	NaN	1	JmjC domain, hydroxylase-domain-containing protein		92,681	811	DNA binding//nucleus//metal ion binding
 YALI1_E23967g	HiT	FALSE	1	NaN	NaN	1	AMMECR1 domain-containing protein		22,638	200	
-YALI1_E02481g	HiT	FALSE	1	NaN	NaN	4	Uncharacterized protein		105,299	1082	
+YALI1_E02481g	HiT	FALSE	1	0.0804741934282808	0.103540098575788	4	Uncharacterized protein		105,299	1082	
 YALI1_D06859g	HiT	FALSE	1	NaN	NaN	1	Ubiquitin-related domain-containing protein		31,117	288	
 YALI1_B25833g	HiT	FALSE	-1	NaN	NaN	4	Uncharacterized protein		30,325	308	integral component of membrane
 YALI1_D17051g	HiT	FALSE	-1	NaN	NaN	1	5'-3' exoribonuclease (EC 3.1.13.-)		112,939	1010	nucleic acid binding//5'-3' exoribonuclease activity//nucleus//DNA-templated transcription, termination//regulation of transcription, DNA-templated//rRNA processing//mRNA processing//nuclear-transcribed mRNA catabolic process, exonucleolytic, 5'-3'//RNA phosphodiester bond hydrolysis, exonucleolytic
@@ -666,7 +666,7 @@ YALI1_B18499g	HiT	FALSE	-1	0.465504975127162	0.356150210885046	1	Glycerol-3-phos
 YALI1_A03300g	HiT	FALSE	1	NaN	NaN	2	Uncharacterized protein		60,406	539	
 YALI1_E37157g	HiT	FALSE	-1	NaN	NaN	2	Uncharacterized protein		11,416	101	
 YALI1_D12315g	HiT	FALSE	1	NaN	NaN	1	Uncharacterized protein		51,952	474	zinc ion binding//integral component of membrane
-YALI1_D03412g	HiT	FALSE	-1	NaN	NaN	2	Glucose signaling factor 2-domain-containing protein		49,542	434	plasma membrane
+YALI1_D03412g	HiT	FALSE	-1	0.0277232893031536	0	2	Glucose signaling factor 2-domain-containing protein		49,542	434	plasma membrane
 YALI1_A20283g	HiT	FALSE	1	NaN	NaN	4	Uncharacterized protein		64,167	562	
 YALI1_E15835g	HiT	FALSE	1	0.0522007032527976	0.059014683553747	1	Uncharacterized protein		64,062	583	mRNA binding//peroxisomal membrane//peroxisomal matrix//oxalate catabolic process//oxalate-CoA ligase activity
 YALI1_E21128g	HiT	FALSE	1	0.228659040513733	0.310503405459478	4	Alcohol dehydrogenase 2	ADH2	37,315	351	alcohol dehydrogenase (NAD) activity//cytoplasm//ethanol metabolic process//NADH oxidation//zinc ion binding
@@ -711,7 +711,7 @@ YALI1_F14342g	HiT	FALSE	1	NaN	NaN	2	P-loop containing nucleoside triphosphate hy
 YALI1_D00515g	HiT	TRUE	-1	NaN	NaN	3	Amino acid/polyamine transporter I		59,156	543	cytoplasm//integral component of plasma membrane//cation transmembrane transporter activity//branched-chain amino acid biosynthetic process//L-amino acid transmembrane transporter activity//antiporter activity//oxidoreductase activity, acting on the CH-OH group of donors, NAD or NADP as acceptor//metal ion binding//L-alpha-amino acid transmembrane transport
 YALI1_D14125g	HiT	FALSE	-1	NaN	NaN	1	Nucleolar protein 9		80,991	724	ribosomal small subunit export from nucleus//endonucleolytic cleavage in ITS1 to separate SSU-rRNA from 5.8S rRNA and LSU-rRNA from tricistronic rRNA transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA)//endonucleolytic cleavage to generate mature 5'-end of SSU-rRNA from (SSU-rRNA, 5.8S rRNA, LSU-rRNA)//endonucleolytic cleavage in 5'-ETS of tricistronic rRNA transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA)//RNA binding//nucleolus//90S preribosome//preribosome, small subunit precursor
 YALI1_E21256g	HiT	TRUE	-1	NaN	NaN	5	Uncharacterized protein		16,157	142	
-YALI1_B25906g	HiT	FALSE	1	NaN	NaN	5	Amino acid permease-domain-containing protein		65,336	602	amino acid transport//integral component of membrane//transmembrane transporter activity//transmembrane transport
+YALI1_B25906g	HiT	FALSE	1	0.00999811083723296	0.00628739930417091	5	Amino acid permease-domain-containing protein		65,336	602	amino acid transport//integral component of membrane//transmembrane transporter activity//transmembrane transport
 YALI1_C02550g	HiT	FALSE	1	0.0843107888835198	0.134813039640556	1	Aldehyde/histidinol dehydrogenase		56,650	529	methylmalonate-semialdehyde dehydrogenase (acylating) activity//integral component of membrane//oxidation-reduction process
 YALI1_E30109g	HiT	FALSE	1	NaN	NaN	1	Major facilitator superfamily domain-containing protein		69,357	635	integral component of plasma membrane//transmembrane transporter activity//transmembrane transport
 YALI1_D27385g	HiT	FALSE	1	NaN	NaN	3	Uncharacterized protein		141,147	1284	DNA binding//nucleus//histone-lysine N-methyltransferase activity//histone lysine methylation
@@ -1259,7 +1259,7 @@ YALI1_B21594g	HiT	FALSE	-1	NaN	NaN	1	HD domain-containing protein		27,669	242	5'
 YALI1_B29505g	HiT	FALSE	-1	NaN	NaN	1	ATP-dependent RNA helicase DBP6		68,223	607	RNA binding//ATP-dependent RNA helicase activity//ATP binding//nucleolus//cytoplasm//rRNA processing//RNA secondary structure unwinding
 YALI1_D12483g	HiT	FALSE	1	NaN	NaN	1	Chromatin modification-related protein EAF3		43,183	387	DNA repair//chromatin remodeling//chromatin silencing//histone deacetylation//Rpd3S complex//NuA4 histone acetyltransferase complex//histone H4 acetylation//histone H2A acetylation//establishment or maintenance of cell polarity regulating cell shape
 YALI1_D30506g	HiT	FALSE	-1	0.152558409155646	0.142823759070871	1	Septin-domain-containing protein		51,838	453	cellular bud neck septin ring//mitotic cytokinesis//septin ring assembly//mating projection base//structural molecule activity//GTP binding//ascospore wall//prospore membrane//phosphatidylinositol-5-phosphate binding//septin complex//septin ring disassembly//septin filament array//phosphatidylinositol-4-phosphate binding
-YALI1_F09177g	HiT	FALSE	-1	NaN	NaN	2	Rab proteins geranylgeranyltransferase component A		63,013	566	GDP-dissociation inhibitor activity//intracellular//small GTPase mediated signal transduction//regulation of catalytic activity
+YALI1_F09177g	HiT	FALSE	-1	0.0183741206884537	0.0198478034621906	2	Rab proteins geranylgeranyltransferase component A		63,013	566	GDP-dissociation inhibitor activity//intracellular//small GTPase mediated signal transduction//regulation of catalytic activity
 YALI1_B19217g	HiT	FALSE	1	NaN	NaN	1	Carbamoyl-phosphate synthase L chain, ATP binding domain-containing protein (Carbamoyl-phosphate synthase L chain, ATP binding domain-domain-containing protein)		79,277	725	ATP binding//ligase activity//metal ion binding
 YALI1_D34106g	HiT	FALSE	1	NaN	NaN	3	Uncharacterized protein		45,174	408	response to stress
 YALI1_B26808g	HiT	FALSE	-1	0.191683953942014	0.168123019769413	1	Uncharacterized protein		16,316	148	ribosomal small subunit assembly//structural constituent of ribosome//translation//cytosolic small ribosomal subunit
@@ -1495,7 +1495,7 @@ YALI1_F06393g	HiT	FALSE	-1	NaN	NaN	3	Lung seven transmembrane receptor-domain-co
 YALI1_C29141g	HiT	FALSE	-1	0.144539019786368	0.122187588070532	1	Septin-domain-containing protein		40,948	370	mitotic cytokinesis//septin ring assembly//GTP binding//hydrolase activity//cell septum//mitotic septin complex//medial cortex septin ring//spore membrane bending pathway//actomyosin contractile ring, proximal layer
 YALI1_E13899g	HiT	FALSE	-1	0.236331925979145	0.330655970871482	1	Peroxisomal acetoacetyl-CoA thiolase		41,357	397	acetyl-CoA C-acetyltransferase activity//mitochondrion//peroxisome//fatty acid beta-oxidation//metal ion binding
 YALI1_E09652g	HiT	FALSE	-1	NaN	NaN	5	Uncharacterized protein		55,043	500	aspartic-type endopeptidase activity//proteolysis
-YALI1_E41276g	HiT	FALSE	-1	NaN	NaN	3	Amidase signature domain-containing protein		59,531	539	amidase activity
+YALI1_E41276g	HiT	FALSE	-1	0.0241646137054934	0.0114486211363174	3	Amidase signature domain-containing protein		59,531	539	amidase activity
 YALI1_B16194g	HiT	FALSE	-1	NaN	NaN	1	Ribosome biogenesis protein YTM1	YTM1	54,077	511	maturation of LSU-rRNA from tricistronic rRNA transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA)//maturation of 5.8S rRNA from tricistronic rRNA transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA)//nucleoplasm//preribosome, large subunit precursor//ribonucleoprotein complex binding//PeBoW complex
 YALI1_B12489g	HiT	FALSE	-1	NaN	NaN	4	Lip8 (Lipase) (EC 3.1.1.3)	LIP8	41,422	371	triglyceride lipase activity//lipid metabolic process
 YALI1_E16305g	HiT	FALSE	1	NaN	NaN	2	P-loop containing nucleoside triphosphate hydrolase protein		25,818	230	uridine kinase activity//ATP binding//cytosol//pyrimidine nucleobase metabolic process//UMP biosynthetic process//phosphorylation//pyrimidine nucleoside salvage
@@ -1546,7 +1546,7 @@ YALI1_B19520g	HiT	FALSE	-1	NaN	NaN	1	Histone-lysine N-methyltransferase, H3 lysi
 YALI1_A02470g	HiT	FALSE	1	NaN	NaN	2	Stretch-activated Ca2+-permeable channel component-domain-containing protein		71,052	640	plasma membrane//stretch-activated, cation-selective, calcium channel activity//integral component of membrane//calcium-mediated signaling using extracellular calcium source//calcium ion import across plasma membrane
 YALI1_E25541g	HiT	FALSE	1	NaN	NaN	2	Uncharacterized protein		13,777	121	nucleus//cytoplasm//translational initiation//ribosomal large subunit biogenesis
 YALI1_C09133g	HiT	FALSE	-1	NaN	NaN	1	Uncharacterized protein		19,253	177	transcription factor activity, RNA polymerase II proximal promoter sequence-specific DNA binding//proximal promoter sequence-specific DNA binding//nucleus//positive regulation of transcription by RNA polymerase II//protein dimerization activity
-YALI1_A07538g	HiT	FALSE	-1	NaN	NaN	3	Histidine phosphatase superfamily		49,727	469	
+YALI1_A07538g	HiT	FALSE	-1	0.0215753193552899	0.00793113876975246	3	Histidine phosphatase superfamily		49,727	469	
 YALI1_A05527g	HiT	FALSE	-1	NaN	NaN	1	Uncharacterized protein		113,159	1012	serine-type endopeptidase activity//proteolysis
 YALI1_C00258g	HiT	FALSE	1	NaN	NaN	1	Carboxylic ester hydrolase (EC 3.1.1.-)		53,656	478	carboxylic ester hydrolase activity
 YALI1_C11501g	HiT	FALSE	1	NaN	NaN	2	EXS family-domain-containing protein		46,571	405	cytoplasm//integral component of membrane
@@ -1594,7 +1594,7 @@ YALI1_E24793g	HiT	FALSE	-1	NaN	NaN	2	Casein kinase II subunit beta (CK II beta)	
 YALI1_C10318g	HiT	TRUE	1	NaN	NaN	3	Uncharacterized protein		56,974	527	integral component of membrane
 YALI1_F10530g	HiT	FALSE	-1	NaN	NaN	3	Uncharacterized protein		46,388	402	
 YALI1_F33123g	HiT	FALSE	1	NaN	NaN	4	Uncharacterized protein		26,719	228	nucleic acid binding//RNA-DNA hybrid ribonuclease activity//nucleus//DNA replication, removal of RNA primer//RNA phosphodiester bond hydrolysis, endonucleolytic
-YALI1_E30014g	HiT	FALSE	1	NaN	NaN	1	P-loop containing nucleoside triphosphate hydrolase protein		167,658	1502	fungal-type vacuole//ATP binding//vacuolar membrane//integral component of plasma membrane//cellular process//peptide-transporting ATPase activity//amide transport//transmembrane transport
+YALI1_E30014g	HiT	FALSE	1	0.00586889520625636	0.00571429916853171	1	P-loop containing nucleoside triphosphate hydrolase protein		167,658	1502	fungal-type vacuole//ATP binding//vacuolar membrane//integral component of plasma membrane//cellular process//peptide-transporting ATPase activity//amide transport//transmembrane transport
 YALI1_F08705g	HiT	FALSE	1	0.173847232553408	0.218760258528315	1	Cys/Met metabolism PLP-dependent enzyme-domain-containing protein		41,728	394	cystathionine gamma-synthase activity//cystathionine gamma-lyase activity//cytoplasm//cysteine biosynthetic process via cystathionine//transsulfuration//pyridoxal phosphate binding//L-cystine L-cysteine-lyase (deaminating)//'de novo' L-methionine biosynthetic process//L-cysteine desulfhydrase activity
 YALI1_B21004g	HiT	FALSE	-1	NaN	NaN	1	Mevalonate kinase (MK) (EC 2.7.1.36)		48,319	449	mevalonate kinase activity//ATP binding//galactose binding//cytosol//ergosterol biosynthetic process//farnesyl diphosphate biosynthetic process, mevalonate pathway//phosphorylation//isopentenyl diphosphate biosynthetic process, mevalonate pathway
 YALI1_B16068g	HiT	FALSE	1	0.0369412310147508	0.0467126686164802	1	Uncharacterized protein		42,931	386	GTPase activator activity//positive regulation of GTPase activity//intracellular part
@@ -1784,7 +1784,7 @@ YALI1_C10016g	HiT	FALSE	1	NaN	NaN	1	Uncharacterized protein		103,909	952	endopla
 YALI1_F07675g	HiT	FALSE	-1	NaN	NaN	1	RNA polymerase, subunit omega/K/RPB6		17,488	152	RNA polymerase I activity//RNA polymerase II activity//RNA polymerase III activity//transcription, RNA-templated//DNA binding//RNA-directed 5'-3' RNA polymerase activity//RNA polymerase II, core complex//RNA polymerase III complex//RNA polymerase I complex//transcription by RNA polymerase I//transcription by RNA polymerase II//response to drug//tRNA transcription by RNA polymerase III
 YALI1_F19938g	HiT	FALSE	-1	NaN	NaN	1	PQ loop repeat-domain-containing protein		29,594	268	integral component of membrane
 YALI1_E36837g	HiT	FALSE	-1	NaN	NaN	1	Uncharacterized protein		114,414	1035	DNA damage checkpoint//nucleus//histone binding//positive regulation of transcription by RNA polymerase II
-YALI1_D13976g	HiT	FALSE	-1	NaN	NaN	3	Replication factor A protein 3		11,301	105	single-stranded DNA binding//DNA replication factor A complex//DNA replication//DNA repair//DNA recombination//site of double-strand break
+YALI1_D13976g	HiT	FALSE	-1	0.0775080503636826	0.0482416813292642	3	Replication factor A protein 3		11,301	105	single-stranded DNA binding//DNA replication factor A complex//DNA replication//DNA repair//DNA recombination//site of double-strand break
 YALI1_E38677g	HiT	FALSE	1	NaN	NaN	1	Uncharacterized protein		22,389	207	
 YALI1_C26408g	HiT	FALSE	-1	NaN	NaN	1	Uncharacterized protein		178,125	1606	ATP binding//chromosome//chromosome organization
 YALI1_B19205g	HiT	FALSE	1	NaN	NaN	1	Uncharacterized protein		159,639	1449	ubiquitin-dependent protein catabolic process//protein deubiquitination//thiol-dependent ubiquitinyl hydrolase activity
@@ -1926,7 +1926,7 @@ YALI1_F07655g	HiT	FALSE	-1	NaN	NaN	1	PQ loop repeat-domain-containing protein		3
 YALI1_F03028g	HiT	FALSE	-1	NaN	NaN	1	Uncharacterized protein		94,300	868	cell part
 YALI1_E19327g	HiT	FALSE	-1	NaN	NaN	2	Uncharacterized protein		8,876	84	endoribonuclease activity//integral component of membrane//RNA phosphodiester bond hydrolysis, endonucleolytic
 YALI1_A10105g	HiT	FALSE	1	NaN	NaN	3	Uncharacterized protein		70,700	654	protein serine/threonine kinase activity//ATP binding//nucleus//cytoplasm//protein phosphorylation//intracellular signal transduction
-YALI1_F09846g	HiT	FALSE	1	NaN	NaN	3	Uncharacterized protein		16,102	142	integral component of membrane
+YALI1_F09846g	HiT	FALSE	1	0.0360294258774161	0.00922492528992879	3	Uncharacterized protein		16,102	142	integral component of membrane
 YALI1_B25603g	HiT	FALSE	1	0.0481417755569685	0.0581548744252289	1	Dipeptidyl peptidase 3 (EC 3.4.14.4) (Dipeptidyl aminopeptidase III) (Dipeptidyl peptidase III)		78,758	707	cytoplasm//proteolysis//metallopeptidase activity//dipeptidyl-peptidase activity//metal ion binding
 YALI1_D31402g	HiT	FALSE	-1	NaN	NaN	3	Kinesin-like protein		97,234	887	ATP binding//kinesin complex//microtubule//microtubule-based movement//microtubule binding//ATP-dependent microtubule motor activity, plus-end-directed
 YALI1_F12504g	HiT	FALSE	1	NaN	NaN	3	Uncharacterized protein		46,000	426	RNA binding
@@ -1985,7 +1985,7 @@ YALI1_F35776g	HiT	FALSE	1	NaN	NaN	1	Uncharacterized protein		28,676	253
 YALI1_F26142g	HiT	FALSE	1	NaN	NaN	2	Uncharacterized protein		17,974	162	histone deacetylase complex//transcription coregulator activity//histone deacetylase activity//histone deacetylation//negative regulation of chromatin silencing//positive regulation of transcription by RNA polymerase II
 YALI1_E10443g	HiT	FALSE	1	NaN	NaN	2	Plasma membrane fusion protein PRM1		77,418	690	plasma membrane//integral component of membrane//plasma membrane fusion involved in cytogamy//mating projection tip
 YALI1_B21819g	HiT	FALSE	-1	NaN	NaN	1	Uncharacterized protein		26,023	227	ESCRT II complex//structural molecule activity//protein homodimerization activity//protein transport to vacuole involved in ubiquitin-dependent protein catabolic process via the multivesicular body sorting pathway
-YALI1_E00280g	HiT	FALSE	1	NaN	NaN	2	Uncharacterized protein		63,125	586	
+YALI1_E00280g	HiT	FALSE	1	0.0229001968438454	0.0131784030620549	2	Uncharacterized protein		63,125	586	
 YALI1_E41393g	HiT	FALSE	1	NaN	NaN	3	Uncharacterized protein		34,642	318	integral component of membrane
 YALI1_D03561g	HiT	FALSE	1	NaN	NaN	2	Uncharacterized protein		95,208	858	DNA-binding transcription factor activity, RNA polymerase II-specific//nitrogen catabolite activation of transcription from RNA polymerase II promoter//RNA polymerase II transcription coactivator activity involved in preinitiation complex assembly//DNA binding//nucleus//zinc ion binding//positive regulation of nitrogen utilization//positive regulation of transcription by RNA polymerase II//RNA polymerase II preinitiation complex assembly
 YALI1_D17206g	HiT	FALSE	-1	0.702228794150559	0.527990222210919	1	60S ribosomal protein L12		17,618	165	ribosomal large subunit assembly//structural constituent of ribosome//translation//rRNA binding//cytosolic large ribosomal subunit
@@ -2071,7 +2071,7 @@ YALI1_E38744g	HiT	FALSE	1	NaN	NaN	1	Uncharacterized protein		73,391	655	integral
 YALI1_E11370g	HiT	FALSE	1	NaN	NaN	1	Glutamyl-tRNA(Gln) amidotransferase subunit B, mitochondrial (Glu-AdT subunit B) (EC 6.3.5.-)	PET112	65,365	588	ATP binding//mitochondrion//glutamyl-tRNA(Gln) amidotransferase complex//mitochondrial translation//glutaminyl-tRNA synthase (glutamine-hydrolyzing) activity//glutaminyl-tRNAGln biosynthesis via transamidation
 YALI1_D03663g	HiT	FALSE	1	NaN	NaN	1	Uncharacterized protein		52,887	473	proteasome complex//ubiquitin-dependent protein catabolic process//protein deubiquitination//thiol-dependent ubiquitinyl hydrolase activity
 YALI1_C25171g	HiT	FALSE	1	NaN	NaN	1	Carotenoid oxygenase		55,424	493	oxidoreductase activity, acting on single donors with incorporation of molecular oxygen, incorporation of two atoms of oxygen//metal ion binding//oxidation-reduction process
-YALI1_E31005g	HiT	FALSE	1	NaN	NaN	4	Uncharacterized protein		28,364	270	
+YALI1_E31005g	HiT	FALSE	1	0.0688903114776195	0.042775204075958	4	Uncharacterized protein		28,364	270	
 YALI1_F06628g	HiT	FALSE	-1	NaN	NaN	1	ZIP zinc transporter-domain-containing protein		47,870	454	zinc ion transmembrane transporter activity//cell//cellular zinc ion homeostasis//integral component of membrane//zinc ion transmembrane transport
 YALI1_E16255g	HiT	FALSE	-1	0.215380024516785	0.218858197117667	2	Armadillo-type protein		116,952	1056	translation elongation factor activity//ATP binding//translational elongation//ATPase activity
 YALI1_B16922g	HiT	FALSE	1	NaN	NaN	3	Uncharacterized protein		26,490	227	
@@ -2142,7 +2142,7 @@ YALI1_D20202g	HiT	FALSE	1	0.0184399564572737	0.012823329667684	1	Uncharacterized
 YALI1_A21696g	HiT	FALSE	1	NaN	NaN	4	Uncharacterized protein		54,449	476	
 YALI1_A04495g	HiT	FALSE	1	NaN	NaN	4	Uncharacterized protein		32,528	282	
 YALI1_F00184g	HiT	FALSE	-1	NaN	NaN	1	Muts domain V-domain-containing protein		98,687	887	nuclear chromosome//four-way junction DNA binding//Y-form DNA binding//heteroduplex DNA loop binding//double-strand/single-strand DNA junction binding//meiotic mismatch repair//removal of nonhomologous ends//damaged DNA binding//ATP binding//postreplication repair//meiotic gene conversion//gene conversion at mating-type locus//DNA-dependent ATPase activity//chromatin silencing at silent mating-type cassette//guanine/thymine mispair binding//single base insertion or deletion binding//MutSalpha complex//MutSbeta complex//interstrand cross-link repair//replication fork arrest//maintenance of DNA repeat elements//negative regulation of reciprocal meiotic recombination
-YALI1_D27274g	HiT	FALSE	1	NaN	NaN	1	Phosphatidylserine decarboxylase proenzyme 1, mitochondrial (EC 4.1.1.65) [Cleaved into: Phosphatidylserine decarboxylase 1 beta chain; Phosphatidylserine decarboxylase 1 alpha chain]	PSD1	64,252	576	phosphatidylserine decarboxylase activity//phosphatidylethanolamine biosynthetic process//protein autoprocessing//integral component of mitochondrial inner membrane
+YALI1_D27274g	HiT	FALSE	1	0.0177430645116989	0.0132964693489318	1	Phosphatidylserine decarboxylase proenzyme 1, mitochondrial (EC 4.1.1.65) [Cleaved into: Phosphatidylserine decarboxylase 1 beta chain; Phosphatidylserine decarboxylase 1 alpha chain]	PSD1	64,252	576	phosphatidylserine decarboxylase activity//phosphatidylethanolamine biosynthetic process//protein autoprocessing//integral component of mitochondrial inner membrane
 YALI1_D21173g	HiT	FALSE	1	NaN	NaN	3	Uncharacterized protein		13,051	114	integral component of membrane
 YALI1_F04763g	HiT	FALSE	1	NaN	NaN	2	Transcription factor PAP1-domain-containing protein		57,333	534	DNA-binding transcription factor activity//regulation of transcription, DNA-templated
 YALI1_B28017g	HiT	FALSE	-1	NaN	NaN	1	Dihydrouridine synthase-domain-containing protein		48,057	423	tRNA dihydrouridine synthesis//tRNA dihydrouridine synthase activity//flavin adenine dinucleotide binding//oxidation-reduction process
@@ -2177,7 +2177,7 @@ YALI1_D26320g	HiT	FALSE	1	NaN	NaN	1	DHS-like NAD/FAD-binding domain-containing p
 YALI1_B18930g	HiT	FALSE	-1	0.250202957400814	0.270325646965073	1	14-3-3 protein Bmh1		31,166	276	protein domain specific binding
 YALI1_F31183g	HiT	FALSE	1	NaN	NaN	5	Uncharacterized protein		17,568	155	
 YALI1_A18817g	HiT	FALSE	1	NaN	NaN	1	SAGA-associated factor 11		21,444	203	nucleus
-YALI1_F01981g	HiT	FALSE	-1	NaN	NaN	1	Aquaporin-like protein		30,563	284	integral component of plasma membrane//water transport//water channel activity//ascospore formation//ion transmembrane transport
+YALI1_F01981g	HiT	FALSE	-1	0.0836766165361139	0.0811846107561885	1	Aquaporin-like protein		30,563	284	integral component of plasma membrane//water transport//water channel activity//ascospore formation//ion transmembrane transport
 YALI1_F27929g	HiT	FALSE	1	NaN	NaN	1	ATP-dependent RNA helicase DHH1		58,529	522	deadenylation-dependent decapping of nuclear-transcribed mRNA//P-body//chromatin binding//mRNA binding//ATP-dependent RNA helicase activity//ATP binding//nucleolus//mRNA processing//cytoplasmic stress granule//RNA secondary structure unwinding//regulation of cytoplasmic mRNA processing body assembly//stress granule assembly//negative regulation of translational elongation//mRNA transport//translation regulator activity, nucleic acid binding//cytoplasmic side of membrane
 YALI1_E11497g	HiT	FALSE	-1	NaN	NaN	5	Uncharacterized protein		10,457	92	integral component of membrane
 YALI1_F32090g	HiT	FALSE	-1	0.848630626220753	0.736281465445914	1	60S ribosomal protein L2		27,413	254	structural constituent of ribosome//ribosome//translation
@@ -2200,7 +2200,7 @@ YALI1_F11481g	HiT	TRUE	-1	NaN	NaN	1	Uncharacterized protein		43,044	401	oxidored
 YALI1_D24182g	HiT	FALSE	1	NaN	NaN	1	Uncharacterized protein		112,125	1020	GTPase activator activity//cytoplasm//plasma membrane//Rab GTPase binding//regulation of exocytosis//syntaxin binding//establishment of cell polarity//positive regulation of GTPase activity//regulation of protein secretion
 YALI1_E07259g	HiT	FALSE	1	NaN	NaN	4	Uncharacterized protein		7,766	68	
 YALI1_E37830g	HiT	FALSE	-1	NaN	NaN	1	Putative kinetochore protein NUF2		52,702	452	condensed chromosome kinetochore//nucleus//cell cycle//Ndc80 complex//cell division
-YALI1_D06131g	HiT	FALSE	-1	NaN	NaN	2	1,3-beta-glucanosyltransferase (EC 2.4.1.-)		50,297	472	fungal-type cell wall//anchored component of external side of plasma membrane//fungal-type cell wall organization//1,3-beta-glucanosyltransferase activity//fungal-type cell wall (1->3)-beta-D-glucan biosynthetic process
+YALI1_D06131g	HiT	FALSE	-1	0.080617816871821	0.084337187453374	2	1,3-beta-glucanosyltransferase (EC 2.4.1.-)		50,297	472	fungal-type cell wall//anchored component of external side of plasma membrane//fungal-type cell wall organization//1,3-beta-glucanosyltransferase activity//fungal-type cell wall (1->3)-beta-D-glucan biosynthetic process
 YALI1_A12989g	HiT	FALSE	-1	NaN	NaN	1	Non-structural maintenance of chromosomes element 4		36,327	320	nucleus//DNA repair//Smc5-Smc6 complex
 YALI1_D08429g	HiT	FALSE	-1	NaN	NaN	1	Dolichyl-diphosphooligosaccharide--protein glycosyltransferase subunit WBP1 (Oligosaccharyl transferase subunit WBP1)		57,333	505	endoplasmic reticulum membrane//integral component of membrane//transferase activity, transferring glycosyl groups//protein N-linked glycosylation via asparagine
 YALI1_B19485g	HiT	FALSE	1	NaN	NaN	3	Uncharacterized protein		100,615	914	RNA binding//ATP-dependent RNA helicase activity//nucleolus//mitochondrion//RNA secondary structure unwinding//membrane//positive regulation of apoptotic process//cellular protein metabolic process//catalytic activity, acting on a protein
@@ -2222,7 +2222,7 @@ YALI1_F18381g	HiT	FALSE	1	0.0131531712304171	0.0238914325839268	2	Uncharacterize
 YALI1_F00866g	HiT	FALSE	1	NaN	NaN	3	Uncharacterized protein		18,481	168	
 YALI1_B08817g	HiT	FALSE	-1	NaN	NaN	4	Uncharacterized protein		49,674	432	
 YALI1_E25761g	HiT	FALSE	1	NaN	NaN	1	Palmitoyltransferase (EC 2.3.1.225)		77,430	702	Golgi membrane//integral component of membrane//protein-cysteine S-palmitoyltransferase activity//early endosome membrane
-YALI1_E22303g	HiT	FALSE	1	NaN	NaN	1	Uncharacterized protein		69,160	629	malate dehydrogenase (decarboxylating) (NAD+) activity//mitochondrion//pyruvate metabolic process//malate metabolic process//metal ion binding//NAD binding//oxidation-reduction process
+YALI1_E22303g	HiT	FALSE	1	0.0206119306309766	0.00782838507426246	1	Uncharacterized protein		69,160	629	malate dehydrogenase (decarboxylating) (NAD+) activity//mitochondrion//pyruvate metabolic process//malate metabolic process//metal ion binding//NAD binding//oxidation-reduction process
 YALI1_D28630g	HiT	FALSE	-1	NaN	NaN	4	Uncharacterized protein		164,263	1489	
 YALI1_F39603g	HiT	FALSE	-1	NaN	NaN	1	P-loop containing nucleoside triphosphate hydrolase protein		143,888	1300	replicative cell aging//nucleic acid binding//ATP binding//DNA replication//DNA repair//DNA recombination//DNA duplex unwinding//ATP-dependent 3'-5' DNA helicase activity//filamentous growth of a population of unicellular organisms
 YALI1_D21501g	HiT	FALSE	1	NaN	NaN	5	Uncharacterized protein		38,755	335	
@@ -2283,7 +2283,7 @@ YALI1_E35955g	HiT	FALSE	-1	NaN	NaN	1	Biotin-protein ligase		67,301	614	biotin-[a
 YALI1_E20963g	HiT	FALSE	1	NaN	NaN	1	Hemolysin-III related-domain-containing protein		37,535	333	cell//cellular zinc ion homeostasis//integral component of membrane
 YALI1_A09787g	HiT	FALSE	1	NaN	NaN	5	Uncharacterized protein		19,227	171	
 YALI1_E32512g	HiT	FALSE	-1	NaN	NaN	3	Uncharacterized protein		16,387	146	
-YALI1_B12443g	HiT	FALSE	1	NaN	NaN	3	Uncharacterized protein		16,908	159	
+YALI1_B12443g	HiT	FALSE	1	0.0463940950025432	0.0485294202000678	3	Uncharacterized protein		16,908	159	
 YALI1_C30936g	HiT	FALSE	1	NaN	NaN	3	Uncharacterized protein		51,256	467	
 YALI1_E16026g	HiT	FALSE	-1	NaN	NaN	2	Uncharacterized protein		82,771	743	DNA repair//nucleosome disassembly//regulation of transcription by RNA polymerase II//RSC-type complex//ATP-dependent chromatin remodeling
 YALI1_B05690g	HiT	FALSE	-1	NaN	NaN	1	AP complex subunit sigma		16,929	144	intracellular protein transport//endocytosis//protein transporter activity//AP-2 adaptor complex
@@ -2470,7 +2470,7 @@ YALI1_E02799g	HiT	FALSE	-1	NaN	NaN	3	Alpha 1-6 mannosyltransferase	anl1	51,202	4
 YALI1_F30703g	HiT	FALSE	1	NaN	NaN	1	Glutamyl-tRNA(Gln) amidotransferase subunit A, mitochondrial (Glu-AdT subunit A) (EC 6.3.5.7)	HER2	51,088	469	amidase activity//ATP binding//endoplasmic reticulum organization//glutamyl-tRNA(Gln) amidotransferase complex//extrinsic component of mitochondrial inner membrane//mitochondrial translation//glutaminyl-tRNA synthase (glutamine-hydrolyzing) activity//glutaminyl-tRNAGln biosynthesis via transamidation
 YALI1_D02085g	HiT	FALSE	-1	NaN	NaN	2	DNA-directed RNA polymerase I, subunit RPA34.5		21,424	192	
 YALI1_E19845g	HiT	FALSE	1	NaN	NaN	5	Uncharacterized protein		16,498	147	
-YALI1_C15297g	HiT	FALSE	-1	NaN	NaN	1	Thymidylate synthase/dCMP hydroxymethylase domain-containing protein		33,709	296	thymidylate synthase activity//dTMP biosynthetic process//methylation//nuclear periphery
+YALI1_C15297g	HiT	FALSE	-1	0.0308283184409969	0.0126583206544591	1	Thymidylate synthase/dCMP hydroxymethylase domain-containing protein		33,709	296	thymidylate synthase activity//dTMP biosynthetic process//methylation//nuclear periphery
 YALI1_E33002g	HiT	FALSE	1	NaN	NaN	2	Actin interacting protein 3-domain-containing protein		93,086	847	cytoskeletal regulatory protein binding//site of polarized growth//regulation of actin nucleation
 YALI1_F32792g	HiT	FALSE	-1	0.493286300559512	0.468794319938962	1	60S ribosomal protein L25		15,938	141	ribosomal large subunit assembly//structural constituent of ribosome//translation//rRNA binding//cytosolic large ribosomal subunit//preribosome, large subunit precursor
 YALI1_D14639g	HiT	FALSE	-1	NaN	NaN	2	Uncharacterized protein		11,673	105	mitochondrial proton-transporting ATP synthase complex, coupling factor F(o)//plasma membrane//ATP synthesis coupled proton transport//integral component of membrane//proton-transporting ATP synthase activity, rotational mechanism//ATP hydrolysis coupled cation transmembrane transport
@@ -2572,7 +2572,7 @@ YALI1_F12365g	HiT	FALSE	-1	NaN	NaN	2	Uncharacterized protein		160,947	1463	prote
 YALI1_B19576g	HiT	FALSE	1	0.023468969577823	0.0327429449643947	1	Ribokinase (RK) (EC 2.7.1.15)	RBK1	33,135	311	ribokinase activity//ATP binding//nucleus//cytoplasm//D-ribose catabolic process//carbohydrate phosphorylation//metal ion binding
 YALI1_A01888g	HiT	FALSE	1	NaN	NaN	3	Uncharacterized protein		54,431	474	
 YALI1_E17466g	HiT	FALSE	-1	0.295263794608342	0.371900409359105	1	40S ribosomal protein S2		27,872	259	structural constituent of ribosome//rRNA export from nucleus//cytosolic small ribosomal subunit//small-subunit processome//positive regulation of translational fidelity//small ribosomal subunit rRNA binding
-YALI1_A18847g	HiT	FALSE	1	NaN	NaN	1	Uncharacterized protein		33,260	299	protein depalmitoylation//cytoplasm//fatty acid metabolic process//palmitoyl-(protein) hydrolase activity//membrane//carboxylic ester hydrolase activity
+YALI1_A18847g	HiT	FALSE	1	0.0447922240818922	0.051130274415056	1	Uncharacterized protein		33,260	299	protein depalmitoylation//cytoplasm//fatty acid metabolic process//palmitoyl-(protein) hydrolase activity//membrane//carboxylic ester hydrolase activity
 YALI1_E18854g	HiT	FALSE	-1	NaN	NaN	1	Replication protein A subunit		65,223	589	DNA binding//nucleus//DNA replication//DNA repair//DNA recombination//chromosomal part//metal ion binding
 YALI1_B23077g	HiT	FALSE	-1	NaN	NaN	1	Uncharacterized protein		120,127	1102	positive regulation of TOR signaling
 YALI1_B26235g	HiT	FALSE	-1	NaN	NaN	2	Manganese/iron superoxide dismutase		38,801	346	superoxide dismutase activity//removal of superoxide radicals//metal ion binding//oxidation-reduction process
@@ -2606,7 +2606,7 @@ YALI1_F24332g	HiT	FALSE	-1	NaN	NaN	2	Putative metalloreductase AIM14		58,629	525
 YALI1_C22922g	HiT	FALSE	-1	0.601753162054934	0.530401634350627	1	60S ribosomal protein L17		20,550	184	cleavage in ITS2 between 5.8S rRNA and LSU-rRNA of tricistronic rRNA transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA)//cytoplasmic translation//structural constituent of ribosome//cytosolic large ribosomal subunit//preribosome, large subunit precursor
 YALI1_C15115g	HiT	FALSE	1	NaN	NaN	5	Uncharacterized protein		116,844	1068	
 YALI1_E41399g	HiT	FALSE	-1	NaN	NaN	1	Emp24/gp25L/p24 family/GOLD-domain-containing protein		22,658	200	endoplasmic reticulum//plasma membrane//protein retention in ER lumen//ER to Golgi vesicle-mediated transport//integral component of membrane//vesicle organization//COPII-coated ER to Golgi transport vesicle
-YALI1_E10587g	HiT	FALSE	1	NaN	NaN	2	Ras family-domain-containing protein		25,355	223	GTPase activity//GTP binding//signal transduction//membrane
+YALI1_E10587g	HiT	FALSE	1	0.0983696359130214	0.0750225946795524	2	Ras family-domain-containing protein		25,355	223	GTPase activity//GTP binding//signal transduction//membrane
 YALI1_C06511g	HiT	FALSE	-1	0.218603779018311	0.200650637199051	1	60S ribosomal protein L34		12,326	110	RNA binding//structural constituent of ribosome//translation//cytosolic large ribosomal subunit//ribosome biogenesis
 YALI1_B27454g	HiT	FALSE	-1	NaN	NaN	1	Pre-mRNA splicing factor PRP21 like protein-domain-containing protein		52,503	468	regulation of alternative mRNA splicing, via spliceosome//mRNA 3'-splice site recognition//RNA binding//U2 snRNP//U2-type prespliceosome//catalytic step 2 spliceosome
 YALI1_B14600g	HiT	FALSE	-1	NaN	NaN	1	Uncharacterized protein		30,110	269	chromosome, telomeric region//Swr1 complex//cytoplasm//DNA repair//chromatin silencing at telomere//NuA4 histone acetyltransferase complex//histone exchange
@@ -2669,7 +2669,7 @@ YALI1_B12714g	HiT	FALSE	1	NaN	NaN	5	Uncharacterized protein		38,182	343	FMN bind
 YALI1_E37749g	HiT	FALSE	1	NaN	NaN	2	Uncharacterized protein		44,982	394	
 YALI1_F26127g	HiT	FALSE	-1	NaN	NaN	2	Uncharacterized protein		20,576	179	Hrd1p ubiquitin ligase ERAD-L complex//integral component of endoplasmic reticulum membrane//ubiquitin-dependent ERAD pathway//ubiquitin binding//regulation of catalytic activity//ubiquitin-protein transferase activator activity
 YALI1_B18536g	HiT	FALSE	-1	NaN	NaN	1	Homeodomain-like protein		64,089	565	mitotic cell cycle//DNA-binding transcription factor activity, RNA polymerase II-specific//RNA polymerase II transcription regulator recruiting activity//nucleus//regulation of transcription by RNA polymerase II//cell differentiation//sequence-specific DNA binding//transcription regulatory region DNA binding//positive regulation of transcription, DNA-templated
-YALI1_D26316g	HiT	FALSE	-1	NaN	NaN	2	Uncharacterized protein		86,620	759	chromatin binding//chromatin remodeling//RSC-type complex
+YALI1_D26316g	HiT	FALSE	-1	0.0185942785503561	0.00803226824991522	2	Uncharacterized protein		86,620	759	chromatin binding//chromatin remodeling//RSC-type complex
 YALI1_E22117g	HiT	FALSE	1	NaN	NaN	4	Uncharacterized protein		19,974	181	integral component of membrane
 YALI1_B05520g	HiT	FALSE	-1	NaN	NaN	1	Pre-rRNA-processing protein ESF2		36,936	324	endonucleolytic cleavage in ITS1 to separate SSU-rRNA from 5.8S rRNA and LSU-rRNA from tricistronic rRNA transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA)//endonucleolytic cleavage to generate mature 5'-end of SSU-rRNA from (SSU-rRNA, 5.8S rRNA, LSU-rRNA)//endonucleolytic cleavage in 5'-ETS of tricistronic rRNA transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA)//ATPase activator activity//RNA binding//nucleolus//90S preribosome//positive regulation of ATPase activity//small-subunit processome assembly
 YALI1_A08206g	HiT	FALSE	1	NaN	NaN	2	CRAL-TRIO domain-containing protein		37,953	330	endosome//cytosol//phosphatidylserine metabolic process//phosphatidylinositol transporter activity//phospholipid transport//sterol biosynthetic process//response to drug//Golgi to plasma membrane protein transport//cell periphery//negative regulation of phosphatidylglycerol biosynthetic process//positive regulation of phosphatidylcholine biosynthetic process
@@ -2747,7 +2747,7 @@ YALI1_C33299g	HiT	FALSE	-1	0.139798239801628	0.16544032719566	2	SOR/SNZ family-d
 YALI1_E18927g	HiT	FALSE	-1	0.25360490681587	0.280026706035944	2	Malate synthase (EC 2.3.3.9)		64,412	575	malate synthase activity//peroxisomal matrix//glyoxylate cycle//tricarboxylic acid cycle//fatty acid catabolic process//glyoxysome//carbon utilization//acetate catabolic process//citramalate lyase activity
 YALI1_B22598g	HiT	FALSE	1	0.048306804242116	0.0404595296778569	1	Actin-related protein 2/3 complex subunit		41,038	376	Arp2/3 protein complex//actin cortical patch//Arp2/3 complex-mediated actin nucleation//actin filament binding
 YALI1_C30440g	HiT	FALSE	1	0.0762044701068159	0.0469840369345541	2	Cys/Met metabolism PLP-dependent enzyme-domain-containing protein		41,925	380	cystathionine gamma-synthase activity//cystathionine beta-lyase activity//cystathionine gamma-lyase activity//nucleus//cytoplasm//cysteine biosynthetic process via cystathionine//transsulfuration//pyridoxal phosphate binding//'de novo' L-methionine biosynthetic process
-YALI1_F39022g	HiT	FALSE	-1	NaN	NaN	3	Uncharacterized protein		14,214	127	
+YALI1_F39022g	HiT	FALSE	-1	0.065787907629705	0.0503254684401492	3	Uncharacterized protein		14,214	127	
 YALI1_F01929g	HiT	FALSE	1	NaN	NaN	3	Uncharacterized protein		71,563	629	
 YALI1_B27645g	HiT	FALSE	1	NaN	NaN	1	General substrate transporter		51,334	476	integral component of membrane//transmembrane transporter activity//transmembrane transport
 YALI1_F14009g	HiT	FALSE	-1	NaN	NaN	1	Putative zinc finger in N-recognin-domain-containing protein		45,729	410	zinc ion binding
@@ -2919,7 +2919,7 @@ YALI1_C17419g	HiT	FALSE	1	NaN	NaN	5	Uncharacterized protein		10,267	89
 YALI1_E39243g	HiT	FALSE	1	NaN	NaN	1	Uncharacterized protein		20,710	184	structural molecule activity//iron ion binding//mitochondrion//iron-sulfur cluster assembly//2 iron, 2 sulfur cluster binding//4 iron, 4 sulfur cluster binding//protein maturation by iron-sulfur cluster transfer
 YALI1_E08176g	HiT	FALSE	-1	NaN	NaN	2	Uncharacterized protein		19,826	178	plasma membrane//cellular bud neck//integral component of membrane
 YALI1_D14910g	HiT	FALSE	1	NaN	NaN	5	Uncharacterized protein		15,935	141	
-YALI1_E25018g	HiT	FALSE	-1	NaN	NaN	2	Uncharacterized protein		198,393	1726	1,3-beta-D-glucan synthase complex//1,3-beta-D-glucan synthase activity//(1->3)-beta-D-glucan biosynthetic process//integral component of membrane//cellular response to drug
+YALI1_E25018g	HiT	FALSE	-1	0.0149491835071211	0.00505069825262801	2	Uncharacterized protein		198,393	1726	1,3-beta-D-glucan synthase complex//1,3-beta-D-glucan synthase activity//(1->3)-beta-D-glucan biosynthetic process//integral component of membrane//cellular response to drug
 YALI1_D15424g	HiT	FALSE	-1	0.622028750279756	0.590156629162428	1	Phosphoglycerate kinase (EC 2.7.2.3)		45,856	426	phosphoglycerate kinase activity//ATP binding//mitochondrion//gluconeogenesis//glycolytic process
 YALI1_A16145g	HiT	FALSE	-1	NaN	NaN	5	Uncharacterized protein		9,732	83	
 YALI1_C30399g	HiT	FALSE	-1	NaN	NaN	1	Nuclear pore protein		101,100	902	nuclear pore//protein import into nucleus//membrane//poly(A)+ mRNA export from nucleus//structural constituent of nuclear pore//nuclear pore complex assembly
@@ -3021,7 +3021,7 @@ YALI1_C18011g	HiT	FALSE	1	NaN	NaN	2	Cytochrome c heme lyase (EC 4.4.1.17)		34,65
 YALI1_C12845g	HiT	FALSE	1	NaN	NaN	2	Uncharacterized protein		56,930	531	positive regulation of transcription from RNA polymerase II promoter by glucose//nucleus//sequence-specific DNA binding
 YALI1_A15017t	HiT	FALSE	-1	NaN	NaN	5	Uncharacterized protein		45,872	395	regulation of transcription, DNA-templated
 YALI1_A14109g	HiT	FALSE	1	NaN	NaN	5	Uncharacterized protein		13,616	117	
-YALI1_F01078g	HiT	FALSE	1	NaN	NaN	2	Class I glutamine amidotransferase-like protein		26,515	250	dTDP-4-dehydrorhamnose 3,5-epimerase activity
+YALI1_F01078g	HiT	FALSE	1	0.167585724114954	0.139451404306545	2	Class I glutamine amidotransferase-like protein		26,515	250	dTDP-4-dehydrorhamnose 3,5-epimerase activity
 YALI1_F09317g	HiT	FALSE	-1	NaN	NaN	2	Uncharacterized protein		13,012	118	integral component of membrane
 YALI1_E08334g	HiT	FALSE	-1	NaN	NaN	1	Glucose inhibited division protein A-domain-containing protein		76,534	688	mitochondrion//tRNA methylation//flavin adenine dinucleotide binding//mitochondrial tRNA wobble uridine modification
 YALI1_D17543g	HiT	FALSE	-1	NaN	NaN	5	Uncharacterized protein		15,974	141	
@@ -3344,7 +3344,7 @@ YALI1_F18122g	HiT	FALSE	1	NaN	NaN	2	Uncharacterized protein		70,166	628
 YALI1_F29852g	HiT	FALSE	1	NaN	NaN	1	Integral membrane protein DUF92-domain-containing protein		35,291	325	integral component of membrane
 YALI1_E17988g	HiT	FALSE	1	NaN	NaN	4	Uncharacterized protein		60,098	537	
 YALI1_E34116g	HiT	FALSE	1	NaN	NaN	1	SPX domain-containing protein		80,542	716	protein polyubiquitination//intracellular//ubiquitin conjugating enzyme binding//positive regulation of proteasomal ubiquitin-dependent protein catabolic process//ubiquitin protein ligase activity
-YALI1_F29395g	HiT	FALSE	-1	NaN	NaN	3	Uncharacterized protein		25,506	244	
+YALI1_F29395g	HiT	FALSE	-1	0.302402274262462	0.29382947965412	3	Uncharacterized protein		25,506	244	
 YALI1_A18451g	HiT	FALSE	1	NaN	NaN	5	Uncharacterized protein		14,297	124	integral component of membrane
 YALI1_A16466g	HiT	FALSE	1	NaN	NaN	1	Queuosine salvage protein		39,512	345	tRNA modification
 YALI1_C26628g	HiT	FALSE	1	NaN	NaN	2	Uncharacterized protein		16,112	142	integral component of membrane
@@ -3402,7 +3402,7 @@ YALI1_F28967g	HiT	FALSE	1	NaN	NaN	1	WD40-repeat-containing domain protein		61,50
 YALI1_A10827g	HiT	FALSE	-1	0.826892093743642	0.810940571515768	1	40S ribosomal protein S7		21,790	192	cytoplasmic translation//structural constituent of ribosome//rRNA processing//cytosolic small ribosomal subunit//90S preribosome//small-subunit processome//ribosomal small subunit biogenesis
 YALI1_F37808g	HiT	FALSE	-1	NaN	NaN	3	Uncharacterized protein		32,920	287	integral component of membrane
 YALI1_B02806g	HiT	FALSE	1	NaN	NaN	1	Riboflavin kinase		21,820	192	ATP binding//mitochondrial inner membrane//riboflavin kinase activity//riboflavin biosynthetic process//FMN biosynthetic process//phosphorylation//metal ion binding
-YALI1_F38191g	HiT	FALSE	-1	NaN	NaN	1	Alpha/Beta hydrolase protein		26,369	240	hydrolase activity
+YALI1_F38191g	HiT	FALSE	-1	0.0378097874008138	0.0160018117768735	1	Alpha/Beta hydrolase protein		26,369	240	hydrolase activity
 YALI1_E06109g	HiT	FALSE	1	NaN	NaN	1	Sortilin		92,077	823	Golgi apparatus//integral component of membrane
 YALI1_F14213g	HiT	FALSE	1	NaN	NaN	1	Repressor of RNA polymerase III transcription MAF1		33,270	299	RNA polymerase III core binding//nucleus//cytoplasm//negative regulation of transcription by RNA polymerase III
 YALI1_C08017g	HiT	FALSE	-1	0.240593734562564	0.2540880339098	1	Uncharacterized protein		36,575	340	oxidoreductase activity//oxidation-reduction process
@@ -3420,7 +3420,7 @@ YALI1_E03762g	HiT	FALSE	1	0.0845181178407935	0.0999965753034927	1	Nucleotide-dip
 YALI1_E05496g	HiT	FALSE	-1	NaN	NaN	5	Uncharacterized protein		11,802	101	
 YALI1_F34661g	HiT	FALSE	1	NaN	NaN	1	Uncharacterized protein		69,299	651	membrane
 YALI1_B25017g	HiT	FALSE	-1	NaN	NaN	2	Exocyst complex component Sec10-like protein		102,364	912	exocyst//exocytosis//Golgi to plasma membrane transport//vesicle docking
-YALI1_B02091g	HiT	FALSE	-1	NaN	NaN	1	Transcription elongation factor Spt6		161,097	1406	chromatin silencing at rDNA//regulation of histone H3-K36 methylation//chromosome, telomeric region//DNA binding//DNA-binding transcription factor activity//chromatin silencing at telomere//transcription elongation factor complex//nucleosome positioning//chromatin silencing at silent mating-type cassette//chromatin silencing at centromere//regulation of extent of heterochromatin assembly//nucleosome binding//nuclear pericentric heterochromatin//positive regulation of transcription elongation from RNA polymerase II promoter//transcriptionally active chromatin//histone binding//mRNA transcription by RNA polymerase II//CLRC ubiquitin ligase complex localization to heterochromatin//regulation of mRNA processing//regulation of histone H3-K4 methylation//chromatin maintenance//negative regulation of histone H3-K14 acetylation//negative regulation of histone exchange//positive regulation of histone H3-K9 dimethylation//positive regulation of histone H3-K9 trimethylation
+YALI1_B02091g	HiT	FALSE	-1	0.00710835739852492	0.00618338294031875	1	Transcription elongation factor Spt6		161,097	1406	chromatin silencing at rDNA//regulation of histone H3-K36 methylation//chromosome, telomeric region//DNA binding//DNA-binding transcription factor activity//chromatin silencing at telomere//transcription elongation factor complex//nucleosome positioning//chromatin silencing at silent mating-type cassette//chromatin silencing at centromere//regulation of extent of heterochromatin assembly//nucleosome binding//nuclear pericentric heterochromatin//positive regulation of transcription elongation from RNA polymerase II promoter//transcriptionally active chromatin//histone binding//mRNA transcription by RNA polymerase II//CLRC ubiquitin ligase complex localization to heterochromatin//regulation of mRNA processing//regulation of histone H3-K4 methylation//chromatin maintenance//negative regulation of histone H3-K14 acetylation//negative regulation of histone exchange//positive regulation of histone H3-K9 dimethylation//positive regulation of histone H3-K9 trimethylation
 YALI1_E28504g	HiT	FALSE	1	NaN	NaN	5	Uncharacterized protein		10,601	97	
 YALI1_E28130g	HiT	FALSE	-1	NaN	NaN	2	Ribosomal protein L22/L17		33,803	292	structural constituent of ribosome//mitochondrial large ribosomal subunit//translation
 YALI1_F09965g	HiT	FALSE	-1	NaN	NaN	2	Uncharacterized protein		61,853	558	carbohydrate:proton symporter activity//glucose transmembrane transporter activity//integral component of membrane//glucose import//proton transmembrane transport
@@ -3509,7 +3509,7 @@ YALI1_A14189g	HiT	FALSE	1	NaN	NaN	4	Uncharacterized protein		21,280	192	integral
 YALI1_E01657g	HiT	FALSE	-1	NaN	NaN	2	Mitochondrial distribution and morphology protein family 31/32		71,402	629	mitochondrion inheritance//mitochondrial inner membrane//cellular ion homeostasis//integral component of membrane//regulation of cardiolipin metabolic process
 YALI1_F32638g	HiT	FALSE	1	NaN	NaN	1	Uncharacterized protein		64,610	580	metallocarboxypeptidase activity//proteolysis
 YALI1_D07209g	HiT	FALSE	-1	NaN	NaN	1	Uncharacterized protein		26,537	239	ER membrane protein complex
-YALI1_D00474g	HiT	FALSE	-1	NaN	NaN	4	Uncharacterized protein		56,636	580	
+YALI1_D00474g	HiT	FALSE	-1	0.15738597646999	0.118237382739912	4	Uncharacterized protein		56,636	580	
 YALI1_E38142g	HiT	FALSE	-1	NaN	NaN	5	Uncharacterized protein		13,321	117	
 YALI1_F03948g	HiT	FALSE	-1	NaN	NaN	2	Kinesin-like protein		109,206	998	ATP binding//kinesin complex//microtubule//microtubule-based movement//chromosome segregation//microtubule binding//ATP-dependent microtubule motor activity, plus-end-directed//mitotic spindle assembly
 YALI1_F19126g	HiT	FALSE	-1	NaN	NaN	1	Uncharacterized protein		41,836	375	GTPase activator activity//regulation of transcription, DNA-templated//zinc ion binding//positive regulation of GTPase activity//sequence-specific DNA binding
@@ -3985,7 +3985,7 @@ YALI1_D34610g	HiT	FALSE	1	NaN	NaN	5	Uncharacterized protein		26,646	266	actin bi
 YALI1_C17947g	HiT	FALSE	-1	NaN	NaN	1	Dihydrofolate reductase-like domain-containing protein		21,266	189	dihydrofolate reductase activity//glycine biosynthetic process//drug binding//tetrahydrofolate biosynthetic process//NADP binding//oxidation-reduction process
 YALI1_D34594g	HiT	FALSE	1	NaN	NaN	3	Uncharacterized protein		61,689	551	
 YALI1_D33364g	HiT	FALSE	1	NaN	NaN	5	Uncharacterized protein		10,148	89	
-YALI1_C17411g	HiT	FALSE	-1	NaN	NaN	2	Chromatin remodelling complex Rsc7/Swp82 subunit-domain-containing protein		58,471	540	regulation of transcription, DNA-templated//RSC-type complex//chromatin DNA binding
+YALI1_C17411g	HiT	FALSE	-1	0.0110295374608342	0	2	Chromatin remodelling complex Rsc7/Swp82 subunit-domain-containing protein		58,471	540	regulation of transcription, DNA-templated//RSC-type complex//chromatin DNA binding
 YALI1_A09408g	HiT	FALSE	1	NaN	NaN	1	Protein N-terminal and lysine N-methyltransferase EFM7 (EC 2.1.1.-) (Elongation factor methyltransferase 7)	EFM7	30,729	273	cytoplasm//protein-lysine N-methyltransferase activity//N-terminal peptidyl-glycine methylation//peptidyl-lysine dimethylation//N-terminal protein N-methyltransferase activity
 YALI1_E06946g	HiT	FALSE	-1	NaN	NaN	5	Uncharacterized protein		132,964	1399	
 YALI1_F14946g	HiT	FALSE	-1	NaN	NaN	5	Uncharacterized protein		23,112	186	integral component of membrane
@@ -4013,7 +4013,7 @@ YALI1_C13241g	HiT	FALSE	-1	NaN	NaN	1	Uncharacterized protein		16,270	138	mitocho
 YALI1_A06721g	HiT	FALSE	-1	NaN	NaN	3	Nuclear pore complex assembly-domain-containing protein		36,844	323	nuclear periphery//nuclear pore complex assembly
 YALI1_F11292g	HiT	FALSE	1	NaN	NaN	1	Uncharacterized protein		34,384	309	gluconolactonase activity//calcium ion binding//extracellular region//L-ascorbic acid biosynthetic process
 YALI1_F04110g	HiT	FALSE	-1	0.136402243873347	0.188909839979654	1	ATP synthase subunit gamma		32,337	293	mitochondrial proton-transporting ATP synthase, central stalk//ATP synthesis coupled proton transport//proton-transporting ATP synthase activity, rotational mechanism//proton-transporting ATPase activity, rotational mechanism//ATP hydrolysis coupled cation transmembrane transport
-YALI1_C16851g	HiT	FALSE	1	NaN	NaN	2	Membrane-associating domain-containing protein (Membrane-associating domain-domain-containing protein)		18,673	174	plasma membrane//integral component of membrane//eisosome//membrane raft//eisosome assembly
+YALI1_C16851g	HiT	FALSE	1	0.0412935381586979	0.0217152971312309	2	Membrane-associating domain-containing protein (Membrane-associating domain-domain-containing protein)		18,673	174	plasma membrane//integral component of membrane//eisosome//membrane raft//eisosome assembly
 YALI1_D20784g	HiT	FALSE	1	NaN	NaN	4	Uncharacterized protein		25,629	228	
 YALI1_D06408g	HiT	FALSE	1	NaN	NaN	2	Uncharacterized protein		80,040	718	transcription factor activity, RNA polymerase II proximal promoter sequence-specific DNA binding//nucleus//regulation of transcription by RNA polymerase II//zinc ion binding//transcription regulatory region DNA binding
 YALI1_B13290g	HiT	FALSE	-1	NaN	NaN	1	Cactus-binding C-terminus of cactin protein-domain-containing protein		57,710	498	
@@ -4229,7 +4229,7 @@ YALI1_C19872g	HiT	FALSE	1	NaN	NaN	3	Uncharacterized protein		36,878	330
 YALI1_E26181g	HiT	FALSE	1	NaN	NaN	3	Chitin synthase-domain-containing protein		191,517	1699	motor activity//chitin synthase activity//ATP binding//cell wall chitin biosynthetic process//integral component of membrane//myosin complex//cell septum//cell periphery
 YALI1_E22029g	HiT	FALSE	1	NaN	NaN	1	Putative zinc finger motif, C2HC5-type-domain-containing protein		51,642	455	transcription coactivator activity//nucleus//zinc ion binding//positive regulation of transcription, DNA-templated
 YALI1_F03604g	HiT	FALSE	-1	NaN	NaN	1	Structural maintenance of chromosomes protein 6		124,692	1099	double-strand break repair via homologous recombination//Smc5-Smc6 complex
-YALI1_B06704g	HiT	FALSE	1	NaN	NaN	1	Uncharacterized protein		45,935	411	protein serine/threonine kinase activity//ATP binding//vacuole//protein phosphorylation//vacuolar protein processing//regulation of vacuole fusion, non-autophagic
+YALI1_B06704g	HiT	FALSE	1	0.0170463146998983	0.00934470172397423	1	Uncharacterized protein		45,935	411	protein serine/threonine kinase activity//ATP binding//vacuole//protein phosphorylation//vacuolar protein processing//regulation of vacuole fusion, non-autophagic
 YALI1_C02152g	HiT	FALSE	-1	NaN	NaN	1	Uncharacterized protein		72,480	640	damaged DNA binding//mitotic sister chromatid cohesion//transferase activity, transferring acyl groups//translesion synthesis//intracellular membrane-bounded organelle//chromosomal part
 YALI1_C17782g	HiT	FALSE	1	0.0387840081637843	0.0238196993930146	2	Uncharacterized protein		48,226	424	
 YALI1_F23719g	HiT	FALSE	1	NaN	NaN	1	Translation initiation factor eIF 4e-like domain-containing protein		37,016	331	translation initiation factor activity//cytoplasm//translational initiation//multicellular organism development
@@ -4559,7 +4559,7 @@ YALI1_E38749g	HiT	FALSE	1	NaN	NaN	1	HIT-like domain-containing protein		18,689	1
 YALI1_D15063g	HiT	FALSE	-1	NaN	NaN	1	Uncharacterized protein		15,742	145	integral component of membrane//heme binding//metal ion binding
 YALI1_E34288g	HiT	FALSE	1	NaN	NaN	4	Uncharacterized protein		29,879	265	integral component of membrane
 YALI1_C24707g	HiT	FALSE	1	0.622463473982706	0.714418727738216	1	Uncharacterized protein		70,047	647	ATP binding//mitochondrion//protein folding//ATPase activity//unfolded protein binding
-YALI1_D08946g	HiT	FALSE	1	NaN	NaN	1	Beta-lactamase-like protein		33,339	298	hydrolase activity
+YALI1_D08946g	HiT	FALSE	1	0.0304140238224822	0.0251631111631061	1	Beta-lactamase-like protein		33,339	298	hydrolase activity
 YALI1_D08910g	HiT	FALSE	1	NaN	NaN	3	Uncharacterized protein		85,938	768	RNA polymerase II proximal promoter sequence-specific DNA binding//proximal promoter DNA-binding transcription activator activity, RNA polymerase II-specific//nucleus//zinc ion binding//positive regulation of transcription by RNA polymerase II
 YALI1_F37354g	HiT	FALSE	1	0.0922561478916582	0.10521664823669	1	tRNA synthetases class I (M)-domain-containing protein		83,506	750	methionine-tRNA ligase activity//ATP binding//cytosol//methionyl-tRNA aminoacylation//methionyl glutamyl tRNA synthetase complex
 YALI1_F12842g	HiT	FALSE	-1	0.692978747660224	0.686347331163106	1	Pyruvate kinase (EC 2.7.1.40)		56,668	515	magnesium ion binding//pyruvate kinase activity//ATP binding//cytoplasm//plasma membrane//cellular response to starvation//cell surface//kinase activity//yeast-form cell wall//hyphal cell wall//potassium ion binding//filamentous growth of a population of unicellular organisms in response to starvation//filamentous growth of a population of unicellular organisms in response to biotic stimulus//induction by symbiont of host defense response//canonical glycolysis
@@ -4606,7 +4606,7 @@ YALI1_B09211g	HiT	FALSE	-1	NaN	NaN	3	Uncharacterized protein		37,545	337	oxidore
 YALI1_D20329g	HiT	FALSE	-1	0.1093141091353	0.114590896012208	2	Uncharacterized protein		38,242	360	
 YALI1_B06839g	HiT	FALSE	1	NaN	NaN	1	Iron-sulfur cluster assembly protein		19,237	181	mitochondrial matrix//cellular iron ion homeostasis//ferrous iron binding//iron-sulfur transferase activity//[2Fe-2S] cluster assembly//2 iron, 2 sulfur cluster binding//4 iron, 4 sulfur cluster binding//protein maturation by iron-sulfur cluster transfer
 YALI1_F01405g	HiT	FALSE	-1	0.0333619654323499	0.0498379405730756	1	Uncharacterized protein		51,831	484	ATP binding//cytosol//protein folding//ubiquitin-dependent protein catabolic process//protein targeting//cellular component organization//heat shock protein binding//metal ion binding//unfolded protein binding//establishment of protein localization to organelle//negative regulation of cellular response to heat
-YALI1_B28511g	HiT	FALSE	-1	NaN	NaN	1	Uncharacterized protein		21,470	195	endocytosis//membrane
+YALI1_B28511g	HiT	FALSE	-1	0.0261056069201424	0.00668404415734147	1	Uncharacterized protein		21,470	195	endocytosis//membrane
 YALI1_F23706g	HiT	FALSE	-1	0.156896122456765	0.163097587521194	1	Uncharacterized protein		52,511	478	carboxypeptidase activity//cytoplasm//proteolysis//glutathione catabolic process//omega peptidase activity//metal ion binding//fungal biofilm matrix//metallodipeptidase activity
 YALI1_F04895g	HiT	FALSE	1	0.0326980117293998	0.0305810190844354	1	Coatomer subunit gamma		98,399	908	Golgi membrane//structural molecule activity//endosome//intracellular protein transport//ER to Golgi vesicle-mediated transport//retrograde vesicle-mediated transport, Golgi to ER//COPI vesicle coat
 YALI1_D03221g	HiT	FALSE	1	NaN	NaN	1	Uncharacterized protein		30,077	271	dicarboxylic acid transmembrane transporter activity//mitochondrial inner membrane//dicarboxylic acid transport//mitochondrial transport//integral component of membrane//transmembrane transport
@@ -4739,7 +4739,7 @@ YALI1_E33858g	HiT	FALSE	-1	NaN	NaN	1	tRNA-splicing endonuclease subunit Sen34 (E
 YALI1_E16325g	HiT	FALSE	-1	NaN	NaN	1	Cupin-like domain-containing protein (Cupin-like domain-domain-containing protein)		37,856	331	
 YALI1_D27912g	HiT	FALSE	-1	NaN	NaN	4	Amidase signature domain-containing protein		63,063	561	amidase activity
 YALI1_D25104g	HiT	FALSE	1	NaN	NaN	3	Uncharacterized protein		144,113	1313	hydrolase activity//phosphatidylinositol dephosphorylation
-YALI1_E08472g	HiT	FALSE	1	NaN	NaN	1	Uncharacterized protein		109,105	972	nuclear export signal receptor activity//nuclear envelope//cytosol//protein import into nucleus//Ran GTPase binding//protein-containing complex//nuclear periphery//positive regulation of protein export from nucleus
+YALI1_E08472g	HiT	FALSE	1	0.021931839870295	0.0116095874649034	1	Uncharacterized protein		109,105	972	nuclear export signal receptor activity//nuclear envelope//cytosol//protein import into nucleus//Ran GTPase binding//protein-containing complex//nuclear periphery//positive regulation of protein export from nucleus
 YALI1_E26223g	HiT	FALSE	-1	NaN	NaN	3	Uncharacterized protein		27,537	256	
 YALI1_E02305g	HiT	FALSE	1	NaN	NaN	2	Uncharacterized protein		8,992	78	organelle organization//microtubule binding//mitotic cell cycle process
 YALI1_E24120g	HiT	FALSE	-1	NaN	NaN	5	Uncharacterized protein		18,211	162	
@@ -4911,7 +4911,7 @@ YALI1_C13302g	HiT	FALSE	1	NaN	NaN	3	Uncharacterized protein		103,260	927	nuclear
 YALI1_C21626g	HiT	FALSE	-1	NaN	NaN	1	Peptidyl-prolyl cis-trans isomerase (PPIase) (EC 5.2.1.8)		17,463	160	protein peptidyl-prolyl isomerization//peptidyl-prolyl cis-trans isomerase activity//protein folding
 YALI1_A03351g	HiT	FALSE	1	NaN	NaN	3	Transcriptional activator		22,983	215	DNA binding//DNA-binding transcription factor activity//regulation of transcription, DNA-templated//CCAAT-binding factor complex//protein heterodimerization activity
 YALI1_C21487g	HiT	FALSE	1	NaN	NaN	1	Tyrosine--tRNA ligase (EC 6.1.1.1) (Tyrosyl-tRNA synthetase)		43,498	393	tyrosine-tRNA ligase activity//ATP binding//nucleus//tyrosyl-tRNA aminoacylation//cytoplasmic stress granule
-YALI1_B19507g	HiT	FALSE	1	NaN	NaN	1	ETC complex I subunit conserved region-domain-containing protein		18,627	161	mitochondrial respiratory chain complex I//plasma membrane//oxidoreductase activity, acting on NAD(P)H//electron transport chain
+YALI1_B19507g	HiT	FALSE	1	0.0582593986266531	0.0485381640013564	1	ETC complex I subunit conserved region-domain-containing protein		18,627	161	mitochondrial respiratory chain complex I//plasma membrane//oxidoreductase activity, acting on NAD(P)H//electron transport chain
 YALI1_B01011g	HiT	FALSE	-1	NaN	NaN	5	Uncharacterized protein		8,458	72	
 YALI1_D20304g	HiT	FALSE	-1	NaN	NaN	1	Uncharacterized protein		21,519	196	damaged DNA binding//nucleus//nucleotide-excision repair//negative regulation of protein catabolic process//ubiquitin binding//proteasome-mediated ubiquitin-dependent protein catabolic process
 YALI1_D30003g	HiT	FALSE	-1	NaN	NaN	3	Uncharacterized protein		7,793	67	
@@ -4935,7 +4935,7 @@ YALI1_C16653g	HiT	FALSE	1	NaN	NaN	1	Exocyst complex protein EXO70		67,816	603	ex
 YALI1_D30685g	HiT	FALSE	1	NaN	NaN	5	Uncharacterized protein		20,930	188	
 YALI1_F13395g	HiT	FALSE	1	0.0221024710541709	0.0242232102543235	1	26S proteasome regulatory subunit RPN2		102,475	938	endopeptidase activity//nucleus//proteasome regulatory particle, base subcomplex//enzyme regulator activity//proteasome storage granule//regulation of protein catabolic process//proteasome-mediated ubiquitin-dependent protein catabolic process//regulation of catalytic activity
 YALI1_E13329g	HiT	FALSE	1	NaN	NaN	3	Major facilitator superfamily domain-containing protein		55,890	516	integral component of membrane//transmembrane transport
-YALI1_E27207g	HiT	FALSE	-1	NaN	NaN	1	Rab protein		22,608	203	incipient cellular bud site//GTPase activity//GTP binding//prospore membrane//endosome//plasma membrane//Golgi to plasma membrane transport//vesicle docking involved in exocytosis//vesicle fusion//autophagy//membrane addition at site of cytokinesis//protein secretion//regulation of exocytosis//transport vesicle//secretory granule membrane//ascospore-type prospore assembly//meiotic spindle pole body//mating projection tip//protein localization to plasma membrane
+YALI1_E27207g	HiT	FALSE	-1	0.0713547078204476	0.0568815002136317	1	Rab protein		22,608	203	incipient cellular bud site//GTPase activity//GTP binding//prospore membrane//endosome//plasma membrane//Golgi to plasma membrane transport//vesicle docking involved in exocytosis//vesicle fusion//autophagy//membrane addition at site of cytokinesis//protein secretion//regulation of exocytosis//transport vesicle//secretory granule membrane//ascospore-type prospore assembly//meiotic spindle pole body//mating projection tip//protein localization to plasma membrane
 YALI1_D24225g	HiT	FALSE	1	NaN	NaN	1	Ribosome biogenesis protein TSR3	TSR3	39,207	348	nucleus//cytoplasm//maturation of SSU-rRNA
 YALI1_C08106g	HiT	FALSE	-1	NaN	NaN	2	Uncharacterized protein		10,602	93	ribosome
 YALI1_E18025g	HiT	FALSE	1	NaN	NaN	3	Uncharacterized protein		124,445	1161	
@@ -5080,7 +5080,7 @@ YALI1_B06847g	HiT	FALSE	-1	NaN	NaN	2	Uncharacterized protein		24,465	219
 YALI1_A20320g	HiT	FALSE	1	NaN	NaN	1	Uncharacterized protein		82,343	743	hydrolase activity
 YALI1_E11529g	HiT	FALSE	1	NaN	NaN	5	Uncharacterized protein		7,684	68	
 YALI1_E16701g	HiT	FALSE	1	NaN	NaN	1	DNA-binding protein		23,930	210	condensed nuclear chromosome kinetochore//nuclear chromatin//nuclear pore//nucleoplasm//cytoplasm//anaphase-promoting complex binding//mitotic checkpoint complex//nuclear periphery//mitotic spindle pole body//mitotic DNA integrity checkpoint//chromosome decondensation//signal transduction involved in mitotic spindle assembly checkpoint//positive regulation of protein autoubiquitination//meiosis I spindle assembly checkpoint//mitotic cell cycle checkpoint inhibiting CAR assembly//mitotic spindle microtubule
-YALI1_D33229g	HiT	FALSE	1	NaN	NaN	1	FACT complex subunit POB3		61,086	545	nuclear chromatin//DNA binding//alpha DNA polymerase:primase complex//DNA-dependent DNA replication//DNA repair//chromatin silencing at silent mating-type cassette//replication fork protection complex//nucleosome binding//chromosome, centromeric outer repeat region//cellular protein localization//DNA replication-independent nucleosome organization//FACT complex//histone binding//positive regulation of RNA polymerase II transcriptional preinitiation complex assembly//chromatin silencing at centromere outer repeat region
+YALI1_D33229g	HiT	FALSE	1	0.0165488989738047	0.0162730633533401	1	FACT complex subunit POB3		61,086	545	nuclear chromatin//DNA binding//alpha DNA polymerase:primase complex//DNA-dependent DNA replication//DNA repair//chromatin silencing at silent mating-type cassette//replication fork protection complex//nucleosome binding//chromosome, centromeric outer repeat region//cellular protein localization//DNA replication-independent nucleosome organization//FACT complex//histone binding//positive regulation of RNA polymerase II transcriptional preinitiation complex assembly//chromatin silencing at centromere outer repeat region
 YALI1_D29841g	HiT	FALSE	-1	NaN	NaN	5	Uncharacterized protein		8,949	77	
 YALI1_B28499g	HiT	FALSE	-1	NaN	NaN	3	ACT domain-containing protein (ACT domain-domain-containing protein)		42,638	391	
 YALI1_F10671g	HiT	FALSE	1	0.0225373419277721	0.0422229499660902	1	Uncharacterized protein		41,408	361	
@@ -5378,7 +5378,7 @@ YALI1_F03909g	HiT	FALSE	1	NaN	NaN	3	Uncharacterized protein		21,697	193
 YALI1_D31387g	HiT	FALSE	-1	NaN	NaN	2	Uncharacterized protein		30,085	264	intracellular protein transport//Golgi transport complex
 YALI1_B20205g	HiT	FALSE	-1	NaN	NaN	1	Uncharacterized protein		50,818	453	microtubule cytoskeleton organization//microtubule motor activity//centrosome//cytoplasmic dynein complex//microtubule-based movement//dynein heavy chain binding
 YALI1_E39466g	HiT	FALSE	-1	NaN	NaN	4	Aspartic peptidase domain-containing protein		41,953	397	aspartic-type endopeptidase activity//extracellular region//proteolysis//fungal-type cell wall//protein catabolic process//anchored component of external side of plasma membrane//fungal-type cell wall organization
-YALI1_F24031g	HiT	FALSE	-1	NaN	NaN	2	And other transporter-domain-containing protein		74,178	659	carbohydrate:proton symporter activity//glucose transmembrane transporter activity//integral component of membrane//glucose import//proton transmembrane transport
+YALI1_F24031g	HiT	FALSE	-1	0.0232663640335707	0.00181237314716853	2	And other transporter-domain-containing protein		74,178	659	carbohydrate:proton symporter activity//glucose transmembrane transporter activity//integral component of membrane//glucose import//proton transmembrane transport
 YALI1_E05261g	HiT	FALSE	-1	NaN	NaN	4	Uncharacterized protein		35,310	303	
 YALI1_B02506g	HiT	FALSE	1	NaN	NaN	1	Uncharacterized protein		41,831	376	nucleic acid binding//mRNA processing
 YALI1_C15105g	HiT	FALSE	1	NaN	NaN	2	Uncharacterized protein		29,692	264	integral component of membrane
@@ -5463,7 +5463,7 @@ YALI1_F31102g	HiT	FALSE	1	NaN	NaN	1	Uncharacterized protein		74,238	676	RNA bind
 YALI1_E18802g	HiT	FALSE	-1	NaN	NaN	2	AP complex subunit beta		80,058	717	intracellular protein transport//vesicle-mediated transport//membrane coat//clathrin binding//cell division site//cell cortex of cell tip
 YALI1_E36641g	HiT	FALSE	-1	NaN	NaN	4	Uncharacterized protein		90,860	848	integral component of membrane
 YALI1_A08197g	HiT	FALSE	1	NaN	NaN	5	Uncharacterized protein		16,785	155	
-YALI1_D04533g	HiT	FALSE	1	NaN	NaN	1	Uncharacterized protein		47,602	424	phosphatidylinositol-4-phosphate binding
+YALI1_D04533g	HiT	FALSE	1	0.0240224815361139	0.014868297494744	1	Uncharacterized protein		47,602	424	phosphatidylinositol-4-phosphate binding
 YALI1_A04795g	HiT	FALSE	1	NaN	NaN	4	Uncharacterized protein		37,646	334	
 YALI1_A14458g	HiT	FALSE	1	NaN	NaN	5	Uncharacterized protein		11,615	103	
 YALI1_D10674g	HiT	FALSE	1	NaN	NaN	5	Uncharacterized protein		8,157	73	
@@ -5478,7 +5478,7 @@ YALI1_D06302g	HiT	FALSE	1	NaN	NaN	3	Uncharacterized protein		17,307	149	mitochon
 YALI1_B04803g	HiT	FALSE	-1	NaN	NaN	1	Transcriptional activator		26,962	239	carbon catabolite activation of transcription from RNA polymerase II promoter//RNA polymerase II proximal promoter sequence-specific DNA binding//DNA-binding transcription factor activity//CCAAT-binding factor complex//regulation of cellular respiration//protein heterodimerization activity
 YALI1_B16410g	HiT	FALSE	-1	NaN	NaN	1	Uncharacterized protein		61,984	563	transcription factor TFIIH core complex//transcription factor TFIIH holo complex//nucleotide-excision repair//transcription by RNA polymerase I//DNA-dependent ATPase activity//RNA polymerase II CTD heptapeptide repeat kinase activity//phosphorylation of RNA polymerase II C-terminal domain
 YALI1_E00306g	HiT	FALSE	-1	NaN	NaN	4	Uncharacterized protein		31,268	271	
-YALI1_E35082g	HiT	FALSE	1	NaN	NaN	1	Uncharacterized protein		18,600	171	succinate dehydrogenase activity//tricarboxylic acid cycle//electron transfer activity//integral component of membrane//electron transport chain//succinate dehydrogenase complex//metal ion binding
+YALI1_E35082g	HiT	FALSE	1	0.109120058382503	0.0977268683180739	1	Uncharacterized protein		18,600	171	succinate dehydrogenase activity//tricarboxylic acid cycle//electron transfer activity//integral component of membrane//electron transport chain//succinate dehydrogenase complex//metal ion binding
 YALI1_B14044g	HiT	FALSE	-1	0.180506869328586	0.199725533231604	1	ClpP/crotonase-like domain-containing protein		37,223	346	enoyl-CoA hydratase activity//mitochondrion//fatty acid beta-oxidation
 YALI1_C16378g	HiT	FALSE	1	0.0446280505264496	0.0616551505832486	2	Uncharacterized protein		45,885	414	
 YALI1_E01865g	HiT	FALSE	-1	NaN	NaN	5	Uncharacterized protein		17,937	164	
@@ -5737,7 +5737,7 @@ YALI1_D19562g	HiT	FALSE	-1	NaN	NaN	3	Uncharacterized protein		7,931	70
 YALI1_C32079g	HiT	FALSE	1	NaN	NaN	3	Uncharacterized protein		19,209	181	
 YALI1_C33354g	HiT	FALSE	-1	NaN	NaN	1	Rab-GTPase-TBC domain-containing protein (Rab-GTPase-TBC domain-domain-containing protein)		51,491	457	GTPase activator activity//endoplasmic reticulum membrane//ER to Golgi vesicle-mediated transport//integral component of membrane//Rab GTPase binding//positive regulation of GTPase activity
 YALI1_E39433g	HiT	FALSE	1	NaN	NaN	3	Uncharacterized protein		58,595	519	peroxisome//integral component of membrane
-YALI1_E25859g	HiT	FALSE	1	NaN	NaN	1	Nucleotide-diphospho-sugar transferase		52,911	483	
+YALI1_E25859g	HiT	FALSE	1	0.0148039254247202	0.0103065114282808	1	Nucleotide-diphospho-sugar transferase		52,911	483	
 YALI1_E02438g	HiT	FALSE	1	NaN	NaN	2	Uncharacterized protein		35,296	313	
 YALI1_F22436g	HiT	FALSE	-1	1.89901158214649	1.53978222278739	1	Enolase		47,306	438	phosphopyruvate hydratase complex//magnesium ion binding//phosphopyruvate hydratase activity//glycolytic process
 YALI1_D05099g	HiT	FALSE	-1	NaN	NaN	3	Uncharacterized protein		18,050	159	
@@ -5956,7 +5956,7 @@ YALI1_C00209g	HiT	FALSE	1	NaN	NaN	1	10 TM acyl transferase domain found in Cas1p
 YALI1_E26892g	HiT	FALSE	1	NaN	NaN	3	Autophagy protein 16		10,776	94	autophagy//protein transport//phagophore assembly site membrane
 YALI1_E26872g	HiT	FALSE	-1	NaN	NaN	1	Histone-lysine N-methyltransferase, H3 lysine-79 specific (EC 2.1.1.43) (Histone H3-K79 methyltransferase)		53,624	492	DNA damage checkpoint//chromosome, telomeric region//nucleus//DNA repair//chromatin silencing at telomere//histone methyltransferase activity (H3-K79 specific)//nucleosomal histone binding//histone H3-K79 methylation//regulation of transcription regulatory region DNA binding
 YALI1_C06459g	HiT	FALSE	1	NaN	NaN	1	Uncharacterized protein		68,928	626	DNA strand renaturation//DNA binding//regulation of DNA repair//DNA recombination//enzyme activator activity//four-way junction helicase activity//DNA duplex unwinding//DNA replication, Okazaki fragment processing//positive regulation of catalytic activity//single-stranded DNA-dependent ATPase activity
-YALI1_E35023g	HiT	FALSE	-1	NaN	NaN	1	Ubiquitin-conjugating enzyme		15,322	139	nucleus//cytoplasm//postreplication repair//free ubiquitin chain polymerization//ubiquitin conjugating enzyme complex//ubiquitin protein ligase binding//ubiquitin protein ligase activity//protein K63-linked ubiquitination
+YALI1_E35023g	HiT	FALSE	-1	0.0519252732985758	0.0556301517226178	1	Ubiquitin-conjugating enzyme		15,322	139	nucleus//cytoplasm//postreplication repair//free ubiquitin chain polymerization//ubiquitin conjugating enzyme complex//ubiquitin protein ligase binding//ubiquitin protein ligase activity//protein K63-linked ubiquitination
 YALI1_D30653g	HiT	FALSE	-1	NaN	NaN	3	Protein transport protein SEC23		82,269	750	intracellular protein transport//ER to Golgi vesicle-mediated transport//zinc ion binding//COPII vesicle coat//intracellular membrane-bounded organelle
 YALI1_E21203g	HiT	FALSE	1	NaN	NaN	1	Uncharacterized protein		28,916	254	SNARE binding//SNAP receptor activity//intracellular protein transport//vesicle fusion//endomembrane system//integral component of membrane//SNARE complex//vesicle docking
 YALI1_D06043g	HiT	FALSE	1	NaN	NaN	1	Uncharacterized protein		47,644	429	transcription, DNA-templated//histone methyltransferase activity (H3-K4 specific)//transcription regulatory region DNA binding//Set1C/COMPASS complex//histone H3-K4 methylation
@@ -6225,7 +6225,7 @@ YALI1_A17546g	HiT	FALSE	-1	NaN	NaN	5	Uncharacterized protein		25,823	234
 YALI1_C13817g	HiT	FALSE	1	NaN	NaN	3	Uncharacterized protein		136,675	1275	
 YALI1_A00325g	HiT	FALSE	-1	0.0445731859944049	0.0593242182299084	1	P-loop containing nucleoside triphosphate hydrolase protein		41,094	368	cytoplasmic translation//GTP binding//cytoplasmic stress granule//hydrolase activity//polysomal ribosome//positive regulation of cellular response to amino acid starvation
 YALI1_D31274g	HiT	FALSE	1	NaN	NaN	1	Uncharacterized protein		268,936	2405	cell morphogenesis//cell cortex//site of polarized growth//actin filament reorganization
-YALI1_F29765g	HiT	FALSE	-1	NaN	NaN	1	Uncharacterized protein		53,715	482	integral component of peroxisomal membrane//peroxisome organization
+YALI1_F29765g	HiT	FALSE	-1	0.0210521980467955	0.018233789498135	1	Uncharacterized protein		53,715	482	integral component of peroxisomal membrane//peroxisome organization
 YALI1_E29719g	HiT	FALSE	1	NaN	NaN	2	N-terminal C2 in EEIG1 and EHBP1 proteins-domain-containing protein		69,564	618	
 YALI1_E38593g	HiT	FALSE	-1	0.0666537846795524	0.0663429441268227	1	Coatomer subunit delta		41,513	384	Golgi membrane//retrograde vesicle-mediated transport, Golgi to ER//protein transport//COPI vesicle coat
 YALI1_F08745g	HiT	FALSE	1	NaN	NaN	2	Uncharacterized protein		81,268	730	negative regulation of transcription by RNA polymerase II//histone deacetylase activity//histone deacetylation//histone deacetylase binding//Sin3-type complex
@@ -6284,7 +6284,7 @@ YALI1_E28033g	HiT	FALSE	1	0.757205005340793	0.631504044727026	1	40S ribosomal pr
 YALI1_F33881g	HiT	FALSE	1	NaN	NaN	5	Uncharacterized protein		13,959	121	
 YALI1_D00406g	HiT	FALSE	-1	NaN	NaN	2	Uncharacterized protein		53,805	476	cytoplasm//ubiquitin-dependent protein catabolic process//ubiquitin conjugating enzyme binding//ubiquitin binding
 YALI1_A18470g	HiT	FALSE	1	NaN	NaN	5	Uncharacterized protein		15,978	142	
-YALI1_B16477g	HiT	FALSE	-1	NaN	NaN	2	Anp1-domain-containing protein		38,276	337	alpha-1,6-mannosyltransferase activity//cell wall mannoprotein biosynthetic process//alpha-1,6-mannosyltransferase complex//cis-Golgi network//protein N-linked glycosylation//mannosylation
+YALI1_B16477g	HiT	FALSE	-1	0.0149755563402848	0.0113349688741946	2	Anp1-domain-containing protein		38,276	337	alpha-1,6-mannosyltransferase activity//cell wall mannoprotein biosynthetic process//alpha-1,6-mannosyltransferase complex//cis-Golgi network//protein N-linked glycosylation//mannosylation
 YALI1_E20666g	HiT	FALSE	-1	NaN	NaN	2	Protein PBN1		58,950	523	mannosyltransferase activity//endoplasmic reticulum membrane//GPI anchor biosynthetic process//integral component of membrane//protein processing//ubiquitin-dependent ERAD pathway//mannosylation//glycosylphosphatidylinositol-mannosyltransferase I complex
 YALI1_D15333g	HiT	FALSE	1	NaN	NaN	1	54S ribosomal protein L2, mitochondrial		41,771	374	structural constituent of ribosome//mitochondrial large ribosomal subunit//translation
 YALI1_D27044g	HiT	FALSE	1	NaN	NaN	1	DNA ligase 4		108,061	956	nuclear chromatin//DNA binding//DNA ligase (ATP) activity//ATP binding//nucleolus//cytoplasm//lagging strand elongation//nucleotide-excision repair, DNA gap filling//double-strand break repair via nonhomologous end joining//DNA recombination//DNA ligase IV complex//metal ion binding//DNA ligation involved in DNA repair//DNA biosynthetic process
@@ -6479,7 +6479,7 @@ YALI1_E03220g	LpH	TRUE	-1	NaN	NaN	1	Protein SDA1		80,367	718	ribosomal large sub
 YALI1_B27144g	LpH	TRUE	1	NaN	NaN	1	Purple acid phosphatase (EC 3.1.3.2)		58,857	527	acid phosphatase activity//dephosphorylation//metal ion binding
 YALI1_D31482g	LpH	TRUE	1	NaN	NaN	2	Uncharacterized protein		74,231	644	integral component of membrane
 YALI1_B15151g	LpH	TRUE	-1	NaN	NaN	2	Glycoside hydrolase superfamily		92,046	806	cytosol//carbohydrate metabolic process//steryl-beta-glucosidase activity//ergosteryl 3-beta-D-glucoside catabolic process
-YALI1_F38191g	LpH	TRUE	1	NaN	NaN	1	Alpha/Beta hydrolase protein		26,369	240	hydrolase activity
+YALI1_F38191g	LpH	TRUE	1	0.0378097874008138	0.0930725275330621	1	Alpha/Beta hydrolase protein		26,369	240	hydrolase activity
 YALI1_D16783g	LpH	TRUE	1	NaN	NaN	2	Uncharacterized protein		35,342	322	
 YALI1_C29618g	LpH	TRUE	-1	0.0669790590412004	0.0495052428840285	1	ATP-dependent RNA helicase DED1		66,949	618	cytoplasmic translational initiation//translation initiation factor activity//ATP-dependent RNA helicase activity//ATP binding//nucleolus//cytoplasm//RNA secondary structure unwinding//gene silencing by RNA
 YALI1_C06071g	LpH	TRUE	-1	NaN	NaN	3	Uncharacterized protein		33,557	305	integral component of peroxisomal membrane//peroxisome fission
@@ -6512,7 +6512,7 @@ YALI1_F28915g	LpH	TRUE	1	NaN	NaN	3	Mannan endo-1,6-alpha-mannosidase (EC 3.2.1.1
 YALI1_F24963g	LpH	TRUE	1	NaN	NaN	1	Putative sodium bile acid cotransporter		48,610	442	integral component of membrane
 YALI1_C21789g	LpH	TRUE	-1	NaN	NaN	3	P-loop containing nucleoside triphosphate hydrolase protein		37,774	329	branched-chain-amino-acid transaminase activity//mitochondrion//leucine biosynthetic process//valine biosynthetic process
 YALI1_A21871g	LpH	TRUE	-1	NaN	NaN	4	Uncharacterized protein		53,584	488	integral component of membrane
-YALI1_E32664g	LpH	TRUE	-1	NaN	NaN	1	ATP-dependent RNA helicase DBP2		60,710	552	nuclear-transcribed mRNA catabolic process, nonsense-mediated decay//RNA binding//ATP-dependent RNA helicase activity//ATP binding//nucleolus//cytoplasm//rRNA processing//phosphomethylpyrimidine kinase activity//thiamine biosynthetic process//RNA secondary structure unwinding//phosphorylation//thiaminase activity
+YALI1_E32664g	LpH	TRUE	-1	0.0260428536826043	0.0223444360038149	1	ATP-dependent RNA helicase DBP2		60,710	552	nuclear-transcribed mRNA catabolic process, nonsense-mediated decay//RNA binding//ATP-dependent RNA helicase activity//ATP binding//nucleolus//cytoplasm//rRNA processing//phosphomethylpyrimidine kinase activity//thiamine biosynthetic process//RNA secondary structure unwinding//phosphorylation//thiaminase activity
 YALI1_F14495g	LpH	TRUE	-1	0.26694071698881	0.198280214038657	1	Acyl-coenzyme A oxidase		78,691	700	acyl-CoA dehydrogenase activity//acyl-CoA oxidase activity//peroxisome//membrane//fatty acid beta-oxidation using acyl-CoA dehydrogenase//fatty acid beta-oxidation using acyl-CoA oxidase//FAD binding
 YALI1_F26367g	LpH	TRUE	1	NaN	NaN	3	Uncharacterized protein		30,569	273	nucleic acid binding//regulation of transcription, DNA-templated
 YALI1_F22376g	LpH	TRUE	-1	NaN	NaN	1	Uncharacterized protein		45,674	410	lipid droplet//lipid storage
@@ -6719,7 +6719,7 @@ YALI1_B13948g	LpH	TRUE	-1	0.179084828687691	0.187443637258393	1	Acyltransferase 
 YALI1_F12080g	LpH	TRUE	-1	NaN	NaN	1	WD40-repeat-containing domain protein		74,669	687	small-subunit processome
 YALI1_C30235g	LpH	TRUE	1	NaN	NaN	4	Uncharacterized protein		28,396	245	integral component of membrane
 YALI1_B24351g	LpH	TRUE	1	NaN	NaN	3	Uncharacterized protein		28,836	285	
-YALI1_E31005g	LpH	TRUE	-1	NaN	NaN	4	Uncharacterized protein		28,364	270	
+YALI1_E31005g	LpH	TRUE	-1	0.0688903114776195	0.0118369254069176	4	Uncharacterized protein		28,364	270	
 YALI1_F14958g	LpH	TRUE	1	NaN	NaN	1	Uncharacterized protein		35,470	309	C-4 methylsterol oxidase activity//iron ion binding//endoplasmic reticulum membrane//ergosterol biosynthetic process//integral component of membrane//oxidation-reduction process
 YALI1_E13287g	LpH	TRUE	-1	NaN	NaN	1	Ribosome biogenesis protein NSA2		29,878	262	maturation of LSU-rRNA from tricistronic rRNA transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA)//maturation of 5.8S rRNA from tricistronic rRNA transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA)//nucleolus//preribosome, large subunit precursor
 YALI1_F07990g	LpH	TRUE	-1	NaN	NaN	3	Uncharacterized protein		51,927	474	RNA polymerase II regulatory region sequence-specific DNA binding//RNA polymerase II transcription factor binding//DNA-binding transcription activator activity, RNA polymerase II-specific//chromatin binding//nucleus//transcription factor complex//zinc ion binding//cell differentiation//positive regulation of transcription by RNA polymerase II
@@ -6766,7 +6766,7 @@ YALI1_A00375g	LpH	TRUE	-1	NaN	NaN	1	Uncharacterized protein		24,368	216	protein 
 YALI1_E24532g	LpH	TRUE	-1	NaN	NaN	4	Dak1 domain-containing protein (Dak1 domain-domain-containing protein)		60,211	563	glycerone kinase activity//ATP binding//glycerol metabolic process//phosphorylation
 YALI1_F35647g	LpH	TRUE	1	NaN	NaN	4	Uncharacterized protein		16,897	151	integral component of membrane
 YALI1_D18475g	LpH	TRUE	-1	NaN	NaN	4	Uncharacterized protein		77,153	678	
-YALI1_E02481g	LpH	TRUE	-1	NaN	NaN	4	Uncharacterized protein		105,299	1082	
+YALI1_E02481g	LpH	TRUE	-1	0.0804741934282808	0.010695557543235	4	Uncharacterized protein		105,299	1082	
 YALI1_E18281g	LpH	TRUE	1	NaN	NaN	2	Uncharacterized protein		19,101	186	
 YALI1_B15015g	LpH	TRUE	-1	NaN	NaN	1	Ornithine decarboxylase	odc	49,185	449	ornithine decarboxylase activity//cytoplasm//putrescine biosynthetic process from ornithine
 YALI1_A06989g	LpH	TRUE	1	NaN	NaN	4	Uncharacterized protein		69,827	624	N,N-dimethylaniline monooxygenase activity//flavin adenine dinucleotide binding//NADP binding//oxidation-reduction process
@@ -7039,7 +7039,7 @@ YALI1_B29364g	LpH	TRUE	-1	NaN	NaN	5	Uncharacterized protein		8,967	77
 YALI1_E12793g	LpH	FALSE	1	NaN	NaN	4	Aspartic peptidase domain-containing protein		56,376	534	aspartic-type endopeptidase activity//proteolysis//fungal-type cell wall organization//anchored component of plasma membrane
 YALI1_C30310g	LpH	TRUE	-1	NaN	NaN	4	Uncharacterized protein		43,646	388	
 YALI1_B06110g	LpH	TRUE	-1	NaN	NaN	2	Uncharacterized protein		36,582	329	DNA-binding transcription factor activity, RNA polymerase II-specific//nucleus//regulation of transcription by RNA polymerase II//zinc ion binding
-YALI1_B25906g	LpH	FALSE	1	NaN	NaN	5	Amino acid permease-domain-containing protein		65,336	602	amino acid transport//integral component of membrane//transmembrane transporter activity//transmembrane transport
+YALI1_B25906g	LpH	FALSE	1	0.00999811083723296	0.0192555189376907	5	Amino acid permease-domain-containing protein		65,336	602	amino acid transport//integral component of membrane//transmembrane transporter activity//transmembrane transport
 YALI1_D35190g	LpH	FALSE	-1	NaN	NaN	1	Pex12 amino terminal region-domain-containing protein		47,256	408	ubiquitin-protein transferase activity//integral component of peroxisomal membrane//protein monoubiquitination//protein C-terminus binding//zinc ion binding//protein import into peroxisome matrix//peroxisomal importomer complex
 YALI1_D10197g	LpH	FALSE	-1	0.049052601190234	0.0370486786063072	3	Uncharacterized protein		56,806	525	oxidoreductase activity, acting on the aldehyde or oxo group of donors, NAD or NADP as acceptor//oxidation-reduction process
 YALI1_E32868g	LpH	TRUE	1	NaN	NaN	2	Permease family-domain-containing protein		62,956	589	fungal-type vacuole//integral component of plasma membrane//xanthine transport//xanthine transmembrane transporter activity//transmembrane transport
@@ -7105,7 +7105,7 @@ YALI1_B27211g	LpH	FALSE	-1	NaN	NaN	1	Uncharacterized protein		114,306	1050	ATP b
 YALI1_E39414g	LpH	TRUE	-1	NaN	NaN	1	RmlC-like cupin domain-containing protein		39,951	359	membrane
 YALI1_E27532g	LpH	FALSE	1	NaN	NaN	2	Uncharacterized protein		67,943	601	integral component of membrane//hydrolase activity
 YALI1_F32989g	LpH	FALSE	-1	NaN	NaN	2	Sds3-like protein		32,354	285	negative regulation of transcription by RNA polymerase II//histone deacetylase activity//histone deacetylation//histone deacetylase binding//Sin3-type complex
-YALI1_D00474g	LpH	TRUE	-1	NaN	NaN	4	Uncharacterized protein		56,636	580	
+YALI1_D00474g	LpH	TRUE	-1	0.15738597646999	0.0108961885071211	4	Uncharacterized protein		56,636	580	
 YALI1_E39886g	LpH	FALSE	1	NaN	NaN	2	SUR7/PalI family-domain-containing protein		77,738	728	mitotic cytokinesis//plasma membrane//meiosis I//integral component of membrane//sporulation resulting in formation of a cellular spore//cell division site//growing cell tip
 YALI1_D16656g	LpH	FALSE	-1	NaN	NaN	1	Utp14 protein-domain-containing protein		109,958	970	nucleolus//maturation of SSU-rRNA//small-subunit processome
 YALI1_D21631g	LpH	TRUE	-1	NaN	NaN	3	Uncharacterized protein		56,489	518	integral component of plasma membrane//cation transmembrane transporter activity//L-amino acid transmembrane transporter activity//antiporter activity//L-alpha-amino acid transmembrane transport
@@ -7125,7 +7125,7 @@ YALI1_A00829g	LpH	TRUE	-1	NaN	NaN	3	Uncharacterized protein		22,880	226
 YALI1_F11781g	LpH	TRUE	-1	NaN	NaN	1	Putative nucleolar complex protein 14		94,463	832	endonucleolytic cleavage in ITS1 to separate SSU-rRNA from 5.8S rRNA and LSU-rRNA from tricistronic rRNA transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA)//endonucleolytic cleavage to generate mature 5'-end of SSU-rRNA from (SSU-rRNA, 5.8S rRNA, LSU-rRNA)//endonucleolytic cleavage in 5'-ETS of tricistronic rRNA transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA)//nucleolus//snoRNA binding//Noc4p-Nop14p complex//small-subunit processome
 YALI1_F12616g	LpH	TRUE	1	NaN	NaN	5	Uncharacterized protein		58,305	515	
 YALI1_D21076g	LpH	FALSE	-1	0.0875174530976602	0.0916664836139369	1	Uncharacterized protein		57,060	510	rRNA modification//snoRNA binding//box C/D snoRNP complex//small-subunit processome
-YALI1_F01078g	LpH	TRUE	-1	NaN	NaN	2	Class I glutamine amidotransferase-like protein		26,515	250	dTDP-4-dehydrorhamnose 3,5-epimerase activity
+YALI1_F01078g	LpH	TRUE	-1	0.167585724114954	0	2	Class I glutamine amidotransferase-like protein		26,515	250	dTDP-4-dehydrorhamnose 3,5-epimerase activity
 YALI1_C16080g	LpH	FALSE	-1	NaN	NaN	2	Ribonuclease III domain-containing protein		51,556	467	double-stranded RNA binding//ribonuclease III activity//nucleus//production of siRNA involved in RNA interference//primary miRNA processing//pre-miRNA processing//RNA phosphodiester bond hydrolysis, endonucleolytic
 YALI1_B15560g	LpH	FALSE	1	NaN	NaN	3	Uncharacterized protein		26,710	244	
 YALI1_B20521g	LpH	FALSE	-1	NaN	NaN	1	P-loop containing nucleoside triphosphate hydrolase protein		83,004	731	spliceosomal complex disassembly//maturation of SSU-rRNA from tricistronic rRNA transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA)//maturation of LSU-rRNA from tricistronic rRNA transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA)//maturation of 5.8S rRNA from tricistronic rRNA transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA)//RNA binding//ATP-dependent RNA helicase activity//ATP binding//U2-type spliceosomal complex//cytoplasm//post-mRNA release spliceosomal complex
@@ -7230,7 +7230,7 @@ YALI1_F29751g	LpH	FALSE	1	NaN	NaN	2	Cytidine deaminase-like protein		16,201	150	
 YALI1_F11605g	LpH	FALSE	1	NaN	NaN	1	PLC-like phosphodiesterase		34,814	308	lipid metabolic process//phosphoric diester hydrolase activity
 YALI1_F21315g	LpH	FALSE	-1	NaN	NaN	1	Nin one binding Zn-ribbon like-domain-containing protein		50,070	450	cleavage involved in rRNA processing//endoribonuclease activity//maturation of SSU-rRNA//preribosome, small subunit precursor//metal ion binding//RNA phosphodiester bond hydrolysis, endonucleolytic
 YALI1_A09325g	LpH	TRUE	-1	NaN	NaN	3	Uncharacterized protein		43,049	402	
-YALI1_E25018g	LpH	FALSE	-1	NaN	NaN	2	Uncharacterized protein		198,393	1726	1,3-beta-D-glucan synthase complex//1,3-beta-D-glucan synthase activity//(1->3)-beta-D-glucan biosynthetic process//integral component of membrane//cellular response to drug
+YALI1_E25018g	LpH	FALSE	-1	0.0149491835071211	0.00666558174415056	2	Uncharacterized protein		198,393	1726	1,3-beta-D-glucan synthase complex//1,3-beta-D-glucan synthase activity//(1->3)-beta-D-glucan biosynthetic process//integral component of membrane//cellular response to drug
 YALI1_E39284g	LpH	FALSE	-1	NaN	NaN	1	Uncharacterized protein		32,530	295	nuclear exosome (RNase complex)//cytoplasmic exosome (RNase complex)//exonucleolytic trimming to generate mature 3'-end of 5.8S rRNA from tricistronic rRNA transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA)//RNA binding//manganese ion binding//nuclear-transcribed mRNA catabolic process, exonucleolytic, 3'-5'//U4 snRNA 3'-end processing//exonucleolytic nuclear-transcribed mRNA catabolic process involved in deadenylation-dependent decay//CUT catabolic process//nuclear polyadenylation-dependent rRNA catabolic process//nuclear polyadenylation-dependent tRNA catabolic process//nuclear retention of pre-mRNA with aberrant 3'-ends at the site of transcription//polyadenylation-dependent snoRNA 3'-end processing
 YALI1_F03529g	LpH	FALSE	1	NaN	NaN	1	Sodium/hydrogen exchanger		66,671	600	fungal-type vacuole membrane//early endosome//late endosome//trans-Golgi network//plasma membrane//vacuolar acidification//sodium:proton antiporter activity//potassium:proton antiporter activity//integral component of membrane//potassium ion transmembrane transport//sodium ion import across plasma membrane//proton transmembrane transport
 YALI1_A07051g	LpH	TRUE	-1	NaN	NaN	4	Uncharacterized protein		74,644	652	
@@ -7297,7 +7297,7 @@ YALI1_B27454g	LpH	FALSE	-1	NaN	NaN	1	Pre-mRNA splicing factor PRP21 like protein
 YALI1_E30639g	LpH	FALSE	1	NaN	NaN	1	GTP-binding protein Rac1p	rac1	21,173	192	GTPase activity//GTP binding//intracellular//small GTPase mediated signal transduction
 YALI1_B11715g	LpH	FALSE	1	NaN	NaN	3	Triose-phosphate transporter family-domain-containing protein		38,243	349	integral component of membrane
 YALI1_F19218g	LpH	TRUE	-1	NaN	NaN	1	Uncharacterized protein		31,260	272	mRNA binding//mRNA cleavage factor complex//mRNA polyadenylation
-YALI1_A07538g	LpH	FALSE	-1	NaN	NaN	3	Histidine phosphatase superfamily		49,727	469	
+YALI1_A07538g	LpH	FALSE	-1	0.0215753193552899	0.00442478131510682	3	Histidine phosphatase superfamily		49,727	469	
 YALI1_A10784g	LpH	TRUE	1	NaN	NaN	3	Uncharacterized protein		41,688	391	
 YALI1_F00894g	LpH	FALSE	-1	NaN	NaN	1	Non-specific serine/threonine protein kinase (EC 2.7.11.1)		162,388	1549	vacuole inheritance//incipient cellular bud site//activation of MAPKKK activity//pheromone-dependent signal transduction involved in conjugation with cellular fusion//signal transduction involved in filamentous growth//invasive growth in response to glucose limitation//ATP binding//nucleus//cytoplasm//regulation of exit from mitosis//budding cell apical bud growth//bipolar cellular bud site selection//pseudohyphal growth//osmosensory signaling pathway via Sho1 osmosensor//Rho protein signal transduction//MAP kinase kinase kinase kinase activity//cell migration//actin cytoskeleton organization//stress-activated protein kinase signaling cascade//stress granule assembly//cellular response to heat//positive regulation of apoptotic process//mating projection tip//histone H2B-S14 phosphorylation//histone kinase activity (H2B-S14 specific)//Rac GTPase binding//negative regulation of sterol import by negative regulation of transcription from RNA polymerase II promoter
 YALI1_B12451g	LpH	FALSE	1	0.0365194881180061	0.0448958172914547	1	Proteasome complex subunit Rpn13 ubiquitin receptor-domain-containing protein		31,058	281	nucleus//cytoplasm//ubiquitin-dependent protein catabolic process//proteasome regulatory particle, lid subcomplex//positive regulation of endopeptidase activity//ubiquitin binding//endopeptidase activator activity//proteasome binding
@@ -7321,7 +7321,7 @@ YALI1_B23744g	LpH	TRUE	-1	NaN	NaN	5	Uncharacterized protein		34,637	315
 YALI1_C19335g	LpH	TRUE	-1	NaN	NaN	5	Uncharacterized protein		9,923	91	
 YALI1_F12312g	LpH	FALSE	-1	NaN	NaN	3	Uncharacterized protein		113,894	1037	metal ion binding
 YALI1_E19494g	LpH	FALSE	-1	NaN	NaN	1	Histone-fold-containing protein		15,696	139	negative regulation of transcription by RNA polymerase II//core promoter binding//chromatin binding//transcription coactivator activity//transcription corepressor activity//negative regulation of transcription by RNA polymerase III//negative cofactor 2 complex//regulation of RNA polymerase II transcriptional preinitiation complex assembly//protein heterodimerization activity//positive regulation of transcription from RNA polymerase II promoter in response to heat stress
-YALI1_F02545g	LpH	TRUE	-1	NaN	NaN	3	Uncharacterized protein		33,243	313	oxidoreductase activity//oxidation-reduction process
+YALI1_F02545g	LpH	TRUE	-1	0.0327300237792472	0	3	Uncharacterized protein		33,243	313	oxidoreductase activity//oxidation-reduction process
 YALI1_B11167g	LpH	FALSE	1	NaN	NaN	1	Magnesium-dependent phosphatase-1		21,498	186	dephosphorylation//phosphatase activity
 YALI1_F05979g	LpH	FALSE	-1	NaN	NaN	1	Uncharacterized protein		26,720	248	DNA binding//DNA recombination//chromosome organization
 YALI1_C07199g	LpH	FALSE	-1	NaN	NaN	1	Uncharacterized protein		26,966	248	SAGA complex
@@ -7475,9 +7475,9 @@ YALI1_E08782g	LpH	TRUE	-1	NaN	NaN	1	Uncharacterized protein		38,391	349	metaboli
 YALI1_E30431g	LpH	FALSE	1	NaN	NaN	4	Uncharacterized protein		45,185	390	
 YALI1_E36079g	LpH	TRUE	-1	NaN	NaN	3	Uncharacterized protein		29,517	259	
 YALI1_D33504g	LpH	FALSE	1	NaN	NaN	2	D-isomer specific 2-hydroxyacid dehydrogenase		36,247	331	transcription corepressor activity//nucleus//cytosol//hydroxypyruvate reductase activity//glyoxylate reductase (NADP) activity//protein homodimerization activity//NAD binding//oxidation-reduction process//negative regulation of nucleic acid-templated transcription
-YALI1_E41276g	LpH	TRUE	-1	NaN	NaN	3	Amidase signature domain-containing protein		59,531	539	amidase activity
+YALI1_E41276g	LpH	TRUE	-1	0.0241646137054934	0	3	Amidase signature domain-containing protein		59,531	539	amidase activity
 YALI1_F16249g	LpH	TRUE	-1	NaN	NaN	5	Uncharacterized protein		17,826	157	
-YALI1_B28511g	LpH	FALSE	1	NaN	NaN	1	Uncharacterized protein		21,470	195	endocytosis//membrane
+YALI1_B28511g	LpH	FALSE	1	0.0261056069201424	0.0107908209816887	1	Uncharacterized protein		21,470	195	endocytosis//membrane
 YALI1_F26216g	LpH	FALSE	1	NaN	NaN	2	ATPase assembly factor ATP10		34,344	294	mitochondrial inner membrane//integral component of mitochondrial membrane//mitochondrial proton-transporting ATP synthase complex assembly
 YALI1_C20597g	LpH	FALSE	-1	0.0366004334282808	0.0324346935808749	1	Uncharacterized protein		71,743	646	electron-transferring-flavoprotein dehydrogenase activity//mitochondrial electron transfer flavoprotein complex//respiratory electron transport chain//integral component of mitochondrial inner membrane//oxidoreductase activity, oxidizing metal ions with flavin as acceptor//ubiquinone binding//4 iron, 4 sulfur cluster binding
 YALI1_D00232g	LpH	FALSE	1	NaN	NaN	3	Uncharacterized protein		48,879	435	double-strand break repair via nonhomologous end joining//DNA ligase IV complex//DNA end binding//nonhomologous end joining complex
@@ -7541,7 +7541,7 @@ YALI1_F31255g	LpH	FALSE	-1	NaN	NaN	1	Transcription factor BYE1		89,621	822	nucle
 YALI1_F16225g	LpH	TRUE	-1	NaN	NaN	5	Uncharacterized protein		20,461	181	
 YALI1_B05295g	LpH	TRUE	1	NaN	NaN	1	Peptide methionine sulfoxide reductase MsrA		20,996	187	peptide-methionine (S)-S-oxide reductase activity//oxidation-reduction process
 YALI1_F09803g	LpH	FALSE	-1	NaN	NaN	1	Small nuclear ribonucleoprotein Sm D2 (Sm-D2) (snRNP core protein D2)		13,101	115	spliceosomal snRNP assembly//Prp19 complex//U5 snRNP//U1 snRNP//U2 snRNP//U4/U6 x U5 tri-snRNP complex//precatalytic spliceosome//catalytic step 2 spliceosome//post-mRNA release spliceosomal complex
-YALI1_C16851g	LpH	FALSE	1	NaN	NaN	2	Membrane-associating domain-containing protein (Membrane-associating domain-domain-containing protein)		18,673	174	plasma membrane//integral component of membrane//eisosome//membrane raft//eisosome assembly
+YALI1_C16851g	LpH	FALSE	1	0.0412935381586979	0.0114622127619532	2	Membrane-associating domain-containing protein (Membrane-associating domain-domain-containing protein)		18,673	174	plasma membrane//integral component of membrane//eisosome//membrane raft//eisosome assembly
 YALI1_F32948g	LpH	TRUE	-1	NaN	NaN	1	Major facilitator superfamily domain-containing protein		54,527	499	transporter activity//ion transmembrane transport//integral component of fungal-type vacuolar membrane
 YALI1_D14628g	LpH	TRUE	-1	NaN	NaN	1	Uncharacterized protein		50,808	438	nucleus//cytoplasm//methyltransferase activity//methylation
 YALI1_A01468g	LpH	FALSE	1	NaN	NaN	1	HAD-like domain-containing protein		41,914	371	mitochondrion//glycerophospholipid biosynthetic process
@@ -7648,7 +7648,7 @@ YALI1_B07076g	LpH	FALSE	1	0.0509376789343845	0.0693656766785351	2	Peptide hydrol
 YALI1_D01967g	LpH	FALSE	-1	NaN	NaN	1	Pseudouridine synthase		73,210	649	pseudouridine synthesis//RNA binding//pseudouridine synthase activity//ncRNA metabolic process//intracellular part
 YALI1_A14099g	LpH	FALSE	1	NaN	NaN	4	Uncharacterized protein		35,681	312	
 YALI1_F07429g	LpH	FALSE	-1	NaN	NaN	1	DNA helicase (EC 3.6.4.12)		101,637	924	double-strand break repair via break-induced replication//chromatin binding//DNA replication origin binding//single-stranded DNA binding//single-stranded RNA binding//ATP binding//nuclear pre-replicative complex//cytoplasm//pre-replicative complex assembly involved in nuclear cell cycle DNA replication//DNA unwinding involved in DNA replication//DNA strand elongation involved in DNA replication//premeiotic DNA replication//rDNA protrusion//replication fork protection complex//3'-5' DNA/RNA helicase activity//MCM complex//replication fork protection//CMG complex//MCM core complex//negative regulation of ATP-dependent DNA helicase activity//mitotic DNA replication initiation//ATP-dependent four-way junction helicase activity//single-stranded DNA-dependent ATP-dependent 3'-5' DNA helicase activity
-YALI1_F01981g	LpH	TRUE	-1	NaN	NaN	1	Aquaporin-like protein		30,563	284	integral component of plasma membrane//water transport//water channel activity//ascospore formation//ion transmembrane transport
+YALI1_F01981g	LpH	TRUE	-1	0.0836766165361139	0.00736528949898271	1	Aquaporin-like protein		30,563	284	integral component of plasma membrane//water transport//water channel activity//ascospore formation//ion transmembrane transport
 YALI1_E40274g	LpH	TRUE	-1	NaN	NaN	5	Uncharacterized protein		8,145	74	
 YALI1_E27339g	LpH	FALSE	1	NaN	NaN	3	Uncharacterized protein		19,276	168	structural constituent of ribosome//ribosome//translation
 YALI1_F11141g	LpH	FALSE	-1	NaN	NaN	3	Uncharacterized protein		68,763	599	
@@ -7783,8 +7783,8 @@ YALI1_E08620g	LpH	TRUE	1	NaN	NaN	2	Uncharacterized protein		199,747	1820	ATP bin
 YALI1_E25189g	LpH	FALSE	1	NaN	NaN	1	Fatty acid desaturase-domain-containing protein		61,718	535	lipid metabolic process//integral component of membrane//oxidoreductase activity//oxidation-reduction process
 YALI1_F05958g	LpH	FALSE	1	NaN	NaN	4	WD40-repeat-containing domain protein		31,434	299	
 YALI1_F28453g	LpH	FALSE	-1	NaN	NaN	1	Uncharacterized protein 52w	52w	39,354	333	ribosomal large subunit assembly//ribosomal large subunit export from nucleus//maturation of LSU-rRNA from tricistronic rRNA transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA)//maturation of 5.8S rRNA from tricistronic rRNA transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA)//nucleolus//preribosome, large subunit precursor//rRNA primary transcript binding
-YALI1_D13976g	LpH	FALSE	-1	NaN	NaN	3	Replication factor A protein 3		11,301	105	single-stranded DNA binding//DNA replication factor A complex//DNA replication//DNA repair//DNA recombination//site of double-strand break
-YALI1_B06704g	LpH	FALSE	1	NaN	NaN	1	Uncharacterized protein		45,935	411	protein serine/threonine kinase activity//ATP binding//vacuole//protein phosphorylation//vacuolar protein processing//regulation of vacuole fusion, non-autophagic
+YALI1_D13976g	LpH	FALSE	-1	0.0775080503636826	0.041011512889115	3	Replication factor A protein 3		11,301	105	single-stranded DNA binding//DNA replication factor A complex//DNA replication//DNA repair//DNA recombination//site of double-strand break
+YALI1_B06704g	LpH	FALSE	1	0.0170463146998983	0.00764604753738555	1	Uncharacterized protein		45,935	411	protein serine/threonine kinase activity//ATP binding//vacuole//protein phosphorylation//vacuolar protein processing//regulation of vacuole fusion, non-autophagic
 YALI1_C19814g	LpH	FALSE	1	NaN	NaN	1	Tafazzin family protein		42,775	372	mitochondrial inner membrane//inner mitochondrial membrane organization//phospholipid biosynthetic process//integral component of mitochondrial outer membrane//cardiolipin acyl-chain remodeling//mitochondrial ATP synthesis coupled electron transport//1-acylglycerophosphocholine O-acyltransferase activity//mitochondrial respiratory chain supercomplex assembly
 YALI1_A09939g	LpH	FALSE	1	NaN	NaN	1	Squalene synthase		51,145	445	farnesyl-diphosphate farnesyltransferase activity//endoplasmic reticulum membrane//plasma membrane//ergosterol biosynthetic process//isoprenoid biosynthetic process//integral component of membrane//farnesyl diphosphate metabolic process//squalene synthase activity
 YALI1_D05244g	LpH	TRUE	1	NaN	NaN	4	Uncharacterized protein		35,353	317	oxidoreductase activity//oxidation-reduction process
@@ -7956,9 +7956,9 @@ YALI1_F05781g	LpH	FALSE	-1	NaN	NaN	2	Uncharacterized protein		84,864	756
 YALI1_E15086g	LpH	TRUE	1	NaN	NaN	5	Uncharacterized protein		15,578	136	Golgi membrane//protein N-linked glycosylation//fungal-type cell wall biogenesis//integral component of membrane//alpha-1,2-galactosyltransferase activity//protein galactosylation
 YALI1_A09064g	LpH	FALSE	-1	NaN	NaN	4	Major facilitator superfamily domain-containing protein		58,112	521	integral component of membrane//cellular response to drug//transmembrane transport
 YALI1_A05701g	LpH	FALSE	1	NaN	NaN	5	Uncharacterized protein		13,453	114	
-YALI1_F00261g	LpH	FALSE	1	NaN	NaN	3	Uncharacterized protein		61,918	564	integral component of membrane
+YALI1_F00261g	LpH	FALSE	1	0.0163044777822991	0.00163622477695829	3	Uncharacterized protein		61,918	564	integral component of membrane
 YALI1_E02056g	LpH	FALSE	-1	NaN	NaN	1	Alpha/beta knot methyltransferase		28,835	258	endonucleolytic cleavage in ITS1 to separate SSU-rRNA from 5.8S rRNA and LSU-rRNA from tricistronic rRNA transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA)//endonucleolytic cleavage to generate mature 5'-end of SSU-rRNA from (SSU-rRNA, 5.8S rRNA, LSU-rRNA)//endonucleolytic cleavage in 5'-ETS of tricistronic rRNA transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA)//nucleolus//cytoplasm//nuclear microtubule//rRNA binding//90S preribosome//small-subunit processome//nuclear periphery//identical protein binding//rRNA (pseudouridine) methyltransferase activity//rRNA base methylation
-YALI1_D06131g	LpH	TRUE	-1	NaN	NaN	2	1,3-beta-glucanosyltransferase (EC 2.4.1.-)		50,297	472	fungal-type cell wall//anchored component of external side of plasma membrane//fungal-type cell wall organization//1,3-beta-glucanosyltransferase activity//fungal-type cell wall (1->3)-beta-D-glucan biosynthetic process
+YALI1_D06131g	LpH	TRUE	-1	0.080617816871821	0	2	1,3-beta-glucanosyltransferase (EC 2.4.1.-)		50,297	472	fungal-type cell wall//anchored component of external side of plasma membrane//fungal-type cell wall organization//1,3-beta-glucanosyltransferase activity//fungal-type cell wall (1->3)-beta-D-glucan biosynthetic process
 YALI1_E38859g	LpH	FALSE	1	NaN	NaN	1	Uncharacterized protein		125,540	1129	cell//glycerophosphodiester phosphodiesterase activity//cellular phosphate ion homeostasis//glycerophospholipid catabolic process//glycerophosphocholine phosphodiesterase activity
 YALI1_B22533g	LpH	FALSE	1	NaN	NaN	1	ATP11 protein-domain-containing protein		36,439	322	mitochondrion//mitochondrial proton-transporting ATP synthase complex assembly//unfolded protein binding
 YALI1_E23184g	LpH	FALSE	1	0.147681223056968	0.187791550050865	1	Tubulin alpha chain		50,396	449	GTPase activity//structural constituent of cytoskeleton//GTP binding//cytoplasm//microtubule//cytoskeleton organization//microtubule-based process
@@ -8062,7 +8062,7 @@ YALI1_E28465g	LpH	FALSE	-1	NaN	NaN	1	DNA-directed RNA polymerase		37,918	339	RNA
 YALI1_D11592g	LpH	FALSE	-1	NaN	NaN	2	Mediator of RNA polymerase II transcription subunit 13 (Mediator complex subunit 13)		142,454	1320	transcription coregulator activity//regulation of transcription by RNA polymerase II//mediator complex
 YALI1_B14308g	LpH	FALSE	1	NaN	NaN	4	Uncharacterized protein		35,608	311	
 YALI1_F05312g	LpH	FALSE	-1	NaN	NaN	4	Uncharacterized protein		71,860	644	DNA-binding transcription factor activity, RNA polymerase II-specific//DNA binding//nucleus//regulation of transcription by RNA polymerase II//zinc ion binding
-YALI1_D27274g	LpH	FALSE	-1	NaN	NaN	1	Phosphatidylserine decarboxylase proenzyme 1, mitochondrial (EC 4.1.1.65) [Cleaved into: Phosphatidylserine decarboxylase 1 beta chain; Phosphatidylserine decarboxylase 1 alpha chain]	PSD1	64,252	576	phosphatidylserine decarboxylase activity//phosphatidylethanolamine biosynthetic process//protein autoprocessing//integral component of mitochondrial inner membrane
+YALI1_D27274g	LpH	FALSE	-1	0.0177430645116989	0.0106154125841811	1	Phosphatidylserine decarboxylase proenzyme 1, mitochondrial (EC 4.1.1.65) [Cleaved into: Phosphatidylserine decarboxylase 1 beta chain; Phosphatidylserine decarboxylase 1 alpha chain]	PSD1	64,252	576	phosphatidylserine decarboxylase activity//phosphatidylethanolamine biosynthetic process//protein autoprocessing//integral component of mitochondrial inner membrane
 YALI1_C18757g	LpH	FALSE	-1	NaN	NaN	5	Uncharacterized protein		32,615	295	
 YALI1_E29481g	LpH	FALSE	-1	NaN	NaN	2	Glycosidase (EC 3.2.-.-)		61,497	584	hydrolase activity, hydrolyzing O-glycosyl compounds//cell wall//carbohydrate metabolic process//cell wall organization
 YALI1_F30789g	LpH	FALSE	-1	NaN	NaN	1	Uncharacterized protein		78,334	682	membrane//glycoprotein-N-acetylgalactosamine 3-beta-galactosyltransferase activity//O-glycan processing, core 1
@@ -8155,7 +8155,7 @@ YALI1_F38856g	LpH	FALSE	1	NaN	NaN	1	Uncharacterized protein		40,017	345	deadenyl
 YALI1_A05407g	LpH	FALSE	1	NaN	NaN	2	Serine/threonine-protein phosphatase (EC 3.1.3.16)		37,040	322	phosphoprotein phosphatase activity//protein dephosphorylation//kinase activity//phosphorylation
 YALI1_F34870g	LpH	FALSE	-1	NaN	NaN	1	Uncharacterized protein		53,610	472	
 YALI1_E18961g	LpH	FALSE	1	NaN	NaN	1	Squalene epoxidase-domain-containing protein		53,227	489	squalene monooxygenase activity//endoplasmic reticulum//lipid droplet//ergosterol biosynthetic process//drug binding//integral component of membrane//ribosome biogenesis//flavin adenine dinucleotide binding//oxidation-reduction process
-YALI1_E10587g	LpH	FALSE	-1	NaN	NaN	2	Ras family-domain-containing protein		25,355	223	GTPase activity//GTP binding//signal transduction//membrane
+YALI1_E10587g	LpH	FALSE	-1	0.0983696359130214	0.0241399726373347	2	Ras family-domain-containing protein		25,355	223	GTPase activity//GTP binding//signal transduction//membrane
 YALI1_D03245g	LpH	FALSE	1	NaN	NaN	2	Sucrase/ferredoxin-like-domain-containing protein		33,577	299	
 YALI1_B22158g	LpH	TRUE	-1	NaN	NaN	4	Uncharacterized protein		307,493	2981	integral component of membrane
 YALI1_E11289g	LpH	FALSE	1	NaN	NaN	2	Uncharacterized protein		15,147	134	
@@ -8335,7 +8335,7 @@ YALI1_E25617g	LpH	FALSE	-1	NaN	NaN	3	Uncharacterized protein		65,493	592
 YALI1_C33314g	LpH	FALSE	1	NaN	NaN	2	Uncharacterized protein		36,472	325	structural constituent of ribosome//mitochondrial small ribosomal subunit//mitochondrial translation
 YALI1_E19620g	LpH	TRUE	-1	NaN	NaN	3	Uncharacterized protein		13,294	119	
 YALI1_B14187g	LpH	FALSE	1	0.0942180884282808	0.113057534814344	1	Adenylyl cyclase-associated protein		56,519	538	cell morphogenesis//division septum//actin binding//establishment or maintenance of cell polarity//signal transduction//actin polymerization or depolymerization//adenylate cyclase binding//cortical actin cytoskeleton//negative regulation of conjugation with cellular fusion//growing cell tip//regulation of adenylate cyclase activity
-YALI1_F29395g	LpH	TRUE	-1	NaN	NaN	3	Uncharacterized protein		25,506	244	
+YALI1_F29395g	LpH	TRUE	-1	0.302402274262462	0.0890139642115971	3	Uncharacterized protein		25,506	244	
 YALI1_B27857g	LpH	FALSE	-1	NaN	NaN	4	WD40-repeat-containing domain protein		40,827	371	
 YALI1_F31135g	LpH	FALSE	1	NaN	NaN	1	Protoheme IX farnesyltransferase, mitochondrial (EC 2.5.1.-) (Heme O synthase)		51,187	471	heme a biosynthetic process//protoheme IX farnesyltransferase activity//integral component of membrane//mitochondrial membrane//cellular respiration//heme O biosynthetic process
 YALI1_C23548g	LpH	FALSE	1	NaN	NaN	2	Mitochondrial ribosomal protein L28-domain-containing protein		17,126	146	mitochondrial large ribosomal subunit
@@ -8366,7 +8366,7 @@ YALI1_C25190g	LpH	FALSE	-1	NaN	NaN	4	P-loop containing nucleoside triphosphate h
 YALI1_E12295g	LpH	FALSE	-1	NaN	NaN	1	Uncharacterized protein		354,875	3153	fermentation//integral component of membrane
 YALI1_D32024g	LpH	FALSE	-1	NaN	NaN	5	Uncharacterized protein		14,672	125	intracellular protein transport//ER to Golgi vesicle-mediated transport//retrograde vesicle-mediated transport, Golgi to ER//intra-Golgi vesicle-mediated transport//COPI vesicle coat
 YALI1_F15218g	LpH	FALSE	-1	NaN	NaN	1	Uncharacterized protein		37,315	333	nucleic acid binding//nucleus
-YALI1_D03412g	LpH	FALSE	1	NaN	NaN	2	Glucose signaling factor 2-domain-containing protein		49,542	434	plasma membrane
+YALI1_D03412g	LpH	FALSE	1	0.0277232893031536	0.0437756402466938	2	Glucose signaling factor 2-domain-containing protein		49,542	434	plasma membrane
 YALI1_D10129g	LpH	FALSE	-1	NaN	NaN	1	Uncharacterized protein		21,357	192	RNA binding
 YALI1_A04927g	LpH	FALSE	1	NaN	NaN	1	Uncharacterized protein		35,646	310	cytoplasm//SCF ubiquitin ligase complex//regulation of proteolysis//ubiquitin protein ligase binding//proteasome-mediated ubiquitin-dependent protein catabolic process
 YALI1_B29419g	LpH	FALSE	-1	0.0532242219811801	0.245931992700916	3	Formate dehydrogenase (FDH) (EC 1.17.1.9) (NAD-dependent formate dehydrogenase)		39,904	366	cytosol//formate dehydrogenase (NAD+) activity//oxidoreductase activity, acting on the CH-OH group of donors, NAD or NADP as acceptor//formate catabolic process//NAD binding//oxidation-reduction process
@@ -8455,7 +8455,7 @@ YALI1_F36805g	LpH	FALSE	1	NaN	NaN	2	Uncharacterized protein		199,747	1858	cellul
 YALI1_F22171g	LpH	FALSE	-1	NaN	NaN	3	Fungal-specific transcription factor domain-domain-containing protein		85,193	758	DNA-binding transcription factor activity, RNA polymerase II-specific//DNA binding//nucleus//regulation of transcription by RNA polymerase II//zinc ion binding
 YALI1_F36610g	LpH	FALSE	-1	NaN	NaN	1	SNF2 family N-terminal domain-containing protein (SNF2 family N-terminal domain-domain-containing protein)		104,082	920	DNA binding//ATP-dependent DNA helicase activity//ATP binding//endomembrane system//membrane//intracellular membrane-bounded organelle//protein-containing complex subunit organization//chromosomal part//cytoplasmic part//heterochromatin assembly involved in chromatin silencing
 YALI1_E22592g	LpH	FALSE	-1	NaN	NaN	1	Uncharacterized protein		44,873	406	tRNA binding//tRNA 5'-leader removal//nucleus//cytoplasm//tRNA 3'-end processing//tRNA folding//ribonucleoprotein complex
-YALI1_B02091g	LpH	FALSE	-1	NaN	NaN	1	Transcription elongation factor Spt6		161,097	1406	chromatin silencing at rDNA//regulation of histone H3-K36 methylation//chromosome, telomeric region//DNA binding//DNA-binding transcription factor activity//chromatin silencing at telomere//transcription elongation factor complex//nucleosome positioning//chromatin silencing at silent mating-type cassette//chromatin silencing at centromere//regulation of extent of heterochromatin assembly//nucleosome binding//nuclear pericentric heterochromatin//positive regulation of transcription elongation from RNA polymerase II promoter//transcriptionally active chromatin//histone binding//mRNA transcription by RNA polymerase II//CLRC ubiquitin ligase complex localization to heterochromatin//regulation of mRNA processing//regulation of histone H3-K4 methylation//chromatin maintenance//negative regulation of histone H3-K14 acetylation//negative regulation of histone exchange//positive regulation of histone H3-K9 dimethylation//positive regulation of histone H3-K9 trimethylation
+YALI1_B02091g	LpH	FALSE	-1	0.00710835739852492	0.00444641299821974	1	Transcription elongation factor Spt6		161,097	1406	chromatin silencing at rDNA//regulation of histone H3-K36 methylation//chromosome, telomeric region//DNA binding//DNA-binding transcription factor activity//chromatin silencing at telomere//transcription elongation factor complex//nucleosome positioning//chromatin silencing at silent mating-type cassette//chromatin silencing at centromere//regulation of extent of heterochromatin assembly//nucleosome binding//nuclear pericentric heterochromatin//positive regulation of transcription elongation from RNA polymerase II promoter//transcriptionally active chromatin//histone binding//mRNA transcription by RNA polymerase II//CLRC ubiquitin ligase complex localization to heterochromatin//regulation of mRNA processing//regulation of histone H3-K4 methylation//chromatin maintenance//negative regulation of histone H3-K14 acetylation//negative regulation of histone exchange//positive regulation of histone H3-K9 dimethylation//positive regulation of histone H3-K9 trimethylation
 YALI1_F23616g	LpH	FALSE	1	NaN	NaN	2	Uncharacterized protein		54,161	479	integral component of membrane
 YALI1_F19579g	LpH	FALSE	1	NaN	NaN	3	Uncharacterized protein		37,584	331	
 YALI1_B17724g	LpH	FALSE	-1	NaN	NaN	3	HPP family-domain-containing protein		31,301	291	integral component of membrane
@@ -8780,7 +8780,7 @@ YALI1_D22704g	LpH	FALSE	1	0.0409227328763988	0.0624090455315361	1	Uncharacterize
 YALI1_D15333g	LpH	FALSE	1	NaN	NaN	1	54S ribosomal protein L2, mitochondrial		41,771	374	structural constituent of ribosome//mitochondrial large ribosomal subunit//translation
 YALI1_C26017g	LpH	FALSE	-1	NaN	NaN	1	Uncharacterized protein		49,382	452	trans-hexaprenyltranstransferase activity//ubiquinone biosynthetic process//isoprenoid biosynthetic process//extrinsic component of mitochondrial inner membrane//metal ion binding
 YALI1_A06735g	LpH	FALSE	-1	NaN	NaN	5	Uncharacterized protein		10,665	93	
-YALI1_B16477g	LpH	FALSE	1	NaN	NaN	2	Anp1-domain-containing protein		38,276	337	alpha-1,6-mannosyltransferase activity//cell wall mannoprotein biosynthetic process//alpha-1,6-mannosyltransferase complex//cis-Golgi network//protein N-linked glycosylation//mannosylation
+YALI1_B16477g	LpH	FALSE	1	0.0149755563402848	0.0121782407604273	2	Anp1-domain-containing protein		38,276	337	alpha-1,6-mannosyltransferase activity//cell wall mannoprotein biosynthetic process//alpha-1,6-mannosyltransferase complex//cis-Golgi network//protein N-linked glycosylation//mannosylation
 YALI1_A16952g	LpH	TRUE	-1	NaN	NaN	5	Uncharacterized protein		13,207	113	
 YALI1_D24836g	LpH	FALSE	1	NaN	NaN	1	Uncharacterized protein		73,936	668	integral component of membrane//plasma membrane of cell tip//cell division site//dipeptide transmembrane transport//tripeptide transmembrane transporter activity//tripeptide transport//dipeptide transmembrane transporter activity
 YALI1_B18384g	LpH	FALSE	1	NaN	NaN	1	Emp24/gp25L/p24 family/GOLD-domain-containing protein		23,797	208	integral component of membrane
@@ -8804,7 +8804,7 @@ YALI1_F06956g	LpH	FALSE	-1	NaN	NaN	1	Uncharacterized protein		44,585	402
 YALI1_D33879g	LpH	FALSE	1	NaN	NaN	1	CoA-transferase family III domain-containing protein		48,946	453	catalytic activity
 YALI1_E38608g	LpH	FALSE	1	NaN	NaN	1	Nuclear distribution protein nude 1		50,801	461	establishment of mitotic spindle orientation//kinetochore//cytoplasm//centrosome//kinesin complex//microtubule//microtubule nucleation//chromosome segregation//nuclear migration//mitotic centrosome separation//microtubule binding//cell migration//vesicle transport along microtubule//establishment of chromosome localization//centrosome localization//regulation of microtubule motor activity
 YALI1_E01019g	LpH	FALSE	-1	0.26180801861648	0.201713151246185	2	Citrate synthase		50,978	459	citrate (Si)-synthase activity//mitochondrion//tricarboxylic acid cycle//propionate catabolic process, 2-methylcitrate cycle//2-methylcitrate synthase activity
-YALI1_C15297g	LpH	FALSE	-1	NaN	NaN	1	Thymidylate synthase/dCMP hydroxymethylase domain-containing protein		33,709	296	thymidylate synthase activity//dTMP biosynthetic process//methylation//nuclear periphery
+YALI1_C15297g	LpH	FALSE	-1	0.0308283184409969	0.00714175926246185	1	Thymidylate synthase/dCMP hydroxymethylase domain-containing protein		33,709	296	thymidylate synthase activity//dTMP biosynthetic process//methylation//nuclear periphery
 YALI1_F17547g	LpH	FALSE	-1	NaN	NaN	2	rRNA-processing protein		14,973	123	nucleolus//rRNA processing
 YALI1_F06109g	LpH	FALSE	-1	NaN	NaN	1	Uncharacterized protein		48,256	435	integral component of membrane
 YALI1_B09871g	LpH	FALSE	-1	NaN	NaN	5	Uncharacterized protein		18,125	165	
@@ -8817,7 +8817,7 @@ YALI1_F21504g	LpH	TRUE	-1	NaN	NaN	3	Glycosyl hydrolase family 3 N terminal domai
 YALI1_C23075g	LpH	FALSE	1	0.111755956706511	0.112730123540183	3	Glutathione S-transferase		24,908	217	translation elongation factor activity//glutathione transferase activity//nucleus//cytoplasm//translational elongation//glutathione metabolic process
 YALI1_F14368g	LpH	FALSE	1	0.0547072809155646	0.0808289638936928	1	Uncharacterized protein		46,782	419	calcium ion binding//endoplasmic reticulum//integral component of membrane
 YALI1_D27934g	LpH	FALSE	-1	NaN	NaN	5	Uncharacterized protein		31,943	278	integral component of membrane
-YALI1_E08472g	LpH	FALSE	1	NaN	NaN	1	Uncharacterized protein		109,105	972	nuclear export signal receptor activity//nuclear envelope//cytosol//protein import into nucleus//Ran GTPase binding//protein-containing complex//nuclear periphery//positive regulation of protein export from nucleus
+YALI1_E08472g	LpH	FALSE	1	0.021931839870295	0.00644256191251272	1	Uncharacterized protein		109,105	972	nuclear export signal receptor activity//nuclear envelope//cytosol//protein import into nucleus//Ran GTPase binding//protein-containing complex//nuclear periphery//positive regulation of protein export from nucleus
 YALI1_E08900g	LpH	FALSE	1	NaN	NaN	1	Kinesin-like protein		97,798	872	establishment of mitotic spindle orientation//ATP binding//kinesin complex//nuclear microtubule//microtubule binding//ATP-dependent microtubule motor activity, plus-end-directed//nuclear migration along microtubule//negative regulation of microtubule polymerization//regulation of mitotic spindle elongation//microtubule plus-end//mitotic spindle disassembly//mitotic spindle astral microtubule//plus-end specific microtubule depolymerization//tubulin-dependent ATPase activity//mitotic spindle assembly
 YALI1_B27360g	LpH	FALSE	-1	NaN	NaN	3	Uncharacterized protein		80,108	701	DNA-binding transcription factor activity, RNA polymerase II-specific//nucleus//regulation of transcription by RNA polymerase II//zinc ion binding
 YALI1_F04980g	LpH	FALSE	-1	NaN	NaN	4	Uncharacterized protein		42,856	373	integral component of membrane
@@ -8873,7 +8873,7 @@ YALI1_B28292g	LpH	FALSE	1	0.0887631404170905	0.124981030976602	1	Uncharacterized
 YALI1_C33406g	LpH	FALSE	-1	NaN	NaN	2	Uncharacterized protein		137,676	1226	incipient cellular bud site//chitin synthase activity//prospore membrane//cellular bud neck//cell wall chitin biosynthetic process//integral component of membrane//cell septum//ascospore wall assembly//chitosome//cell periphery//protein localization to bud neck
 YALI1_B09211g	LpH	TRUE	-1	NaN	NaN	3	Uncharacterized protein		37,545	337	oxidoreductase activity//oxidation-reduction process
 YALI1_B30024g	LpH	FALSE	1	0.271328880595117	0.254638659333672	1	Uncharacterized protein		34,511	318	metabolic process//lyase activity
-YALI1_E35023g	LpH	FALSE	1	NaN	NaN	1	Ubiquitin-conjugating enzyme		15,322	139	nucleus//cytoplasm//postreplication repair//free ubiquitin chain polymerization//ubiquitin conjugating enzyme complex//ubiquitin protein ligase binding//ubiquitin protein ligase activity//protein K63-linked ubiquitination
+YALI1_E35023g	LpH	FALSE	1	0.0519252732985758	0.00761171990844354	1	Ubiquitin-conjugating enzyme		15,322	139	nucleus//cytoplasm//postreplication repair//free ubiquitin chain polymerization//ubiquitin conjugating enzyme complex//ubiquitin protein ligase binding//ubiquitin protein ligase activity//protein K63-linked ubiquitination
 YALI1_B27110g	LpH	FALSE	1	NaN	NaN	1	Uncharacterized protein		47,219	425	GPI-anchor transamidase activity//attachment of GPI anchor to protein//GPI-anchor transamidase complex
 YALI1_E39385g	LpH	FALSE	1	NaN	NaN	1	Clathrin light chain		24,241	217	structural molecule activity//intracellular protein transport//clathrin coat of trans-Golgi network vesicle//clathrin coat of coated pit//clathrin heavy chain binding//clathrin-dependent endocytosis
 YALI1_F07344g	LpH	FALSE	1	0.480476981256358	0.38961242792472	1	GTP-binding nuclear protein		24,170	214	ribosomal subunit export from nucleus//GTPase activity//Ran guanyl-nucleotide exchange factor activity//GTP binding//nucleus//cytoplasm//protein import into nucleus//negative regulation of G2/M transition of mitotic cell cycle//poly(A)+ mRNA export from nucleus//chromosome organization
@@ -9084,7 +9084,7 @@ YALI1_F13644g	LpH	FALSE	-1	NaN	NaN	1	CRM1 C terminal-domain-containing protein		
 YALI1_C31576g	LpH	FALSE	-1	NaN	NaN	1	WD40-repeat-containing domain protein		47,824	424	telomere maintenance//chromosome, telomeric region//chromatin silencing at telomere//histone methyltransferase activity (H3-K4 specific)//Set1C/COMPASS complex//histone H3-K4 methylation
 YALI1_C07117g	LpH	FALSE	1	NaN	NaN	2	Uncharacterized protein		14,981	134	vesicle-mediated transport//integral component of Golgi membrane
 YALI1_E35280g	LpH	FALSE	1	NaN	NaN	1	Oxidation resistance protein 1		25,704	229	mitochondrion
-YALI1_D26316g	LpH	FALSE	-1	NaN	NaN	2	Uncharacterized protein		86,620	759	chromatin binding//chromatin remodeling//RSC-type complex
+YALI1_D26316g	LpH	FALSE	-1	0.0185942785503561	0.0118599537795015	2	Uncharacterized protein		86,620	759	chromatin binding//chromatin remodeling//RSC-type complex
 YALI1_B30146g	LpH	FALSE	1	NaN	NaN	1	Uncharacterized protein		76,160	689	RNA binding//cytoplasmic stress granule//regulation of cytoplasmic mRNA processing body assembly//stress granule assembly
 YALI1_D10768g	LpH	FALSE	1	NaN	NaN	3	Major facilitator superfamily domain-containing protein		58,428	536	glycerophosphodiester transmembrane transporter activity//glycerophosphodiester transmembrane transport//plasma membrane//glycerol-3-phosphate transmembrane transporter activity//glycerol-3-phosphate transmembrane transport//integral component of membrane
 YALI1_E22576g	LpH	FALSE	-1	NaN	NaN	1	DNA polymerase alpha subunit B		66,466	608	DNA binding//DNA-directed DNA polymerase activity//nucleus//DNA replication//DNA biosynthetic process
@@ -9135,7 +9135,7 @@ YALI1_F00307g	LpH	FALSE	-1	NaN	NaN	1	Uncharacterized protein		160,474	1442	RNA c
 YALI1_F25783g	LpH	FALSE	1	NaN	NaN	5	Uncharacterized protein		11,021	96	anaphase-promoting complex//regulation of mitotic metaphase/anaphase transition//anaphase-promoting complex-dependent catabolic process
 YALI1_E19852g	LpH	FALSE	-1	0.109772160760427	0.070807213474059	1	Pyridoxal phosphate-dependent transferase		46,639	431	serine-pyruvate transaminase activity//peroxisome//alanine-glyoxylate transaminase activity//glycine biosynthetic process, by transamination of glyoxylate
 YALI1_C15084g	LpH	FALSE	1	NaN	NaN	2	Uncharacterized protein		48,466	439	catalytic activity//metabolic process
-YALI1_B19507g	LpH	FALSE	1	NaN	NaN	1	ETC complex I subunit conserved region-domain-containing protein		18,627	161	mitochondrial respiratory chain complex I//plasma membrane//oxidoreductase activity, acting on NAD(P)H//electron transport chain
+YALI1_B19507g	LpH	FALSE	1	0.0582593986266531	0.0703133310554425	1	ETC complex I subunit conserved region-domain-containing protein		18,627	161	mitochondrial respiratory chain complex I//plasma membrane//oxidoreductase activity, acting on NAD(P)H//electron transport chain
 YALI1_A02150g	LpH	FALSE	-1	NaN	NaN	4	Uncharacterized protein		68,512	613	
 YALI1_D26666g	LpH	FALSE	1	NaN	NaN	2	Uncharacterized protein		56,705	507	N,N-dimethylaniline monooxygenase activity//flavin adenine dinucleotide binding//NADP binding//oxidation-reduction process
 YALI1_F39236g	LpH	FALSE	-1	NaN	NaN	1	Trypsin-like cysteine/serine peptidase domain-containing protein		114,041	1036	serine-type endopeptidase activity//nucleus//proteolysis//apoptotic process
@@ -9542,7 +9542,7 @@ YALI1_B23201g	LpH	FALSE	-1	NaN	NaN	5	Uncharacterized protein		49,682	438
 YALI1_A19220g	LpH	FALSE	1	NaN	NaN	1	Uncharacterized protein		21,503	192	nucleus//regulation of transcription, DNA-templated//sequence-specific DNA binding
 YALI1_F13691g	LpH	FALSE	1	NaN	NaN	2	Uncharacterized protein		79,796	736	integral component of membrane
 YALI1_E38912g	LpH	FALSE	-1	0.038721173560529	0.0319452266200407	1	Acyl-coenzyme A oxidase		77,282	689	acyl-CoA dehydrogenase activity//acyl-CoA oxidase activity//peroxisome//fatty acid beta-oxidation using acyl-CoA dehydrogenase//fatty acid beta-oxidation using acyl-CoA oxidase//FAD binding
-YALI1_E35082g	LpH	FALSE	1	NaN	NaN	1	Uncharacterized protein		18,600	171	succinate dehydrogenase activity//tricarboxylic acid cycle//electron transfer activity//integral component of membrane//electron transport chain//succinate dehydrogenase complex//metal ion binding
+YALI1_E35082g	LpH	FALSE	1	0.109120058382503	0.0504452425890132	1	Uncharacterized protein		18,600	171	succinate dehydrogenase activity//tricarboxylic acid cycle//electron transfer activity//integral component of membrane//electron transport chain//succinate dehydrogenase complex//metal ion binding
 YALI1_E28736g	LpH	FALSE	1	NaN	NaN	1	UAA transporter		40,555	370	GDP-fucose transmembrane transporter activity//UDP-N-acetylglucosamine transmembrane transporter activity//UDP-xylose transmembrane transporter activity//GDP-fucose transmembrane transport//UDP-glucose transmembrane transport//UDP-xylose transmembrane transport//integral component of Golgi membrane//integral component of endoplasmic reticulum membrane//fungal-type cell wall chitin biosynthetic process//UDP-N-acetylglucosamine transmembrane transport
 YALI1_F11827g	LpH	FALSE	1	NaN	NaN	2	Glutamate decarboxylase (EC 4.1.1.15)		61,021	544	glutamate decarboxylase activity//glutamate metabolic process//pyridoxal phosphate binding
 YALI1_A18286g	LpH	FALSE	-1	NaN	NaN	1	Uncharacterized protein		61,651	556	ribosomal large subunit export from nucleus//ribosomal small subunit export from nucleus//RNA binding//nuclear pore//nucleolus//cytoplasm//poly(A)+ mRNA export from nucleus//nuclear RNA export factor complex
@@ -9577,9 +9577,9 @@ YALI1_D13071g	LpH	FALSE	1	NaN	NaN	3	Uncharacterized protein		31,597	281
 YALI1_C17314g	LpH	FALSE	-1	NaN	NaN	5	Uncharacterized protein		10,467	91	
 YALI1_E24567g	LpH	FALSE	-1	NaN	NaN	3	Amino acid permease/ SLC12A domain-containing protein		61,368	559	amino acid transport//integral component of membrane//transmembrane transporter activity//transmembrane transport
 YALI1_F15769g	LpH	TRUE	1	NaN	NaN	2	Pheromone A receptor-domain-containing protein		44,665	388	pheromone-dependent signal transduction involved in conjugation with cellular fusion//cytogamy//mating-type factor pheromone receptor activity//integral component of plasma membrane//G protein-coupled receptor signaling pathway
-YALI1_F14136g	LpH	FALSE	1	NaN	NaN	1	Uncharacterized protein		102,159	911	integral component of membrane
+YALI1_F14136g	LpH	FALSE	1	0.0176217070040692	0.0204412836826043	1	Uncharacterized protein		102,159	911	integral component of membrane
 YALI1_A03883g	LpH	FALSE	-1	NaN	NaN	3	Uncharacterized protein		39,076	343	integral component of membrane
-YALI1_F39022g	LpH	FALSE	1	NaN	NaN	3	Uncharacterized protein		14,214	127	
+YALI1_F39022g	LpH	FALSE	1	0.065787907629705	0.00743965230671414	3	Uncharacterized protein		14,214	127	
 YALI1_F34202g	LpH	FALSE	-1	NaN	NaN	2	Branched-chain alpha-ketoacid dehydrogenase		54,563	480	pyruvate dehydrogenase (acetyl-transferring) kinase activity//mitochondrion//carbon utilization//peptidyl-serine phosphorylation//negative regulation of pyruvate dehydrogenase activity
 YALI1_B18727g	LpH	FALSE	-1	NaN	NaN	2	Uncharacterized protein		46,704	412	nucleic acid binding
 YALI1_A22137g	LpH	FALSE	-1	NaN	NaN	4	Uncharacterized protein		66,211	588	
@@ -9625,7 +9625,7 @@ YALI1_D32934g	LpH	FALSE	1	NaN	NaN	5	Uncharacterized protein		7,415	68	DNA metabo
 YALI1_C03461g	LpH	FALSE	-1	NaN	NaN	2	Uncharacterized protein		79,038	701	Golgi to plasma membrane transport//exomer complex//fungal-type cell wall chitin biosynthetic process
 YALI1_E19682g	LpH	FALSE	-1	NaN	NaN	2	Mitochondrial carrier domain-containing protein		33,769	306	pyruvate secondary active transmembrane transporter activity//mitochondrial inner membrane//mitochondrial pyruvate transmembrane transport//integral component of membrane//NAD transmembrane transport//NAD transmembrane transporter activity
 YALI1_C15115g	LpH	FALSE	-1	NaN	NaN	5	Uncharacterized protein		116,844	1068	
-YALI1_F09846g	LpH	FALSE	-1	NaN	NaN	3	Uncharacterized protein		16,102	142	integral component of membrane
+YALI1_F09846g	LpH	FALSE	-1	0.0360294258774161	0.00664204243133266	3	Uncharacterized protein		16,102	142	integral component of membrane
 YALI1_A14287g	LpH	FALSE	1	NaN	NaN	1	1,2-dihydroxy-3-keto-5-methylthiopentene dioxygenase (EC 1.13.11.54) (Acireductone dioxygenase (Fe(2+)-requiring)) (ARD) (Fe-ARD)	ADI1	20,356	173	iron ion binding//nucleus//cytoplasm//acireductone dioxygenase (Ni2+-requiring) activity//acireductone dioxygenase [iron(II)-requiring] activity//L-methionine salvage from methylthioadenosine//oxidation-reduction process
 YALI1_E11136g	LpH	FALSE	-1	NaN	NaN	3	Uncharacterized protein		100,092	879	
 YALI1_B13828g	LpH	FALSE	1	NaN	NaN	2	Uncharacterized protein		149,032	1367	cytoplasm//signal transduction//regulation of GTPase activity//metal ion binding
@@ -9865,7 +9865,7 @@ YALI1_F04455g	LpH	FALSE	1	0.171865756531027	0.172693864224313	1	Cytochrome c oxi
 YALI1_F05448g	LpH	TRUE	1	NaN	NaN	5	Uncharacterized protein		52,847	468	
 YALI1_A00014g	LpH	FALSE	-1	NaN	NaN	5	Uncharacterized protein		13,779	117	
 YALI1_B14959g	LpH	FALSE	1	NaN	NaN	3	Uncharacterized protein		11,589	104	
-YALI1_E22303g	LpH	FALSE	1	NaN	NaN	1	Uncharacterized protein		69,160	629	malate dehydrogenase (decarboxylating) (NAD+) activity//mitochondrion//pyruvate metabolic process//malate metabolic process//metal ion binding//NAD binding//oxidation-reduction process
+YALI1_E22303g	LpH	FALSE	1	0.0206119306309766	0.00335454214242116	1	Uncharacterized protein		69,160	629	malate dehydrogenase (decarboxylating) (NAD+) activity//mitochondrion//pyruvate metabolic process//malate metabolic process//metal ion binding//NAD binding//oxidation-reduction process
 YALI1_D09238g	LpH	FALSE	-1	NaN	NaN	5	Uncharacterized protein		42,106	368	
 YALI1_E33278g	LpH	FALSE	1	NaN	NaN	5	Uncharacterized protein		7,781	66	
 YALI1_B29711g	LpH	FALSE	-1	NaN	NaN	4	Uncharacterized protein		53,116	455	
@@ -10443,7 +10443,7 @@ YALI1_E36773g	LpH	FALSE	-1	NaN	NaN	2	Uncharacterized protein		20,883	186	integra
 YALI1_F02074g	LpH	FALSE	-1	NaN	NaN	3	Amino acid permease/ SLC12A domain-containing protein		61,959	556	amino acid transport//integral component of membrane//transmembrane transporter activity//transmembrane transport
 YALI1_D32958g	LpH	FALSE	1	NaN	NaN	3	PhoG like DNA-binding family-domain-containing protein		53,839	494	nuclear chromosome//DNA binding//DNA-binding transcription factor activity//positive regulation of transcription by RNA polymerase II
 YALI1_C01576g	LpH	FALSE	-1	NaN	NaN	3	Uncharacterized protein		32,615	290	
-YALI1_D33229g	LpH	FALSE	-1	NaN	NaN	1	FACT complex subunit POB3		61,086	545	nuclear chromatin//DNA binding//alpha DNA polymerase:primase complex//DNA-dependent DNA replication//DNA repair//chromatin silencing at silent mating-type cassette//replication fork protection complex//nucleosome binding//chromosome, centromeric outer repeat region//cellular protein localization//DNA replication-independent nucleosome organization//FACT complex//histone binding//positive regulation of RNA polymerase II transcriptional preinitiation complex assembly//chromatin silencing at centromere outer repeat region
+YALI1_D33229g	LpH	FALSE	-1	0.0165488989738047	0.00901113863936928	1	FACT complex subunit POB3		61,086	545	nuclear chromatin//DNA binding//alpha DNA polymerase:primase complex//DNA-dependent DNA replication//DNA repair//chromatin silencing at silent mating-type cassette//replication fork protection complex//nucleosome binding//chromosome, centromeric outer repeat region//cellular protein localization//DNA replication-independent nucleosome organization//FACT complex//histone binding//positive regulation of RNA polymerase II transcriptional preinitiation complex assembly//chromatin silencing at centromere outer repeat region
 YALI1_D28630g	LpH	FALSE	-1	NaN	NaN	4	Uncharacterized protein		164,263	1489	
 YALI1_E33421g	LpH	FALSE	1	NaN	NaN	4	Uncharacterized protein		53,971	478	
 YALI1_B04937g	LpH	FALSE	-1	NaN	NaN	1	Condensin complex subunit 2		81,605	739	nuclear condensin complex//chromatin binding//mitotic chromosome condensation//DNA topoisomerase binding//cell division//DNA topoisomerase (ATP-hydrolyzing) activator activity//positive regulation of DNA topoisomerase (ATP-hydrolyzing) activity
@@ -10508,7 +10508,7 @@ YALI1_E10492g	LpH	FALSE	1	0.0419729345701933	0.0355294745930824	1	V-type proton 
 YALI1_F33812g	LpH	FALSE	-1	NaN	NaN	1	JAB1/Mov34/MPN/PAD-1 ubiquitin protease-domain-containing protein		34,753	312	mitochondrial fission//thiol-dependent ubiquitin-specific protease activity//mitochondrion//metallopeptidase activity//proteasome regulatory particle, lid subcomplex//peroxisome fission//protein deubiquitination//nuclear periphery//proteasome storage granule//proteasome-mediated ubiquitin-dependent protein catabolic process//proteasome storage granule assembly
 YALI1_C20488g	LpH	FALSE	-1	NaN	NaN	1	Uncharacterized protein		90,128	823	
 YALI1_F39159g	LpH	FALSE	1	NaN	NaN	3	Uncharacterized protein		40,953	374	
-YALI1_F24031g	LpH	FALSE	-1	NaN	NaN	2	And other transporter-domain-containing protein		74,178	659	carbohydrate:proton symporter activity//glucose transmembrane transporter activity//integral component of membrane//glucose import//proton transmembrane transport
+YALI1_F24031g	LpH	FALSE	-1	0.0232663640335707	0.00156649518870804	2	And other transporter-domain-containing protein		74,178	659	carbohydrate:proton symporter activity//glucose transmembrane transporter activity//integral component of membrane//glucose import//proton transmembrane transport
 YALI1_D08050g	LpH	FALSE	1	0.0698688232655137	0.0482928898931841	1	Dolichol-phosphate mannosyltransferase subunit 1 (EC 2.4.1.83)		26,679	238	dolichyl-phosphate beta-D-mannosyltransferase activity//plasma membrane//dolichol-linked oligosaccharide biosynthetic process//protein O-linked glycosylation//fungal-type cell wall biogenesis//mannosylation
 YALI1_D13679g	LpH	FALSE	-1	NaN	NaN	1	Pre-mRNA-splicing factor ISY1		25,196	220	generation of catalytic spliceosome for second transesterification step//first spliceosomal transesterification activity//mRNA 3'-splice site recognition//Prp19 complex//cytoplasm//U2-type catalytic step 1 spliceosome//U2-type catalytic step 2 spliceosome//U2-type post-mRNA release spliceosomal complex//post-spliceosomal complex
 YALI1_F17034g	LpH	FALSE	1	NaN	NaN	3	Uncharacterized protein		81,920	707	
@@ -10892,7 +10892,7 @@ YALI1_F17836g	LpH	FALSE	1	NaN	NaN	1	Uncharacterized protein		236,822	2084	motor 
 YALI1_D19338g	LpH	FALSE	-1	NaN	NaN	3	Uncharacterized protein		36,488	317	
 YALI1_D02180g	LpH	FALSE	1	NaN	NaN	2	N-glycosylation protein-domain-containing protein		24,988	227	endoplasmic reticulum membrane//protein N-linked glycosylation//integral component of membrane//cellular response to oxidative stress
 YALI1_D18673g	LpH	FALSE	1	NaN	NaN	1	Ubiquitin-conjugating enzyme/RWD-like protein		16,385	147	ATP binding//transferase activity//ligase activity
-YALI1_F29765g	LpH	FALSE	-1	NaN	NaN	1	Uncharacterized protein		53,715	482	integral component of peroxisomal membrane//peroxisome organization
+YALI1_F29765g	LpH	FALSE	-1	0.0210521980467955	0.00650220026220753	1	Uncharacterized protein		53,715	482	integral component of peroxisomal membrane//peroxisome organization
 YALI1_D22888g	LpH	FALSE	-1	NaN	NaN	3	Uncharacterized protein		49,117	435	
 YALI1_E18713g	LpH	FALSE	-1	NaN	NaN	3	Uncharacterized protein		42,264	374	
 YALI1_E02415g	LpH	FALSE	1	NaN	NaN	2	54S ribosomal protein L31, mitochondrial		12,984	112	structural constituent of ribosome//mitochondrial large ribosomal subunit//mitochondrial translation
@@ -11037,7 +11037,7 @@ YALI1_F14805g	LpH	FALSE	-1	NaN	NaN	1	WD40-repeat-containing domain protein		66,3
 YALI1_F25951g	LpH	FALSE	-1	NaN	NaN	1	MBOAT, membrane-bound O-acyltransferase family-domain-containing protein		59,111	512	1-acylglycerol-3-phosphate O-acyltransferase activity//integral component of membrane//glycerophospholipid biosynthetic process
 YALI1_E24451g	LpH	FALSE	-1	NaN	NaN	5	Uncharacterized protein		7,772	66	
 YALI1_E34367g	LpH	FALSE	1	NaN	NaN	3	NUWM protein (EC 1.6.99.3)	nuwm	28,436	249	NADH dehydrogenase activity//oxidation-reduction process
-YALI1_E00280g	LpH	FALSE	1	NaN	NaN	2	Uncharacterized protein		63,125	586	
+YALI1_E00280g	LpH	FALSE	1	0.0229001968438454	0.00874539560834181	2	Uncharacterized protein		63,125	586	
 YALI1_E05963g	LpH	FALSE	1	NaN	NaN	2	Polymerase/histidinol phosphatase-like protein		36,022	314	histidine biosynthetic process//histidinol-phosphatase activity//cytoplasm//dephosphorylation
 YALI1_D24130g	LpH	FALSE	-1	NaN	NaN	5	Uncharacterized protein		9,221	80	
 YALI1_E34319g	LpH	FALSE	1	NaN	NaN	4	Uncharacterized protein		29,831	264	
@@ -11150,7 +11150,7 @@ YALI1_B29742g	LpH	FALSE	1	NaN	NaN	1	Rab-GTPase-TBC domain-containing protein		74
 YALI1_A18671g	LpH	FALSE	-1	NaN	NaN	5	Uncharacterized protein		10,219	86	
 YALI1_D07348g	LpH	FALSE	1	0.504299679298067	0.473651462207528	1	40S ribosomal protein S22		14,789	130	structural constituent of ribosome//translation//cytosolic small ribosomal subunit
 YALI1_E01286g	LpH	FALSE	1	NaN	NaN	1	P-loop containing nucleoside triphosphate hydrolase protein		78,815	725	ATP binding//mitochondrion//integral component of membrane//ATPase activity, coupled to transmembrane movement of substances//transmembrane transport
-YALI1_C17411g	LpH	FALSE	-1	NaN	NaN	2	Chromatin remodelling complex Rsc7/Swp82 subunit-domain-containing protein		58,471	540	regulation of transcription, DNA-templated//RSC-type complex//chromatin DNA binding
+YALI1_C17411g	LpH	FALSE	-1	0.0110295374608342	0.00362785261571719	2	Chromatin remodelling complex Rsc7/Swp82 subunit-domain-containing protein		58,471	540	regulation of transcription, DNA-templated//RSC-type complex//chromatin DNA binding
 YALI1_F14351t	LpH	FALSE	-1	NaN	NaN	5	Uncharacterized protein		11,551	100	RNA-directed DNA polymerase activity//RNA-dependent DNA biosynthetic process
 YALI1_F28934g	LpH	FALSE	1	NaN	NaN	2	Uncharacterized protein		9,880	83	integral component of membrane
 YALI1_B18607g	LpH	FALSE	1	0.0451332222431333	0.0607019220625636	1	Acyl-CoA N-acyltransferase		22,677	207	aralkylamine N-acetyltransferase activity//diamine N-acetyltransferase activity//cytoplasm//chromatin organization
@@ -11317,7 +11317,7 @@ YALI1_F21989g	LpH	FALSE	-1	0.0660360569633774	0.0525921580976602	1	Uncharacteriz
 YALI1_F36259g	LpH	FALSE	1	NaN	NaN	2	WLM domain-containing protein (WLM domain-domain-containing protein)		29,551	271	
 YALI1_F38820g	LpH	FALSE	1	NaN	NaN	1	V-type proton ATPase subunit a		91,132	804	vacuolar proton-transporting V-type ATPase, V0 domain//fungal-type vacuole membrane//vacuolar acidification//ATP synthesis coupled proton transport//ATP hydrolysis coupled proton transport//integral component of membrane//vacuolar proton-transporting V-type ATPase complex//proton-transporting ATPase activity, rotational mechanism//ATPase binding//vacuolar proton-transporting V-type ATPase complex assembly
 YALI1_E29150g	LpH	FALSE	1	0.338579125788403	0.398420085910478	1	60S ribosomal protein L31		13,452	116	cytoplasmic translation//structural constituent of ribosome//cytosolic large ribosomal subunit
-YALI1_E25859g	LpH	FALSE	-1	NaN	NaN	1	Nucleotide-diphospho-sugar transferase		52,911	483	
+YALI1_E25859g	LpH	FALSE	-1	0.0148039254247202	0.00434298628942014	1	Nucleotide-diphospho-sugar transferase		52,911	483	
 YALI1_F37998g	LpH	FALSE	-1	NaN	NaN	2	Uncharacterized protein		18,589	165	RNA binding//U6 snRNP//U12-type spliceosomal complex//RNA processing//mRNA metabolic process//U2-type prespliceosome//catalytic step 2 spliceosome//spliceosomal tri-snRNP complex//Lsm1-7-Pat1 complex
 YALI1_E39395g	LpH	FALSE	1	NaN	NaN	1	UDP-N-acetylglucosamine transferase subunit ALG13 (EC 2.4.1.141) (Asparagine-linked glycosylation protein 13)	ALG13	22,071	196	N-acetylglucosaminyldiphosphodolichol N-acetylglucosaminyltransferase activity//dolichol-linked oligosaccharide biosynthetic process//integral component of membrane//UDP-N-acetylglucosamine transferase complex
 YALI1_B27015g	LpH	FALSE	1	NaN	NaN	1	Adaptin N terminal region-domain-containing protein		85,873	783	intracellular protein transport//vesicle-mediated transport//AP-3 adaptor complex
@@ -11417,7 +11417,7 @@ YALI1_E30479g	LpH	FALSE	1	NaN	NaN	1	Uncharacterized protein		14,389	128	chromati
 YALI1_E38136g	LpH	FALSE	1	NaN	NaN	3	Uncharacterized protein		16,781	159	
 YALI1_D24026g	LpH	FALSE	1	NaN	NaN	1	Uncharacterized protein		30,387	277	integral component of membrane
 YALI1_A19459g	LpH	FALSE	1	NaN	NaN	1	Kinase-like domain-containing protein		54,731	486	spliceosomal complex assembly//protein serine/threonine kinase activity//ATP binding//nucleus//cytoplasm//protein phosphorylation//intracellular signal transduction//regulation of mRNA processing//regulation of protein localization to nucleus
-YALI1_E30014g	LpH	FALSE	-1	NaN	NaN	1	P-loop containing nucleoside triphosphate hydrolase protein		167,658	1502	fungal-type vacuole//ATP binding//vacuolar membrane//integral component of plasma membrane//cellular process//peptide-transporting ATPase activity//amide transport//transmembrane transport
+YALI1_E30014g	LpH	FALSE	-1	0.00586889520625636	0.0013564525422177	1	P-loop containing nucleoside triphosphate hydrolase protein		167,658	1502	fungal-type vacuole//ATP binding//vacuolar membrane//integral component of plasma membrane//cellular process//peptide-transporting ATPase activity//amide transport//transmembrane transport
 YALI1_C25747g	LpH	FALSE	1	NaN	NaN	5	Uncharacterized protein		13,584	124	
 YALI1_A03599g	LpH	FALSE	-1	NaN	NaN	4	Uncharacterized protein		9,599	80	
 YALI1_D07299g	LpH	FALSE	-1	NaN	NaN	2	Uncharacterized protein		9,716	83	
@@ -11457,7 +11457,7 @@ YALI1_B11495g	LpH	FALSE	-1	NaN	NaN	3	Uncharacterized protein		33,130	286
 YALI1_B10813g	LpH	FALSE	1	0.58821681190234	0.558581492115972	2	Sulfate adenylyltransferase (EC 2.7.7.4) (ATP-sulfurylase) (Sulfate adenylate transferase) (SAT)	MET3	64,034	572	adenylylsulfate kinase activity//sulfate adenylyltransferase (ATP) activity//ATP binding//cytoplasm//methionine biosynthetic process//sulfate assimilation via adenylyl sulfate reduction//phosphorylation//cysteine biosynthetic process//sulfate assimilation, phosphoadenylyl sulfate reduction by phosphoadenylyl-sulfate reductase (thioredoxin)//hydrogen sulfide biosynthetic process
 YALI1_B16158g	LpH	FALSE	1	NaN	NaN	3	Metallo-dependent phosphatase-like protein		74,256	650	hydrolase activity
 YALI1_D01317g	LpH	FALSE	-1	NaN	NaN	1	EAP30/Vps36 family-domain-containing protein		53,774	485	ESCRT II complex//late endosome membrane//phosphatidylinositol-3-phosphate binding//ubiquitin binding//protein transport to vacuole involved in ubiquitin-dependent protein catabolic process via the multivesicular body sorting pathway
-YALI1_D04533g	LpH	FALSE	1	NaN	NaN	1	Uncharacterized protein		47,602	424	phosphatidylinositol-4-phosphate binding
+YALI1_D04533g	LpH	FALSE	1	0.0240224815361139	0.00991241426500509	1	Uncharacterized protein		47,602	424	phosphatidylinositol-4-phosphate binding
 YALI1_C24755g	LpH	FALSE	1	NaN	NaN	1	Uncharacterized protein		7,488	69	mitochondrial intermembrane space//cytosol//copper ion transport//aerobic respiration//protein maturation by copper ion transfer//copper chaperone activity//protein farnesylation//mitochondrial respiratory chain complex IV assembly//cuprous ion binding
 YALI1_A09467g	LpH	FALSE	-1	NaN	NaN	1	TATA element modulatory factor 1 TATA binding-domain-containing protein		79,044	705	
 YALI1_A00309g	LpH	FALSE	-1	0.0672771271592065	0.0641634895167854	1	tRNA synthetases class I-domain-containing protein		123,868	1080	tRNA binding//aminoacyl-tRNA editing activity//isoleucine-tRNA ligase activity//ATP binding//cytoplasm//isoleucyl-tRNA aminoacylation//aminoacyl-tRNA metabolism involved in translational fidelity
@@ -11633,7 +11633,7 @@ YALI1_F31568g	LpH	FALSE	1	NaN	NaN	1	Eukaryotic cytochrome b561-domain-containing
 YALI1_F15449g	LpH	FALSE	1	NaN	NaN	1	Uncharacterized protein		61,559	558	
 YALI1_E12421g	LpH	FALSE	-1	NaN	NaN	5	Uncharacterized protein		13,368	113	
 YALI1_E11323g	LpH	FALSE	-1	NaN	NaN	1	Uncharacterized protein		27,499	253	mRNA binding//mRNA cleavage and polyadenylation specificity factor complex//pre-mRNA cleavage required for polyadenylation
-YALI1_E27207g	LpH	FALSE	1	NaN	NaN	1	Rab protein		22,608	203	incipient cellular bud site//GTPase activity//GTP binding//prospore membrane//endosome//plasma membrane//Golgi to plasma membrane transport//vesicle docking involved in exocytosis//vesicle fusion//autophagy//membrane addition at site of cytokinesis//protein secretion//regulation of exocytosis//transport vesicle//secretory granule membrane//ascospore-type prospore assembly//meiotic spindle pole body//mating projection tip//protein localization to plasma membrane
+YALI1_E27207g	LpH	FALSE	1	0.0713547078204476	0.0299175713504578	1	Rab protein		22,608	203	incipient cellular bud site//GTPase activity//GTP binding//prospore membrane//endosome//plasma membrane//Golgi to plasma membrane transport//vesicle docking involved in exocytosis//vesicle fusion//autophagy//membrane addition at site of cytokinesis//protein secretion//regulation of exocytosis//transport vesicle//secretory granule membrane//ascospore-type prospore assembly//meiotic spindle pole body//mating projection tip//protein localization to plasma membrane
 YALI1_F20330g	LpH	FALSE	1	NaN	NaN	1	P-loop containing nucleoside triphosphate hydrolase protein		81,045	718	mitochondrial RNA 3'-end processing//ATP-dependent RNA helicase activity//RNA catabolic process//mitochondrial degradosome
 YALI1_A01888g	LpH	FALSE	1	NaN	NaN	3	Uncharacterized protein		54,431	474	
 YALI1_E14118g	LpH	FALSE	-1	NaN	NaN	2	Uncharacterized protein		72,081	662	aldehyde dehydrogenase (NAD) activity//reciprocal meiotic recombination//membrane//oxidation-reduction process
@@ -11715,7 +11715,7 @@ YALI1_E41699g	LpH	FALSE	1	NaN	NaN	5	Ferric reductase like transmembrane componen
 YALI1_E18895g	LpH	FALSE	-1	NaN	NaN	1	Uncharacterized protein		81,610	725	Golgi trans cisterna//Golgi medial cisterna//intracellular protein transport//integral component of membrane
 YALI1_C13768g	LpH	FALSE	1	NaN	NaN	5	Uncharacterized protein		67,045	623	amino acid transmembrane transport//endosome//plasma membrane//cation transport//cation transmembrane transporter activity//L-amino acid transmembrane transporter activity//drug transmembrane transporter activity//polyamine transport//integral component of membrane
 YALI1_B08851g	LpH	FALSE	-1	NaN	NaN	3	Uncharacterized protein		45,678	419	
-YALI1_F09177g	LpH	FALSE	-1	NaN	NaN	2	Rab proteins geranylgeranyltransferase component A		63,013	566	GDP-dissociation inhibitor activity//intracellular//small GTPase mediated signal transduction//regulation of catalytic activity
+YALI1_F09177g	LpH	FALSE	-1	0.0183741206884537	0.0255524761927772	2	Rab proteins geranylgeranyltransferase component A		63,013	566	GDP-dissociation inhibitor activity//intracellular//small GTPase mediated signal transduction//regulation of catalytic activity
 YALI1_F05893g	LpH	FALSE	1	NaN	NaN	5	Uncharacterized protein		12,420	113	
 YALI1_E38692g	LpH	FALSE	1	NaN	NaN	3	Kinetochore Sim4 complex subunit Fta4		31,326	278	Mis6-Sim4 complex
 YALI1_D32462g	LpH	FALSE	1	NaN	NaN	5	Uncharacterized protein		11,567	96	
@@ -11755,7 +11755,7 @@ YALI1_C03534g	LpH	FALSE	-1	NaN	NaN	4	Uncharacterized protein		65,117	559
 YALI1_E17141g	LpH	FALSE	-1	NaN	NaN	1	SGF29 tudor-like domain-containing protein (SGF29 tudor-like domain-domain-containing protein)		30,741	269	SAGA complex//RNA polymerase II transcription regulator recruiting activity//Ada2/Gcn5/Ada3 transcription activator complex//regulation of organelle organization//cellular protein-containing complex localization//methylated histone binding//histone H3-K9 acetylation//histone H3-K18 acetylation//histone H3-K14 acetylation//positive regulation of transcription by RNA polymerase II//heterochromatin organization involved in chromatin silencing
 YALI1_B01568g	LpH	FALSE	-1	NaN	NaN	5	Uncharacterized protein		8,345	75	
 YALI1_F10928g	LpH	FALSE	1	NaN	NaN	1	Uncharacterized protein		15,614	137	
-YALI1_A18847g	LpH	FALSE	1	NaN	NaN	1	Uncharacterized protein		33,260	299	protein depalmitoylation//cytoplasm//fatty acid metabolic process//palmitoyl-(protein) hydrolase activity//membrane//carboxylic ester hydrolase activity
+YALI1_A18847g	LpH	FALSE	1	0.0447922240818922	0.0104864980671414	1	Uncharacterized protein		33,260	299	protein depalmitoylation//cytoplasm//fatty acid metabolic process//palmitoyl-(protein) hydrolase activity//membrane//carboxylic ester hydrolase activity
 YALI1_E34322g	LpH	FALSE	1	NaN	NaN	1	Uncharacterized protein		37,392	333	double-stranded DNA binding//nucleus//phosphorylation//polynucleotide 3'-phosphatase activity//ATP-dependent polydeoxyribonucleotide 5'-hydroxyl-kinase activity//DNA 3' dephosphorylation involved in DNA repair//polynucleotide 3' dephosphorylation
 YALI1_F02389g	LpH	FALSE	-1	NaN	NaN	5	Uncharacterized protein		7,376	68	
 YALI1_F12478g	LpH	FALSE	-1	NaN	NaN	1	Queuine tRNA-ribosyltransferase catalytic subunit 1 (EC 2.4.2.29) (Guanine insertion enzyme) (tRNA-guanine transglycosylase)		45,356	406	nucleus//cytoplasm//queuine tRNA-ribosyltransferase activity//metal ion binding//tRNA-guanine transglycosylation
@@ -11767,7 +11767,7 @@ YALI1_D05398g	LpH	FALSE	1	NaN	NaN	1	Uncharacterized protein		35,921	316	nuclear 
 YALI1_D16431g	LpH	FALSE	-1	NaN	NaN	1	Uncharacterized protein		45,881	405	nuclear chromosome, telomeric region//Swr1 complex//cytoplasm//cytoskeleton//chromatin silencing at telomere//histone exchange
 YALI1_F17912g	LpH	FALSE	1	NaN	NaN	3	Uncharacterized protein		25,443	224	
 YALI1_E10210g	LpH	FALSE	-1	NaN	NaN	2	Uncharacterized protein		52,491	472	scavenger receptor activity//receptor-mediated endocytosis//biosynthetic process//membrane//transferase activity//pyridoxal phosphate binding
-YALI1_B12443g	LpH	FALSE	-1	NaN	NaN	3	Uncharacterized protein		16,908	159	
+YALI1_B12443g	LpH	FALSE	-1	0.0463940950025432	0.012561440508647	3	Uncharacterized protein		16,908	159	
 YALI1_E23912g	LpH	FALSE	1	0.534543277288911	0.451809140615463	1	WD40-repeat-containing domain protein		35,568	324	conjugation with cellular fusion//protein kinase C binding//cytoplasm//regulation of G2/M transition of mitotic cell cycle//positive regulation of protein autophosphorylation//regulation of fungal-type cell wall biogenesis//ribosome binding//regulation of eIF2 alpha phosphorylation by amino acid starvation
 YALI1_B11878g	LpH	FALSE	1	NaN	NaN	4	Uncharacterized protein		48,239	449	
 YALI1_D28351g	LpH	FALSE	1	NaN	NaN	3	Uncharacterized protein		97,612	979	chitinase activity//extracellular region//carbohydrate metabolic process//chitin catabolic process//chitin binding//cell part
@@ -12442,7 +12442,7 @@ YALI1_E23498g	LpH	FALSE	-1	NaN	NaN	5	Uncharacterized protein		10,841	93
 YALI1_E04341g	LpH	FALSE	-1	NaN	NaN	1	Armadillo-type protein		84,570	760	
 YALI1_E04688g	LpH	FALSE	1	NaN	NaN	1	Arginyl-tRNA--protein transferase 1 (Arginyltransferase 1) (R-transferase 1) (EC 2.3.2.8) (Arginine-tRNA--protein transferase 1)		53,775	477	arginyltransferase activity//cytoplasm//protein arginylation
 YALI1_B07864g	LpH	FALSE	-1	NaN	NaN	2	Uncharacterized protein		51,599	461	mitochondrial inner membrane//mitochondrial transport//transmembrane transporter activity//integral component of mitochondrial outer membrane//transmembrane transport
-YALI1_D08946g	LpH	FALSE	-1	NaN	NaN	1	Beta-lactamase-like protein		33,339	298	hydrolase activity
+YALI1_D08946g	LpH	FALSE	-1	0.0304140238224822	0.00632518743387589	1	Beta-lactamase-like protein		33,339	298	hydrolase activity
 YALI1_A09949g	LpH	FALSE	1	NaN	NaN	1	Gtr1/RagA G protein conserved region-domain-containing protein		36,238	318	fungal-type vacuole membrane//chromosome, telomeric region//GTPase activity//GTP binding//nucleus//lysosome//chromatin silencing at telomere//transcription by RNA polymerase I//transcription by RNA polymerase III//phosphate ion transport//cellular response to starvation//negative regulation of autophagy//late endosome membrane//EGO complex//identical protein binding//cellular response to amino acid stimulus//protein localization to vacuolar membrane//positive regulation of TORC1 signaling//Gtr1-Gtr2 GTPase complex
 YALI1_A17671g	LpH	FALSE	1	NaN	NaN	3	Uncharacterized protein		134,694	1235	signal transduction//hydrolase activity//phosphatidylinositol dephosphorylation
 YALI1_E02574g	LpH	FALSE	1	NaN	NaN	1	ATP-dependent DNA helicase II subunit 2 (EC 3.6.4.12)		79,851	710	telomere maintenance//nuclear chromosome, telomeric region//damaged DNA binding//helicase activity//ATP binding//double-strand break repair via nonhomologous end joining//DNA recombination//telomeric DNA binding//Ku70:Ku80 complex

@@ -34,11 +34,11 @@ The absolute proteomics datasets [NSAF] have also been incorporated to enzyme-co
 | *Y. lipolytica* |	ecYaliGEM |	https://github.com/SysBioChalmers/ecModels/tree/chore/update_iYali |
 
 
-- KeyWords
+## KeyWords
 
-**Repo Category:** Data Analysis; **Utilisation:** Multi-omics/multi-organisms datasets analysis; **Field:** Stress adaptation studies, Metabolic engineering, Omics, Evolutionary conservation;**Omic Source:** Transcriptomics, Proteomics; **Taxonomy:** *S. cervisiae* CEN.PK 113 /-D,	*K. marxianus* CBS6556, *Y. lipolytica* W29  
+**Repo Category:** Data Analysis; **Utilisation:** Multi-omics/multi-organisms datasets analysis; **Field:** Stress adaptation studies, Metabolic engineering, Omics, Evolutionary conservation;**Omic Source:** Transcriptomics, Proteomics, Genome-wide orthology; **Taxonomy:** *S. cervisiae* CEN.PK 113 /-D,	*K. marxianus* CBS6556, *Y. lipolytica* W29  
 
-Last update: 2019-05-20
+Last update: 2019-05-21
 
 
 This repository is administered by [@IVANDOMENZAIN](https://github.com/IVANDOMENZAIN), Division of Systems and Synthetic Biology, Department of Biology and Biological Engineering, Chalmers University of Technology

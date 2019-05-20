@@ -39,7 +39,7 @@ normalize_Prots_AALength <- function(data,genes,proteins,organism){
     }
   }else {
     #for sce the match is done based on CENPK gene IDs
-    DB_ids <- database[,3]
+    DB_ids <- database[,1]
     ids    <- genes
   }
   #Reduce dataset to those entries which have a correspondance in the

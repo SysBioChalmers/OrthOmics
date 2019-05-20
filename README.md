@@ -18,9 +18,9 @@ Growing on different experimental conditions:
 | Osmotic stress |	30°C / pH 5.5 / KCL [1M] |	36°C / pH 5.5 / KCL [1M] |	--- |
 
 
-The main function for the analysis is `**multiOmics_Analysis_pipeline**` located on the `complementaryScripts` subfolder. It should be run on R studio allowing the installation of the required packages. With this, preprocessing (two levels of filters), PCA and DE analysis are performed on RNAseq, relative and absolute proteomics datasets. 
+The main script for this analysis is **`multiOmics_Analysis_pipeline.R`** located on the `complementaryScripts` subfolder. It should be run on R studio allowing the installation of the required packages. With this, preprocessing (two levels of filters), PCA and DE analysis are performed on RNAseq, relative and absolute proteomics datasets. 
 
-DE hits for all organisms and conditions are mapped to the `**SingleCopyOG_All.txt**` file which contains a list of 1:1:1 single copy orthologous proteins obtained from `**orthoFinder**`, this allows to explore the evolutionary conserved stress-adaptation responses of the three organisms in this study at the transcript and protein levels. 
+DE hits for all organisms and conditions are mapped to the **`SingleCopyOG_All.txt`** file which contains a list of 1:1:1 single copy orthologous proteins obtained from **`orthoFinder`**, this allows to explore the evolutionary conserved stress-adaptation responses of the three organisms in this study at the transcript and protein levels. 
 
 Finally, an integrated table wich contains results from DE RNAseq analysis, absolute proteomics levels, GO terms, gene names, molecular weights, AA sequence length, etc. is generated for the three organisms. 
 

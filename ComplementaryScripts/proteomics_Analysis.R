@@ -1,5 +1,27 @@
 proteomics_Analysis <- function(organism,dataSource,normByMW,stringent,normMethod,logPval,log2FC,adjustedP,repoPath){
-
+#proteomics_Analysis
+#
+#Function that performs differential expression analysis on proteomics datasets (absolute and relative)
+#the function follows a pipeline in which noisy measurements are removed, then low reads are removed and dataset 
+#is normalized. PCA is also run and results stored as a plot. DE analysis is carried out using limma and edgeR.
+#
+# organism      (string) Organism ID (sce, kma or yli)
+# dataSource    (string) Proteomics measurement dataset that should be used for DE analysis
+#               (XIC, SCounts, NSAF or iBAQ)
+# normByMW      TRUE if dataset should be normalized taking MWs into account
+# stringent     TRUE if noisy measurements should be filtered out according to: datum>=(stddev(row)/median(row)). 
+#               FALSE if datum>=(stddev(row)/mean(row)) should be used instead.
+# normMethod    (string) recommended 'TMM'
+# logPval       (double) abs(Log10) for the DE pValue threshold
+# log2FC        (double) abs(log2FC) for the DE fold-change threshold
+# adjustedP     TRUE if adjusted pValue computation should be used
+# repoPath      Main repository directory
+#
+# Usage: proteomics_Analysis(organism,dataSource,normByMW,stringent,normMethod,logPval,log2FC,adjustedP,repoPath)
+#
+# Last modified: Ivan Domenzain. 2019-05-20
+#
+  
 #Internal functions path
 scriptsPath <- paste(repoPath,'/ComplementaryScripts',sep='')
 DBpath      <- paste(repoPath,'/Databases/Uniprot/',sep='')

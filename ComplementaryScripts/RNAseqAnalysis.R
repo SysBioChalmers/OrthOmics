@@ -1,4 +1,25 @@
 RNAseqAnalysis <- function(organism,stringent,normMethod,minLCPM,logPval,log2FC,adjustedP,repoPath){
+#RNAseqAnalysis
+#
+#Function that performs differential expression analysis on RNAseq datasets the function follows a pipeline in 
+#which noisy measurements are removed, then low reads are removed and dataset is normalized. 
+#PCA is also run and results stored as a plot. DE analysis is carried out using limma and edgeR.
+#
+# organism      (string) Organism ID (sce, kma or yli)
+# stringent     TRUE if noisy measurements should be filtered out according to: datum>=(stddev(row)/median(row)). 
+#               FALSE if datum>=(stddev(row)/mean(row)) should be used instead.
+# normMethod    (string) recommended 'TMM'
+# minLCPM       (double) minimum value for log2CPM when filtering out low reads  
+# logPval       (double) abs(Log10) for the DE pValue threshold
+# log2FC        (double) abs(log2FC) for the DE fold-change threshold
+# adjustedP     TRUE if adjusted pValue computation should be used
+# repoPath      Main repository directory
+#
+# Usage: RNAseqAnalysis(organism,stringent,normMethod,minLCPM,logPval,log2FC,adjustedP,repoPath)
+#
+# Last modified: Ivan Domenzain. 2019-05-20
+#
+  
 #================================ RELEVANT DIRECTORIES ====================================
 #Relevant paths (The user should provide the path in which the repository is stored)
 #Internal functions path

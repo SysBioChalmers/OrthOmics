@@ -1,4 +1,22 @@
 mapDEgenesToOG <- function(organisms,pVal,logFC,adjustedPval,omics,repoPath){
+#proteomics_Analysis
+#
+#Function that identifies the DE genes/proteins for a given organism in all 
+#of the experimental conditions for which a DE results file is available and
+#maps the genes into a OG list file (1:1:1 orthologous genes files from orthoFinder)
+#
+# organisms        (vector) Organism IDs (c(sce, kma or yli))
+# pVal             (double) DE pValue threshold
+# logFC            (double) abs(log2FC) for the DE fold-change threshold
+# adjustedPval     TRUE if adjusted pValue computation should be used
+# omics            (string) 'RNA' or 'proteins'
+# repoPath         Main repository directory
+#
+# Usage: mapDEgenesToOG(organisms,pVal,logFC,adjustedPval,omics,repoPath)
+#
+# Last modified: Ivan Domenzain. 2019-05-20
+#
+  
 orgColors  <- c('blue','red','yellow')
 conditions <- c('HiT','LpH','Osm')
 setwd(paste(repoPath,'/ComplementaryScripts',sep=''))

@@ -1,4 +1,4 @@
-#createIntegratedTable <- function(dataset,grouping,metric,stringent,coverage){
+createIntegratedTable <- function(organism,FDR,log2FC,adjustedP,justDEgenes){
 #
 #Function that integrates the results from RNAseq DE with absolute proteomics
 #measurements and genes annotation.
@@ -8,7 +8,6 @@
   
 #==================================== DEFINE VARIABLES =======================================
 #Provide organism code [sce,kma,yli]
-organism    <- 'cpk'
 organism2   <- organism
 if (all(organism == 'yli')){
   conditions  <- c('HiT','LpH')
@@ -19,12 +18,7 @@ if (all(organism == 'yli')){
   if (all(organism=='cpk')){organism2 <- 'sce'}
 }
 #Define DE thresholds
-FDR         <- 0.01
-logPval     <- abs(log10(FDR))
-log2FC      <- 1
-adjustedP   <- TRUE
-#Flag that indicates if all genes or just the DE ones should be shown on the integrated tables
-justDEgenes <- FALSE
+logPval     <- abs(log10(pVal))
 #=============================== Relevant directories ======================================
 #Relevant paths (The user should provide the path in which the repository is stored)
 repoPath    <- '/Users/ivand/Documents/GitHub/CHASSY_multiOmics_Analysis'
@@ -38,10 +32,9 @@ GOTermsPath <- paste(repoPath,'/Databases/GO_terms',sep='')
 #=============================== Load data =================================================
 #============= Load absolute proteomics measurements (all conditions)
 setwd(Protpath)
-fileName <- paste(organism2,'_abs_NSAF_filtered.csv',sep='')
-prot_Abs <- read.delim(fileName, header = TRUE, sep = ",",stringsAsFactors=FALSE, na.strings = "NA")
-proteins <- prot_Abs[,1]
-prot_Abs <- prot_Abs[,2:ncol(prot_Abs)]
+fileName <- paste(organism2,'_abs_NSAF_filtered.txt',sep="")
+prot_Abs <- read.delim(fileName, header = TRUE, sep = "\t",stringsAsFactors=FALSE)
+proteins <- rownames(prot_Abs)
 #============= Load gene groups (orthology) list
 setwd(Orthpath)
 fileName   <- paste(organism,'_orthology_groups.txt',sep='')
@@ -87,9 +80,15 @@ setwd(uniprotPath)
 uniprotData  <- read.delim(uniprotFile, header = TRUE, sep = "\t",stringsAsFactors=FALSE, na.strings = "NA")
 
 #Loop through all conditions 
+cat(paste("Creating intergrated Omics table for: ",organism,'\n',sep=""))
 tableData <- c()
 for (i in 1:length(conditions)){
   condition <- conditions[i]
+  cat(paste("Adding DE genes for ",condition,'\n',sep=""))
+  cat("Adding semi-absolute proteomics data\n")
+  cat("Adding gene orthologous grouping info\n")
+  cat("Adding gene uniprot info\n")
+  cat("Adding GO terms info\n")
   #Load RNAseq DE results for the i-th condition
   setwd(paste(RNApath,'/',organism,'/Results/DE_log2FC_',log2FC,'_FDR_',FDR,sep=''))
   fileName    <- paste(organism,'_RNA_ref_',conditions[i],'.csv',sep='')
@@ -137,7 +136,6 @@ for (i in 1:length(conditions)){
     if (length(orthoGene)>0){
       orthoGene <- strsplit(orthoGene,' ')[[1]][1]
     } else{orthoGene <- NaN}
-    
     #Search uniprot info
     uni_Index <- grepl(gene,uniprotData[,3])
     if (length(uni_Index)>0){
@@ -155,7 +153,6 @@ for (i in 1:length(conditions)){
       MWeigth   <- ''
       SeqLength <- ''
     }
-
     #Search gene GOterm
     GOterms  <- ''
     GO_Index <- which(GO_terms[,1] == orthoGene)
@@ -163,7 +160,6 @@ for (i in 1:length(conditions)){
       GOterms  <- GO_terms[GO_Index,2]
       GOterms  <- paste(GOterms, collapse = '//')
     }
-    
     #Combine variables for a row in the integrated table
     #if (significance & !is.na(P_ref)){  
     if (justDEgenes) {
@@ -183,4 +179,4 @@ if (justDEgenes) {
   fileName <- paste(organism,'_integratedTable_Allgenes.txt',sep='')
 }
 write.table(tableData, file = fileName, row.names = F,quote = FALSE,sep="\t")
-#}
+}

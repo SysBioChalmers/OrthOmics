@@ -1,8 +1,8 @@
-load_ProtData <- function(dataPath,DBpath,organism,Pmethod,normalize){
+load_ProtData <- function(dataPath,DBpath,organism,Pmethod,normMW,normL){
   
   nargin <- length(as.list(match.call())) -1
-  if (nargin < 5){normalize <- FALSE}
-  
+  if (nargin < 5){normMW <- FALSE}
+  if (nargin < 6){normL  <- FALSE}
   setwd(dataPath)
   pointer <- which(c('kma','sce','yli') == organism)
   if (all(Pmethod == 'XIC')){
@@ -67,9 +67,9 @@ load_ProtData <- function(dataPath,DBpath,organism,Pmethod,normalize){
     }
   }
   colnames(dataset) <- cols
-  rownames(dataset) <- genes
+  #rownames(dataset) <- genes
   remove(cols)
-  if (normalize){
+  if (normMW){
     setwd(DBpath)
     print(paste('Normalizing ',Pmethod, ' data by molecular weight', sep=''))
     output   <- normalize_Prots_MWeight(dataset,genes,proteins,organism)
@@ -77,5 +77,15 @@ load_ProtData <- function(dataPath,DBpath,organism,Pmethod,normalize){
     genes    <- output[[2]]
     proteins <- output[[3]]
   }
+  else{
+    if (normL){
+      setwd(DBpath)
+      print(paste('Normalizing ',Pmethod, ' data by AA chain length', sep=''))
+      output   <- normalize_Prots_AALength(dataset,genes,proteins,organism)
+      dataset  <- output[[1]]
+      genes    <- output[[2]]
+      proteins <- output[[3]]
+    }
+  }    
   return(list(dataset,proteins,genes,conditions,colorValues,replicates,group))
 }

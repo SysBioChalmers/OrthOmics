@@ -11,6 +11,9 @@
 #absolute proteomics levels [umol/g protein], Molecular weight of proteins, Sequence lenght and GO terms information
 #is put together for each organism.
 #
+#This script will facilitate all analyses described above, the user only needs to 1) clone the repo and 
+#2) change the directory name on Line 50 to reflect the location of your cloned directory
+#
 # Last modified: Ivan Domenzain. 2019-05-20
 #
 
@@ -45,7 +48,8 @@ normByMW   <- TRUE
 stringent  <- TRUE
 #Normalization method for DE analysis
 normMethod <- 'TMM'
-repoPath   <- '/Users/ivand/Documents/GitHub/CHASSY_multiOmics_Analysis'
+#Add the directory info where you cloned the OrthOmics Repository (the main directory), an example is shown
+repoPath   <- '/Users/ivand/Documents/GitHub/OrthOmics'
 #Internal functions path
 scriptsPath <- paste(repoPath,'/ComplementaryScripts',sep='')
 

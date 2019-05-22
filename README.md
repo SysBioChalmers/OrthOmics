@@ -12,10 +12,10 @@ Growing on different experimental conditions:
 
 | Conditions | *S. cervisiae* CEN.PK 113 7-D |	*K. marxianus* CBS6556 |	*Y. lipolytica* W29 
 | ------------- |:-------------:|:-------------:|:-------------:|
-| Reference |	30°C / pH 5.5 |	30°C / pH 5.5 |	25°C / pH 5.5 |
-| High temperature |	36°C / pH 5.5 |	44°C / pH 5.5 |	32°C / pH 5.5 |
-| Low pH |	30°C / pH 3.5 |	30°C / pH 3.5 |	25°C / pH 3.5 |
-| Osmotic stress |	30°C / pH 5.5 / KCL [1M] |	36°C / pH 5.5 / KCL [1M] |	--- |
+| Reference |	30°C / pH 5.5 |	30°C / pH 5.5 |	28°C / pH 5.5 |
+| High temperature |	36°C / pH 5.5 |	40°C / pH 5.5 |	32°C / pH 5.5 |
+| Low pH |	30°C / pH 3.5 |	30°C / pH 3.5 |	28°C / pH 3.5 |
+| Osmotic stress |	30°C / pH 5.5 / 600 mM KCL |	30°C / pH 5.5 / 600 mM KCL |	--- |
 
 
 The main script for this analysis is **`multiOmics_Analysis_pipeline.R`** located on the `complementaryScripts` subfolder. It should be run on R studio allowing the installation of the required packages. With this, preprocessing (two levels of filters), PCA and DE analysis are performed on RNAseq, relative and absolute proteomics datasets. 

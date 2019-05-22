@@ -1,4 +1,4 @@
-# CHASSY_multiOmics_Analysis
+# OrthOmics: Where DE meets orthology
 This repository contains a collection of scripts for mining, analyzing, and visualizing omics data including:
 - Transcriptomics
 - Relative proteomics

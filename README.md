@@ -1,14 +1,20 @@
 # CHASSY_multiOmics_Analysis
-This repository contains a collection of scripts for mining, analysing and visualizing several omics data layers:
+This repository contains a collection of scripts for mining, analyzing, and visualizing omics data including:
 - Transcriptomics
-- Relative and absolute proteomics
+- Relative proteomics
+- Absolute proteomics
+
+In addition, information is automatically pulled from DE analyses and matched to databases and custom analyses including:
+- Gene/Protein Conservation
+- Associated GO terms
+- Protein length/molecular weight
 
 The included datasets were produced for three different fungal organisms:
 - *S. cerevisiae*
 - *K. marxianus*
 - *Y. lipolytica*
 
-Growing on different experimental conditions:
+Growing on different experimental conditions in steady-state chemostats:
 
 | Conditions | *S. cervisiae* CEN.PK 113 7-D |	*K. marxianus* CBS6556 |	*Y. lipolytica* W29 
 | ------------- |:-------------:|:-------------:|:-------------:|
@@ -18,11 +24,11 @@ Growing on different experimental conditions:
 | Osmotic stress |	30°C / pH 5.5 / 600 mM KCL |	30°C / pH 5.5 / 600 mM KCL |	--- |
 
 
-The main script for this analysis is **`multiOmics_Analysis_pipeline.R`** located on the `complementaryScripts` subfolder. It should be run on R studio allowing the installation of the required packages. With this, preprocessing (two levels of filters), PCA and DE analysis are performed on RNAseq, relative and absolute proteomics datasets. 
+The main script for this analysis is **`multiOmics_Analysis_pipeline.R`** located on the `complementaryScripts` subfolder. It should be run using R studio after the installation of the required packages. This script preprocesses raw data (via two filters), performs PCA and other dataset visualizations, and outputs DE data in .csv form for RNAseq, relative, and absolute proteomics datasets. 
 
-DE hits for all organisms and conditions are mapped to the **`SingleCopyOG_All.txt`** file which contains a list of 1:1:1 single copy orthologous proteins obtained from the [**`orthoFinder`**](https://github.com/davidemms/OrthoFinder), this allows to explore the evolutionary conserved stress-adaptation responses of the three organisms in this study at the transcript and protein levels. 
+In addition, significant DE hits for all organisms and conditions are mapped to the **`SingleCopyOG_All.txt`** file that contains a list of 1:1:1 single copy orthologous proteins inferred using [**`orthoFinder`**](https://github.com/davidemms/OrthoFinder). This file allows the user to explore the evolutionary conserved stress-adaptation responses of the three organisms in this study at the transcript and protein levels. 
 
-Finally, an integrated table wich contains results from DE RNAseq analysis, absolute proteomics levels, GO terms, gene names, molecular weights, AA sequence length, etc. is generated for the three organisms. 
+Finally, an integrated table that contains results from DE RNAseq analysis, absolute proteomics levels, GO terms, gene names, molecular weights, AA sequence length, etc. is generated for the three organisms. 
 
 ## Integration into GEMs
 The absolute proteomics datasets [NSAF] have also been incorporated to enzyme-constrained GEMs for the three organisms, available at:

@@ -66,7 +66,5 @@ library(VennDiagram)
     
 
   }
-  ggsave(plot_name, width = 5, height=5)
-  show(venn.plot)
   return(overlap)
 }

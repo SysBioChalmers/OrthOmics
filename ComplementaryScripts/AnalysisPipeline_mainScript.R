@@ -1,4 +1,4 @@
-#multiOmics_Analysis_pipeline
+#AnalysisPipeline_mainScript
 #
 #Function that performs differential expression analysis on proteomics absolute and relative) nd RNAseq datasets 
 #for the datasets in the CHASSY project (fermentations for S. cerevisiae, K. marxianus and Y. lipolytica exposed

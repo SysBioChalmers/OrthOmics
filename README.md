@@ -1,4 +1,4 @@
-# OrthOmics: Where DE meets orthology
+# OrthOmics
 This repository contains a collection of scripts for mining, analyzing, and visualizing omics data including:
 - Transcriptomics
 - Relative proteomics
@@ -24,7 +24,7 @@ Growing on different experimental conditions in steady-state chemostats:
 | Osmotic stress |	30°C / pH 5.5 / 600 mM KCL |	30°C / pH 5.5 / 600 mM KCL |	--- |
 
 
-The main script for this analysis is **`multiOmics_Analysis_pipeline.R`** located on the `complementaryScripts` subfolder. It should be run using R studio after the installation of the required packages. This script preprocesses raw data (via two filters), performs PCA and other dataset visualizations, and outputs DE data in .csv form for RNAseq, relative, and absolute proteomics datasets. 
+The main script for this analysis is **`AnalysisPipeline_mainScript.R`** located on the `complementaryScripts` subfolder. It should be run using R studio after the installation of the required packages. This script preprocesses raw data (via two filters), performs PCA and other dataset visualizations, and outputs DE data in .csv form for RNAseq, relative, and absolute proteomics datasets. 
 
 In addition, significant DE hits for all organisms and conditions are mapped to the **`SingleCopyOG_All.txt`** file that contains a list of 1:1:1 single copy orthologous proteins inferred using [**`orthoFinder`**](https://github.com/davidemms/OrthoFinder). This file allows the user to explore the evolutionary conserved stress-adaptation responses of the three organisms in this study at the transcript and protein levels. 
 
@@ -44,7 +44,7 @@ The absolute proteomics datasets [NSAF] have also been incorporated to enzyme-co
 
 **Repo Category:** Data Analysis; **Utilisation:** Multi-omics/multi-organisms datasets analysis; **Field:** Stress adaptation studies, Metabolic engineering, Omics, Evolutionary conservation;**Omic Source:** Transcriptomics, Proteomics, Genome-wide orthology; **Taxonomy:** *S. cervisiae* CEN.PK 113 /-D,	*K. marxianus* CBS6556, *Y. lipolytica* W29  
 
-Last update: 2019-05-21
+Last update: 2019-05-22
 
 
 This repository is administered by [@IVANDOMENZAIN](https://github.com/IVANDOMENZAIN), Division of Systems and Synthetic Biology, Department of Biology and Biological Engineering, Chalmers University of Technology

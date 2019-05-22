@@ -40,10 +40,10 @@ normalize_Prots_MWeight <- function(data,genes,proteins,organism){
   }
   #Reduce dataset to those entries which have a correspondance in the
   #uniprot database
-  DB_indxs     <- match(ids,DB_ids)
-  toRemove     <- c()
-  newData      <- c()
-  newGenes     <- c()
+  DB_indxs <- match(ids,DB_ids)
+  toRemove <- c()
+  newData  <- c()
+  newGenes <- c()
   newProts <- c()
   #Exclude indexes without a match in the database, with non-positive or
   #non-numerical MW

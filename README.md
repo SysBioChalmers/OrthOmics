@@ -1,45 +1,56 @@
-# CHASSY_multiOmics_Analysis
-This repository contains a collection of scripts for mining, analysing and visualizing several omics data layers:
+# OrthOmics
+This repository contains a collection of scripts for mining, analyzing, and visualizing omics data including:
 - Transcriptomics
-- Relative and absolute proteomics
-- Metabolomics
+- Relative proteomics
+- Absolute proteomics
+
+In addition, information is automatically pulled from DE analyses and matched to databases and custom analyses including:
+- Gene/Protein Conservation
+- Associated GO terms
+- Protein length/molecular weight
 
 The included datasets were produced for three different fungal organisms:
 - *S. cerevisiae*
 - *K. marxianus*
 - *Y. lipolytica*
 
-Growing on different experimental conditions:
+Growing on different experimental conditions in steady-state chemostats:
 
 | Conditions | *S. cervisiae* CEN.PK 113 7-D |	*K. marxianus* CBS6556 |	*Y. lipolytica* W29 
 | ------------- |:-------------:|:-------------:|:-------------:|
-| Reference |	30°C / pH 5.5 |	30°C / pH 5.5 |	25°C / pH 5.5 |
-| High temperature |	36°C / pH 5.5 |	44°C / pH 5.5 |	32°C / pH 5.5 |
-| Low pH |	30°C / pH 3.5 |	30°C / pH 3.5 |	25°C / pH 3.5 |
-| Osmotic stress |	30°C / pH 5.5 / KCL [1M] |	36°C / pH 5.5 / KCL [1M] |	--- |
+| Reference |	30°C / pH 5.5 |	30°C / pH 5.5 |	28°C / pH 5.5 |
+| High temperature |	36°C / pH 5.5 |	40°C / pH 5.5 |	32°C / pH 5.5 |
+| Low pH |	30°C / pH 3.5 |	30°C / pH 3.5 |	28°C / pH 3.5 |
+| Osmotic stress |	30°C / pH 5.5 / 600 mM KCL |	30°C / pH 5.5 / 600 mM KCL |	--- |
 
 
-The proteomics datasets have been incorporated to enzymatically constrained GEMs for the three organisms, available at:
+The main script for this analysis is **`AnalysisPipeline_mainScript.R`** located on the `complementaryScripts` subfolder. It should be run using R studio after the installation of the required packages. This script preprocesses raw data (via two filters), performs PCA and other dataset visualizations, and outputs DE data in .csv form for RNAseq, relative, and absolute proteomics datasets. 
+
+In addition, significant DE hits for all organisms and conditions are mapped to the **`SingleCopyOG_All.txt`** file that contains a list of 1:1:1 single copy orthologous proteins inferred using [**`orthoFinder`**](https://github.com/davidemms/OrthoFinder). This file allows the user to explore the evolutionary conserved stress-adaptation responses of the three organisms in this study at the transcript and protein levels. 
+
+Finally, an integrated table that contains results from DE RNAseq analysis, absolute proteomics levels, GO terms, gene names, molecular weights, AA sequence length, etc. is generated for the three organisms. 
+
+## Integration into GEMs
+The absolute proteomics datasets [NSAF] have also been incorporated to enzyme-constrained GEMs for the three organisms, available at:
 
 | Organism | Model ID |	URL |
 | ------------- |:-------------:|:-------------:|
-| *S. cervisiae* |	ecYeastGEM |	https://github.com/SysBioChalmers/GECKO |
-| *K. marxianus* |	ecKmarxGEM |	https://github.com/SysBioChalmers/EnzymeConstrained-Kmarx-GEM |
-| *Y. lipolytica* |	ecYaliGEM |	https://github.com/SysBioChalmers/EnzymeConstrained-Yali-GEM |
+| *S. cervisiae* |	ecYeastGEM |	https://github.com/SysBioChalmers/ecModels/tree/chore/updateYeastGEM |
+| *K. marxianus* |	ecKmarxGEM |	https://github.com/SysBioChalmers/ecModels/tree/chore/updateKmarx |
+| *Y. lipolytica* |	ecYaliGEM |	https://github.com/SysBioChalmers/ecModels/tree/chore/update_iYali |
 
 
-- KeyWords
+## KeyWords
 
-**Repo Category:** Data Analysis; **Utilisation:** Multi-omics/multi-organisms datasets analysis; **Field:** Metabolic engineering, Omics, Evolutionary studies;**Omic Source:** Transcriptomics, Proteomics, Metabolomics; **Taxonomy:** *S. cervisiae* CEN.PK 113 /-D,	*K. marxianus* CBS6556, *Y. lipolytica* W29  
+**Repo Category:** Data Analysis; **Utilisation:** Multi-omics/multi-organisms datasets analysis; **Field:** Stress adaptation studies, Metabolic engineering, Omics, Evolutionary conservation;**Omic Source:** Transcriptomics, Proteomics, Genome-wide orthology; **Taxonomy:** *S. cervisiae* CEN.PK 113 /-D,	*K. marxianus* CBS6556, *Y. lipolytica* W29  
 
-Last update: 2019-04-25
+Last update: 2019-05-22
 
 
 This repository is administered by [@IVANDOMENZAIN](https://github.com/IVANDOMENZAIN), Division of Systems and Synthetic Biology, Department of Biology and Biological Engineering, Chalmers University of Technology
 
 ## Installation
 ### Required Software
-- MATLAB (version 2013b)
 - R studio (version 1.0.136 or later)
 ### Installation Instructions
 * Clone master branch from [SysBioChalmers GitHub](https://github.com/SysBioChalmers/CHASSY_multiOmics_Analysis).

@@ -16,6 +16,11 @@
 
 install.packages('VennDiagram')
 install.packages("rlist")
+install.packages("devtools")
+install.packages("edgeR")
+install.packages("limma")
+install.packages("tidyverse")
+
 library("rlist")
 library(VennDiagram)
 library(devtools)
@@ -24,7 +29,6 @@ library(limma)
 library(edgeR)
 library(tidyverse) # Collection of useful R-packages
 library(RColorBrewer)
-library(snowfall)
 library(ggbiplot)
 library(ggplot2)
 #====================================DEFINE VARIABLES =======================================

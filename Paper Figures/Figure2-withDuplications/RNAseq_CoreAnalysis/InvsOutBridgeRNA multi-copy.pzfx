@@ -1,0 +1,935 @@
+<?xml version="1.0" encoding="UTF-8"?><GraphPadPrismFile PrismXMLVersion="5.00">
+<Created>
+<OriginalVersion CreatedByProgram="GraphPad Prism" CreatedByVersion="8.0.0.131" Login="_applepay" DateTime="2018-12-02T11:16:04+01:00"></OriginalVersion>
+<MostRecentVersion CreatedByProgram="GraphPad Prism" CreatedByVersion="8.0.2.159" Login="_applepay" DateTime="2019-06-25T16:45:22+02:00"></MostRecentVersion>
+</Created>
+<InfoSequence>
+<Ref ID="Info0"></Ref>
+<Ref ID="Info1" Selected="1"></Ref>
+</InfoSequence>
+<Info ID="Info0">
+<Title>Project info 1</Title>
+<Notes></Notes>
+<Constant><Name>Experiment Date</Name><Value>2018-12-02</Value></Constant>
+<Constant><Name>Experiment ID</Name><Value></Value></Constant>
+<Constant><Name>Notebook ID</Name><Value></Value></Constant>
+<Constant><Name>Project</Name><Value></Value></Constant>
+<Constant><Name>Experimenter</Name><Value></Value></Constant>
+<Constant><Name>Protocol</Name><Value></Value></Constant>
+</Info>
+
+<Info ID="Info1">
+<Title>Project info 1</Title>
+<Notes></Notes>
+<Constant><Name>Experiment Date</Name><Value>2018-12-02</Value></Constant>
+<Constant><Name>Experiment ID</Name><Value></Value></Constant>
+<Constant><Name>Notebook ID</Name><Value></Value></Constant>
+<Constant><Name>Project</Name><Value></Value></Constant>
+<Constant><Name>Experimenter</Name><Value></Value></Constant>
+<Constant><Name>Protocol</Name><Value></Value></Constant>
+</Info>
+
+<TableSequence Selected="1">
+
+<Ref ID="Table11" Selected="1"></Ref>
+<Ref ID="Table9"></Ref>
+<Ref ID="Table18"></Ref>
+<Ref ID="Table21"></Ref>
+<Ref ID="Table23"></Ref>
+<Ref ID="Table25"></Ref>
+<Ref ID="Table27"></Ref>
+<Ref ID="Table29"></Ref>
+<Ref ID="Table31"></Ref>
+<Ref ID="Table33"></Ref>
+</TableSequence>
+<Table ID="Table11" XFormat="none" YFormat="replicates" Replicates="1" TableType="PartsOfWhole" EVFormat="AsteriskAfterNumber">
+<Title>KMA Measured Pie Multi-Copy</Title>
+<FloatingNote ID="Sticky0" Auto="0" Color="Yellow" Left="470" Top="68" Width="180" Height="150" ScrWidth="0" ScrHeight="0" ScrDPI="96">
+
+<Font Color="#000000" Face="Arial">Only the values entered into column A will be automatically graphed. Use New...Graph to plot other columns.</Font>
+</FloatingNote>
+
+<RowTitlesColumn Width="109">
+<Subcolumn>
+<d>Single-Copy Ortholog</d>
+<d>Single-Copy Non-Ortholog</d>
+<d>Multi-Copy Ortholog</d>
+<d>Multi-Copy Non-Ortholog</d>
+</Subcolumn>
+</RowTitlesColumn>
+<YColumn Width="92" Decimals="0" Subcolumns="1">
+<Title></Title>
+<Subcolumn>
+<d>3317</d>
+<d>1124</d>
+<d>434</d>
+<d>42</d>
+</Subcolumn>
+</YColumn>
+</Table>
+<Table ID="Table9" XFormat="none" YFormat="replicates" Replicates="1" TableType="TwoWay" EVFormat="AsteriskAfterNumber">
+<Title>InvsOut % of set RNA</Title>
+<RowTitlesColumn Width="76">
+<Subcolumn>
+<d>KMA_Heat</d>
+<d>KMA_pH</d>
+<d>KMA_salt</d>
+<d>SCE_Heat</d>
+<d>SCE_pH</d>
+<d>SCE_salt</d>
+<d>YLI_temp</d>
+<d>YLI_pH</d>
+</Subcolumn>
+</RowTitlesColumn>
+<YColumn Width="138" Decimals="9" Subcolumns="1">
+<Title><TextAlign align="Left">Single-Copy Ortholog</TextAlign></Title>
+<Subcolumn>
+<d>2.17063612</d>
+<d>0.482363582</d>
+<d>1.71842026</d>
+</Subcolumn>
+</YColumn>
+<YColumn Width="166" Decimals="9" Subcolumns="1">
+<Title><TextAlign align="Left">Single-Copy Non-Ortholog</TextAlign></Title>
+<Subcolumn>
+<d>7.829181495</d>
+<d>2.31316726</d>
+<d>6.04982206</d>
+</Subcolumn>
+</YColumn>
+<YColumn Width="129" Decimals="8" Subcolumns="1">
+<Title><TextAlign align="Left">Multi-Copy Ortholog</TextAlign></Title>
+<Subcolumn>
+<d>9.21658986</d>
+<d>4.14746544</d>
+<d>9.67741935</d>
+</Subcolumn>
+</YColumn>
+<YColumn Width="157" Decimals="7" Subcolumns="1">
+<Title><TextAlign align="Left">Multi-Copy Non-Ortholog</TextAlign></Title>
+<Subcolumn>
+<d>21.4285714</d>
+<d>11.9047619</d>
+<d>28.5714286</d>
+</Subcolumn>
+</YColumn>
+</Table>
+<Table ID="Table18" XFormat="none" TableType="Contingency" EVFormat="AsteriskAfterNumber">
+<Title>KMA HiT Fischer</Title>
+<FloatingNote ID="Sticky6" Auto="0" Color="Yellow" Left="204" Top="263" Width="588" Height="337" ScrWidth="0" ScrHeight="0" ScrDPI="96">
+<WebLink Flags="0" ToolTip="@help:stat_howto_contingency_tables" URL="@help:stat_howto_contingency_tables">
+Step by step instructions for analyzing contingency tables
+</WebLink>
+
+<B><Font Size="11" Color="#000000" Face="Arial">How the data are organized</Font></B>
+<Font Size="11" Color="#000000" Face="Arial"><BR></BR>This is a retrospective case-control study. The two columns represent two groups of subjects. The two  rows represent two alternative exposures (smoking or not).  The values are the number of subjects who fall into each category. Data are the first to show a relationship between smoking and cancer  (Doll and Hill, British Med. J, 1950, 739-748).</Font>
+<B><Font Size="11" Color="#000000" Face="Verdana"><BR></BR><BR></BR>Goals</Font></B>
+<Font Size="11" Color="#000000" Face="Verdana"><BR></BR> - To assess whether the relationship between cancer and smoking </Font>
+<Font Size="11" Color="#000000" Face="Verdana"><BR></BR>    is more than expected by chance. </Font>
+<B><Font Size="11" Color="#000000" Face="Verdana"><BR></BR> - </Font></B>
+<Font Size="11" Color="#000000" Face="Verdana">To quantify the odds ratio with its 95% confidence interval.</Font>
+<B><Font Size="11" Color="#000000" Face="Verdana"><BR></BR><BR></BR>How to analyze the data</Font></B>
+<Font Size="11" Color="#000000" Face="Verdana"><BR></BR>Click Analyze, choose &quot;Chi-square (and Fisher&apos;s exact) test&quot; from the list of analyses for contingency tables, and then choose the </Font>
+<Font Size="11" Color="#000000" Face="Arial">Fisher&apos;s exact test and check the option to compute the odd&apos;s ratio</Font>
+<Font Size="11" Color="#000000" Face="Verdana"> in the dialog. Click below for more detailed instructions, and to learn about contingency tables.</Font>
+</FloatingNote>
+
+<RowTitlesColumn Width="90">
+<Subcolumn>
+<d><TextAlign align="Center">Core</TextAlign></d>
+<d><TextAlign align="Center">Non-Core</TextAlign></d>
+</Subcolumn>
+</RowTitlesColumn>
+<YColumn Width="100" Decimals="0" Subcolumns="1">
+<Title><TextAlign align="Left">DE</TextAlign></Title>
+<Subcolumn>
+<d>56</d>
+<d>153</d>
+</Subcolumn>
+</YColumn>
+<YColumn Width="83" Decimals="0" Subcolumns="1">
+<Title><TextAlign align="Left">Non-DE</TextAlign></Title>
+<Subcolumn>
+<d>2830</d>
+<d>1878</d>
+</Subcolumn>
+</YColumn>
+</Table>
+<Table ID="Table21" XFormat="none" TableType="Contingency" EVFormat="AsteriskAfterNumber">
+<Title>KMA LpH Fischer</Title>
+<FloatingNote ID="Sticky7" Auto="0" Color="Yellow" Left="204" Top="263" Width="588" Height="337" ScrWidth="0" ScrHeight="0" ScrDPI="96">
+<WebLink Flags="0" ToolTip="@help:stat_howto_contingency_tables" URL="@help:stat_howto_contingency_tables">
+Step by step instructions for analyzing contingency tables
+</WebLink>
+
+<B><Font Size="11" Color="#000000" Face="Arial">How the data are organized</Font></B>
+<Font Size="11" Color="#000000" Face="Arial"><BR></BR>This is a retrospective case-control study. The two columns represent two groups of subjects. The two  rows represent two alternative exposures (smoking or not).  The values are the number of subjects who fall into each category. Data are the first to show a relationship between smoking and cancer  (Doll and Hill, British Med. J, 1950, 739-748).</Font>
+<B><Font Size="11" Color="#000000" Face="Verdana"><BR></BR><BR></BR>Goals</Font></B>
+<Font Size="11" Color="#000000" Face="Verdana"><BR></BR> - To assess whether the relationship between cancer and smoking </Font>
+<Font Size="11" Color="#000000" Face="Verdana"><BR></BR>    is more than expected by chance. </Font>
+<B><Font Size="11" Color="#000000" Face="Verdana"><BR></BR> - </Font></B>
+<Font Size="11" Color="#000000" Face="Verdana">To quantify the odds ratio with its 95% confidence interval.</Font>
+<B><Font Size="11" Color="#000000" Face="Verdana"><BR></BR><BR></BR>How to analyze the data</Font></B>
+<Font Size="11" Color="#000000" Face="Verdana"><BR></BR>Click Analyze, choose &quot;Chi-square (and Fisher&apos;s exact) test&quot; from the list of analyses for contingency tables, and then choose the </Font>
+<Font Size="11" Color="#000000" Face="Arial">Fisher&apos;s exact test and check the option to compute the odd&apos;s ratio</Font>
+<Font Size="11" Color="#000000" Face="Verdana"> in the dialog. Click below for more detailed instructions, and to learn about contingency tables.</Font>
+</FloatingNote>
+
+<RowTitlesColumn Width="74">
+<Subcolumn>
+<d><TextAlign align="Center">Core</TextAlign></d>
+<d><TextAlign align="Center">Non-Core</TextAlign></d>
+</Subcolumn>
+</RowTitlesColumn>
+<YColumn Width="100" Decimals="0" Subcolumns="1">
+<Title><TextAlign align="Left">DE</TextAlign></Title>
+<Subcolumn>
+<d>10</d>
+<d>55</d>
+</Subcolumn>
+</YColumn>
+<YColumn Width="83" Decimals="0" Subcolumns="1">
+<Title><TextAlign align="Left">Non-DE</TextAlign></Title>
+<Subcolumn>
+<d>2876</d>
+<d>1976</d>
+</Subcolumn>
+</YColumn>
+</Table>
+<Table ID="Table23" XFormat="none" TableType="Contingency" EVFormat="AsteriskAfterNumber">
+<Title>KMA Osm Fischer</Title>
+<FloatingNote ID="Sticky8" Auto="0" Color="Yellow" Left="204" Top="263" Width="588" Height="337" ScrWidth="0" ScrHeight="0" ScrDPI="96">
+<WebLink Flags="0" ToolTip="@help:stat_howto_contingency_tables" URL="@help:stat_howto_contingency_tables">
+Step by step instructions for analyzing contingency tables
+</WebLink>
+
+<B><Font Size="11" Color="#000000" Face="Arial">How the data are organized</Font></B>
+<Font Size="11" Color="#000000" Face="Arial"><BR></BR>This is a retrospective case-control study. The two columns represent two groups of subjects. The two  rows represent two alternative exposures (smoking or not).  The values are the number of subjects who fall into each category. Data are the first to show a relationship between smoking and cancer  (Doll and Hill, British Med. J, 1950, 739-748).</Font>
+<B><Font Size="11" Color="#000000" Face="Verdana"><BR></BR><BR></BR>Goals</Font></B>
+<Font Size="11" Color="#000000" Face="Verdana"><BR></BR> - To assess whether the relationship between cancer and smoking </Font>
+<Font Size="11" Color="#000000" Face="Verdana"><BR></BR>    is more than expected by chance. </Font>
+<B><Font Size="11" Color="#000000" Face="Verdana"><BR></BR> - </Font></B>
+<Font Size="11" Color="#000000" Face="Verdana">To quantify the odds ratio with its 95% confidence interval.</Font>
+<B><Font Size="11" Color="#000000" Face="Verdana"><BR></BR><BR></BR>How to analyze the data</Font></B>
+<Font Size="11" Color="#000000" Face="Verdana"><BR></BR>Click Analyze, choose &quot;Chi-square (and Fisher&apos;s exact) test&quot; from the list of analyses for contingency tables, and then choose the </Font>
+<Font Size="11" Color="#000000" Face="Arial">Fisher&apos;s exact test and check the option to compute the odd&apos;s ratio</Font>
+<Font Size="11" Color="#000000" Face="Verdana"> in the dialog. Click below for more detailed instructions, and to learn about contingency tables.</Font>
+</FloatingNote>
+
+<RowTitlesColumn Width="90">
+<Subcolumn>
+<d><TextAlign align="Center">Core</TextAlign></d>
+<d><TextAlign align="Center">Non-Core</TextAlign></d>
+</Subcolumn>
+</RowTitlesColumn>
+<YColumn Width="100" Decimals="0" Subcolumns="1">
+<Title><TextAlign align="Left">DE</TextAlign></Title>
+<Subcolumn>
+<d>38</d>
+<d>141</d>
+</Subcolumn>
+</YColumn>
+<YColumn Width="83" Decimals="0" Subcolumns="1">
+<Title><TextAlign align="Left">Non-DE</TextAlign></Title>
+<Subcolumn>
+<d>2848</d>
+<d>1890</d>
+</Subcolumn>
+</YColumn>
+</Table>
+<Table ID="Table25" XFormat="none" TableType="Contingency" EVFormat="AsteriskAfterNumber">
+<Title>Sce HiT Fisher</Title>
+<FloatingNote ID="Sticky9" Auto="0" Color="Yellow" Left="204" Top="263" Width="588" Height="337" ScrWidth="0" ScrHeight="0" ScrDPI="96">
+<WebLink Flags="0" ToolTip="@help:stat_howto_contingency_tables" URL="@help:stat_howto_contingency_tables">
+Step by step instructions for analyzing contingency tables
+</WebLink>
+
+<B><Font Size="11" Color="#000000" Face="Arial">How the data are organized</Font></B>
+<Font Size="11" Color="#000000" Face="Arial"><BR></BR>This is a retrospective case-control study. The two columns represent two groups of subjects. The two  rows represent two alternative exposures (smoking or not).  The values are the number of subjects who fall into each category. Data are the first to show a relationship between smoking and cancer  (Doll and Hill, British Med. J, 1950, 739-748).</Font>
+<B><Font Size="11" Color="#000000" Face="Verdana"><BR></BR><BR></BR>Goals</Font></B>
+<Font Size="11" Color="#000000" Face="Verdana"><BR></BR> - To assess whether the relationship between cancer and smoking </Font>
+<Font Size="11" Color="#000000" Face="Verdana"><BR></BR>    is more than expected by chance. </Font>
+<B><Font Size="11" Color="#000000" Face="Verdana"><BR></BR> - </Font></B>
+<Font Size="11" Color="#000000" Face="Verdana">To quantify the odds ratio with its 95% confidence interval.</Font>
+<B><Font Size="11" Color="#000000" Face="Verdana"><BR></BR><BR></BR>How to analyze the data</Font></B>
+<Font Size="11" Color="#000000" Face="Verdana"><BR></BR>Click Analyze, choose &quot;Chi-square (and Fisher&apos;s exact) test&quot; from the list of analyses for contingency tables, and then choose the </Font>
+<Font Size="11" Color="#000000" Face="Arial">Fisher&apos;s exact test and check the option to compute the odd&apos;s ratio</Font>
+<Font Size="11" Color="#000000" Face="Verdana"> in the dialog. Click below for more detailed instructions, and to learn about contingency tables.</Font>
+</FloatingNote>
+
+<RowTitlesColumn Width="90">
+<Subcolumn>
+<d><TextAlign align="Center">Core</TextAlign></d>
+<d><TextAlign align="Center">Non-Core</TextAlign></d>
+</Subcolumn>
+</RowTitlesColumn>
+<YColumn Width="100" Decimals="0" Subcolumns="1">
+<Title><TextAlign align="Left">DE</TextAlign></Title>
+<Subcolumn>
+<d>39</d>
+<d>100</d>
+</Subcolumn>
+</YColumn>
+<YColumn Width="83" Decimals="0" Subcolumns="1">
+<Title><TextAlign align="Left">Non-DE</TextAlign></Title>
+<Subcolumn>
+<d>2862</d>
+<d>2363</d>
+</Subcolumn>
+</YColumn>
+</Table>
+<Table ID="Table27" XFormat="none" TableType="Contingency" EVFormat="AsteriskAfterNumber">
+<Title>Sce LpH Fisher</Title>
+<FloatingNote ID="Sticky10" Auto="0" Color="Yellow" Left="204" Top="263" Width="588" Height="337" ScrWidth="0" ScrHeight="0" ScrDPI="96">
+<WebLink Flags="0" ToolTip="@help:stat_howto_contingency_tables" URL="@help:stat_howto_contingency_tables">
+Step by step instructions for analyzing contingency tables
+</WebLink>
+
+<B><Font Size="11" Color="#000000" Face="Arial">How the data are organized</Font></B>
+<Font Size="11" Color="#000000" Face="Arial"><BR></BR>This is a retrospective case-control study. The two columns represent two groups of subjects. The two  rows represent two alternative exposures (smoking or not).  The values are the number of subjects who fall into each category. Data are the first to show a relationship between smoking and cancer  (Doll and Hill, British Med. J, 1950, 739-748).</Font>
+<B><Font Size="11" Color="#000000" Face="Verdana"><BR></BR><BR></BR>Goals</Font></B>
+<Font Size="11" Color="#000000" Face="Verdana"><BR></BR> - To assess whether the relationship between cancer and smoking </Font>
+<Font Size="11" Color="#000000" Face="Verdana"><BR></BR>    is more than expected by chance. </Font>
+<B><Font Size="11" Color="#000000" Face="Verdana"><BR></BR> - </Font></B>
+<Font Size="11" Color="#000000" Face="Verdana">To quantify the odds ratio with its 95% confidence interval.</Font>
+<B><Font Size="11" Color="#000000" Face="Verdana"><BR></BR><BR></BR>How to analyze the data</Font></B>
+<Font Size="11" Color="#000000" Face="Verdana"><BR></BR>Click Analyze, choose &quot;Chi-square (and Fisher&apos;s exact) test&quot; from the list of analyses for contingency tables, and then choose the </Font>
+<Font Size="11" Color="#000000" Face="Arial">Fisher&apos;s exact test and check the option to compute the odd&apos;s ratio</Font>
+<Font Size="11" Color="#000000" Face="Verdana"> in the dialog. Click below for more detailed instructions, and to learn about contingency tables.</Font>
+</FloatingNote>
+
+<RowTitlesColumn Width="90">
+<Subcolumn>
+<d><TextAlign align="Center">Core</TextAlign></d>
+<d><TextAlign align="Center">Non-Core</TextAlign></d>
+</Subcolumn>
+</RowTitlesColumn>
+<YColumn Width="100" Decimals="0" Subcolumns="1">
+<Title><TextAlign align="Left">DE</TextAlign></Title>
+<Subcolumn>
+<d>99</d>
+<d>133</d>
+</Subcolumn>
+</YColumn>
+<YColumn Width="83" Decimals="0" Subcolumns="1">
+<Title><TextAlign align="Left">Non-DE</TextAlign></Title>
+<Subcolumn>
+<d>2802</d>
+<d>2330</d>
+</Subcolumn>
+</YColumn>
+</Table>
+<Table ID="Table29" XFormat="none" TableType="Contingency" EVFormat="AsteriskAfterNumber">
+<Title>Sce Osm Fisher</Title>
+<FloatingNote ID="Sticky11" Auto="0" Color="Yellow" Left="204" Top="263" Width="588" Height="337" ScrWidth="0" ScrHeight="0" ScrDPI="96">
+<WebLink Flags="0" ToolTip="@help:stat_howto_contingency_tables" URL="@help:stat_howto_contingency_tables">
+Step by step instructions for analyzing contingency tables
+</WebLink>
+
+<B><Font Size="11" Color="#000000" Face="Arial">How the data are organized</Font></B>
+<Font Size="11" Color="#000000" Face="Arial"><BR></BR>This is a retrospective case-control study. The two columns represent two groups of subjects. The two  rows represent two alternative exposures (smoking or not).  The values are the number of subjects who fall into each category. Data are the first to show a relationship between smoking and cancer  (Doll and Hill, British Med. J, 1950, 739-748).</Font>
+<B><Font Size="11" Color="#000000" Face="Verdana"><BR></BR><BR></BR>Goals</Font></B>
+<Font Size="11" Color="#000000" Face="Verdana"><BR></BR> - To assess whether the relationship between cancer and smoking </Font>
+<Font Size="11" Color="#000000" Face="Verdana"><BR></BR>    is more than expected by chance. </Font>
+<B><Font Size="11" Color="#000000" Face="Verdana"><BR></BR> - </Font></B>
+<Font Size="11" Color="#000000" Face="Verdana">To quantify the odds ratio with its 95% confidence interval.</Font>
+<B><Font Size="11" Color="#000000" Face="Verdana"><BR></BR><BR></BR>How to analyze the data</Font></B>
+<Font Size="11" Color="#000000" Face="Verdana"><BR></BR>Click Analyze, choose &quot;Chi-square (and Fisher&apos;s exact) test&quot; from the list of analyses for contingency tables, and then choose the </Font>
+<Font Size="11" Color="#000000" Face="Arial">Fisher&apos;s exact test and check the option to compute the odd&apos;s ratio</Font>
+<Font Size="11" Color="#000000" Face="Verdana"> in the dialog. Click below for more detailed instructions, and to learn about contingency tables.</Font>
+</FloatingNote>
+
+<RowTitlesColumn Width="90">
+<Subcolumn>
+<d><TextAlign align="Center">Core</TextAlign></d>
+<d><TextAlign align="Center">Non-Core</TextAlign></d>
+</Subcolumn>
+</RowTitlesColumn>
+<YColumn Width="100" Decimals="0" Subcolumns="1">
+<Title><TextAlign align="Left">DE</TextAlign></Title>
+<Subcolumn>
+<d>69</d>
+<d>287</d>
+</Subcolumn>
+</YColumn>
+<YColumn Width="83" Decimals="0" Subcolumns="1">
+<Title><TextAlign align="Left">Non-DE</TextAlign></Title>
+<Subcolumn>
+<d>2832</d>
+<d>2176</d>
+</Subcolumn>
+</YColumn>
+</Table>
+<Table ID="Table31" XFormat="none" TableType="Contingency" EVFormat="AsteriskAfterNumber">
+<Title>YLI HiT Fisher</Title>
+<FloatingNote ID="Sticky12" Auto="0" Color="Yellow" Left="204" Top="263" Width="588" Height="337" ScrWidth="0" ScrHeight="0" ScrDPI="96">
+<WebLink Flags="0" ToolTip="@help:stat_howto_contingency_tables" URL="@help:stat_howto_contingency_tables">
+Step by step instructions for analyzing contingency tables
+</WebLink>
+
+<B><Font Size="11" Color="#000000" Face="Arial">How the data are organized</Font></B>
+<Font Size="11" Color="#000000" Face="Arial"><BR></BR>This is a retrospective case-control study. The two columns represent two groups of subjects. The two  rows represent two alternative exposures (smoking or not).  The values are the number of subjects who fall into each category. Data are the first to show a relationship between smoking and cancer  (Doll and Hill, British Med. J, 1950, 739-748).</Font>
+<B><Font Size="11" Color="#000000" Face="Verdana"><BR></BR><BR></BR>Goals</Font></B>
+<Font Size="11" Color="#000000" Face="Verdana"><BR></BR> - To assess whether the relationship between cancer and smoking </Font>
+<Font Size="11" Color="#000000" Face="Verdana"><BR></BR>    is more than expected by chance. </Font>
+<B><Font Size="11" Color="#000000" Face="Verdana"><BR></BR> - </Font></B>
+<Font Size="11" Color="#000000" Face="Verdana">To quantify the odds ratio with its 95% confidence interval.</Font>
+<B><Font Size="11" Color="#000000" Face="Verdana"><BR></BR><BR></BR>How to analyze the data</Font></B>
+<Font Size="11" Color="#000000" Face="Verdana"><BR></BR>Click Analyze, choose &quot;Chi-square (and Fisher&apos;s exact) test&quot; from the list of analyses for contingency tables, and then choose the </Font>
+<Font Size="11" Color="#000000" Face="Arial">Fisher&apos;s exact test and check the option to compute the odd&apos;s ratio</Font>
+<Font Size="11" Color="#000000" Face="Verdana"> in the dialog. Click below for more detailed instructions, and to learn about contingency tables.</Font>
+</FloatingNote>
+
+<RowTitlesColumn Width="74">
+<Subcolumn>
+<d><TextAlign align="Center">Core</TextAlign></d>
+<d><TextAlign align="Center">Non-Core</TextAlign></d>
+</Subcolumn>
+</RowTitlesColumn>
+<YColumn Width="100" Decimals="0" Subcolumns="1">
+<Title><TextAlign align="Left">DE</TextAlign></Title>
+<Subcolumn>
+<d>15</d>
+<d>163</d>
+</Subcolumn>
+</YColumn>
+<YColumn Width="83" Decimals="0" Subcolumns="1">
+<Title><TextAlign align="Left">Non-DE</TextAlign></Title>
+<Subcolumn>
+<d>2873</d>
+<d>3397</d>
+</Subcolumn>
+</YColumn>
+</Table>
+<Table ID="Table33" XFormat="none" TableType="Contingency" EVFormat="AsteriskAfterNumber">
+<Title>YLI LpH Fisher</Title>
+<FloatingNote ID="Sticky13" Auto="0" Color="Yellow" Left="204" Top="263" Width="588" Height="337" ScrWidth="0" ScrHeight="0" ScrDPI="96">
+<WebLink Flags="0" ToolTip="@help:stat_howto_contingency_tables" URL="@help:stat_howto_contingency_tables">
+Step by step instructions for analyzing contingency tables
+</WebLink>
+
+<B><Font Size="11" Color="#000000" Face="Arial">How the data are organized</Font></B>
+<Font Size="11" Color="#000000" Face="Arial"><BR></BR>This is a retrospective case-control study. The two columns represent two groups of subjects. The two  rows represent two alternative exposures (smoking or not).  The values are the number of subjects who fall into each category. Data are the first to show a relationship between smoking and cancer  (Doll and Hill, British Med. J, 1950, 739-748).</Font>
+<B><Font Size="11" Color="#000000" Face="Verdana"><BR></BR><BR></BR>Goals</Font></B>
+<Font Size="11" Color="#000000" Face="Verdana"><BR></BR> - To assess whether the relationship between cancer and smoking </Font>
+<Font Size="11" Color="#000000" Face="Verdana"><BR></BR>    is more than expected by chance. </Font>
+<B><Font Size="11" Color="#000000" Face="Verdana"><BR></BR> - </Font></B>
+<Font Size="11" Color="#000000" Face="Verdana">To quantify the odds ratio with its 95% confidence interval.</Font>
+<B><Font Size="11" Color="#000000" Face="Verdana"><BR></BR><BR></BR>How to analyze the data</Font></B>
+<Font Size="11" Color="#000000" Face="Verdana"><BR></BR>Click Analyze, choose &quot;Chi-square (and Fisher&apos;s exact) test&quot; from the list of analyses for contingency tables, and then choose the </Font>
+<Font Size="11" Color="#000000" Face="Arial">Fisher&apos;s exact test and check the option to compute the odd&apos;s ratio</Font>
+<Font Size="11" Color="#000000" Face="Verdana"> in the dialog. Click below for more detailed instructions, and to learn about contingency tables.</Font>
+</FloatingNote>
+
+<RowTitlesColumn Width="90">
+<Subcolumn>
+<d><TextAlign align="Center">Core</TextAlign></d>
+<d><TextAlign align="Center">Non-Core</TextAlign></d>
+</Subcolumn>
+</RowTitlesColumn>
+<YColumn Width="100" Decimals="0" Subcolumns="1">
+<Title><TextAlign align="Left">DE</TextAlign></Title>
+<Subcolumn>
+<d>178</d>
+<d>763</d>
+</Subcolumn>
+</YColumn>
+<YColumn Width="83" Decimals="0" Subcolumns="1">
+<Title><TextAlign align="Left">Non-DE</TextAlign></Title>
+<Subcolumn>
+<d>2710</d>
+<d>2797</d>
+</Subcolumn>
+</YColumn>
+</Table>
+
+<!--Analyses, graphs and layouts as compressed binary. Don&apos;t edit this part of the file.-->
+
+<Template dt:dt="bin.base64" xmlns:dt="urn:schemas-microsoft-com:datatypes">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
+PkSo9kTrq/bEr7My2aa/KF4+5JySN4ofLp42pLnk1RJ+zhWbjhc2XUKkTe9jNh0a
+ZlP8OuyQlcu62zJ/iD5QMnHoraVvFG8q2WHo6tJXS/g5OXOexE9pOqfSnBXCnGhv
+bs77mTlHhJkT7neKOTNzhG4b7OlBlc7zrGLa7IFtNMjiAW81MbzhLWeFU7gKiEg5
+fPrp6elh+14LFixg9zi///77oc9C2SLTH+FUVzftkWkyGhoa6cfHPQWEfwj6BIxi
+oRUU75kxFwcNDY0wfELKCsynY0COIqeVzs1qqGW0jJbJXhlzbcVKK9dWJ2k3OWoZ
+LZNrMuYooic9irSMlklAxhxFBUS/52loJAJzFOHjuh5FGhrxwxxFcDbTo0hDI36Y
+owhf7PUo0tCIHx8He4JnhXxLTDbYm9jvf8wd/ZsZjzEdcBG/B+L3wUmmBDw2uUcN
+B+7xS59fk8/yOVUBSvk/BH6Hn+lySH+Ldef9J2j10bDehwVERArYyeBslVfjmM/o
+d+GMqapsspC/MpYVR+PKMj71Deu/FZc/s5YVR/+QZYy+4qn+W/GCA/92cUH1trTi
++aziahmf/3dVfBUvPdPmN4skmYrznzdaZWk5STfCtb4JxnUTy4IzC1+jxj7ihOZl
+f6Dnq0cRctLRn1zxVPtfg2XnvLr8A8+q1bPHNgVv3HHwiaMvPOilNb7zzztvx55Z
+b49+/ZWN99/03Mxdj/rDtWM2v5Lf8fSeb9eelDf66emv1M069fEHZg2e+drUX7z1
+9Rm/eXTLholzNk1Y+dieZ695/tLC20b+9fOVn//vgKVP7t157rV7LPzLQ4Hdan73
+xtqTmuaNuXnv7okX+G+78fNPV1y/7bm9M84vemSbAcv/uv/r73Y/c+qqEXePvW/X
+nTvW/N+iV24+48kzNv9nxfwXm85fM4V88aSv7OjyjQ9csXHT0pq9v9+w3Y5/O+Hb
+7174dM+bnjuuesihd69a0/n9+PnXr93n24umtr66+ap/vlZ82gMbGzZtPuTwP/m/
+2+Hykffnvfqe78wjd+jc67xVv/l+9N/zn/n9W68+ffzhFbv7rntwh28uHt3xk7dO
+2ucPpX+/44s5J/z3z1dt+DKwasJvP3hvTMc1K17/deOvhl+0xPPRrLUbhp426vN/
+j83rvva0fz9x1Y9W7DP+8sdvPfbC5d/ekPfJgCdmnPr3oQf88s+frvuu9OPuyp9W
+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
+UyENJOWSJboSh3odOoSYuF8fJEkQXY3MfzvE91ab0DCwaB4Gle/tY8H3VlbE+d6+
+y0K+t3G09NaIYeDI99a5NsjOF9zeX/ne0j0MevuM7+37EN/b/Px0DYNc4Xv7UDx9
+yI9tOAuJhCgaZH3tkGt8bx9thbbNIw94q3zTfTX+Td45vj18Zf4vvO2+Ib7v6NDW
+fG+gM7mYOPO9mf4GVoIhSGi+t8SRSgvH4nvD53E7VjDN95btfG9wW7CzrOZ7y3a+
+N7iTROV7242gIP5qGGlaL1Nt6xlYs77tKQzcgmtm0vOZSWlcj5TVrG+pRCqtN05Y
+r5VI613ArOcNsx6mWs36Rnp63P++NJNl+iOc6uqmPTJNRkNDI/3QrG8aGqmDZn3T
+MlpGy4TLaNY3LaNlkpXRrG9aRsskK6NZ3zQ0koVmfdPQSBaa9U1DI1lo1jcNjWSh
+Wd8061tfs741MPcd9Bz8hLGps2NJ68Juo639uA6jknDWNxXSEceN404OIIhmkG3E
+PbfQLnKbnSMQGsg/Yx5W8WDP4HLmUYb25j9lpVj/t29fPH+jZzm+8zG0M3+vA05a
+0drZtry1vduY3NzdSjqYX9jk1oV7VVTtVVVR2UB4CmjXzlzqlRTTJlN5VhEuBPXb
+WQbTO7pbj+3oWBohgumlnU0ootuER+NoJ3BlNYtp7QyXwZtrO5u1aBbdHQs7loXH
+45m8nQeI8AvIaBL6sjkRx3MbNuzLb8Nhzp8NopeD4E738vihe/nW6+UXryYTzzrk
+7/t+cE1VzF6e3xNUoxKEJ/j/AAAA//8DALAcTIQ=</Template></GraphPadPrismFile>

@@ -1,7 +1,7 @@
 library(dplyr)
 #library(stingr)
 
-preprocessOrthoResults <- function(repoPath){
+#preprocessOrthoResults <- function(repoPath){
 #preprocessOrthoResultsAnyCopy#
 #
 #Function that generates a simple .csv with any orthologous proteins
@@ -19,14 +19,14 @@ preprocessOrthoResults <- function(repoPath){
   
   #Open OrthoFinder results files
   #sourcePath <- paste(repoPath,'/OrthoFinder/Orthogroups',sep='')
-  setwd('/Users/doughty/Documents/GitHub/OrthoFinder-2.3.3_source/orthofinder/SCEvYLI-L.star-T.cas/OrthoFinder')
-  filename      <- '/Users/doughty/Documents/GitHub/OrthoFinder-2.3.3_source/orthofinder/SCEvYLI-L.star-T.cas/OrthoFinder/Results_Jul05/Orthogroups/Orthogroups.GeneCount.tsv'
+  setwd('/Users/doughty/Documents/GitHub/OrthoFinder-2.3.3_source/orthofinder/s288cvgenus')
+  filename      <- '/Users/doughty/Documents/GitHub/OrthoFinder-2.3.3_source/orthofinder/s288cvgenus/OrthoFinder/Results_Jul05/Orthogroups/Orthogroups.GeneCount.tsv'
   anyCopyOG  <- read.delim(filename, header = TRUE, sep = "\t",stringsAsFactors=FALSE, na.strings = "NA")
-  filename      <- '/Users/doughty/Documents/GitHub/OrthoFinder-2.3.3_source/orthofinder/SCEvYLI-L.star-T.cas/OrthoFinder/Results_Jul05/Orthogroups/Orthogroups.tsv'
+  filename      <- '/Users/doughty/Documents/GitHub/OrthoFinder-2.3.3_source/orthofinder/s288cvgenus/OrthoFinder/Results_Jul05/Orthogroups/Orthogroups.tsv'
   orthoGroups   <- read.delim(filename, header = TRUE, sep = "\t",stringsAsFactors=FALSE, na.strings = "NA")
   endCol        <- ncol(orthoGroups)
   newOGlist     <- c()
-  group_number  <- 'GroupIII.csv' #Add the group number for the analysis
+  group_number  <- 'GroupV.csv' #Add the group number for the analysis
   filename   <- '/Users/doughty/Documents/GitHub/OrthoFinder-2.3.3_source/s288c_gene_prot.csv'
   gene_2_prot <- read.csv(filename, header = TRUE)
 
@@ -73,12 +73,13 @@ num.el <- sapply(test, length)
 newOGsimple <- cbind(unlist(test), rep(1:length(test), num.el))
 colnames(newOGsimple) <- c("protein","orthogroup")
 newOGsimple <- as.data.frame(newOGsimple)
-newOGsimple$orthogroup <- gsub('1', 'S+LYT', newOGsimple$orthogroup)
+newOGsimple$orthogroup <- gsub('1', 'S+EMP', newOGsimple$orthogroup)
 newOGsimple$protein <- gsub('\\s+', '', newOGsimple$protein)
 
 #Map each  protein to gene name
 #for (i in 1:nrow(newOGsimple)){
 m <- merge(newOGsimple, gene_2_prot, by.x = "protein", by.y = "protein", all.x= TRUE)
+m  <- m [,c(1,3,2)]
 #}
 write.csv(m, file = group_number, row.names = TRUE)
 

@@ -1,5 +1,5 @@
 library(dplyr)
-library(stingr)
+#library(stingr)
 
 preprocessOrthoResults <- function(repoPath){
 #preprocessOrthoResultsAnyCopy#
@@ -19,18 +19,20 @@ preprocessOrthoResults <- function(repoPath){
   
   #Open OrthoFinder results files
   #sourcePath <- paste(repoPath,'/OrthoFinder/Orthogroups',sep='')
-  #setwd(sourcePath)
-  filename      <- '/Users/doughty/Documents/GitHub/OrthoFinder-2.3.3_source/orthofinder/CBSvSCE-L.Ferm-E.goss/OrthoFinder/Results_Jun26/Orthogroups/Orthogroups.GeneCount.tsv'
+  setwd('/Users/doughty/Documents/GitHub/OrthoFinder-2.3.3_source/orthofinder/SCEvYLI-L.star-T.cas/OrthoFinder')
+  filename      <- '/Users/doughty/Documents/GitHub/OrthoFinder-2.3.3_source/orthofinder/SCEvYLI-L.star-T.cas/OrthoFinder/Results_Jul05/Orthogroups/Orthogroups.GeneCount.tsv'
   anyCopyOG  <- read.delim(filename, header = TRUE, sep = "\t",stringsAsFactors=FALSE, na.strings = "NA")
-  filename      <- '/Users/doughty/Documents/GitHub/OrthoFinder-2.3.3_source/orthofinder/CBSvSCE-L.Ferm-E.goss/OrthoFinder/Results_Jun26/Orthogroups/Orthogroups.tsv'
+  filename      <- '/Users/doughty/Documents/GitHub/OrthoFinder-2.3.3_source/orthofinder/SCEvYLI-L.star-T.cas/OrthoFinder/Results_Jul05/Orthogroups/Orthogroups.tsv'
   orthoGroups   <- read.delim(filename, header = TRUE, sep = "\t",stringsAsFactors=FALSE, na.strings = "NA")
   endCol        <- ncol(orthoGroups)
   newOGlist     <- c()
   group_number  <- 'GroupIII.csv' #Add the group number for the analysis
-  
+  filename   <- '/Users/doughty/Documents/GitHub/OrthoFinder-2.3.3_source/s288c_gene_prot.csv'
+  gene_2_prot <- read.csv(filename, header = TRUE)
 
-anyCopyOG <- filter(anyCopyOG, K.marxianus !=0) #Remove orthogroups with 0 values for the query organism (these are orthologs between the other organisms but not the query)
-anyCopyOG  <- anyCopyOG [,c(1,3,2,4,5)]
+
+anyCopyOG <- filter(anyCopyOG, A_s288c !=0) #Remove orthogroups with 0 values for the query organism (these are orthologs between the other organisms but not the query)
+#anyCopyOG  <- anyCopyOG [,c(1,3,2,4,5)]
 anyCopyOG <- anyCopyOG[apply(anyCopyOG[c(3:5)],1,function(z) any(z!=0)),] #remove orthogroups that only have genes in the query organism
 
 #Map each  OG to orthoGroups data frame
@@ -57,9 +59,27 @@ anyCopyOG <- anyCopyOG[apply(anyCopyOG[c(3:5)],1,function(z) any(z!=0)),] #remov
   return(newOGlist)
 
 
-newOGlist <- newOGlist[,-1:-2]
-newOGlist <- newOGlist[,-2:-3]
 
-newOGsplit <- c()
+newOGlist <- newOGlist[,-1]
+newOGlist <- newOGlist[,-2:-4]
+#newOGlist$newcolumn <- S+PNA
+#newOGlist2 <- cbind(newOGsimple, c(1))
+#newOGlist2 <- newOGlist2[,-1]
+
+#newOGsplit <- c()
 newOGsimple <- toString(newOGlist, width=NULL)
-write.csv(newOGsimple, file = group_number, row.names = FALSE)
+test <- as.list(strsplit(newOGsimple, ","))
+num.el <- sapply(test, length)
+newOGsimple <- cbind(unlist(test), rep(1:length(test), num.el))
+colnames(newOGsimple) <- c("protein","orthogroup")
+newOGsimple <- as.data.frame(newOGsimple)
+newOGsimple$orthogroup <- gsub('1', 'S+LYT', newOGsimple$orthogroup)
+newOGsimple$protein <- gsub('\\s+', '', newOGsimple$protein)
+
+#Map each  protein to gene name
+#for (i in 1:nrow(newOGsimple)){
+m <- merge(newOGsimple, gene_2_prot, by.x = "protein", by.y = "protein", all.x= TRUE)
+#}
+write.csv(m, file = group_number, row.names = TRUE)
+
+#write.csv(newOGsimple, file = group_number, row.names = TRUE)

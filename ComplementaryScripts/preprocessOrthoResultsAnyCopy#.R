@@ -19,15 +19,15 @@ library(dplyr)
   
   #Open OrthoFinder results files
   #sourcePath <- paste(repoPath,'/OrthoFinder/Orthogroups',sep='')
-  setwd('/Users/doughty/Documents/GitHub/OrthoFinder-2.3.3_source/orthofinder/s288cvgenus')
-  filename      <- '/Users/doughty/Documents/GitHub/OrthoFinder-2.3.3_source/orthofinder/s288cvgenus/OrthoFinder/Results_Jul05/Orthogroups/Orthogroups.GeneCount.tsv'
+  setwd('/Users/doughty/Documents/GitHub/CHASSY_multiOmics_Analysis/Orthologs/orthfinder/s288cvgenus')
+  filename      <- '/Users/doughty/Documents/GitHub/CHASSY_multiOmics_Analysis/Orthologs/orthfinder/s288cvgenus/Orthogroups/Orthogroups.GeneCount.tsv'
   anyCopyOG  <- read.delim(filename, header = TRUE, sep = "\t",stringsAsFactors=FALSE, na.strings = "NA")
-  filename      <- '/Users/doughty/Documents/GitHub/OrthoFinder-2.3.3_source/orthofinder/s288cvgenus/OrthoFinder/Results_Jul05/Orthogroups/Orthogroups.tsv'
+  filename      <- '/Users/doughty/Documents/GitHub/CHASSY_multiOmics_Analysis/Orthologs/orthfinder/s288cvgenus/Orthogroups/Orthogroups.tsv'
   orthoGroups   <- read.delim(filename, header = TRUE, sep = "\t",stringsAsFactors=FALSE, na.strings = "NA")
   endCol        <- ncol(orthoGroups)
   newOGlist     <- c()
   group_number  <- 'GroupV.csv' #Add the group number for the analysis
-  filename   <- '/Users/doughty/Documents/GitHub/OrthoFinder-2.3.3_source/s288c_gene_prot.csv'
+  filename   <- '/Users/doughty/Documents/GitHub/CHASSY_multiOmics_Analysis/Orthologs/orthfinder/s288cvgenus/s288c_gene_prot.csv'
   gene_2_prot <- read.csv(filename, header = TRUE)
 
 

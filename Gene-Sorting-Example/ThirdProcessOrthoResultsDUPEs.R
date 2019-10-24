@@ -14,7 +14,8 @@
   filename   <- '/Users/doughty/Documents/GitHub/CHASSY_multiOmics_Analysis/Gene-Sorting-Example/S.cerevisiae_GeneSorting/s288c_gene_prot.csv'
   gene_2_prot <- read.csv(filename, header = TRUE)
   SelfSelfDuplicates <- read.delim('/Users/doughty/Documents/GitHub/CHASSY_multiOmics_Analysis/Gene-Sorting-Example/S.cerevisiae_GeneSorting/GroupV/Duplications_Groups_For_Sorting.csv', header = FALSE)
-
+  
+                    
 
 multiCopyOG <- anyCopyOG[apply(anyCopyOG[c(2)],1,function(z) any(z!=0)),] #Organism of interest in column 2 - Remove orthogroups with 0 values for the query organism (these are orthologs between the other organisms but not the query)
 multiCopyOG <- multiCopyOG[apply(multiCopyOG[c(2)],1,function(z) any(z>=2)),] # keep duplicated genes in SCE from this query
@@ -24,9 +25,11 @@ multiCopyOG1 <- multiCopyOG %>% filter(multiCopyOG[c(2)]==multiCopyOG[c(3)])
 multiCopyOG2 <- multiCopyOG %>% filter(multiCopyOG[c(2)]==multiCopyOG[c(4)])
 multiCopyOG3 <- multiCopyOG %>% filter(multiCopyOG[c(2)]==multiCopyOG[c(5)])
 
-merged <- rbind(multiCopyOG1, multiCopyOG2, multiCopyOG3, by="Orthogroup")
+merged <- rbind(multiCopyOG1, multiCopyOG2, multiCopyOG3, by=c(1))
+merged <- merged[-nrow(merged),]
 mergedunique <- unique(merged$Orthogroup)
 mergedunique <- as.data.frame(mergedunique)
+names(mergedunique)[names(mergedunique) == "mergedunique"] <- "Orthogroup"
 
 #Map each  OG to orthoGroups data frame
   for (i in 1:nrow(mergedunique)){
@@ -52,6 +55,16 @@ mergedunique <- as.data.frame(mergedunique)
 
   #Get OG names for OGs with shared copy number in SCE and at least one other organism
 newOGlist <- as.data.frame(newOGlist)
+newOGlist <- newOGlist[c(2)]
+
+#Reformat the Self-Self Duplicate list to show orthologous proteins as prot1, prot2, prot3, etc. This will be
+#matched to the orthofinder result files
+SelfSelfDuplicates <- gsub(", ,", "", SelfSelfDuplicates$V1, fixed = TRUE)
+SelfSelfDuplicates <- gsub(" ,", "", SelfSelfDuplicates, fixed = TRUE)
+SelfSelfDuplicates <- as.data.frame(SelfSelfDuplicates) 
+SelfSelfDuplicates2 <- trimws(SelfSelfDuplicates$SelfSelfDuplicates, which = c("right"))
+SelfSelfDuplicates <- as.data.frame(SelfSelfDuplicates2) 
+
 colnames(SelfSelfDuplicates) <- "A_s288c"
 library(dplyr)
 #Create a list of Self-Self Duplicates that are not found in the search query

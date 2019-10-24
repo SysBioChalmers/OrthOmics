@@ -9,9 +9,16 @@ gene_2_prot <- read.csv("s288c_gene_prot.csv", header = TRUE)
 AllDuplicates <- read.csv('/Users/doughty/Documents/GitHub/CHASSY_multiOmics_Analysis/Gene-Sorting-Example/S.cerevisiae_GeneSorting/GroupV/Duplicates_to_Exclude.csv', header = TRUE,  sep = ",",stringsAsFactors=FALSE, na.strings = "NA")
 AllDuplicates <- AllDuplicates[c(1,2)]
 TransposonsToExclude <- read.csv("transposons.csv", header = TRUE)
+WholeGenomeDupes <- read.csv('WGD-Byrne2005.csv', header = TRUE,  sep = ",",stringsAsFactors=FALSE, na.strings = "#N/A")
+Three_Plus_CopyGenes <- read.csv('/Users/doughty/Documents/GitHub/CHASSY_multiOmics_Analysis/Gene-Sorting-Example/S.cerevisiae_GeneSorting/GroupV/3+Copy_Genes.csv', header = TRUE,  sep = ",",stringsAsFactors=FALSE, na.strings = "#N/A")
+Three_Plus_CopyGenes <- Three_Plus_CopyGenes[c(1,2)]
+
+#First we need to remove some WGD genes that have reduplicated (exist as 3+ copy genes)
+WholeGenomeDupes <- (WholeGenomeDupes %>% anti_join(Three_Plus_CopyGenes))
 
 #Duplicate sorting is bottom-UP - starts with groupV and tests which duplicates can be traced backwards
 AllDuplicates <- (AllDuplicates %>% anti_join(TransposonsToExclude))
+AllDuplicates <- (AllDuplicates %>% anti_join(WholeGenomeDupes))
 
 GroupV <- (AllDuplicates %>% anti_join(GroupIV_Duplicates))
 namevector <- c("GroupV")
@@ -47,8 +54,15 @@ namevector <- c("GroupI")
 GroupI[, namevector] <- "GroupI"
 names(GroupI)[names(GroupI) == "GroupI"] <- "Group"
 
-#Assemble hierarchy
+#Assemble hierarchy for non-WGD Duplicates
 SCESortedDuplicates <- rbind(GroupI, GroupII, GroupIII, GroupIV, GroupV)
+
+#Add protein-coding WGD genes to the list
+WholeGenomeDupes <- WholeGenomeDupes[complete.cases(WholeGenomeDupes[ ,2 ]), ]
+namevector <- c("WGD")
+WholeGenomeDupes[, namevector] <- "WGD"
+names(WholeGenomeDupes)[names(WholeGenomeDupes) == "WGD"] <- "Group"
+SCESortedDuplicates <- rbind(GroupI, GroupII, GroupIII, WholeGenomeDupes, GroupIV, GroupV)
 
 write.csv(SCESortedDuplicates, file="Sorted_MultiCopy_Genes_SCE.csv", row.names = FALSE)
 

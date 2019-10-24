@@ -7,9 +7,10 @@ GroupIII_Singles  <- read.csv("GroupIII-Singles.csv", header = TRUE, sep = ",",s
 GroupIV_Singles  <- read.csv("GroupIV-Singles.csv", header = TRUE, sep = ",",stringsAsFactors=FALSE, na.strings = "NA")
 gene_2_prot <- read.csv("s288c_gene_prot.csv", header = TRUE)
 DuplicatesToExclude <- read.csv('/Users/doughty/Documents/GitHub/CHASSY_multiOmics_Analysis/Gene-Sorting-Example/S.cerevisiae_GeneSorting/GroupV/Duplicates_to_Exclude.csv', header = TRUE,  sep = ",",stringsAsFactors=FALSE, na.strings = "NA")
+WholeGenomeDupes <- read.csv('WGD-Byrne2005.csv', header = TRUE,  sep = ",",stringsAsFactors=FALSE, na.strings = "NA")
 
 SingleCopyGenes <- (gene_2_prot %>% anti_join(DuplicatesToExclude))
-
+SingleCopyGenes <- (SingleCopyGenes %>% anti_join(WholeGenomeDupes))
 #Begin hierarchal sorting
 GroupI <- subset(SingleCopyGenes, SingleCopyGenes$protein %in% GroupI_Singles$protein)
 namevector <- c("GroupI")

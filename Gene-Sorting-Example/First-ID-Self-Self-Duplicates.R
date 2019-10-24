@@ -2,10 +2,13 @@
 #genes and proteins that are predicted to be duplicates in an organism.
 
 #This results in two outputs that are needed in future steps
-#1) A list of genes to exclude from singleCopy Analysis called Duplicates_to_Exclude.csv
-#2) A list of duplicated genes in the same ortholog family which we will later sort to determine the relative
-#timing of the duplication event (Duplications_Groups_For_Sorting.csv)
 
+#1) A list of duplicated genes in the same ortholog family which we will later sort to determine the relative
+#timing of the duplication event (Duplications_Groups_For_Sorting.csv)
+#2) A list of genes that exist as 3 or more copies for other analyses
+#3) A list of genes to exclude from singleCopy Analysis called Duplicates_to_Exclude.csv
+
+#Load Necessary Data from the Self-Self orthology search
 setwd('/Users/doughty/Documents/GitHub/CHASSY_multiOmics_Analysis/Gene-Sorting-Example/S.cerevisiae_GeneSorting/GroupV')
 filename      <- 'Orthogroups.GeneCount.tsv'
 DuplicateOGs  <- read.delim(filename, header = TRUE, sep = "\t",stringsAsFactors=FALSE, na.strings = "NA")
@@ -17,13 +20,11 @@ group_number  <- 'Duplicates_to_Exclude.csv' #Add the group number for the analy
 filename   <- '/Users/doughty/Documents/GitHub/CHASSY_multiOmics_Analysis/Gene-Sorting-Example/S.cerevisiae_GeneSorting/s288c_gene_prot.csv'
 gene_2_prot <- read.csv(filename, header = TRUE)
 
-
+#Keep only self-self duplicates (i.e. 2+ copy genes)
 DuplicateOGs <- DuplicateOGs[apply(DuplicateOGs[c(2)],1,function(z) any(z!=0)),] #Organism of interest in column 2 - Remove orthogroups with 0 values for the organism of interest (these are orthologs between the other organisms but not the query)
 DuplicateOGs <- DuplicateOGs[apply(DuplicateOGs[c(2)],1,function(z) any(z>=2)),] # grab duplicates from self-self orthology search
 
-
-
-#Map each  OG to orthoGroups data frame
+#Map each  Gene/protein to orthoGroups data frame
 for (i in 1:nrow(DuplicateOGs)){
   OGid    <- DuplicateOGs[i,1] 
   index   <- which(orthoGroups[,1]==OGid)
@@ -47,29 +48,31 @@ return(newOGlist)
 newOGlistP <- newOGlist [,c(1:2)]
 newOGlistP2 <- cSplit(newOGlistP, 'A_s288c', sep=",", type.convert=FALSE)
 
-library(stringr)
-#Keep only the uniprot protein ID
+#1) Create a list of duplicates for sorting later on in the format that will match orthofinder outputs
+#Keep the protein IDs inside of their respective orthogroups for future sorting
+MultiCopyGroups <- lapply(newOGlistP2, word, 1)
 
-test3 <- lapply(newOGlistP2, word, 1)
+MultiCopyGroups <- as.data.frame(MultiCopyGroups)
+rownames(MultiCopyGroups) <- MultiCopyGroups$Orthogroup
+MultiCopyGroups <- MultiCopyGroups[,-1]
 
-test3 <- as.data.frame(test3)
-rownames(test3) <- test3$Orthogroup
-test3 <- test3[,-1]
-#test3t <- t(test3)
-#test3t <- colnames(test3t, test3t$Orthogroup)
-#test3t <- as.data.frame(test3t, col.names = test3t$Orthogroup)
-#test3t['V1']
-#colnames(test3t) <- test3t$Orthogroup
+write.table(MultiCopyGroups, file="Duplications_Groups_For_Sorting.csv", row.names = FALSE, col.names = FALSE, quote = FALSE, sep = ", ", na="")
 
-#test3 <- test3[,-1]
-#test3 <- toString(test3, width=NULL)
-write.table(test3, file="Duplications_Groups_For_Sorting.csv", row.names = FALSE, col.names = FALSE, quote = FALSE, sep = ", ")
+#2) Create a list of genes that have 3+copies in the organism of interest - This helps for downstream analyses
 
-#XXX <- read.csv ("Duplications_Groups_For_Sorting.csv", sep = " ")
-#test4 <- lapply(test3, function(x) x[!is.na(x)])
-#test4 <- as.matrix(test4)
-#write(test4, file = "Duplications_As_Groups.txt")
+Three_Plus_Copy_Genes <- MultiCopyGroups[complete.cases(MultiCopyGroups[ ,3 ]), ]
 
+Three_Plus_Copy_Genes <- data.frame(matrix(unlist(Three_Plus_Copy_Genes), byrow=T), stringsAsFactors=FALSE)
+namevector <- c("3+CopyGenes")
+Three_Plus_Copy_Genes[, namevector] <- "3+CopyGenes"
+names(Three_Plus_Copy_Genes)[names(Three_Plus_Copy_Genes) == "3+CopyGenes"] <- "Group"
+names(Three_Plus_Copy_Genes) [1] <- paste("protein")
+Three_Plus_Copy_Genes <- Three_Plus_Copy_Genes[complete.cases(Three_Plus_Copy_Genes[ ,1 ]), ]
+Three_Plus_Copy_Genes <- merge(Three_Plus_Copy_Genes, gene_2_prot, by.x = "protein", by.y = "protein", all.x= TRUE)
+Three_Plus_Copy_Genes <- Three_Plus_Copy_Genes[,c(1,3,2)]
+write.table(Three_Plus_Copy_Genes, file="3+Copy_Genes.csv", row.names = FALSE, col.names = TRUE, quote = FALSE, sep = ",")
+
+#3) Create a list of duplicated genes to exclude from singlegene sorting
 #Pull all uniprot IDs into a linear list                    
 newOGlistQ <- newOGlist [,c(2)]
 newOGsimple <- toString(newOGlistQ, width=NULL)
@@ -87,8 +90,6 @@ newOGsimple2$protein <- gsub('\\s+', '', newOGsimple2$protein_01)
 
 m <- merge(newOGsimple2, gene_2_prot, by.x = "protein", by.y = "protein", all.x= TRUE)
 m  <- m [,c(1,4,2)]
-
-#n <- merge(m, test3, by.x = c("protein"), by.y = c("A_s288c_01"), all.x= FALSE, all.y=FALSE)
 
 write.csv(m, file = group_number, row.names = FALSE)
 

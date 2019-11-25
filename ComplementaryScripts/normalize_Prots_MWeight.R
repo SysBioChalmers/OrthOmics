@@ -34,7 +34,7 @@ normalize_Prots_MWeight <- function(data,genes,proteins,organism){
       MWs    <- database[,7]
     }
   }else {
-    #for sce the match is done based on CENPK gene IDs
+    #for sce the match is done based on s288c gene IDs
     DB_ids <- database[,3]
     ids    <- genes
   }

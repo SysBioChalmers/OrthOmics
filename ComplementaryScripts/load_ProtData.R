@@ -54,7 +54,7 @@ load_ProtData <- function(dataPath,DBpath,organism,Pmethod,normMW,normL){
   }
   
   if (all(organism == 'sce')){
-    genes    <- IDs[,1]
+    genes    <- IDs[,3]
     genes[genes==''] <- IDs[,1][genes=='']
   }
   proteins <- IDs[,2]

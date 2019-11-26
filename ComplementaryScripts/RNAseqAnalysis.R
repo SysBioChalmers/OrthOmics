@@ -17,8 +17,7 @@ RNAseqAnalysis <- function(organism,stringent,normMethod,minLCPM,logPval,log2FC,
 #
 # Usage: RNAseqAnalysis(organism,stringent,normMethod,minLCPM,logPval,log2FC,adjustedP,repoPath)
 #
-# Last modified: Ivan Domenzain. 2019-05-20
-#
+# Last modified: Ivan Domenzain. 2019-11-25
   
 #================================ RELEVANT DIRECTORIES ====================================
 #Relevant paths (The user should provide the path in which the repository is stored)
@@ -66,16 +65,22 @@ source('plotVennDiagram.R')
 setwd(resultsPath)
 cat(paste("Getting overlap of measured transcripts across conditions: ",dataSource,"\n",sep=""))
 png(paste(organism,'_RNA_vennAllconds.png',sep=''),width = 600, height = 600)
-if (all(organism == 'yli')) {
+if (length(conditions) == 3) {
   intLabSize   <- c(rep(3,7))
   intLabSize[5]<- 4
   ellipses     <- 3
   allConds     <- plotVennDiagram(detected,conditions,colorValues,intLabSize,ellipses)
-}else  {
+}else{
+  if (length(conditions) == 4) {
   intLabSize   <- c(rep(3,15))
   intLabSize[6]<- 4
   ellipses     <- 4
   allConds     <- plotVennDiagram(detected,conditions,colorValues,intLabSize,ellipses)
+  } else{
+    intLabSize   <- c(rep(3,31))
+    ellipses     <- 5
+    allConds     <- plotVennDiagram(detected,conditions,colorValues,intLabSize,ellipses)
+  }
 }
 dev.off()
 cat("#================== 3. visualize data samples distributions and filter low reads =================\n")

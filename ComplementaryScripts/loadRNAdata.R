@@ -13,19 +13,26 @@ loadRNAdata <- function(dataPath,organism){
                       rep(conditions[2],replicates[2]),
                       rep(conditions[3],replicates[3])), levels = conditions)
   } else {
-    if (all(organism == 'cpk') |all(organism == 'sce')){
-    conditions <- c('Ref','HiT','LpH','Osm')
-    colorValues <- c("grey", "red", "#009E73","blue")
-    replicates <- c(3,3,3,3)
-    }
-    if (all(organism == 'kma')){replicates <- c(3,2,3,3)}
-    conditions <- c('Ref','HiT','LpH','Osm')
-    colorValues <- c("grey", "red", "#009E73","blue")
+    if (all(organism == 'sce')){
+    conditions <- c('Ref','HiT','LpH','Osm','Ana')
+    colorValues <- c("grey", "red", "#009E73","blue",'brown')
+    replicates <- c(3,3,3,3,3)
     group <- factor(c(rep(conditions[1],replicates[1]),
                       rep(conditions[2],replicates[2]),
                       rep(conditions[3],replicates[3]),
-                      rep(conditions[4],replicates[4])), levels = conditions)
-  }
+                      rep(conditions[4],replicates[4]),
+                      rep(conditions[5],replicates[5])), levels = conditions)
+    }
+    if (all(organism == 'kma')){
+      replicates  <- c(3,2,3,3)
+      conditions  <- c('Ref','HiT','LpH','Osm')
+      colorValues <- c("grey", "red", "#009E73","blue")
+      group <- factor(c(rep(conditions[1],replicates[1]),
+                        rep(conditions[2],replicates[2]),
+                        rep(conditions[3],replicates[3]),
+                        rep(conditions[4],replicates[4])), levels = conditions)
+      }
+    }
   #Generate colNames
   cols <- c()
   for (i in 1:length(conditions)) {

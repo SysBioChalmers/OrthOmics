@@ -73,7 +73,8 @@ for (organism in organisms){
   #================== 3. Create integratative Omics table ==================
   setwd(scriptsPath)
   source('createIntegratedTable.R')
-  createIntegratedTable(orgID,pVal,log2FC,adjustedP,FALSE)
+  createIntegratedTable(organism,pVal,log2FC,adjustedP,FALSE,repoPath)
+  createIntegratedTable(organism,pVal,log2FC,adjustedP,TRUE,repoPath)
   cat("\014") 
 }
 #================== 3. Map DE genes to 1:1:1 orthologous genes list ==================

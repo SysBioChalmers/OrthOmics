@@ -1,4 +1,4 @@
-DEpairwiseAnalysis <- function(dataset,org,conditions,coloVals,logPval,log2FC,adjusted,omics,groups,normMethod,excl){
+DEpairwiseAnalysis <- function(dataset,org,conditions,coloVals,logPval,log2FC,adjusted,omics,groups,normMethod){
   nargin <- length(as.list(match.call())) -1
   if (nargin < 10){normMethod <- '-'}
   #Create new directory for storing results for the given set of threshold values 
@@ -75,9 +75,6 @@ DEpairwiseAnalysis <- function(dataset,org,conditions,coloVals,logPval,log2FC,ad
     data[[i-1]] <- volcanoData
     dev.off()
   }
-  #Exclude undesired condition
-  excl <- which(conditions==excl)
-  if (excl>0){  conditions <- conditions[-excl]}
   #Get venn diagrams for the up and down regulated genes
   ellipses <- length(conditions)-1
   if (ellipses == 4){

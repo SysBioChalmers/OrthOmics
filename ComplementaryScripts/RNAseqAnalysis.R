@@ -39,7 +39,6 @@ conditions        <- output[[3]]
 colorValues       <- output[[4]]
 replicates        <- output[[5]]
 grouping          <- output[[6]]
-excluded          <- output[[7]]
 rownames(dataset) <- genes
 rm(output)
 rm(dataPath)
@@ -130,7 +129,7 @@ setwd(scriptsPath)
 source('DEpairwiseAnalysis.R')
 setwd(resultsPath)
 #Call DE analysis internal function
-output   <- DEpairwiseAnalysis(filtered.data,organism,conditions,colorValues,logPval,log2FC,adjustedP,'RNA',grouping,normMethod,excluded)
+output   <- DEpairwiseAnalysis(filtered.data,organism,conditions,colorValues,logPval,log2FC,adjustedP,'RNA',grouping,normMethod)
 upReg_AllConds   <- output[[1]]
 downReg_AllConds <- output[[2]]
 Excsv_Up         <- output[[3]]

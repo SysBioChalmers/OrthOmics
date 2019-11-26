@@ -12,16 +12,19 @@ loadRNAdata <- function(dataPath,organism){
     group <- factor(c(rep(conditions[1],replicates[1]),
                       rep(conditions[2],replicates[2]),
                       rep(conditions[3],replicates[3])), levels = conditions)
+    excl <- c()
   } else {
     if (all(organism == 'sce')){
     conditions <- c('Ref','HiT','LpH','Osm','Ana')
-    colorValues <- c("grey", "red", "#009E73","blue",'brown')
+    colorValues <- c("grey", "red", "#009E73","blue",'yellow')
     replicates <- c(3,3,3,3,3)
     group <- factor(c(rep(conditions[1],replicates[1]),
                       rep(conditions[2],replicates[2]),
                       rep(conditions[3],replicates[3]),
                       rep(conditions[4],replicates[4]),
                       rep(conditions[5],replicates[5])), levels = conditions)
+    #Condition to exclude from pan-stress analysis
+    excl <- 'Ana'
     }
     if (all(organism == 'kma')){
       replicates  <- c(3,2,3,3)
@@ -31,6 +34,7 @@ loadRNAdata <- function(dataPath,organism){
                         rep(conditions[2],replicates[2]),
                         rep(conditions[3],replicates[3]),
                         rep(conditions[4],replicates[4])), levels = conditions)
+      excl <- c()
       }
     }
   #Generate colNames
@@ -46,5 +50,5 @@ loadRNAdata <- function(dataPath,organism){
   dataset[is.na(dataset)] <- 0
   
   remove(cols)
-  return(list(dataset,genes,conditions,colorValues,replicates,group))
+  return(list(dataset,genes,conditions,colorValues,replicates,group,excl))
 }

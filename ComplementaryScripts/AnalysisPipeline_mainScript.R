@@ -63,9 +63,8 @@ for (organism in organisms){
   #================== 1. Analyze Transcriptomics Data ====================================
   setwd(scriptsPath)
   source('RNAseqAnalysis.R')
-  if (all(organism=='sce')){orgID <- 'cpk'} else{orgID <- organism}
   cat(paste("Analyzing RNAseq data for: ", organism,'\n',sep=""))
-  RNAseqAnalysis(orgID,stringent,normMethod,0,logPval,log2FC,adjustedP,repoPath)
+  RNAseqAnalysis(organism,normMethod,0,logPval,log2FC,adjustedP,repoPath)
   #================== 2. Analyze proteomics Data ====================================
   setwd(scriptsPath)
   source('proteomics_Analysis.R')
@@ -80,4 +79,4 @@ for (organism in organisms){
 #================== 3. Map DE genes to 1:1:1 orthologous genes list ==================
 setwd(scriptsPath)
 source('mapDEgenesToOG.R')
-mapDEgenesToOG(c('cpk','kma','yli'),pVal,log2FC,adjustedP,'RNA',repoPath)
+mapDEgenesToOG(c('sce','kma','yli'),pVal,log2FC,adjustedP,'RNA',repoPath)

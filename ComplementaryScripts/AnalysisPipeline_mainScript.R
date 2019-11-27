@@ -7,14 +7,14 @@
 #The DE hits for all organisms and conditions are mapped to a list of 1:1:1 orthologous genes (from orthoFinder)
 #to search for evolutionary conserved stress-adaptation responses at the transcript and protein levels.
 #
-#An intgrated table is also generated in which information of foldchanges at the transcript level together with 
+#An integrated table is also generated in which information of foldchanges at the transcript level together with 
 #absolute proteomics levels [umol/g protein], Molecular weight of proteins, Sequence lenght and GO terms information
 #is put together for each organism.
 #
 #This script will facilitate all analyses described above, the user only needs to 1) clone the repo and 
-#2) change the directory name on Line 50 to reflect the location of your cloned directory
+#2) change the directory name on Line 56 to reflect the location of your cloned directory
 #
-# Last modified: Ivan Domenzain. 2019-05-20
+# Last modified: Ivan Domenzain. 2019-11-27
 #
 
 install.packages('VennDiagram')
@@ -74,7 +74,6 @@ for (organism in organisms){
   setwd(scriptsPath)
   source('createIntegratedTable.R')
   createIntegratedTable(organism,pVal,log2FC,adjustedP,FALSE,repoPath)
-  createIntegratedTable(organism,pVal,log2FC,adjustedP,TRUE,repoPath)
   cat("\014") 
 }
 #================== 3. Map DE genes to 1:1:1 orthologous genes list ==================

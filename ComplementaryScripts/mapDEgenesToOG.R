@@ -14,7 +14,7 @@ mapDEgenesToOG <- function(organisms,pVal,logFC,adjustedPval,omics,repoPath){
 #
 # Usage: mapDEgenesToOG(organisms,pVal,logFC,adjustedPval,omics,repoPath)
 #
-# Last modified: Ivan Domenzain. 2019-05-20
+# Last modified: Ivan Domenzain. 2019-11-27
 #
   
 orgColors  <- c('blue','red','yellow')
@@ -77,8 +77,6 @@ for (i in 1:length(conditions)){
     filename <- paste(orgs[j],'_',omics,'_ref_',cond,'.csv',sep='')
     #For j-th organism get the data for the genes that were DE exclusively in the i-th condition
     DEdata[[j]]  <- read.csv(filename,row.names = 1,stringsAsFactors = FALSE)
-    #Add exception for Kma identifiers
-    if (all(omics=='RNA') & all(orgs[j]=='kma')) {rownames(DEdata[[j]]) <- gsub("KMXK_", "KMXK", rownames(DEdata[[j]]))}
     if (adjustedPval == TRUE){
       upReg[[j]]   <- rownames(DEdata[[j]])[(DEdata[[j]]$logFC>=logFC) & (DEdata[[j]]$FDR<=pVal)]
       DownReg[[j]] <- rownames(DEdata[[j]])[(DEdata[[j]]$logFC<=-logFC) & (DEdata[[j]]$FDR<=pVal)]

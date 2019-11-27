@@ -54,10 +54,11 @@ loadRNAdata <- function(dataPath,organism,anox){
     groupVector <- groupVector[-toRemove]
   }
   #Update conditions, colors and replicates
-  conditions  <- conditions[-excl]
-  colorValues <- colorValues[-excl]
-  replicates  <- replicates[-excl]
-  
+  if (length(excl)>0){
+    conditions  <- conditions[-excl]
+    colorValues <- colorValues[-excl]
+    replicates  <- replicates[-excl]
+  }
   group <- factor(groupVector,levels = conditions)
   remove(cols)
   return(list(dataset,genes,conditions,colorValues,replicates,group))

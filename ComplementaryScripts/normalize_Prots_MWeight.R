@@ -19,7 +19,7 @@ normalize_Prots_MWeight <- function(data,genes,proteins,organism){
 #
 # Usage: outputLust <- normalize_Prots_MWeight(data,genes,proteins,organism)
 #
-# Last modified: Ivan Domenzain. 2019-11-27
+# Last modified: Ivan Domenzain. 2019-03-16
 #
   
   filename <- paste('uniprot_',organism,'.txt',sep='')
@@ -47,26 +47,24 @@ normalize_Prots_MWeight <- function(data,genes,proteins,organism){
   newProts <- c()
   #Exclude indexes without a match in the database, with non-positive or
   #non-numerical MW
-  MWs   <- as.numeric(MWs)#/1000
-  avgMW <- mean(MWs)
+  MWs <- as.numeric(MWs)#/1000
   for (i in 1:length(DB_indxs)){
-    index   <- DB_indxs[i]
-    Mweight <- avgMW
+    index <- DB_indxs[i]
     if (!is.na(index)){
       if (!is.na(MWs[index]) | MWs[index]>0){
-        Mweight <- MWs[index]
+        #Divide each protein row by its correspondant MW
+        newData <- rbind(newData,data[i,]/MWs[index])  
+        newGenes <- rbind(newGenes,genes[i])  
+        newProts <- rbind(newProts,proteins[i])  
       }
     }
-    #Divide each protein row by its correspondant MW
-    newData  <- rbind(newData,data[i,]/Mweight)  
-    newGenes <- rbind(newGenes,genes[i])  
-    newProts <- rbind(newProts,proteins[i])  
   }
   #Normalize dataset, brings the values back to their original order of
   #magnitude. Multiplying all columns by the same constant does not affect
   #fold-change calculations
   for (j in 1:ncol(newData)){
-    newData[,j] <- newData[,j]*avgMW
+    newData[,j] <- newData[,j]*(mean(MWs))
   }
+  
   return(list(newData,newGenes,newProts))
 }

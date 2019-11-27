@@ -38,7 +38,7 @@ load_ProtData <- function(dataPath,DBpath,organism,Pmethod,normMW,normL){
                       rep(conditions[2],replicates[2]),
                       rep(conditions[3],replicates[3]),
                       rep(conditions[4],replicates[4])), levels = conditions)
-  }
+    }
   IDs      <- dataset[,1:3]
   dataset  <- dataset[,(ncol(IDs)+1):(sum(replicates)+ncol(IDs))]
   dataset[is.na(dataset)] <- 0

@@ -3,7 +3,7 @@ createIntegratedTable <- function(organism,FDR,log2FC,adjustedP,justDEgenes,repo
 #Function that integrates the results from RNAseq DE with absolute proteomics
 #measurements and genes annotation.
 #
-# Ivan Domenzain. Last modified 2019-03-27
+# Ivan Domenzain. Last modified 2019-11-26
 #
   
 #==================================== DEFINE VARIABLES =======================================

@@ -21,7 +21,7 @@ normalize_Prots_AALength <- function(data,genes,proteins,organism){
 #
 # Usage: outputLust <- normalize_Prots_AALength(data,genes,proteins,organism)
 #
-# Last modified: Ivan Domenzain. 2019-04-24
+# Last modified: Ivan Domenzain. 2019-11-27
 #
   
   filename <- paste('uniprot_',organism,'.txt',sep='')
@@ -44,30 +44,40 @@ normalize_Prots_AALength <- function(data,genes,proteins,organism){
   }
   #Reduce dataset to those entries which have a correspondance in the
   #uniprot database
-  DB_indxs     <- match(ids,DB_ids)
-  toRemove     <- c()
-  newData      <- c()
-  newGenes     <- c()
+  DB_indxs <- match(ids,DB_ids)
+  newData  <- c()
+  newGenes <- c()
   newProts <- c()
   #Exclude indexes without a match in the database, with non-positive or
   #non-numerical MW
   MWs         <- as.numeric(MWs)/1000 #g/mmol
+  avgMW       <- mean(MWs)
   NormFactors <- c()
+  #get mean AA seq length
+  AAlengths <- c()
   for (i in 1:length(DB_indxs)){
     index <- DB_indxs[i]
+    if (!is.na(index)){AAlengths <- c(AAlengths,nchar(SEQ[index]))}
+  }
+  avgLength <- mean(AAlengths)
+  
+  for (i in 1:length(ids)){
+    index <- DB_indxs[i]
+    LengthAA <- avgLength
+    Mweight  <- avgMW
     if (!is.na(index)){
-      
       if ((!is.na(MWs[index]) | MWs[index]>0) & !is.na(SEQ[index])){
         LengthAA <- nchar(SEQ[index])
-        #Divide each protein row by its correspondant AA chain length
-        newRow      <- data[i,]/LengthAA
-        newData     <- rbind(newData,newRow)
-        newRow      <- MWs[index]*newRow
-        NormFactors <- rbind(NormFactors,newRow)
-        newGenes    <- rbind(newGenes,genes[i])  
-        newProts    <- rbind(newProts,proteins[i])  
+        Mweight  <- MWs[index]
       }
     }
+    #Divide each protein row by its correspondant AA chain length
+    newRow      <- data[i,]/LengthAA
+    newData     <- rbind(newData,newRow)
+    newRow      <- Mweight*newRow
+    NormFactors <- rbind(NormFactors,newRow)
+    newGenes    <- rbind(newGenes,genes[i])  
+    newProts    <- rbind(newProts,proteins[i])  
   }
   NormFactors <- colSums(NormFactors)
   print(NormFactors)

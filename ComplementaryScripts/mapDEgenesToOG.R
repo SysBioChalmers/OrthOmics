@@ -50,7 +50,7 @@ for (i in 1:length(conditions)){
   DownReg <- list()
   OGup    <- list()
   OGDown  <- list()
-  if (i==3){
+  if (all(cond=='Osm')){
     orgs <- organisms[1:2]
     colorValues <- orgColors[1:2]
     intLabSize <- c(rep(2.5,3))
@@ -67,7 +67,7 @@ for (i in 1:length(conditions)){
   }
   for (j in 1:length(orgs)){
     print(orgs[j])
-    #Load any DE file 
+    #Load DE results file 
     if (all(omics=='RNA')){
       dataPath <- paste(repoPath,'/RNA-seq/',orgs[j],'/Results/DE_log2FC_',logFC,'_FDR_0.01',sep='')
     } else{
@@ -83,7 +83,6 @@ for (i in 1:length(conditions)){
     } else {
       upReg[[j]]   <- rownames(DEdata[[j]])[(DEdata[[j]]$logFC>=logFC) & (DEdata[[j]]$PValue<=pVal)]
       DownReg[[j]] <- rownames(DEdata[[j]])[(DEdata[[j]]$logFC<=-logFC) & (DEdata[[j]]$PValue<=pVal)]   
-      print(upReg[[j]])
     }
     #Map the DE genes to the OG list
     k <- j+1

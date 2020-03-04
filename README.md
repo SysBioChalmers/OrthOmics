@@ -44,7 +44,7 @@ The absolute proteomics datasets [NSAF] have also been incorporated to enzyme-co
 
 **Repo Category:** Data Analysis; **Utilisation:** Multi-omics/multi-organisms datasets analysis; **Field:** Stress adaptation studies, Metabolic engineering, Omics, Evolutionary conservation;**Omic Source:** Transcriptomics, Proteomics, Genome-wide orthology; **Taxonomy:** *S. cervisiae* CEN.PK 113 /-D,	*K. marxianus* CBS6556, *Y. lipolytica* W29  
 
-Last update: 2019-06-03
+Last update: 2019-06-16
 
 
 This repository is administered by [@IVANDOMENZAIN](https://github.com/IVANDOMENZAIN), Division of Systems and Synthetic Biology, Department of Biology and Biological Engineering, Chalmers University of Technology
@@ -58,7 +58,7 @@ This repository is administered by [@IVANDOMENZAIN](https://github.com/IVANDOMEN
 
 ## Development Guidelines
 
-Anybody is welcome to contribute to the development of multiOmics analysis Toolbox, but please abide by the following guidelines.
+Anybody is welcome to contribute to the development of **OrthOmics**, but please abide by the following guidelines.
 
 Each function should start with a commented section describing the function and explaining the parameters. Existing functions can clarify what style should be used. When making *any* changes to an existing function (`*.R`-file), change the date and name of developer near the bottom of this commented section.
 

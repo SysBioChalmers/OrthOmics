@@ -63,7 +63,6 @@ DEpairwiseAnalysis <- function(dataset,org,conditions,coloVals,logPval,log2FC,ad
     p <- p + geom_hline(aes(yintercept=logPval)) 
     p <- p + geom_vline(aes(xintercept=-log2FC)) + geom_vline(aes(xintercept=log2FC))
     p <- p + geom_point(colour = genesColor, alpha = 0.5)
-    #p <- p + geom_text(aes(label=dataLabels),check_overlap = TRUE)
     textStr <- paste(length(downReg_AllConds[[i-1]]),' Down regulated',sep='')
     p <- p + annotate(geom = 'text',x=-0.5*log2FC, y=0.6*yLimit, label=textStr,size = 5)
     textStr <- paste(length(upReg_AllConds[[i-1]]),' Up regulated',sep='')
@@ -78,13 +77,17 @@ DEpairwiseAnalysis <- function(dataset,org,conditions,coloVals,logPval,log2FC,ad
   }
   #Get venn diagrams for the up and down regulated genes
   ellipses <- length(conditions)-1
+  if (ellipses == 4){
+    intLabSize   <- c(rep(2.5,15))
+  }
   if (ellipses == 3) {
     intLabSize <- c(rep(2.5,7))
     intLabSize[2]<-3
     intLabSize[4]<-3
     intLabSize[6]<-3
     intLabSize[5]<-3.5
-  }else{
+  }
+  if (ellipses == 2){
     intLabSize <- c(rep(2.5,3))
     intLabSize[2]<-3.5
   }
@@ -105,8 +108,6 @@ DEpairwiseAnalysis <- function(dataset,org,conditions,coloVals,logPval,log2FC,ad
   Excsv_down  <- list()
   condIndxes  <- c(1:(length(conditions)-1))
   #Also get a file for the DE genes in all conditions
-  allCondsUp   <- allCondsUp[[ellipses+1]]
-  allCondsDown <- allCondsDown[[ellipses+1]]
   allUpCols    <- c()
   allDownCols  <- c()
   for (i in 1:(length(conditions)-1)){

@@ -52,13 +52,15 @@ load_ProtData <- function(dataPath,DBpath,organism,Pmethod,normMW,normL){
   if (all(Pmethod == 'NSAF')  & all(organism == 'kma')){
     genes <- gsub("_", "", genes)
   }
-  
+  #Make up empty s288c IDs with CENPK
   if (all(organism == 'sce')){
-    genes    <- IDs[,1]
-    genes[genes==''] <- IDs[,1][genes=='']
+    genes    <- IDs[,3]
+    emptyIDs <- which(genes=='')
+    genes[emptyIDs] <- IDs[,1][emptyIDs]
   }
   proteins <- IDs[,2]
-  proteins[proteins==''] <- genes[proteins=='']
+  emptyIDs <- which(proteins=='')
+  proteins[emptyIDs] <- genes[emptyIDs]
   #Generate colNames
   cols <- c()
   for (i in 1:length(conditions)) {

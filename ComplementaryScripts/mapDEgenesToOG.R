@@ -14,7 +14,7 @@ mapDEgenesToOG <- function(organisms,pVal,logFC,adjustedPval,omics,repoPath){
 #
 # Usage: mapDEgenesToOG(organisms,pVal,logFC,adjustedPval,omics,repoPath)
 #
-# Last modified: Ivan Domenzain. 2019-05-20
+# Last modified: Ivan Domenzain. 2019-11-27
 #
   
 orgColors  <- c('blue','red','yellow')
@@ -50,7 +50,7 @@ for (i in 1:length(conditions)){
   DownReg <- list()
   OGup    <- list()
   OGDown  <- list()
-  if (i==3){
+  if (all(cond=='Osm')){
     orgs <- organisms[1:2]
     colorValues <- orgColors[1:2]
     intLabSize <- c(rep(2.5,3))
@@ -67,7 +67,7 @@ for (i in 1:length(conditions)){
   }
   for (j in 1:length(orgs)){
     print(orgs[j])
-    #Load any DE file 
+    #Load DE results file 
     if (all(omics=='RNA')){
       dataPath <- paste(repoPath,'/RNA-seq/',orgs[j],'/Results/DE_log2FC_',logFC,'_FDR_0.01',sep='')
     } else{
@@ -77,15 +77,12 @@ for (i in 1:length(conditions)){
     filename <- paste(orgs[j],'_',omics,'_ref_',cond,'.csv',sep='')
     #For j-th organism get the data for the genes that were DE exclusively in the i-th condition
     DEdata[[j]]  <- read.csv(filename,row.names = 1,stringsAsFactors = FALSE)
-    #Add exception for Kma identifiers
-    if (all(omics=='RNA') & all(orgs[j]=='kma')) {rownames(DEdata[[j]]) <- gsub("KMXK_", "KMXK", rownames(DEdata[[j]]))}
     if (adjustedPval == TRUE){
       upReg[[j]]   <- rownames(DEdata[[j]])[(DEdata[[j]]$logFC>=logFC) & (DEdata[[j]]$FDR<=pVal)]
       DownReg[[j]] <- rownames(DEdata[[j]])[(DEdata[[j]]$logFC<=-logFC) & (DEdata[[j]]$FDR<=pVal)]
     } else {
       upReg[[j]]   <- rownames(DEdata[[j]])[(DEdata[[j]]$logFC>=logFC) & (DEdata[[j]]$PValue<=pVal)]
       DownReg[[j]] <- rownames(DEdata[[j]])[(DEdata[[j]]$logFC<=-logFC) & (DEdata[[j]]$PValue<=pVal)]   
-      print(upReg[[j]])
     }
     #Map the DE genes to the OG list
     k <- j+1

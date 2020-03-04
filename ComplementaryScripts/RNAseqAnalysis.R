@@ -1,4 +1,4 @@
-RNAseqAnalysis <- function(organism,stringent,normMethod,minLCPM,logPval,log2FC,adjustedP,repoPath){
+RNAseqAnalysis <- function(organism,normMethod,minLCPM,logPval,log2FC,adjustedP,repoPath){
 #RNAseqAnalysis
 #
 #Function that performs differential expression analysis on RNAseq datasets the function follows a pipeline in 
@@ -6,8 +6,6 @@ RNAseqAnalysis <- function(organism,stringent,normMethod,minLCPM,logPval,log2FC,
 #PCA is also run and results stored as a plot. DE analysis is carried out using limma and edgeR.
 #
 # organism      (string) Organism ID (sce, kma or yli)
-# stringent     TRUE if noisy measurements should be filtered out according to: datum>=(stddev(row)/median(row)). 
-#               FALSE if datum>=(stddev(row)/mean(row)) should be used instead.
 # normMethod    (string) recommended 'TMM'
 # minLCPM       (double) minimum value for log2CPM when filtering out low reads  
 # logPval       (double) abs(Log10) for the DE pValue threshold
@@ -15,11 +13,11 @@ RNAseqAnalysis <- function(organism,stringent,normMethod,minLCPM,logPval,log2FC,
 # adjustedP     TRUE if adjusted pValue computation should be used
 # repoPath      Main repository directory
 #
-# Usage: RNAseqAnalysis(organism,stringent,normMethod,minLCPM,logPval,log2FC,adjustedP,repoPath)
+# Usage: RNAseqAnalysis(organism,normMethod,minLCPM,logPval,log2FC,adjustedP,repoPath)
 #
-# Last modified: Ivan Domenzain. 2019-05-20
-#
+# Last modified: Ivan Domenzain. 2019-11-26
   
+
 #================================ RELEVANT DIRECTORIES ====================================
 #Relevant paths (The user should provide the path in which the repository is stored)
 #Internal functions path
@@ -54,7 +52,7 @@ source('filterData.R')
 #Coverage means the proportion of replicates in which a transcript should be present 
 #in order to be considered as measured for a given condition
 coverage      <- 2/3
-output        <- filterData(dataset,replicates,'mean',stringent,coverage)
+output        <- filterData(dataset,replicates,'mean',TRUE,coverage)
 filtered      <- output[[1]]
 detected      <- output[[2]]
 rm(output)
@@ -66,16 +64,22 @@ source('plotVennDiagram.R')
 setwd(resultsPath)
 cat(paste("Getting overlap of measured transcripts across conditions: ",dataSource,"\n",sep=""))
 png(paste(organism,'_RNA_vennAllconds.png',sep=''),width = 600, height = 600)
-if (all(organism == 'yli')) {
+if (length(conditions) == 3) {
   intLabSize   <- c(rep(3,7))
   intLabSize[5]<- 4
   ellipses     <- 3
   allConds     <- plotVennDiagram(detected,conditions,colorValues,intLabSize,ellipses)
-}else  {
+}else{
+  if (length(conditions) == 4) {
   intLabSize   <- c(rep(3,15))
   intLabSize[6]<- 4
   ellipses     <- 4
   allConds     <- plotVennDiagram(detected,conditions,colorValues,intLabSize,ellipses)
+  } else{
+    intLabSize   <- c(rep(2.5,31))
+    ellipses     <- 5
+    allConds     <- plotVennDiagram(detected,conditions,colorValues,intLabSize,ellipses)
+  }
 }
 dev.off()
 cat("#================== 3. visualize data samples distributions and filter low reads =================\n")

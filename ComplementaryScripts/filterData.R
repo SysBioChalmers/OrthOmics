@@ -1,11 +1,11 @@
 filterData <- function(dataset,grouping,metric,stringent,coverage){
-#Function that filters a biological dataset for different replicates in 
-#different conditions. Those elements that were not measured for at least coverage
+#Function that filters an -omics dataset for different replicates in 
+#different conditions. Those elements that were not measured for at least "coverage"
 #of the triplicates for at least one of the conditions are removed. The elements
 #should show low variability for all the conditions in which they were measured 
 #in order to be kept
 #
-# Ivan Domenzain. created 2018-10-18
+# Ivan Domenzain. created 2019-11-27
 #
 
 nargin <- length(as.list(match.call())) -1
@@ -32,11 +32,9 @@ for (i in 1:length(grouping)){
 #Loop through all the elements (rows)
 filtered <- c()
 for (i in 1:nrow(dataset)){
-  #print(i)
   presence  <- c(rep(FALSE,length(grouping)))
   spreading <- c(rep(FALSE,length(grouping)))
   for (j in 1:length(grouping)){
-    #print(j)
     #The element should be measured in at least (coverage value) of the replicates 
     #for being considered as present in one condition
     rowCond <- condData[[j]][i,]

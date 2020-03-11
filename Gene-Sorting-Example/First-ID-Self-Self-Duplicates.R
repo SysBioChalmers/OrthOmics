@@ -13,7 +13,7 @@ library(splitstackshape)
 library(stringr)
 repoPath <- '/Users/ivand/Documents/GitHub/OrthOmics'
 #Load Necessary Data from the Self-Self orthology search
-groupingPath <- paste(repoPath,'/Gene-Sorting-Example/Scerevisiae_GeneSorting',sep='')
+groupingPath <- paste(repoPath,'/Gene-Sorting-Example/S.cerevisiae_GeneSorting',sep='')
 setwd(groupingPath)
 filename     <- paste(groupingPath,'/GroupV/Orthogroups.GeneCount.tsv',sep='')
 DuplicateOGs <- read.delim(filename, header = TRUE, sep = "\t",stringsAsFactors=FALSE, na.strings = "NA")
@@ -24,6 +24,7 @@ group_number <- 'Duplicates_to_Exclude.csv' #Add the group number for the analys
 filename     <- paste(groupingPath,'/s288c_gene_prot.csv',sep='')
 gene_2_prot  <- read.csv(filename, header = TRUE)
 newOGlist    <- c()
+setwd(paste(groupingPath,'/GroupV',sep=''))
 #Keep only self-self duplicates (i.e. 2+ copy genes)
 rownames(DuplicateOGs) <- DuplicateOGs[,1]
 DuplicateOGs           <- DuplicateOGs[,2:endCol]
@@ -33,13 +34,8 @@ DuplicateOGs <- DuplicateOGs[apply(DuplicateOGs[c(1)],1,function(z) any(z!=0)),]
 # grab duplicates from self-self orthology search
 DuplicateOGs <- DuplicateOGs[apply(DuplicateOGs[c(1)],1,function(z) any(z>=2)),] 
 #Map each  Gene/protein to orthoGroups data frame
-for (i in 1:nrow(DuplicateOGs)){
-  OGid      <- rownames(DuplicateOGs)[i] 
-  index     <- which(orthoGroups[,1]==OGid)
-  rowData   <- orthoGroups[index,2:endCol]
-  newRow    <- orthoGroups[index,]
-  newOGlist <- rbind(newOGlist,newRow)
-}
+matches   <- match(rownames(DuplicateOGs),orthoGroups[,1])
+newOGlist <- orthoGroups[matches,]
 colnames(newOGlist) <- colnames(orthoGroups)
 #return(newOGlist)
 newOGlistP <- newOGlist [,c(1:2)]

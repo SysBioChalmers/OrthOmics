@@ -43,6 +43,18 @@ if (!requireNamespace("limma", quietly = TRUE)){
 if (!requireNamespace("edgeR", quietly = TRUE)){
   BiocManager::install("edgeR")}
 
+# Loading libraries ============================================================
+library("rlist")
+library(VennDiagram)
+library(devtools)
+library(ggplot2)
+library(limma)
+library(edgeR)
+library(tidyverse) # Collection of useful R-packages
+library(RColorBrewer)
+library(ggbiplot)
+library(ggplot2)
+
 #====================================DEFINE VARIABLES =======================================
 #Provide organism code [sce,kma,yli]
 organisms    <- c('sce','kma','yli')

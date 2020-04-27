@@ -11,24 +11,14 @@
 #absolute proteomics levels [umol/g protein], Molecular weight of proteins, Sequence lenght and GO terms information
 #is put together for each organism.
 #
-#This script will facilitate all analyses described above, the user only needs to 1) clone the repo
+#This script will facilitate all analyses described above, the user only needs to clone the repo
 #
 # Last modified: Ronan Harrington. 2020-04-27
 #
 
-# Changing working directory ===================================================
-
-# Setting the working directory to the directory which contains this script
-if (exists("RStudio.Version")){
-  setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
-} else {
-  setwd(getSrcDirectory()[1])
-}
-
-# Setting working directory to parent directory of ComplementaryScripts/
-setwd("../")
-
 # Installing required R packages ===============================================
+if (!requireNamespace("rstudioapi", quietly = TRUE)){
+  install.packages("rstudioapi")}
 if (!requireNamespace("devtools", quietly = TRUE)){
   install.packages("devtools")}
 if (!requireNamespace("VennDiagram", quietly = TRUE)){
@@ -47,6 +37,18 @@ if (!requireNamespace("limma", quietly = TRUE)){
   BiocManager::install("limma")}
 if (!requireNamespace("edgeR", quietly = TRUE)){
   BiocManager::install("edgeR")}
+
+# Changing working directory ===================================================
+
+# Setting the working directory to the directory which contains this script
+if (exists("RStudio.Version")){
+  setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+} else {
+  setwd(getSrcDirectory()[1])
+}
+
+# Setting working directory to parent directory of ComplementaryScripts/
+setwd("../")
 
 # Loading libraries ============================================================
 library("rlist")

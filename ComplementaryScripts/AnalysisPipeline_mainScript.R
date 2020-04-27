@@ -16,12 +16,17 @@
 # Last modified: Ronan Harrington. 2020-04-27
 #
 
-# Setting the working directory to the directory which contains this script ====
+# Changing working directory ===================================================
+
+# Setting the working directory to the directory which contains this script
 if (exists("RStudio.Version")){
   setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 } else {
   setwd(getSrcDirectory()[1])
 }
+
+# Setting working directory to parent directory of ComplementaryScripts/
+setwd("../")
 
 # Installing required R packages ===============================================
 if (!requireNamespace("devtools", quietly = TRUE)){
@@ -73,8 +78,8 @@ normByMW   <- TRUE
 stringent  <- TRUE
 #Normalization method for DE analysis
 normMethod <- 'TMM'
-#Add the directory info where you cloned the OrthOmics Repository (the main directory), an example is shown
-repoPath   <- '/Users/ivand/Documents/GitHub/OrthOmics'
+# Assigning the working directory to the character object 'repoPath'
+repoPath   <- getwd()
 #Internal functions path
 scriptsPath <- paste(repoPath,'/ComplementaryScripts',sep='')
 

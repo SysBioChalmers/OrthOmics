@@ -11,19 +11,46 @@
 #absolute proteomics levels [umol/g protein], Molecular weight of proteins, Sequence lenght and GO terms information
 #is put together for each organism.
 #
-#This script will facilitate all analyses described above, the user only needs to 1) clone the repo and 
-#2) change the directory name on Line 56 to reflect the location of your cloned directory
+#This script will facilitate all analyses described above, the user only needs to clone the repo
 #
-# Last modified: Ivan Domenzain. 2019-11-27
+# Last modified: Ronan Harrington. 2020-04-27
 #
 
-install.packages('VennDiagram')
-install.packages("rlist")
-install.packages("devtools")
-install.packages("edgeR")
-install.packages("limma")
-install.packages("tidyverse")
+# Installing required R packages ===============================================
+if (!requireNamespace("rstudioapi", quietly = TRUE)){
+  install.packages("rstudioapi")}
+if (!requireNamespace("devtools", quietly = TRUE)){
+  install.packages("devtools")}
+if (!requireNamespace("VennDiagram", quietly = TRUE)){
+  install.packages("VennDiagram")}
+if (!requireNamespace("rlist", quietly = TRUE)){
+  install.packages("rlist")}
+if (!requireNamespace("tidyverse", quietly = TRUE)){
+  install.packages("tidyverse")}
+if (!requireNamespace("RColorBrewer", quietly = TRUE)){
+  install.packages("RColorBrewer")}
+if (!requireNamespace("ggbiplot", quietly = TRUE)){
+  install.packages("ggbiplot")}
+if (!requireNamespace("BiocManager", quietly = TRUE)){
+  install.packages("BiocManager")}
+if (!requireNamespace("limma", quietly = TRUE)){
+  BiocManager::install("limma")}
+if (!requireNamespace("edgeR", quietly = TRUE)){
+  BiocManager::install("edgeR")}
 
+# Changing working directory ===================================================
+
+# Setting the working directory to the directory which contains this script
+if (exists("RStudio.Version")){
+  setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+} else {
+  setwd(getSrcDirectory()[1])
+}
+
+# Setting working directory to parent directory of ComplementaryScripts/
+setwd("../")
+
+# Loading libraries ============================================================
 library("rlist")
 library(VennDiagram)
 library(devtools)
@@ -34,6 +61,7 @@ library(tidyverse) # Collection of useful R-packages
 library(RColorBrewer)
 library(ggbiplot)
 library(ggplot2)
+
 #====================================DEFINE VARIABLES =======================================
 #Provide organism code [sce,kma,yli]
 organisms    <- c('sce','kma','yli')
@@ -52,8 +80,8 @@ normByMW   <- TRUE
 stringent  <- TRUE
 #Normalization method for DE analysis
 normMethod <- 'TMM'
-#Add the directory info where you cloned the OrthOmics Repository (the main directory), an example is shown
-repoPath   <- '/Users/ivand/Documents/GitHub/OrthOmics'
+# Assigning the working directory to the character object 'repoPath'
+repoPath   <- getwd()
 #Internal functions path
 scriptsPath <- paste(repoPath,'/ComplementaryScripts',sep='')
 
